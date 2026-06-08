@@ -1,0 +1,29 @@
+# Carpeta de configuración de Claude Code
+.claude/
+
+# Archivos locales de trabajo (NO se publican)
+BUENA 1-heroturfs-home-v1.html
+heroturfs-home.html
+
+# Logos sueltos (las imágenes ya van embebidas en index.html)
+heroturfs-logo.png
+heroturfs-logo-cropped.png
+heroturfs-logo-transparent.png
+logo-check.jpg
+logo-combined.png
+logo-crop-test.png
+logo-final.png
+logo-real.png
+logo-text-white.png
+simbolo-check.png
+
+# Imágenes/texturas pesadas de trabajo (NO subir)
+20250829_125226.jpg
+Pista-Marathon-One-con-personas-2.webp
+Heroturf-Vulcan-Terracota-Vista-4.jpg
+textura atlantis.jpg
+textura elysium.jpg
+textura valhalla.jpg
+
+# Sistema
+.DS_Store
