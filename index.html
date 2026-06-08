@@ -409,6 +409,51 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .rpc-foot{padding-top:12px;border-top:1px solid rgba(0,0,0,.07)}
 .rpc-name{font-size:13px;font-weight:700;color:#1a1f24}
 .rpc-role{font-size:11px;color:#8a96a0;margin-top:2px}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+.nav-burger{display:none;background:none;border:none;color:var(--text-sec);cursor:pointer;padding:0;align-items:center}
+.nav-burger:hover{color:var(--text)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:99;background:rgba(50,63,73,.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);flex-direction:column;padding:6px 0}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:14px 24px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a:active{background:rgba(255,255,255,.06);color:#fff}
+
+@media(max-width:1024px){
+  .proyectos-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:220px}
+  .reviews-grid-photo{grid-template-columns:1fr 1fr}
+  .faq-inner-d{grid-template-columns:1fr;gap:36px}
+  .footer-top{grid-template-columns:1fr 1fr 1fr;gap:32px}
+  [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:900px){
+  .hero-aside{display:none}
+}
+@media(max-width:768px){
+  .nav{padding:0 18px}
+  .nav-left>.nav-dropdown,.nav-left>.nav-item{display:none}
+  .nav-burger{display:flex}
+  section:not(.hero){padding:56px 0}
+  .hero-content{padding:0 24px 56px}
+  .hero-headline{font-size:clamp(42px,12vw,64px)}
+  .split-big-grid{grid-template-columns:1fr}
+  .split-big-card{height:360px}
+  .split-big-content{padding:28px 24px}
+  .reviews-grid-photo{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px}
+  [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
+}
+@media(max-width:560px){
+  .nav{padding:0 14px}
+  .nav-right{gap:12px}
+  .nav-right>.nav-icon:first-child{display:none}
+  .nav-sep{display:none}
+  .nav-logo img{height:20px}
+  section:not(.hero){padding:48px 0}
+  .proyectos-grid{grid-template-columns:1fr;grid-auto-rows:200px}
+  .proy-card.tall{grid-row:auto}
+  .footer-top{grid-template-columns:1fr;gap:24px}
+}
 </style>
 </head>
 <body>
@@ -416,6 +461,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-left">
+    <button class="nav-burger" aria-label="Abrir menú" onclick="toggleMenu()"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     <div class="nav-dropdown">
       <a href="#" class="nav-item">Productos <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
       <div class="nav-dropdown-menu">
@@ -449,6 +495,15 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     </div>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="toggleMenu()">Pistas en stock</a>
+  <a href="#" onclick="toggleMenu()">Pistas personalizadas</a>
+  <a href="#" onclick="toggleMenu()">Complementos</a>
+  <a href="#" onclick="toggleMenu()">Proyectos</a>
+  <a href="#" onclick="toggleMenu()">Contacto</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -833,6 +888,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     btn.classList.add('active');
   }
   selectGamaD('valhalla',document.querySelector('.gama-tab-d'));
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
   function toggleFaqD(btn){
     const item=btn.closest('.faq-item-d'),open=item.classList.contains('open');
     document.querySelectorAll('.faq-item-d').forEach(i=>i.classList.remove('open'));
