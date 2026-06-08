@@ -418,6 +418,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .mobile-menu a{padding:14px 24px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)}
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu a:hover,.mobile-menu a:active{background:rgba(255,255,255,.06);color:#fff}
+.reviews-carousel{position:relative}
+.reviews-arrow{display:none;position:absolute;top:90px;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:#1a1f24;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28)}
+.reviews-arrow:active{background:#fff}
+.reviews-arrow-prev{left:2px}
+.reviews-arrow-next{right:2px}
 
 @media(max-width:1024px){
   .proyectos-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:220px}
@@ -439,7 +444,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .split-big-grid{grid-template-columns:1fr}
   .split-big-card{height:360px}
   .split-big-content{padding:28px 24px}
-  .reviews-grid-photo{grid-template-columns:1fr}
+  .reviews-grid-photo{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+  .reviews-grid-photo::-webkit-scrollbar{display:none}
+  .review-photo-card{flex:0 0 86%;scroll-snap-align:start}
+  .reviews-carousel .reveal{opacity:1;transform:none}
+  .reviews-arrow{display:flex}
   .footer-top{grid-template-columns:1fr 1fr;gap:28px}
   [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
 }
@@ -671,7 +680,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         </div>
       </div>
     </div>
-    <div class="reviews-grid-photo">
+    <div class="reviews-carousel">
+    <div class="reviews-grid-photo" id="reviewsTrack">
       <div class="review-photo-card reveal d1">
         <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-gimnasio-verde-ambiente-1.webp" alt="Lion's Gym" loading="lazy"></div>
         <div class="rpc-body">
@@ -696,6 +706,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <div class="rpc-foot"><div class="rpc-name">Luis</div><div class="rpc-role">Bisonte CrossFit · Cantabria</div></div>
         </div>
       </div>
+    </div>
+    <button class="reviews-arrow reviews-arrow-prev" onclick="scrollReviews(-1)" aria-label="Reseña anterior"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="reviews-arrow reviews-arrow-next" onclick="scrollReviews(1)" aria-label="Reseña siguiente"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
   </div>
 </section>
@@ -889,6 +902,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   }
   selectGamaD('valhalla',document.querySelector('.gama-tab-d'));
   function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+  function scrollReviews(dir){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');t.scrollBy({left:dir*(c.offsetWidth+14),behavior:'smooth'});}
   function toggleFaqD(btn){
     const item=btn.closest('.faq-item-d'),open=item.classList.contains('open');
     document.querySelectorAll('.faq-item-d').forEach(i=>i.classList.remove('open'));
