@@ -1011,7 +1011,13 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     },5500);
     t.addEventListener('mouseenter',function(){paused=true});
     t.addEventListener('mouseleave',function(){paused=false});
-    ['pointerdown','touchstart','wheel'].forEach(function(ev){t.addEventListener(ev,function(){stopped=true},{passive:true})});
+    // Stop only on real horizontal interaction; vertical page scrolling over the carousel must not kill autoplay
+    let px=0,py=0;
+    t.addEventListener('pointerdown',function(e){px=e.clientX;py=e.clientY},{passive:true});
+    t.addEventListener('pointermove',function(e){if(e.buttons&&Math.abs(e.clientX-px)>12&&Math.abs(e.clientX-px)>Math.abs(e.clientY-py))stopped=true},{passive:true});
+    t.addEventListener('touchstart',function(e){px=e.touches[0].clientX;py=e.touches[0].clientY},{passive:true});
+    t.addEventListener('touchmove',function(e){const dx=Math.abs(e.touches[0].clientX-px),dy=Math.abs(e.touches[0].clientY-py);if(dx>12&&dx>dy)stopped=true},{passive:true});
+    t.addEventListener('wheel',function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY))stopped=true},{passive:true});
     document.querySelectorAll('.reviews-arrow,.rev-dot').forEach(function(b){b.addEventListener('click',function(){stopped=true})});
   })();
   function toggleFaqD(btn){
