@@ -162,7 +162,7 @@ section{padding:88px 0}
 
 /* FOOTER */
 footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)}
-.footer-top{max-width:1600px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.footer-top{max-width:1600px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
 .footer-logo img{height:32px;width:auto;display:block;margin-bottom:14px}
 .footer-desc{font-size:12px;color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:20px;max-width:210px}
 .footer-social{display:flex;gap:7px}
@@ -173,11 +173,22 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .footer-links{display:flex;flex-direction:column;gap:9px}
 .footer-link{font-size:13px;color:rgba(255,255,255,.82);text-decoration:none;transition:color .2s}
 .footer-link:hover{color:#fff}
-.footer-bottom{max-width:1600px;margin:0 auto;border-top:1px solid var(--border);padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-bottom{max-width:1600px;margin:0 auto;border-top:1px solid var(--border);padding:20px 24px 0;display:flex;flex-direction:column;gap:14px}
+.fb-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .footer-copy{font-size:11px;color:rgba(255,255,255,.32)}
-.footer-legal{display:flex;gap:18px}
+.footer-legal{display:flex;gap:18px;flex-wrap:wrap}
 .footer-legal a{font-size:11px;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s}
 .footer-legal a:hover{color:rgba(255,255,255,.6)}
+.footer-country{position:relative}
+.footer-country-btn{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:rgba(255,255,255,.82);background:none;border:none;cursor:pointer;font-family:var(--fb)}
+.footer-country-btn:hover{color:#fff}
+.footer-country-menu{position:absolute;bottom:calc(100% + 10px);left:0;background:#1a1c20;border:1px solid rgba(255,255,255,.08);border-radius:6px;min-width:210px;padding:8px 0;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .2s,transform .2s;z-index:60}
+.footer-country:hover .footer-country-menu{opacity:1;pointer-events:all;transform:translateY(0)}
+.footer-payments{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:flex-end}
+.footer-payments>img{height:24px;width:auto;display:block;border-radius:4px}
+.pay-badge{height:24px;min-width:38px;padding:0 6px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;background:#fff}
+.pay-badge img{height:11px;width:auto;display:block}
+.pay-badge.shoppay{background:#5A31F4;font-size:8px;font-weight:800;color:#fff;letter-spacing:.03em;font-family:var(--fb);white-space:nowrap}
 
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:#0a0a0a}
@@ -853,20 +864,53 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     </div>
     <div>
       <div class="footer-col-title">Products</div>
-      <div class="footer-links"><a href="#" class="footer-link">Tracks in stock</a><a href="#" class="footer-link">Custom track</a><a href="#" class="footer-link">Valhalla</a><a href="#" class="footer-link">Marathon</a><a href="#" class="footer-link">Elysium</a><a href="#" class="footer-link">Atlantis</a></div>
+      <div class="footer-links"><a href="#" class="footer-link">Tracks in stock</a><a href="#" class="footer-link">Custom turf</a><a href="#" class="footer-link">Accessories</a></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Sports Turf</div>
+      <div class="footer-links"><a href="#" class="footer-link">Sled tracks</a><a href="#" class="footer-link">Gym turf</a><a href="#" class="footer-link">Home gym turf</a><a href="#" class="footer-link">CrossFit turf</a></div>
     </div>
     <div>
       <div class="footer-col-title">Company</div>
-      <div class="footer-links"><a href="#" class="footer-link">Projects</a><a href="#" class="footer-link">About us</a><a href="#" class="footer-link">Installation</a><a href="#" class="footer-link">Blog</a><a href="#" class="footer-link">Contact</a></div>
+      <div class="footer-links"><a href="#" class="footer-link">About us</a><a href="#" class="footer-link">Projects</a><a href="#" class="footer-link">Become a distributor</a><a href="#" class="footer-link">Contact</a></div>
     </div>
     <div>
-      <div class="footer-col-title">International</div>
-      <div class="footer-links"><a href="#" class="footer-link" style="display:inline-flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14">Spain</a><a href="#" class="footer-link" style="display:inline-flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14">France</a><a href="#" class="footer-link" style="display:inline-flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/it.svg" alt="Italy" width="20" height="14">Italy</a><a href="#" class="footer-link" style="display:inline-flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/de.svg" alt="Germany" width="20" height="14">Germany</a><a href="#" class="footer-link" style="display:inline-flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/gb.svg" alt="United Kingdom" width="20" height="14">United Kingdom</a></div>
+      <div class="footer-col-title">Resources</div>
+      <div class="footer-links"><a href="#" class="footer-link">Installation guide</a><a href="#" class="footer-link">Turf cleaning guide</a><a href="#" class="footer-link">Blog</a></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2026 Heroturfs. All rights reserved.</span>
-    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Cookies</a><a href="#">Legal notice</a></div>
+    <div class="fb-row">
+      <div class="footer-country">
+        <button class="footer-country-btn"><img class="flag" src="https://flagcdn.com/gb.svg" alt="United Kingdom" width="20" height="14">United Kingdom <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
+        <div class="footer-country-menu">
+          <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14">Spain</a>
+          <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/eu.svg" alt="European Union" width="20" height="14">European Union</a>
+          <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14">France</a>
+          <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/it.svg" alt="Italy" width="20" height="14">Italy</a>
+          <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/de.svg" alt="Germany" width="20" height="14">Germany</a>
+          <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/nl.svg" alt="Netherlands" width="20" height="14">Netherlands</a>
+          <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/gb.svg" alt="United Kingdom" width="20" height="14">United Kingdom</a>
+          <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/us.svg" alt="United States" width="20" height="14">United States</a>
+        </div>
+      </div>
+      <div class="footer-payments">
+        <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons/flat/amex.svg" alt="American Express" loading="lazy">
+        <span class="pay-badge"><img src="https://cdn.simpleicons.org/applepay/000000" alt="Apple Pay" loading="lazy"></span>
+        <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons/flat/diners.svg" alt="Diners Club" loading="lazy">
+        <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons/flat/discover.svg" alt="Discover" loading="lazy">
+        <span class="pay-badge"><img src="https://cdn.simpleicons.org/googlepay/3C4043" alt="Google Pay" loading="lazy"></span>
+        <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons/flat/maestro.svg" alt="Maestro" loading="lazy">
+        <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons/flat/mastercard.svg" alt="Mastercard" loading="lazy">
+        <span class="pay-badge shoppay">Shop&nbsp;Pay</span>
+        <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons/flat/unionpay.svg" alt="UnionPay" loading="lazy">
+        <img src="https://cdn.jsdelivr.net/gh/aaronfagan/svg-credit-card-payment-icons/flat/visa.svg" alt="Visa" loading="lazy">
+      </div>
+    </div>
+    <div class="fb-row">
+      <span class="footer-copy">© 2026 Heroturfs UK. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Cookies Policy</a><a href="#">Purchase Terms</a><a href="#">Legal Notice</a></div>
+    </div>
   </div>
 </footer>
 
