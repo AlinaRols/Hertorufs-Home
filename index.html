@@ -1008,7 +1008,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       if(max<=2)return;
       if(t.scrollLeft>=max-4)t.scrollTo({left:0,behavior:'smooth'});
       else t.scrollBy({left:c.offsetWidth+reviewGap(t),behavior:'smooth'});
-    },5500);
+    },3000);
     t.addEventListener('mouseenter',function(){paused=true});
     t.addEventListener('mouseleave',function(){paused=false});
     // Stop only on real horizontal interaction; vertical page scrolling over the carousel must not kill autoplay
