@@ -408,7 +408,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .rsb-stars{display:flex;gap:2px;margin-bottom:2px}
 .rsb-stars svg{width:14px;height:14px;fill:#e8a020}
 .rsb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a96a0}
-.reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;margin-bottom:32px;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+.reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:16px;margin-bottom:32px;scrollbar-width:none;-ms-overflow-style:none}
 .reviews-grid-photo::-webkit-scrollbar{display:none}
 .review-photo-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .review-photo-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
@@ -470,7 +470,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .split-big-grid{grid-template-columns:1fr}
   .split-big-card{height:360px}
   .split-big-content{padding:28px 24px}
-  .reviews-grid-photo{display:flex;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+  .reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:14px;scrollbar-width:none;-ms-overflow-style:none}
   .reviews-grid-photo::-webkit-scrollbar{display:none}
   .review-photo-card{flex:0 0 86%;scroll-snap-align:start}
   .rpc-img{aspect-ratio:auto;height:220px}
@@ -489,7 +489,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   section:not(.hero){padding:48px 0}
   .proyectos-grid{grid-template-columns:1fr;grid-auto-rows:200px}
   .proy-card.tall{grid-row:auto}
-  .footer-top{grid-template-columns:1fr;gap:24px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px 18px}
+  .footer-top>div:first-child{grid-column:1/-1}
 }
 </style>
 </head>
@@ -1064,23 +1065,35 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   });
   function scrollReviews(dir){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');t.scrollBy({left:dir*(c.offsetWidth+reviewGap(t)),behavior:'smooth'});}
   function goReview(i){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');t.scrollTo({left:i*(c.offsetWidth+reviewGap(t)),behavior:'smooth'});}
-  function updateReviewDots(){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');if(!c)return;const i=Math.round(t.scrollLeft/(c.offsetWidth+reviewGap(t)));document.querySelectorAll('.rev-dot').forEach((d,idx)=>d.classList.toggle('active',idx===i));}
+  function updateReviewDots(){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');if(!c)return;const dots=document.querySelectorAll('.rev-dot');if(!dots.length)return;const i=Math.round(t.scrollLeft/(c.offsetWidth+reviewGap(t)))%dots.length;dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));}
   document.getElementById('reviewsTrack').addEventListener('scroll',()=>window.requestAnimationFrame(updateReviewDots));
 
-  // Reviews autoplay: advance every 5.5s, pause on hover, stop for good once the user interacts
+  // Reviews marquee: continuous scroll that only pauses on hover; stops for good on real horizontal interaction
   (function(){
     const t=document.getElementById('reviewsTrack');
     if(!t)return;
     let stopped=false,paused=false;
     window.stopReviewsAutoplay=function(){stopped=true};
-    setInterval(function(){
-      if(stopped||paused||document.hidden)return;
-      const c=t.querySelector('.review-photo-card');if(!c)return;
-      const max=t.scrollWidth-t.clientWidth;
-      if(max<=2)return;
-      if(t.scrollLeft>=max-4)t.scrollTo({left:0,behavior:'smooth'});
-      else t.scrollBy({left:c.offsetWidth+reviewGap(t),behavior:'smooth'});
-    },3000);
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)stopped=true;
+    // Duplicate the cards once so the loop is seamless (like the ticker)
+    const originals=[...t.querySelectorAll('.review-photo-card')];
+    originals.forEach(function(c){const k=c.cloneNode(true);k.classList.add('visible');t.appendChild(k);});
+    const SPEED=48; // px per second
+    let pos=t.scrollLeft,last=null;
+    function frame(ts){
+      if(last!==null&&!stopped&&!paused&&!document.hidden){
+        const dt=Math.min(ts-last,100)/1000;
+        if(Math.abs(t.scrollLeft-pos)>2)pos=t.scrollLeft;
+        const c=t.querySelector('.review-photo-card');
+        const h=originals.length*(c.offsetWidth+reviewGap(t));
+        pos+=SPEED*dt;
+        if(pos>=h)pos-=h;
+        t.scrollLeft=pos;
+      }
+      last=ts;
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
     t.addEventListener('mouseenter',function(){paused=true});
     t.addEventListener('mouseleave',function(){paused=false});
     // Stop only on real horizontal interaction; vertical page scrolling over the carousel must not kill autoplay
