@@ -1,6 +1,9 @@
 # Carpeta de configuración de Claude Code
 .claude/
 
+# Capturas y logs locales de Playwright (herramienta de pruebas)
+.playwright-mcp/
+
 # Archivos locales de trabajo (NO se publican)
 BUENA 1-heroturfs-home-v1.html
 heroturfs-home.html
