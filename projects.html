@@ -543,6 +543,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .proj-card{aspect-ratio:4/3}
 }
 </style>
+<style>
+/* ===== MOBILE IMPROVEMENTS (projects) ===== */
+@media(max-width:560px){
+  .ch-collage{grid-template-columns:1fr;grid-auto-rows:200px;gap:8px;padding:0 14px 14px;height:auto}
+  .ch-head{padding:0 14px 22px}
+  .ch-title{font-size:clamp(40px,12vw,60px)}
+  .ch-sub{font-size:15px}
+  .proj-meta{padding:48px 18px 18px}
+  .proj-name{font-size:21px}
+  .proj-desc{font-size:12.5px}
+}
+@media(hover:none){ .proj-dots{opacity:1} }
+@media(max-width:768px){ section.collage-hero{padding:96px 0 0} .proj-grid-sec{padding-top:22px!important} }
+</style>
 </head>
 <body>
 
@@ -619,8 +633,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .ch-tile.big{grid-column:span 2;grid-row:auto}
 }
 @media(max-width:560px){
-  .ch-collage{grid-template-columns:1fr;grid-auto-rows:220px}
-  .ch-tile.big{grid-column:span 1}
+  .ch-collage{grid-template-columns:1fr 1fr;grid-auto-rows:130px;gap:7px}
+  .ch-tile.big{grid-column:span 2;grid-row:span 2}
+  .ch-cap{padding:14px}
+  .ch-name{font-size:15px}
+  .ch-tile.big .ch-name{font-size:24px}
+  .ch-loc{font-size:11px;margin-top:5px}
 }
 </style>
 <section class="collage-hero">
@@ -656,7 +674,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
 
 <!-- PROJECT GRID -->
-<section style="padding:56px 0 88px;background:#fff">
+<section class="proj-grid-sec" style="padding:56px 0 88px;background:#fff">
   <div class="container">
     <div class="proj-grid">
       <a href="https://heroturfs.es/pages/lowfit-huelva" target="_blank" rel="noopener" class="proj-card reveal" data-cat="gym">
@@ -945,6 +963,28 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     });
     cardEl.addEventListener('mouseleave', () => { clearInterval(timer); timer = null; show(0); });
   });
+  // touch devices: auto-cycle each card's photos while it is on screen (no hover)
+  if (window.matchMedia('(hover: none)').matches) {
+    const ioTouch = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const card = e.target;
+        const imgs = [...card.querySelectorAll('.g-img')];
+        const dots = [...card.querySelectorAll('.g-dot')];
+        if (imgs.length < 2) return;
+        if (e.isIntersecting) {
+          imgs.forEach(im => { if (im.dataset.src && !im.getAttribute('src')) im.src = im.dataset.src; });
+          if (card._cy) return;
+          let i = 0;
+          card._cy = setInterval(() => {
+            imgs[i].classList.remove('active'); if (dots[i]) dots[i].classList.remove('active');
+            i = (i + 1) % imgs.length;
+            imgs[i].classList.add('active'); if (dots[i]) dots[i].classList.add('active');
+          }, 2200);
+        } else if (card._cy) { clearInterval(card._cy); card._cy = null; }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.proj-card').forEach(c => ioTouch.observe(c));
+  }
 </script>
 </body>
 </html>
