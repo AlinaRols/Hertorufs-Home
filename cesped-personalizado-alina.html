@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heroturfs — Projects · Real installations across Europe</title>
+<title>Heroturfs — Custom turf · your colours, your logo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
@@ -18,8 +18,7 @@
   --fd:'Barlow Condensed',sans-serif; --fb:'Barlow',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:#fff;color:var(--text);line-height:1.6;overflow-x:hidden}
-.nav{background:#323F49;border-bottom:1px solid rgba(255,255,255,.08)}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -42,6 +41,7 @@ section{padding:88px 0}
 .nav-dropdown{position:relative}
 .nav-dropdown-menu{position:absolute;top:calc(100% + 16px);left:0;background:#1a1c20;border:1px solid rgba(255,255,255,.08);border-radius:6px;min-width:200px;padding:8px 0;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s;z-index:200}
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0)}
+.country-dropdown .nav-dropdown-menu{left:auto;right:0}
 .nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s,background .2s}
 .nav-dropdown-item:hover{color:#fff;background:rgba(255,255,255,.05)}
 .flag{width:20px;height:14px;object-fit:cover;border-radius:2px;display:inline-block;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
@@ -190,10 +190,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pay-badge{height:24px;min-width:38px;padding:0 6px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;background:#fff}
 .pay-badge img{height:11px;width:auto;display:block}
 .pay-badge.shoppay{background:#5A31F4;font-size:8px;font-weight:800;color:#fff;letter-spacing:.03em;font-family:var(--fb);white-space:nowrap}
-.footer-copy{font-size:11px;color:rgba(255,255,255,.32)}
-.footer-legal{display:flex;gap:18px}
-.footer-legal a{font-size:11px;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,.6)}
 
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:#0a0a0a}
@@ -412,17 +408,24 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .rsb-stars{display:flex;gap:2px;margin-bottom:2px}
 .rsb-stars svg{width:14px;height:14px;fill:#e8a020}
 .rsb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a96a0}
-.reviews-grid-photo{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
-.review-photo-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:16px;margin-bottom:32px;scrollbar-width:none;-ms-overflow-style:none}
+.reviews-grid-photo::-webkit-scrollbar{display:none}
+.review-photo-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .review-photo-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
 .rpc-img{aspect-ratio:4/3;overflow:hidden;flex-shrink:0}
 .rpc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .review-photo-card:hover .rpc-img img{transform:scale(1.04)}
 .rpc-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.rpc-stars{display:flex;gap:2px}
+.rpc-stars{display:flex;gap:2px;align-items:center}
 .rpc-stars svg{width:13px;height:13px;fill:#e8a020}
-.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;flex:1}
-.rpc-foot{padding-top:12px;border-top:1px solid rgba(0,0,0,.07)}
+.rpc-date{margin-left:auto;font-size:11px;color:#8a96a0;font-weight:500}
+.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rpc-text.expanded{display:block;-webkit-line-clamp:unset}
+.rpc-links{display:flex;align-items:center;gap:14px}
+.rpc-lang{background:none;border:none;padding:0;font-size:11px;font-weight:600;color:#8a96a0;cursor:pointer;text-decoration:underline;text-underline-offset:2px;align-self:flex-start;font-family:var(--fb);transition:color .2s}
+.rpc-lang:hover{color:#1a1f24}
+.rpc-foot{margin-top:auto;padding-top:12px;border-top:1px solid rgba(0,0,0,.07);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rpc-foot .flag{box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 .rpc-name{font-size:13px;font-weight:700;color:#1a1f24}
 .rpc-role{font-size:11px;color:#8a96a0;margin-top:2px}
 
@@ -435,15 +438,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu a:hover,.mobile-menu a:active{background:rgba(255,255,255,.06);color:#fff}
 .reviews-carousel{position:relative}
-.reviews-arrow{display:none;position:absolute;top:110px;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:#1a1f24;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28)}
+.reviews-arrow{display:flex;position:absolute;top:140px;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:#1a1f24;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28);transition:background .2s}
+.reviews-arrow:hover{background:#fff}
 .reviews-arrow:active{background:#fff}
 .reviews-arrow-prev{left:2px}
 .reviews-arrow-next{right:2px}
-.reviews-dots{display:none}
+.reviews-dots{display:flex;justify-content:center;gap:9px;margin-top:4px}
+.rev-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.18);cursor:pointer;padding:0;transition:background .25s,width .25s}
+.rev-dot.active{background:var(--accent);width:22px;border-radius:5px}
+.reviews-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:1px solid rgba(0,0,0,.22);border-radius:6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a1f24;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.reviews-cta:hover{background:#1a1f24;color:#fff;border-color:#1a1f24}
 
 @media(max-width:1024px){
   .proyectos-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:220px}
-  .reviews-grid-photo{grid-template-columns:1fr 1fr}
+  .review-photo-card{flex-basis:calc((100% - 16px)/2)}
   .faq-inner-d{grid-template-columns:1fr;gap:36px}
   .footer-top{grid-template-columns:1fr 1fr 1fr;gap:32px}
   [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important}
@@ -455,21 +463,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .nav{padding:0 18px}
   .nav-left>.nav-dropdown,.nav-left>.nav-item{display:none}
   .nav-burger{display:flex}
+  .country-name{display:none}
   section:not(.hero){padding:56px 0}
   .hero-content{padding:0 24px 56px}
   .hero-headline{font-size:clamp(42px,12vw,64px)}
   .split-big-grid{grid-template-columns:1fr}
   .split-big-card{height:360px}
   .split-big-content{padding:28px 24px}
-  .reviews-grid-photo{display:flex;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+  .reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:14px;scrollbar-width:none;-ms-overflow-style:none}
   .reviews-grid-photo::-webkit-scrollbar{display:none}
   .review-photo-card{flex:0 0 86%;scroll-snap-align:start}
   .rpc-img{aspect-ratio:auto;height:220px}
   .reviews-carousel .reveal{opacity:1;transform:none}
-  .reviews-arrow{display:flex}
-  .reviews-dots{display:flex;justify-content:center;gap:9px;margin-top:20px}
-  .rev-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.18);cursor:pointer;padding:0;transition:background .25s,width .25s}
-  .rev-dot.active{background:var(--accent);width:22px;border-radius:5px}
+  .reviews-arrow{top:110px}
+  .reviews-dots{margin-top:20px}
   .footer-top{grid-template-columns:1fr 1fr;gap:28px}
   [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
 }
@@ -482,80 +489,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   section:not(.hero){padding:48px 0}
   .proyectos-grid{grid-template-columns:1fr;grid-auto-rows:200px}
   .proy-card.tall{grid-row:auto}
-  .footer-top{grid-template-columns:1fr;gap:24px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px 18px}
+  .footer-top>div:first-child{grid-column:1/-1}
 }
-</style>
-
-<style>
-/* ===== PROJECTS PAGE ===== */
-.page-hero{position:relative;padding:150px 0 64px;background:#0c0d0f;overflow:hidden}
-.page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(900px 400px at 18% -10%,rgba(227,51,43,.18),transparent 60%);pointer-events:none}
-.page-hero .container{position:relative;z-index:2}
-.crumbs{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-ter);margin-bottom:22px}
-.crumbs a{color:var(--text-ter);text-decoration:none;transition:color .2s}
-.crumbs a:hover{color:var(--text-sec)}
-.crumbs span{color:var(--accent)}
-.ph-row{display:grid;grid-template-columns:1.35fr .65fr;gap:52px;align-items:end}
-.ph-title{font-family:var(--fd);font-size:clamp(46px,6.5vw,94px);font-weight:900;line-height:.88;letter-spacing:-.015em}
-.ph-title em{font-style:normal;color:var(--accent)}
-.ph-intro{font-size:15px;color:var(--text-sec);line-height:1.75;padding-bottom:8px;border-left:2px solid var(--accent);padding-left:18px}
-@media(max-width:760px){.ph-row{grid-template-columns:1fr;gap:24px}.ph-intro{padding-bottom:0}}
-
-/* FILTERS */
-.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
-
-/* PROJECT CARDS */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 22px}
-.proj-card{position:relative;overflow:hidden;border-radius:var(--r);text-decoration:none;display:block;aspect-ratio:3/4;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
-.proj-card:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(0,0,0,.5)}
-.proj-photos{position:absolute;inset:0}
-.g-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .55s ease}
-.g-img.active{opacity:1}
-.proj-dots{position:absolute;top:15px;right:15px;z-index:3;display:flex;gap:5px;opacity:0;transition:opacity .3s}
-.proj-card:hover .proj-dots{opacity:1}
-.g-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);box-shadow:0 0 4px rgba(0,0,0,.4);transition:background .3s,transform .3s}
-.g-dot.active{background:#fff;transform:scale(1.25)}
-/* light vignette over the photo (mood only) */
-.proj-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.3) 0%,rgba(0,0,0,0) 48%);transition:opacity .3s}
-/* solid readable caption band */
-.proj-meta{position:absolute;left:0;right:0;bottom:0;padding:60px 22px 20px;z-index:2;background:linear-gradient(to top,#0d0e10 0%,rgba(13,14,16,.97) 42%,rgba(13,14,16,.78) 72%,rgba(13,14,16,0) 100%)}
-.proj-cat{position:absolute;top:14px;left:14px;z-index:3;display:inline-flex;align-items:center;gap:7px;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#fff;background:rgba(18,20,23,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px}
-.proj-cat::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.proj-name{font-family:var(--fd);font-size:24px;font-weight:800;color:#fff;line-height:1.04;letter-spacing:.01em}
-.proj-loc{font-size:12px;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.78);margin-top:8px;display:flex;align-items:center;gap:6px}
-.proj-loc svg{color:var(--accent);flex-shrink:0}
-.proj-desc{font-size:13px;line-height:1.55;color:rgba(255,255,255,.7);margin-top:12px;padding-top:13px;border-top:1px solid rgba(255,255,255,.12);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:54px}
-.proj-foot{display:flex;align-items:center;justify-content:flex-end;margin-top:14px}
-.proj-arrow{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.9;transition:gap .25s}
-.proj-card:hover .proj-arrow{gap:9px}
-
-.proj-cta{background:var(--surface);text-align:center}
-.proj-cta .section-title{margin-bottom:14px}
-.proj-cta-sub{font-size:15px;color:var(--text-sec);max-width:480px;margin:0 auto 30px;line-height:1.7}
-.proj-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-
-@media(max-width:900px){
-  .proj-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:560px){
-  .page-hero{padding:120px 0 48px}
-  .proj-grid{grid-template-columns:1fr}
-  .proj-card{aspect-ratio:4/3}
-}
-</style>
-<style>
-/* ===== MOBILE IMPROVEMENTS (projects) ===== */
-@media(max-width:560px){
-  .ch-collage{grid-template-columns:1fr;grid-auto-rows:200px;gap:8px;padding:0 14px 14px;height:auto}
-  .ch-head{padding:0 14px 22px}
-  .ch-title{font-size:clamp(40px,12vw,60px)}
-  .ch-sub{font-size:15px}
-  .proj-meta{padding:48px 18px 18px}
-  .proj-name{font-size:21px}
-  .proj-desc{font-size:12.5px}
-}
-@media(hover:none){ .proj-dots{opacity:1} }
-@media(max-width:768px){ section.collage-hero{padding:96px 0 0} .proj-grid-sec{padding-top:22px!important} }
 </style>
 </head>
 <body>
@@ -582,8 +518,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     <button class="nav-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
     <button class="nav-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="nav-badge">0</span></button>
     <div class="nav-sep"></div>
-    <div class="nav-dropdown" style="position:relative">
-      <button style="font-size:11px;color:var(--text-sec);background:none;border:none;font-family:var(--fb);font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14">Spain <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="nav-dropdown country-dropdown" style="position:relative">
+      <button style="font-size:11px;color:var(--text-sec);background:none;border:none;font-family:var(--fb);font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/gb.svg" alt="United Kingdom" width="20" height="14"><span class="country-name">United Kingdom</span> <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="nav-dropdown-menu" style="right:0;left:auto;min-width:180px">
         <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14">Spain</a>
         <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/eu.svg" alt="European Union" width="20" height="14">European Union</a>
@@ -607,273 +543,349 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   <a href="#" onclick="toggleMenu()">Contact</a>
 </div>
 
-<!-- ===== COLLAGE HERO (full-bleed) ===== -->
+
+<!-- ===== CUSTOM TURF PAGE STYLES ===== -->
 <style>
-.collage-hero{background:#fff;padding:104px 0 0;color:#14181c}
-.ch-head{padding-bottom:28px}
-.ch-eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.ch-eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent)}
-.ch-title{font-family:var(--fd);font-size:clamp(46px,6.2vw,88px);font-weight:900;line-height:.88;letter-spacing:-.01em;margin:14px 0 16px}
-.ch-title em{color:var(--accent);font-style:normal}
-.ch-sub{color:#5a646c;max-width:540px;font-size:16px;line-height:1.7}
-.ch-collage{display:grid;grid-template-columns:1.7fr 1fr 1fr;grid-auto-rows:1fr;gap:8px;padding:0 16px 16px;height:min(74vh,660px)}
-.ch-tile{position:relative;overflow:hidden;border-radius:12px;display:block;cursor:pointer}
-.ch-tile.big{grid-row:span 2}
-.ch-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-.ch-tile:hover img{transform:scale(1.05)}
-.ch-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.1) 55%,transparent 100%)}
-.ch-tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(227,51,43,.94);color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:5px 11px;border-radius:20px}
-.ch-cap{position:absolute;left:0;bottom:0;z-index:2;padding:20px}
-.ch-name{font-family:var(--fd);font-size:24px;font-weight:700;color:#fff;line-height:1;letter-spacing:.02em}
-.ch-tile.big .ch-name{font-size:30px}
-.ch-loc{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.66);margin-top:8px}
-.ch-loc::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
-@media(max-width:900px){
-  .ch-collage{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:200px}
-  .ch-tile.big{grid-column:span 2;grid-row:auto}
+/* HERO */
+.cp-hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden;background:#000}
+.cp-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.cp-hero-shade{position:absolute;inset:0;background:linear-gradient(to top,#0d0e10 2%,rgba(13,14,16,.4) 45%,rgba(0,0,0,.45) 100%)}
+.cp-hero-inner{position:relative;z-index:2;width:100%;max-width:1600px;margin:0 auto;padding:0 40px 72px}
+.cp-hero-eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+.cp-hero-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent)}
+.eyebrow-label{display:inline-flex;align-items:center;gap:9px}
+.eyebrow-label::before{content:'';width:24px;height:2px;background:var(--accent);flex-shrink:0}
+.cp-hero h1{font-family:var(--fd);font-size:clamp(48px,7vw,104px);font-weight:900;line-height:.9;letter-spacing:-.015em;color:#fff;max-width:14ch}
+.cp-hero h1 em{font-style:normal;color:var(--accent)}
+.cp-hero-sub{font-size:17px;color:rgba(255,255,255,.72);line-height:1.7;max-width:520px;margin:22px 0 32px}
+.cp-hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+/* SECTION SHELL */
+.cp-sec{padding:96px 0}
+.cp-head{max-width:680px;margin-bottom:48px}
+.cp-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.cp-h2{font-family:var(--fd);font-size:clamp(30px,3.6vw,52px);font-weight:900;line-height:1;letter-spacing:-.01em;color:#14181c;margin-bottom:14px}
+.cp-h2 em{font-style:normal;color:var(--accent)}
+.cp-lead{font-size:15px;color:#5a646c;line-height:1.7}
+.cp-dark .cp-h2{color:#fff}
+.cp-dark .cp-lead{color:rgba(255,255,255,.62)}
+
+/* STEPS */
+.cp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cp-step{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:34px 30px;transition:transform .25s,box-shadow .25s}
+.cp-step:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.1)}
+.cp-step-n{font-family:var(--fd);font-size:54px;font-weight:900;line-height:1;color:var(--accent);opacity:.9}
+.cp-step-t{font-family:var(--fd);font-size:22px;font-weight:800;color:#14181c;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.01em}
+.cp-step-d{font-size:14px;color:#5a646c;line-height:1.6}
+
+/* COLOUR MARQUEE (dark) */
+.cp-colours{background:#14181c;padding:88px 0;overflow:hidden}
+.cp-mq{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.cp-mq-track{display:flex;gap:18px;width:max-content;animation:cpscroll 48s linear infinite}
+.cp-colours:hover .cp-mq-track{animation-play-state:paused}
+@keyframes cpscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.cp-chip{flex:0 0 auto;width:184px}
+.cp-chip-img{width:184px;height:184px;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.cp-chip-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.cp-chip:hover .cp-chip-img img{transform:scale(1.07)}
+.cp-chip-name{font-family:var(--fd);font-weight:800;font-size:15px;color:#fff;margin-top:13px;letter-spacing:.02em}
+.cp-chip-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:3px;text-transform:uppercase;letter-spacing:.12em}
+@media(prefers-reduced-motion:reduce){.cp-mq-track{animation:none;flex-wrap:wrap;justify-content:center}}
+
+/* DESIGN + LOGO */
+.cp-design-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.cp-design-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cp-design-imgs img{width:100%;object-fit:cover;border-radius:14px;display:block}
+.cp-design-imgs .dp{aspect-ratio:1/1} .cp-design-imgs .dw{grid-column:span 2;aspect-ratio:16/7}
+.cp-feat{display:flex;flex-direction:column;gap:18px;margin-top:24px}
+.cp-feat-item{display:flex;gap:14px;align-items:flex-start}
+.cp-feat-ico{flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(227,51,43,.1);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.cp-feat-t{font-family:var(--fd);font-size:16px;font-weight:800;color:#14181c;text-transform:uppercase;letter-spacing:.02em}
+.cp-feat-d{font-size:13.5px;color:#5a646c;line-height:1.55;margin-top:3px}
+
+/* PROJECTS */
+.cp-proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cp-proj{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:transform .3s,box-shadow .3s}
+.cp-proj:hover{transform:translateY(-5px);box-shadow:0 20px 46px rgba(0,0,0,.2)}
+.cp-proj img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.cp-proj:hover img{transform:scale(1.06)}
+.cp-proj-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.1) 60%)}
+.cp-proj-cap{position:absolute;left:0;bottom:0;padding:20px;z-index:2}
+.cp-proj-name{font-family:var(--fd);font-size:20px;font-weight:800;color:#fff;line-height:1}
+.cp-proj-loc{font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px;display:flex;align-items:center;gap:6px}
+.cp-proj-loc::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent)}
+
+/* FORM (dark band) */
+.cp-form-sec{background:#1a1c20;padding:96px 0}
+.cp-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.cp-form-grid .cp-h2{color:#fff}
+.cp-form-intro{font-size:15px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:26px}
+.cp-form-list{display:flex;flex-direction:column;gap:12px}
+.cp-form-list div{display:flex;align-items:center;gap:11px;font-size:14px;color:rgba(255,255,255,.82)}
+.cp-form-list span{color:var(--accent);font-weight:800}
+.cp-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cp-field{display:flex;flex-direction:column;gap:7px}
+.cp-field.full{grid-column:span 2}
+.cp-field label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5)}
+.cp-field input,.cp-field select,.cp-field textarea{background:#26292e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:13px 14px;color:#fff;font-family:var(--fb);font-size:14px;transition:border-color .2s}
+.cp-field input:focus,.cp-field select:focus,.cp-field textarea:focus{outline:none;border-color:var(--accent)}
+.cp-field textarea{resize:vertical;min-height:96px}
+.cp-form .btn-primary{grid-column:span 2;justify-content:center;padding:15px}
+
+/* responsive */
+@media(max-width:960px){
+  .cp-studio-grid,.cp-design-grid,.cp-form-grid{grid-template-columns:1fr;gap:36px}
+  .cp-proj-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .cp-hero-inner{padding:0 22px 56px}
+  .cp-sec,.cp-studio,.cp-form-sec{padding:64px 0}
+  .cp-steps{grid-template-columns:1fr;gap:12px}
 }
 @media(max-width:560px){
-  .ch-collage{grid-template-columns:1fr 1fr;grid-auto-rows:130px;gap:7px}
-  .ch-tile.big{grid-column:span 2;grid-row:span 2}
-  .ch-cap{padding:14px}
-  .ch-name{font-size:15px}
-  .ch-tile.big .ch-name{font-size:24px}
-  .ch-loc{font-size:11px;margin-top:5px}
+  .cp-proj-grid{grid-template-columns:1fr}
+  .cp-form{grid-template-columns:1fr}
+  .cp-field.full,.cp-form .btn-primary{grid-column:span 1}
+  .cp-design-imgs .dw{grid-column:span 2}
 }
 </style>
-<section class="collage-hero">
-  <div class="container ch-head">
-    <span class="ch-eyebrow reveal">Our work · +1,000 installations</span>
-    <h1 class="ch-title reveal d1">Tracks that <em>perform.</em></h1>
-    <p class="ch-sub reveal d2">Real installations in boxes, gyms and sports centres across Spain and Europe.</p>
-  </div>
-  <div class="ch-collage reveal d2">
-    <a href="proyecto-lowfit.html" class="ch-tile big" data-cat="centre">
-      <img src="assets/lowfit-marathon.jpg" alt="Lowfit Huelva">
-      <span class="ch-tag">Featured</span>
-      <div class="ch-cap"><div class="ch-name">Lowfit Huelva</div><div class="ch-loc">Huelva · Spain</div></div>
-    </a>
-    <a href="#" class="ch-tile" data-cat="box">
-      <img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/wod_BOX-133.webp" alt="CrossFit Costa Blanca">
-      <div class="ch-cap"><div class="ch-name">CrossFit Costa Blanca</div><div class="ch-loc">Alicante · Spain</div></div>
-    </a>
-    <a href="#" class="ch-tile" data-cat="box">
-      <img src="assets/craft-bcn.jpg" alt="Craft BCN">
-      <div class="ch-cap"><div class="ch-name">Craft BCN</div><div class="ch-loc">Barcelona · Spain</div></div>
-    </a>
-    <a href="#" class="ch-tile" data-cat="outdoor">
-      <img src="assets/finestrat-aritz.jpg" alt="Finestrat Aritz">
-      <div class="ch-cap"><div class="ch-name">Finestrat Aritz</div><div class="ch-loc">Alicante · Spain</div></div>
-    </a>
-    <a href="#" class="ch-tile" data-cat="custom">
-      <img src="assets/bollodromo.jpg" alt="Bollodromo">
-      <div class="ch-cap"><div class="ch-name">Bollodromo</div><div class="ch-loc">Weightlifting platform</div></div>
-    </a>
+
+<!-- ===== HERO ===== -->
+<section class="cp-hero">
+  <img src="assets/acero-crossfit.jpg" alt="Custom Heroturfs track">
+  <div class="cp-hero-shade"></div>
+  <div class="cp-hero-inner">
+    <span class="cp-hero-eyebrow reveal">Custom turf · Made in Spain</span>
+    <h1 class="reveal d1">Don't settle for any turf.<br><em>Make it yours.</em></h1>
+    <p class="cp-hero-sub reveal d2">Dimensions, colours, markings and logo — built to measure for your box, gym or sports centre. One track, exactly how you imagined it.</p>
+    <div class="cp-hero-ctas reveal d3">
+      <a href="#quote" class="btn-primary">Request your quote</a>
+      <a href="#colours" class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.3)">Explore the 17 colours</a>
+    </div>
   </div>
 </section>
 
+<!-- ===== TICKER ===== -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <div class="ticker-item">17 colours</div><div class="ticker-item">Your logo &amp; markings</div><div class="ticker-item">Made to measure</div><div class="ticker-item">86,000 stitches/m²</div><div class="ticker-item">5-year guarantee</div>
+  </div>
+</div>
 
-<!-- PROJECT GRID -->
-<section class="proj-grid-sec" style="padding:56px 0 88px;background:#fff">
+<!-- ===== 3 STEPS ===== -->
+<section class="cp-sec" style="background:#fff">
   <div class="container">
-    <div class="proj-grid">
-      <a href="https://heroturfs.es/pages/lowfit-huelva" target="_blank" rel="noopener" class="proj-card reveal" data-cat="gym">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/Pista_de_sled_push_hyrox_Lowfit.webp" alt="Lowfit — Huelva, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/pista-cesped-artificial-deportivo-mars-red-lowfit-huelva.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/cesped-artificial-deportivo-mars-red-proyecto-lowfit-huelva-equipo.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Gyms & sports centres</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Lowfit</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Huelva, Spain</div>
-          <p class="proj-desc">XL Mars Red track with custom logo and markings.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
+    <div class="cp-head center reveal">
+      <span class="eyebrow-label">How it works</span>
+      <h2 class="cp-h2">Your custom track in <em>three simple steps.</em></h2>
+      <p class="cp-lead" style="margin:0 auto">From idea to installed track — we handle the design, manufacturing and finish.</p>
+    </div>
+    <div class="cp-steps">
+      <div class="cp-step reveal">
+        <div class="cp-step-n">01</div>
+        <div class="cp-step-t">Choose colour &amp; size</div>
+        <div class="cp-step-d">Pick from 17 colours and tell us your dimensions. Single colour or combine several into lanes.</div>
+      </div>
+      <div class="cp-step reveal d1">
+        <div class="cp-step-n">02</div>
+        <div class="cp-step-t">Add logo &amp; markings</div>
+        <div class="cp-step-d">Your logo, lane numbers, start lines and metre markings — woven into the track.</div>
+      </div>
+      <div class="cp-step reveal d2">
+        <div class="cp-step-n">03</div>
+        <div class="cp-step-t">We make &amp; deliver</div>
+        <div class="cp-step-d">Manufactured in Spain, shipped seam-free and ready to install — optional fitting by our team.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="#quote" class="btn-primary">Request a custom quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 17 COLOURS — INTERACTIVE STUDIO ===== -->
+<section class="cp-colours cp-dark" id="colours">
+  <div class="container">
+    <div class="cp-head reveal" style="max-width:620px">
+      <span class="eyebrow-label">The colour range</span>
+      <h2 class="cp-h2">Combine <em>17 colours</em> to create your track.</h2>
+      <p class="cp-lead">Real turf, real colours. Pick one for a clean look or mix several into lanes — your track, your palette.</p>
+    </div>
+  </div>
+  <div class="cp-mq reveal">
+    <div class="cp-mq-track" id="cpMqTrack"></div>
+  </div>
+</section>
+
+<!-- ===== DESIGN + LOGO ===== -->
+<section class="cp-sec" style="background:#fff">
+  <div class="container">
+    <div class="cp-design-grid">
+      <div class="reveal">
+        <span class="eyebrow-label">Make it unmistakable</span>
+        <h2 class="cp-h2">Your design. <em>Your logo.</em></h2>
+        <p class="cp-lead">We design every track from scratch around your brand — colours, logo and markings woven in, not stuck on. The result looks like it was made for your space, because it was.</p>
+        <div class="cp-feat">
+          <div class="cp-feat-item">
+            <div class="cp-feat-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div>
+            <div><div class="cp-feat-t">Your logo, woven in</div><div class="cp-feat-d">Your logo woven straight into the turf — it lasts as long as the track itself.</div></div>
+          </div>
+          <div class="cp-feat-item">
+            <div class="cp-feat-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div>
+            <div><div class="cp-feat-t">Lanes &amp; markings</div><div class="cp-feat-d">Numbered lanes, start lines and metre marks, exactly where you train.</div></div>
+          </div>
+          <div class="cp-feat-item">
+            <div class="cp-feat-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <div><div class="cp-feat-t">Any size, seam-free</div><div class="cp-feat-d">Made to your exact dimensions and fitted without visible joins.</div></div>
+          </div>
         </div>
+      </div>
+      <div class="cp-design-imgs reveal d1">
+        <img class="dp" src="assets/design-ejercito.jpg" alt="Custom naval crest track">
+        <img class="dp" src="assets/design-testa.jpg" alt="Custom indoor track with markings">
+        <img class="dw" src="assets/design-wod.jpg" alt="CrossFit Costa Blanca x Heroturfs track">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MADE IN SPAIN / FACTORY ===== -->
+<style>
+.cp-fac{padding:96px 0 0}
+.cp-fac-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.cp-fac-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cp-fac-imgs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+.cp-fac-imgs .span2{grid-column:span 2;aspect-ratio:auto;height:190px}
+.cp-fac-facts{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}
+.cp-fac-facts div{display:flex;flex-direction:column}
+.cp-fac-facts b{font-family:var(--fd);font-size:30px;font-weight:900;color:#14181c;line-height:1}
+.cp-fac-facts span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a949c;margin-top:6px}
+.cp-fac-flag{display:inline-flex;align-items:center;gap:9px;margin-bottom:14px}
+.cp-fac-flag img{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.cp-fac-flag span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
+@media(max-width:960px){ .cp-fac-grid{grid-template-columns:1fr;gap:36px} .cp-fac-imgs .span2{height:150px} }
+@media(max-width:768px){ .cp-fac{padding:64px 0 0} }
+</style>
+<section class="cp-fac" style="background:#f5f6f7">
+  <div class="container">
+    <div class="cp-fac-grid">
+      <div class="cp-fac-imgs reveal">
+        <img src="assets/factory-1.jpg" alt="Custom branded track">
+        <img src="assets/factory-2.jpg" alt="Custom logo detail">
+        <img src="assets/factory-3.jpg" alt="Blue custom track in production">
+        <img src="assets/factory-4.jpg" alt="Custom logo track in production">
+        <img class="span2" src="assets/factory-yarn.jpg" alt="Yarn at the Heroturfs factory in Crevillent">
+      </div>
+      <div class="reveal d1">
+        <div class="cp-fac-flag"><img src="https://flagcdn.com/es.svg" alt="Spain"><span>Made in Spain</span></div>
+        <h2 class="cp-h2">Made in our <em>Crevillent factory.</em></h2>
+        <p class="cp-lead">We don't resell — we manufacture. Every track is woven and finished in our own factory in Crevillent, Alicante. That's how we control quality, customisation and lead times — from the first thread to the final roll that ships to your box.</p>
+        <div class="cp-fac-facts">
+          <div><b>100%</b><span>Made in Spain</span></div>
+          <div><b>86,000</b><span>Stitches / m²</span></div>
+          <div><b>Direct</b><span>From our factory</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REAL PROJECTS ===== -->
+<section class="cp-sec" style="background:#f5f6f7;padding:56px 0 96px">
+  <div class="container">
+    <div class="cp-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:100%;flex-wrap:wrap;gap:16px">
+      <div>
+        <span class="eyebrow-label">Real projects</span>
+        <h2 class="cp-h2">Built to measure. <em>Proven on the floor.</em></h2>
+      </div>
+      <a href="projects.html" class="btn-ghost" style="color:#14181c;border-color:rgba(0,0,0,.2)">See all projects →</a>
+    </div>
+    <div class="cp-proj-grid">
+      <a href="proyecto-lowfit.html" class="cp-proj reveal">
+        <img src="assets/lowfit-marathon.jpg" alt="Lowfit Huelva">
+        <div class="cp-proj-ov"></div>
+        <div class="cp-proj-cap"><div class="cp-proj-name">Lowfit</div><div class="cp-proj-loc">Huelva · Mars Red</div></div>
       </a>
-      <a href="https://heroturfs.es/pages/base-armada-espanola-cartagena" target="_blank" rel="noopener" class="proj-card reveal" data-cat="facility">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/base-militar-heroturfs-001.webp" alt="Spanish Navy Base — Cartagena, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/base-militar-heroturfs-003.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/base-militar-heroturfs-002.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Sports facilities</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Spanish Navy Base</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cartagena, Spain</div>
-          <p class="proj-desc">The largest track we've ever installed — 37 m outdoors, with a full-colour military crest.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
+      <a href="projects.html" class="cp-proj reveal d1">
+        <img src="assets/acero-crossfit.jpg" alt="Acero Crossfit">
+        <div class="cp-proj-ov"></div>
+        <div class="cp-proj-cap"><div class="cp-proj-name">Acero Crossfit</div><div class="cp-proj-loc">Toledo · Atlas Grey</div></div>
       </a>
-      <a href="https://heroturfs.es/pages/atis-telde" target="_blank" rel="noopener" class="proj-card reveal" data-cat="boxes">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/atis-001.webp" alt="Atis CrossFit — Telde, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/atis-003.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/atis-002.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Boxes</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Atis CrossFit</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Telde, Spain</div>
-          <p class="proj-desc">Four-lane Valhalla sled track with numbering.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
+      <a href="projects.html" class="cp-proj reveal d2">
+        <img src="assets/finestrat-aritz.jpg" alt="Finestrat Aritz">
+        <div class="cp-proj-ov"></div>
+        <div class="cp-proj-cap"><div class="cp-proj-name">Finestrat Aritz</div><div class="cp-proj-loc">Alicante · Hades Black</div></div>
       </a>
-      <a href="https://heroturfs.es/pages/centro-fisioterapia-craft-barcelona" target="_blank" rel="noopener" class="proj-card reveal" data-cat="physio">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/craft-centro-rehabilitacion-003.webp" alt="Craft — Barcelona, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/craft-centro-rehabilitacion-001.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/craft-centro-rehabilitacion-002.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Physio & rehab</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Craft</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Barcelona, Spain</div>
-          <p class="proj-desc">Hades Black & Hermes White track with integrated logo.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/slks-francia" target="_blank" rel="noopener" class="proj-card reveal" data-cat="physio">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/slks-003-index.webp" alt="SLKS — France" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/slks-006-index.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/slks-005-index.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Physio & rehab</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">SLKS</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>France</div>
-          <p class="proj-desc">Valhalla track with technical markings for recovery.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/sportclub-alicante" target="_blank" rel="noopener" class="proj-card reveal" data-cat="boxes">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/Sport_Center_Alicante_Pista_Hyrox_3_W.webp" alt="Sportclub Alicante — Vistahermosa, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/Sport_Center_Alicante_Pista_Hyrox_2_W.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/Sport_Center_Alicante_Pista_Hyrox_1_W.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Boxes</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Sportclub Alicante</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Vistahermosa, Spain</div>
-          <p class="proj-desc">400+ m² track built for hybrid racing.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/proyecto-cesped-hyrox-oxygen" target="_blank" rel="noopener" class="proj-card reveal" data-cat="gym">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/Diseno-de-gimnasios-Oxygen_04_ret.webp" alt="Oxygen Sports & Wellness — Málaga, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/Diseno-de-gimnasios-hyrox-Oxygen_08.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/Diseno-de-gimnasios-Oxygen_05_ret.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Gyms & sports centres</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Oxygen Sports & Wellness</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Málaga, Spain</div>
-          <p class="proj-desc">Custom track for weighted sled training.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/testa-training" target="_blank" rel="noopener" class="proj-card reveal" data-cat="gym">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/testa_training_-_03.webp" alt="Testa Training — Santa Cruz de Tenerife, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/testa_training_-_05.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/testa_training_-_04.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Gyms & sports centres</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Testa Training</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Santa Cruz de Tenerife, Spain</div>
-          <p class="proj-desc">6×12 m hybrid Valhalla high-performance track.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/bollodromo-tarragona" target="_blank" rel="noopener" class="proj-card reveal" data-cat="gym">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/bollodromo-004.webp" alt="Bollodromo — Tarragona, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/bollodromo-003.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/bollodromo-001.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Gyms & sports centres</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Bollodromo</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Tarragona, Spain</div>
-          <p class="proj-desc">Custom track with the centre's name and mascot.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/crossfitzeta" target="_blank" rel="noopener" class="proj-card reveal" data-cat="boxes">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/cesped-artificial-crossfit-crossfitzeta-03.webp" alt="CrossFitZeta — Finestrat, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/cesped-artificial-crossfit-crossfitzeta-02.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/cesped-artificial-crossfit-crossfitzeta-01.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Boxes</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">CrossFitZeta</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Finestrat, Spain</div>
-          <p class="proj-desc">Custom black Valhalla with integrated branding.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/sfc-crossfit-lllinars-del-valles" target="_blank" rel="noopener" class="proj-card reveal" data-cat="boxes">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/cesped_crossfit.webp" alt="SFC CrossFit — Llinars del Vallés, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/crossfit-llinares-del-valles-02.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/crossfit-llinares-del-valles-01.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Boxes</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">SFC CrossFit</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Llinars del Vallés, Spain</div>
-          <p class="proj-desc">Valhalla track with integrated markings.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/acero-crossfit-toledo" target="_blank" rel="noopener" class="proj-card reveal" data-cat="boxes">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/Cesped_artificial_crossfit.webp" alt="Acero CrossFit — Toledo, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/Proyecto_cesped_artificial_gimnasio_Acero.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/Acero-crossfit-pista-cesped-5.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Boxes</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Acero CrossFit</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Toledo, Spain</div>
-          <p class="proj-desc">Fully custom XL premium sports track.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/av-sana" target="_blank" rel="noopener" class="proj-card reveal" data-cat="gym">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/AV-SANA-CESPED-ARTIFICIAL-HEROTURFS.webp" alt="AV Sana — Callosa de Segura, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/AV-SANA-CENTRO-DEPORTIVO-HEROTURFS.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/cesped-av-sana-entrenamiento-funcional.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Gyms & sports centres</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">AV Sana</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Callosa de Segura, Spain</div>
-          <p class="proj-desc">Two outdoor tracks for sled work and HIIT.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/pista-de-running-500-crevillent-es" target="_blank" rel="noopener" class="proj-card reveal" data-cat="facility">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/Cesped-artificial-Heroturfs-Circuito-de-Running-en-Crevillent.webp" alt="Félix Candela Arena — Crevillent, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/proyecto-cesped-correr-felix-candela.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/cesped-artificial-personalizado-circuito-de-running-Crevillent.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Sports facilities</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">Félix Candela Arena</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Crevillent, Spain</div>
-          <p class="proj-desc">500 m conditioning and running circuit by the sports hall.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.es/pages/crossfit-03130-santa-pola-es" target="_blank" rel="noopener" class="proj-card reveal" data-cat="boxes">
-        <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/Elegir_cesped_artificial_para_Hyrox.webp" alt="CrossFit 03130 — Santa Pola, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/cesped-artificial-marcado_6d781a38-0d1b-45fd-87de-128fdda35015.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/cesped-artificial-gimnasio-verde-cuerda-chica2.webp" alt="" loading="lazy"></div>
-        <div class="proj-shade"></div>
-        <span class="proj-cat">Boxes</span>
-        <div class="proj-dots"><span class="g-dot active"></span><span class="g-dot"></span><span class="g-dot"></span></div>
-        <div class="proj-meta">
-          <h3 class="proj-name">CrossFit 03130</h3>
-          <div class="proj-loc"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Santa Pola, Spain</div>
-          <p class="proj-desc">Sled-resistant turf upgrade for the box.</p>
-          <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
-        </div>
+      <a href="projects.html" class="cp-proj reveal d3">
+        <img src="assets/bollodromo.jpg" alt="Bollodromo">
+        <div class="cp-proj-ov"></div>
+        <div class="cp-proj-cap"><div class="cp-proj-name">Bollodromo</div><div class="cp-proj-loc">Custom logo &amp; markings</div></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="proj-cta">
+<!-- ===== QUOTE FORM ===== -->
+<section class="cp-form-sec" id="quote">
   <div class="container">
-    <span class="eyebrow-label" style="display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:24px;height:2px;background:var(--accent);display:inline-block"></span>Your project next</span>
-    <h2 class="section-title">Shall we design the track<br>for <em>your project?</em></h2>
-    <p class="proj-cta-sub">Whether you need a solution for a few square metres or you're planning a project spanning thousands, we'll always offer you the best options.</p>
-    <div class="proj-cta-btns">
-      <a href="index.html#personalizar" class="btn-primary">Design your own <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      <a href="index.html#gamas" class="btn-ghost">See tracks in stock</a>
+    <div class="cp-form-grid">
+      <div class="reveal">
+        <span class="eyebrow-label">Start your project</span>
+        <h2 class="cp-h2">Shall we design <em>your track?</em></h2>
+        <p class="cp-form-intro">Tell us about your space and what you train. We'll come back with colours, a layout and a quote — no commitment.</p>
+        <div class="cp-form-list">
+          <div><span>✓</span> Free design proposal &amp; mock-up</div>
+          <div><span>✓</span> Quote within 48&nbsp;hours</div>
+          <div><span>✓</span> Made in Spain · 5-year guarantee</div>
+        </div>
+      </div>
+      <form class="cp-form reveal d1" onsubmit="cpSubmit(event)">
+        <div class="cp-field"><label>Name</label><input type="text" name="name" required placeholder="Your name"></div>
+        <div class="cp-field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com"></div>
+        <div class="cp-field"><label>Phone</label><input type="tel" name="phone" placeholder="+34 ..."></div>
+        <div class="cp-field"><label>Project type</label><select name="type"><option>CrossFit box</option><option>Gym</option><option>Sports centre</option><option>Physio / rehab</option><option>Other</option></select></div>
+        <div class="cp-field full"><label>Tell us about your track</label><textarea name="message" placeholder="Approx. size, colours you like, logo, deadline..."></textarea></div>
+        <button type="submit" class="btn-primary">Request my quote →</button>
+      </form>
     </div>
   </div>
 </section>
 
+<!-- ===== FAQ ===== -->
+<section class="faq-section-d" style="background:#fff">
+  <div class="container">
+    <div class="faq-inner-d">
+      <div>
+        <span class="eyebrow-label">FAQ</span>
+        <h2 class="faq-title-d">Everything you need<br><em>to know before buying.</em></h2>
+        <p class="faq-desc-d">More questions about colours, sizes or lead times? We're one message away.</p>
+        <a href="#quote" class="btn-primary" style="margin-top:8px">Ask us anything</a>
+      </div>
+      <div class="faq-list-d reveal" style="transition-delay:.12s">
+        <div class="faq-item-d open">
+          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Can I include my logo or a custom design?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-ans-d"><div class="faq-ans-inner-d">Yes. Every custom track is designed from scratch with your colours, logo, lane numbers and markings — woven to last.</div></div>
+        </div>
+        <div class="faq-item-d">
+          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">How many colours can I combine?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-ans-d"><div class="faq-ans-inner-d">Up to all 17. Use a single colour for a clean look, or combine several into lanes and zones.</div></div>
+        </div>
+        <div class="faq-item-d">
+          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">What's the minimum order and lead time?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-ans-d"><div class="faq-ans-inner-d">Custom tracks start from small runs. Manufacturing typically takes a few weeks depending on size and finish — we confirm exact dates with your quote.</div></div>
+        </div>
+        <div class="faq-item-d">
+          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Do you also handle installation?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-ans-d"><div class="faq-ans-inner-d">Yes, our team can fit the track seam-free. We also ship ready-to-install with guidance if you prefer to do it yourself.</div></div>
+        </div>
+        <div class="faq-item-d">
+          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Is it made for sled work and functional training?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-ans-d"><div class="faq-ans-inner-d">Exactly what it's built for. At 86,000 stitches/m² it takes sprints, heavy sled drags and daily intensity without flattening.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="footer-top">
     <div>
@@ -942,49 +954,58 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.06 });
+  }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
-  // hover gallery — cycle each card's photos while hovered
-  document.querySelectorAll('.proj-card').forEach(cardEl => {
-    const imgs = [...cardEl.querySelectorAll('.g-img')];
-    const dots = [...cardEl.querySelectorAll('.g-dot')];
-    if (imgs.length < 2) return;
-    let i = 0, timer = null, loaded = false;
-    const show = n => {
-      imgs[i].classList.remove('active'); if (dots[i]) dots[i].classList.remove('active');
-      i = n;
-      imgs[i].classList.add('active'); if (dots[i]) dots[i].classList.add('active');
-    };
-    cardEl.addEventListener('mouseenter', () => {
-      if (!loaded) { imgs.forEach(im => { if (im.dataset.src && !im.getAttribute('src')) im.src = im.dataset.src; }); loaded = true; }
-      clearInterval(timer);
-      timer = setInterval(() => show((i + 1) % imgs.length), 1100);
-    });
-    cardEl.addEventListener('mouseleave', () => { clearInterval(timer); timer = null; show(0); });
-  });
-  // touch devices: auto-cycle each card's photos while it is on screen (no hover)
-  if (window.matchMedia('(hover: none)').matches) {
-    const ioTouch = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        const card = e.target;
-        const imgs = [...card.querySelectorAll('.g-img')];
-        const dots = [...card.querySelectorAll('.g-dot')];
-        if (imgs.length < 2) return;
-        if (e.isIntersecting) {
-          imgs.forEach(im => { if (im.dataset.src && !im.getAttribute('src')) im.src = im.dataset.src; });
-          if (card._cy) return;
-          let i = 0;
-          card._cy = setInterval(() => {
-            imgs[i].classList.remove('active'); if (dots[i]) dots[i].classList.remove('active');
-            i = (i + 1) % imgs.length;
-            imgs[i].classList.add('active'); if (dots[i]) dots[i].classList.add('active');
-          }, 2200);
-        } else if (card._cy) { clearInterval(card._cy); card._cy = null; }
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.proj-card').forEach(c => ioTouch.observe(c));
+  function toggleFaqD(btn){
+    const item=btn.closest('.faq-item-d'),open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item-d').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
   }
+  function cpSubmit(e){
+    e.preventDefault();
+    const f=e.target;
+    f.innerHTML='<div style="grid-column:span 2;text-align:center;padding:30px 10px"><div style="font-family:var(--fd);font-size:26px;font-weight:900;color:#fff">Thanks! ✓</div><p style="color:rgba(255,255,255,.6);margin-top:10px;font-size:14px">We\'ll get back to you within 48 hours with colours, a layout and your quote.</p></div>';
+  }
+
+  // ===== COLOUR MARQUEE (real turf swatches) =====
+  const CP_COLOURS = [
+    ['Antiope Lime','Heroturf-Antiope-Lime-Vista-4'],['Aphrodite Beige','Heroturf-Aphrodite-Beig-Vista-4'],
+    ['Apollo Gold','Heroturf-Apollo-Gold-Vista-4'],['Aurora Orange','Heroturf-Aurora-Orange-Vista-4'],
+    ['Baldur Yellow','Heroturf-Baldur-Yellow-Vista-4'],['Freya Pink','Heroturf-Freya-Pink-Vista-4'],
+    ['Hermes White','Heroturf-Hermes-White-Vista-4'],['Heimdall Blue','Heroturf-Heimdall-Blue-Vista-4'],
+    ['Fenrir Anthracite','Heroturf-Fenrir-Anthracite-Vista-4'],['Loki Blue','Heroturf-Loki-Blue-Vista-4'],
+    ['Atlas Grey','Heroturf-Atlas-Grey-Vista-4'],['Mars Red','Heroturf-Mars-Red-Vista-4'],
+    ['Minerva Olive','Heroturf-Minerva-Olive-Vista-4'],['Perseus Green','Heroturf-Perseus-Green-Vista-4'],
+    ['Odin Purple','Heroturf-Odin-Purple-Vista-4'],['Hades Black','Heroturf-Hades-Black-Vista-4'],
+    ['Vulcan Terracotta','Heroturf-Vulcan-Terracota-Vista-4_1']
+  ];
+  (function(){
+    const track = document.getElementById('cpMqTrack');
+    if(!track) return;
+    const base = 'https://heroturfs.es/cdn/shop/files/';
+    const chip = c => '<div class="cp-chip"><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub">Heroturfs colour</div></div>';
+    const html = CP_COLOURS.map(chip).join('');
+    track.innerHTML = html + html;
+  })();
+
+  // Ticker: duplicate items until they cover 2x the viewport so the loop is seamless
+  (function(){
+    const inner = document.querySelector('.ticker-inner');
+    if(!inner) return;
+    const base = inner.innerHTML;
+    function build(){
+      inner.innerHTML = base;
+      let sets = 1;
+      while(inner.scrollWidth < window.innerWidth*2 || sets%2 !== 0){
+        inner.innerHTML += base; sets++;
+        if(sets > 40) break;
+      }
+      inner.style.animationDuration = ((sets/2)*26) + 's';
+    }
+    build();
+    let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(build, 200); });
+  })();
 </script>
 </body>
 </html>

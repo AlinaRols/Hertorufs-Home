@@ -34,3 +34,16 @@ textura valhalla.jpg
 
 # Sistema
 .DS_Store
+
+# Fotos fuente de fábrica (las optimizadas van en assets/)
+Fabrica1.jpg
+Manufacturing*.jpg
+Manufacturing*.JPG
+Manufacturing*.jpeg
+Lowfit XL.png
+2025*.jpg
+pro-*.jpeg
+
+# Fotos fuente césped personalizado
+pista-*.jpg
+wod_BOX-133.jpg
