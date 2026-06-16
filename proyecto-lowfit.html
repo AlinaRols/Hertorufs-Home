@@ -581,6 +581,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .po-grid h2{font-family:var(--fd);font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1;margin-bottom:20px;color:#14181c}
 .po-grid h2 em{color:var(--accent);font-style:normal}
 .po-grid p{font-size:16px;line-height:1.8;color:#4a5560;margin-bottom:16px}
+.po-more-btn{display:none}
+@media(max-width:820px){
+  .po-more{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.22,1,.36,1)}
+  .po-more.open{max-height:640px}
+  .po-more-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:none;padding:0;margin-top:2px;font-family:var(--fb);font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);cursor:pointer}
+}
 .proj-facts{display:flex;flex-direction:column;gap:22px;margin-bottom:30px}
 .fact{display:flex;align-items:center;gap:16px}
 .fact-ic{width:50px;height:50px;border-radius:12px;background:rgba(227,51,43,.09);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -703,8 +709,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       <div class="reveal">
         <h2>A sprint track <em>built to compete.</em></h2>
         <p>Lowfit Huelva needed a centrepiece for their functional floor — a surface that could take daily sled work, sprints and HYROX-style sessions without flattening or fading.</p>
+        <div class="po-more">
         <p>We delivered a multi-lane Marathon track in bright red, with numbered lanes and full metre markings from the start line. Six clearly defined lanes let coaches run heats side by side, and the high-density turf keeps its structure under the heaviest sled loads.</p>
         <p>Made to measure for the room, fitted seam-free, and backed by our five-year guarantee.</p>
+        </div>
+        <button class="po-more-btn" onclick="const m=this.previousElementSibling;this.textContent=m.classList.toggle('open')?'Read less':'Read more';">Read more</button>
       </div>
       <aside class="reveal d1">
         <div class="proj-facts">
