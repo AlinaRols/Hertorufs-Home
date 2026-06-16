@@ -455,6 +455,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .nav{padding:0 18px}
   .nav-left>.nav-dropdown,.nav-left>.nav-item{display:none}
   .nav-burger{display:flex}
+  .country-name{display:none}
   section:not(.hero){padding:56px 0}
   .hero-content{padding:0 24px 56px}
   .hero-headline{font-size:clamp(42px,12vw,64px)}
@@ -524,15 +525,17 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .proj-name{font-family:var(--fd);font-size:24px;font-weight:800;color:#fff;line-height:1.04;letter-spacing:.01em}
 .proj-loc{font-size:12px;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.78);margin-top:8px;display:flex;align-items:center;gap:6px}
 .proj-loc svg{color:var(--accent);flex-shrink:0}
-.proj-desc{font-size:13px;line-height:1.55;color:rgba(255,255,255,.7);margin-top:12px;padding-top:13px;border-top:1px solid rgba(255,255,255,.12);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:54px}
+.proj-desc{font-size:13px;line-height:1.55;color:rgba(255,255,255,.7);margin-top:12px;padding-top:13px;border-top:1px solid rgba(255,255,255,.12);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
 .proj-foot{display:flex;align-items:center;justify-content:flex-end;margin-top:14px}
 .proj-arrow{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.9;transition:gap .25s}
 .proj-card:hover .proj-arrow{gap:9px}
 
-.proj-cta{background:var(--surface);text-align:center}
-.proj-cta .section-title{margin-bottom:14px}
-.proj-cta-sub{font-size:15px;color:var(--text-sec);max-width:480px;margin:0 auto 30px;line-height:1.7}
+.proj-cta{background:#f5f6f7;text-align:center}
+.proj-cta .section-title{margin-bottom:14px;color:#1a1f24}
+.proj-cta-sub{font-size:15px;color:#5a6672;max-width:480px;margin:0 auto 30px;line-height:1.7}
 .proj-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.proj-cta .btn-ghost{color:#1a1f24;border-color:rgba(0,0,0,.18)}
+.proj-cta .btn-ghost:hover{color:#1a1f24;border-color:rgba(0,0,0,.4)}
 
 @media(max-width:900px){
   .proj-grid{grid-template-columns:repeat(2,1fr)}
@@ -583,7 +586,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     <button class="nav-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="nav-badge">0</span></button>
     <div class="nav-sep"></div>
     <div class="nav-dropdown" style="position:relative">
-      <button style="font-size:11px;color:var(--text-sec);background:none;border:none;font-family:var(--fb);font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14">Spain <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <button style="font-size:11px;color:var(--text-sec);background:none;border:none;font-family:var(--fb);font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/gb.svg" alt="United Kingdom" width="20" height="14"><span class="country-name">United Kingdom</span> <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="nav-dropdown-menu" style="right:0;left:auto;min-width:180px">
         <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14">Spain</a>
         <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/eu.svg" alt="European Union" width="20" height="14">European Union</a>
@@ -643,7 +646,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 </style>
 <section class="collage-hero">
   <div class="container ch-head">
-    <span class="ch-eyebrow reveal">Our work · +1,000 installations</span>
+    <span class="ch-eyebrow reveal">Our work · 1,000+ installations</span>
     <h1 class="ch-title reveal d1">Tracks that <em>perform.</em></h1>
     <p class="ch-sub reveal d2">Real installations in boxes, gyms and sports centres across Spain and Europe.</p>
   </div>
@@ -676,6 +679,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <!-- PROJECT GRID -->
 <section class="proj-grid-sec" style="padding:56px 0 88px;background:#fff">
   <div class="container">
+    <div class="proj-grid-head reveal" style="margin-bottom:40px">
+      <span class="ch-eyebrow">More work</span>
+      <h2 class="section-title" style="color:#1a1f24;margin-top:12px">From boxes to <em>sports centres.</em></h2>
+      <p style="font-size:15px;color:#5a6672;margin-top:10px;max-width:520px;line-height:1.7">Every track we've installed, designed and built to each client's exact space.</p>
+    </div>
     <div class="proj-grid">
       <a href="https://heroturfs.es/pages/lowfit-huelva" target="_blank" rel="noopener" class="proj-card reveal" data-cat="gym">
         <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/Pista_de_sled_push_hyrox_Lowfit.webp" alt="Lowfit — Huelva, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/pista-cesped-artificial-deportivo-mars-red-lowfit-huelva.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/cesped-artificial-deportivo-mars-red-proyecto-lowfit-huelva-equipo.webp" alt="" loading="lazy"></div>
