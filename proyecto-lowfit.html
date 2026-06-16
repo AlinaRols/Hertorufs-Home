@@ -512,7 +512,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     <button class="nav-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="nav-badge">0</span></button>
     <div class="nav-sep"></div>
     <div class="nav-dropdown" style="position:relative">
-      <button style="font-size:11px;color:var(--text-sec);background:none;border:none;font-family:var(--fb);font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/gb.svg" alt="United Kingdom" width="20" height="14">United Kingdom <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <button style="font-size:11px;color:var(--text-sec);background:none;border:none;font-family:var(--fb);font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px"><img class="flag" src="https://flagcdn.com/gb.svg" alt="United Kingdom" width="20" height="14"><span class="country-name">United Kingdom</span> <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="nav-dropdown-menu" style="right:0;left:auto;min-width:180px">
         <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14">Spain</a>
         <a href="#" class="nav-dropdown-item"><img class="flag" src="https://flagcdn.com/eu.svg" alt="European Union" width="20" height="14">European Union</a>
@@ -685,6 +685,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 @media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr 1fr;gap:32px}}
 @media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr;gap:28px}}
 @media(max-width:560px){.footer-top{grid-template-columns:1fr 1fr;gap:28px 18px}.footer-top>div:first-child{grid-column:1/-1}}
+
+/* nav country selector: hide label on mobile so it does not overlap the logo */
+@media(max-width:768px){.country-name{display:none}}
 </style>
 
 <section class="dp-hero">
