@@ -616,18 +616,18 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-proj-loc::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent)}
 
 /* FORM (dark band) */
-.cp-form-sec{background:#1a1c20;padding:96px 0}
+.cp-form-sec{background:#323F49;padding:96px 0}
 .cp-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .cp-form-grid .cp-h2{color:#fff}
-.cp-form-intro{font-size:15px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:26px}
+.cp-form-intro{font-size:15px;color:rgba(255,255,255,.66);line-height:1.7;margin-bottom:26px}
 .cp-form-list{display:flex;flex-direction:column;gap:12px}
-.cp-form-list div{display:flex;align-items:center;gap:11px;font-size:14px;color:rgba(255,255,255,.82)}
+.cp-form-list div{display:flex;align-items:center;gap:11px;font-size:14px;color:rgba(255,255,255,.85)}
 .cp-form-list span{color:var(--accent);font-weight:800}
 .cp-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .cp-field{display:flex;flex-direction:column;gap:7px}
 .cp-field.full{grid-column:span 2}
-.cp-field label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5)}
-.cp-field input,.cp-field select,.cp-field textarea{background:#26292e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:13px 14px;color:#fff;font-family:var(--fb);font-size:14px;transition:border-color .2s}
+.cp-field label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.6)}
+.cp-field input,.cp-field select,.cp-field textarea{background:#fff;border:1px solid rgba(0,0,0,.15);border-radius:8px;padding:13px 14px;color:#14181c;font-family:var(--fb);font-size:14px;transition:border-color .2s}
 .cp-field input:focus,.cp-field select:focus,.cp-field textarea:focus{outline:none;border-color:var(--accent)}
 .cp-field textarea{resize:vertical;min-height:96px}
 .cp-form .btn-primary{grid-column:span 2;justify-content:center;padding:15px}
@@ -965,7 +965,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   function cpSubmit(e){
     e.preventDefault();
     const f=e.target;
-    f.innerHTML='<div style="grid-column:span 2;text-align:center;padding:30px 10px"><div style="font-family:var(--fd);font-size:26px;font-weight:900;color:#fff">Thanks! ✓</div><p style="color:rgba(255,255,255,.6);margin-top:10px;font-size:14px">We\'ll get back to you within 48 hours with colours, a layout and your quote.</p></div>';
+    f.innerHTML='<div style="grid-column:span 2;text-align:center;padding:30px 10px"><div style="font-family:var(--fd);font-size:26px;font-weight:900;color:#fff">Thanks! ✓</div><p style="color:rgba(255,255,255,.66);margin-top:10px;font-size:14px">We\'ll get back to you within 48 hours with colours, a layout and your quote.</p></div>';
   }
 
   // ===== COLOUR MARQUEE (real turf swatches) =====
