@@ -536,6 +536,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .proj-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .proj-cta .btn-ghost{color:#1a1f24;border-color:rgba(0,0,0,.18)}
 .proj-cta .btn-ghost:hover{color:#1a1f24;border-color:rgba(0,0,0,.4)}
+.proj-cta-banner{grid-column:1/-1;background:#323f49;border-radius:var(--r);padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;overflow:hidden}
+.pcb-title{font-family:var(--fd);font-size:clamp(24px,2.6vw,34px);font-weight:900;color:#fff;line-height:1.05}
+.pcb-title em{color:var(--accent);font-style:normal}
+.pcb-sub{font-size:14px;color:rgba(255,255,255,.72);margin-top:9px;max-width:540px;line-height:1.6}
+.pcb-btn{flex-shrink:0}
+@media(max-width:560px){.proj-cta-banner{padding:30px 24px;flex-direction:column;align-items:flex-start}}
 
 @media(max-width:900px){
   .proj-grid{grid-template-columns:repeat(2,1fr)}
@@ -757,6 +763,14 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <div class="proj-foot"><span class="proj-arrow">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
         </div>
       </a>
+      <!-- MID CTA -->
+      <div class="proj-cta-banner">
+        <div>
+          <h3 class="pcb-title">Want a track <em>like these?</em></h3>
+          <p class="pcb-sub">Tell us about your space and we'll design and build a top-tier track that's entirely yours.</p>
+        </div>
+        <a href="#" class="btn-primary pcb-btn">Get in touch <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
       <a href="https://heroturfs.es/pages/proyecto-cesped-hyrox-oxygen" target="_blank" rel="noopener" class="proj-card reveal" data-cat="gym">
         <div class="proj-photos"><img class="g-img active" src="https://heroturfs.es/cdn/shop/files/Diseno-de-gimnasios-Oxygen_04_ret.webp" alt="Oxygen Sports & Wellness — Málaga, Spain" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/Diseno-de-gimnasios-hyrox-Oxygen_08.webp" alt="" loading="lazy"><img class="g-img" data-src="https://heroturfs.es/cdn/shop/files/Diseno-de-gimnasios-Oxygen_05_ret.webp" alt="" loading="lazy"></div>
         <div class="proj-shade"></div>
