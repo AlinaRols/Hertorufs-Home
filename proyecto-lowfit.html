@@ -623,7 +623,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
 /* RELATED (reuses pj-card) */
 .related-section{background:#fff;padding:84px 0}
-.related-head{font-family:var(--fd);font-size:clamp(26px,3vw,38px);font-weight:900;color:#14181c;margin-bottom:28px;line-height:1}
+.related-head{font-family:var(--fd);font-size:clamp(26px,3vw,38px);font-weight:900;color:#14181c;line-height:1.02}
+.related-head em{color:var(--accent);font-style:normal}
+.related-head-wrap{margin-bottom:32px}
+.related-sub{font-size:15px;color:#5a6672;line-height:1.7;margin-top:10px;max-width:540px}
 .proj-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .marquee{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent)}
 .marquee-track{display:flex;width:max-content;animation:rmarquee 90s linear infinite}
@@ -767,7 +770,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <!-- ===== RELATED ===== -->
 <section class="related-section">
   <div class="container">
-    <div class="related-head reveal">More projects</div>
+    <div class="related-head-wrap reveal">
+      <span class="eyebrow-label" style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="width:24px;height:2px;background:var(--accent);display:inline-block"></span>More projects</span>
+      <div class="related-head">Explore the rest of <em>our work.</em></div>
+      <p class="related-sub">Tracks designed and fitted for boxes, gyms, sports centres and outdoor spaces.</p>
+    </div>
   </div>
   <div class="marquee">
     <div class="marquee-track">
