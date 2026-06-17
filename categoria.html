@@ -665,18 +665,24 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .catalogue-section{background:#fff;padding:80px 0}
 .cat-head{margin-bottom:30px}
 .cat-head-sub{font-size:15px;color:#5a6672;line-height:1.7;margin-top:10px;max-width:560px}
-.cat-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid rgba(0,0,0,.08)}
+.cat-filterbar{margin-bottom:30px}
+.cat-frow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cat-frow+.cat-frow{margin-top:12px;padding-top:14px;border-top:1px solid rgba(0,0,0,.07)}
+.cat-flabel{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8a96a0;flex-shrink:0;width:52px}
 .cat-filters{display:flex;gap:8px;flex-wrap:wrap}
 .cat-filter{font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5a6672;background:#f2f3f5;border:1px solid transparent;padding:9px 16px;border-radius:40px;cursor:pointer;transition:background .2s,color .2s}
 .cat-filter:hover{background:#e7e9ec;color:#1a1f24}
 .cat-filter.active{background:#14181c;color:#fff}
-.cat-count{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a96a0}
-.cat-sizebar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:-8px 0 30px}
-.cat-sizelabel{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a96a0;flex-shrink:0}
+.cat-count{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a96a0;flex-shrink:0;margin-left:auto}
 .cat-sizes{display:flex;gap:8px;flex-wrap:wrap}
 .cat-size{font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:.04em;color:#5a6672;background:#fff;border:1px solid #d6dbe0;padding:8px 14px;border-radius:40px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .cat-size:hover{border-color:#1a1f24;color:#1a1f24}
 .cat-size.active{background:#1a1f24;color:#fff;border-color:#1a1f24}
+.cat-empty{display:none;text-align:center;padding:54px 0}
+.cat-empty.show{display:block}
+.cat-empty p{font-size:15px;color:#5a6672;margin-bottom:18px}
+.cat-clear{font-family:var(--fb);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1a1f24;background:none;border:1px solid rgba(0,0,0,.2);padding:11px 22px;border-radius:6px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.cat-clear:hover{background:#1a1f24;color:#fff;border-color:#1a1f24}
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .prod-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:var(--r);overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .prod-card:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(0,0,0,.12)}
@@ -770,23 +776,26 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       <h2 class="section-title" style="color:#1a1f24;margin-top:12px">The full <em>catalogue.</em></h2>
       <p class="cat-head-sub">Every track, in every colour. Filter by tone family and choose the finish that best fits your box identity.</p>
     </div>
-    <div class="cat-toolbar reveal">
-      <div class="cat-filters">
-        <button class="cat-filter active" data-filter="all">All</button>
-        <button class="cat-filter" data-filter="markings">With markings</button>
-        <button class="cat-filter" data-filter="single">Single colour</button>
-        <button class="cat-filter" data-filter="custom">Custom</button>
+    <div class="cat-filterbar reveal">
+      <div class="cat-frow">
+        <span class="cat-flabel">Finish</span>
+        <div class="cat-filters">
+          <button class="cat-filter active" data-filter="all">All</button>
+          <button class="cat-filter" data-filter="markings">With markings</button>
+          <button class="cat-filter" data-filter="single">Single colour</button>
+          <button class="cat-filter" data-filter="custom">Custom</button>
+        </div>
+        <div class="cat-count"><span id="catCount">9</span> products</div>
       </div>
-      <div class="cat-count"><span id="catCount">9</span> products</div>
-    </div>
-    <div class="cat-sizebar reveal">
-      <span class="cat-sizelabel">Size</span>
-      <div class="cat-sizes">
-        <button class="cat-size active" data-size="all">All sizes</button>
-        <button class="cat-size" data-size="1.0x8.0">1.0 × 8.0 m</button>
-        <button class="cat-size" data-size="1.0x10.0">1.0 × 10.0 m</button>
-        <button class="cat-size" data-size="2.0x10.0">2.0 × 10.0 m</button>
-        <button class="cat-size" data-size="2.0x16.1">2.0 × 16.1 m</button>
+      <div class="cat-frow">
+        <span class="cat-flabel">Size</span>
+        <div class="cat-sizes">
+          <button class="cat-size active" data-size="all">All sizes</button>
+          <button class="cat-size" data-size="1.0x8.0">1.0 × 8.0 m</button>
+          <button class="cat-size" data-size="1.0x10.0">1.0 × 10.0 m</button>
+          <button class="cat-size" data-size="2.0x10.0">2.0 × 10.0 m</button>
+          <button class="cat-size" data-size="2.0x16.1">2.0 × 16.1 m</button>
+        </div>
       </div>
     </div>
     <div class="cat-grid" id="catGrid">
@@ -853,6 +862,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£70.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
         </div>
       </a>
+    </div>
+    <div class="cat-empty" id="catEmpty">
+      <p>No tracks match these filters.</p>
+      <button class="cat-clear" onclick="clearCatFilters()">Clear filters</button>
     </div>
   </div>
 </section>
@@ -1046,9 +1059,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     document.querySelectorAll('.proj-card').forEach(c => ioTouch.observe(c));
   }
 
-  // category filters (type + size, combined)
+  // category filters (type + size, combined) + empty state
   (function(){
-    const grid=document.getElementById('catGrid');const count=document.getElementById('catCount');
+    const grid=document.getElementById('catGrid');const count=document.getElementById('catCount');const empty=document.getElementById('catEmpty');
     if(!grid)return;
     let type='all',size='all';
     function apply(){
@@ -1060,6 +1073,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         const show=okType&&okSize;c.style.display=show?'':'none';if(show)n++;
       });
       if(count)count.textContent=n;
+      if(empty)empty.classList.toggle('show',n===0);
     }
     document.querySelectorAll('.cat-filter').forEach(b=>b.addEventListener('click',function(){
       document.querySelectorAll('.cat-filter').forEach(x=>x.classList.remove('active'));this.classList.add('active');
@@ -1069,6 +1083,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       document.querySelectorAll('.cat-size').forEach(x=>x.classList.remove('active'));this.classList.add('active');
       size=this.getAttribute('data-size');apply();
     }));
+    window.clearCatFilters=function(){
+      type='all';size='all';
+      document.querySelectorAll('.cat-filter').forEach(x=>x.classList.toggle('active',x.getAttribute('data-filter')==='all'));
+      document.querySelectorAll('.cat-size').forEach(x=>x.classList.toggle('active',x.getAttribute('data-size')==='all'));
+      apply();
+    };
   })();
 </script>
 </body>
