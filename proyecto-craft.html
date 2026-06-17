@@ -602,7 +602,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pp-head h2 em{font-style:normal;color:var(--accent)}
 /* filmstrip carousel — fotos en su proporción real */
 .pp-film{position:relative}
-.pp-strip{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x proximity;padding:6px 2px 22px;cursor:grab;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.pp-strip{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 22px;cursor:grab;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .pp-strip::-webkit-scrollbar{display:none}
 .pp-strip:active{cursor:grabbing}
 .pp-item{position:relative;flex:0 0 auto;height:460px;border-radius:16px;overflow:hidden;cursor:pointer;scroll-snap-align:center;background:#0e1115}
@@ -946,8 +946,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
   // Lightbox gallery
   (function(){
-    const imgs = [...document.querySelectorAll('.pp-item img')];
+    const film = document.querySelector('.pp-film') || document;
+    const originals = [...document.querySelectorAll('.pp-strip .pp-item')];
+    const imgs = originals.map(it => it.querySelector('img'));
     if(!imgs.length) return;
+    originals.forEach((it, n) => it.dataset.i = n);   // clones del bucle heredan data-i
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
     const lbCount = document.getElementById('lbCount');
@@ -955,7 +958,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     function show(n){ idx = (n + imgs.length) % imgs.length; lbImg.src = imgs[idx].src; lbImg.alt = imgs[idx].alt; lbCount.textContent = (idx+1) + ' / ' + imgs.length; }
     function open(n){ show(n); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
     function close(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
-    imgs.forEach((im, n) => im.parentElement.addEventListener('click', () => open(n)));
+    film.addEventListener('click', e => { const it = e.target.closest('.pp-item'); if(it && it.dataset.i != null) open(parseInt(it.dataset.i, 10)); });
     document.getElementById('lbClose').addEventListener('click', close);
     document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); show(idx-1); });
     document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); show(idx+1); });
@@ -967,18 +970,53 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       else if(e.key === 'ArrowRight') show(idx+1);
     });
   })();
-  // filmstrip carousel — arrows + drag to scroll
+  // filmstrip carousel — bucle infinito + flechas + arrastre
   (function(){
     const strip = document.querySelector('.pp-strip');
     if(!strip) return;
+    // duplica las fotos para el bucle continuo
+    [...strip.children].forEach(it => { const c = it.cloneNode(true); c.classList.add('clone'); c.setAttribute('aria-hidden','true'); strip.appendChild(c); });
+    const firstClone = strip.querySelector('.pp-item.clone');
+    let half = 0;
+    const measure = () => { half = firstClone.offsetLeft - strip.children[0].offsetLeft; };
+    const wrap = pos => { if(half){ while(pos >= half) pos -= half; while(pos < 0) pos += half; } return pos; };
+    measure();
+    window.addEventListener('resize', measure);
+    strip.querySelectorAll('img').forEach(im => { if(!im.complete) im.addEventListener('load', measure); });
+    // normaliza el scroll nativo (rueda / trackpad) dentro del bucle
+    let ticking = false, down = false, sx = 0, sl = 0, dragged = false;
+    strip.addEventListener('scroll', () => {
+      if(ticking || !half || down) return; ticking = true;
+      requestAnimationFrame(() => {
+        if(strip.scrollLeft >= half) strip.scrollLeft -= half;
+        else if(strip.scrollLeft <= 0) strip.scrollLeft += half;
+        ticking = false;
+      });
+    });
+    // animación propia para las flechas (con wrap por frame, sin pelear con el scroll suave nativo)
+    function glideBy(delta){
+      const start = strip.scrollLeft, t0 = performance.now(), dur = 440;
+      (function step(t){
+        const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        strip.scrollLeft = wrap(start + delta * e);
+        if(p < 1) requestAnimationFrame(step);
+      })(performance.now());
+    }
     const prev = document.querySelector('.pp-nav.prev');
     const next = document.querySelector('.pp-nav.next');
     const amt = () => Math.max(280, strip.clientWidth * 0.7);
-    prev && prev.addEventListener('click', () => strip.scrollBy({left:-amt(), behavior:'smooth'}));
-    next && next.addEventListener('click', () => strip.scrollBy({left: amt(), behavior:'smooth'}));
-    let down=false, sx=0, sl=0, dragged=false;
+    prev && prev.addEventListener('click', () => glideBy(-amt()));
+    next && next.addEventListener('click', () => glideBy(amt()));
+    // arrastre con wrap manual
     strip.addEventListener('pointerdown', e => { down=true; dragged=false; sx=e.clientX; sl=strip.scrollLeft; });
-    strip.addEventListener('pointermove', e => { if(!down) return; const dx=e.clientX-sx; if(Math.abs(dx)>6) dragged=true; strip.scrollLeft = sl-dx; });
+    strip.addEventListener('pointermove', e => {
+      if(!down) return;
+      const dx = e.clientX - sx;
+      if(Math.abs(dx) > 6) dragged = true;
+      let pos = sl - dx;
+      if(half){ while(pos >= half){ pos -= half; sl -= half; } while(pos < 0){ pos += half; sl += half; } }
+      strip.scrollLeft = pos;
+    });
     window.addEventListener('pointerup', () => { down=false; });
     strip.addEventListener('click', e => { if(dragged){ e.stopPropagation(); e.preventDefault(); } }, true);
   })();
