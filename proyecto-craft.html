@@ -600,13 +600,22 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pp-vk::before{content:'';width:24px;height:2px;background:var(--accent)}
 .pp-head h2{font-family:var(--fd);font-size:clamp(28px,3.2vw,42px);font-weight:900;color:#14181c;line-height:1;letter-spacing:-.01em;margin-top:13px}
 .pp-head h2 em{font-style:normal;color:var(--accent)}
-.pp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.pp-item{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/3}
-.pp-item.wide{grid-column:span 2;aspect-ratio:16/7}
-.pp-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,1,.36,1)}
-.pp-item:hover img{transform:scale(1.05)}
-@media(max-width:820px){.pp-grid{grid-template-columns:1fr}.pp-item.wide{grid-column:span 1;aspect-ratio:4/3}}
-.pp-item{cursor:pointer}
+/* filmstrip carousel — fotos en su proporción real */
+.pp-film{position:relative}
+.pp-strip{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x proximity;padding:6px 2px 22px;cursor:grab;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.pp-strip::-webkit-scrollbar{display:none}
+.pp-strip:active{cursor:grabbing}
+.pp-item{position:relative;flex:0 0 auto;height:460px;border-radius:16px;overflow:hidden;cursor:pointer;scroll-snap-align:center;background:#0e1115}
+.pp-item img{height:100%;width:auto;display:block;object-fit:cover;pointer-events:none;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.pp-item:hover img{transform:scale(1.04)}
+.pp-nav{position:absolute;top:calc(50% - 11px);transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #e6e8ec;box-shadow:0 8px 24px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;color:#14181c;transition:transform .2s,background .2s}
+.pp-nav:hover{background:#14181c;color:#fff;transform:translateY(-50%) scale(1.06)}
+.pp-nav.prev{left:8px}.pp-nav.next{right:8px}
+.pp-nav svg{width:18px;height:18px}
+.pp-hint{font-size:12px;color:#8a8f96;margin-top:2px;display:flex;align-items:center;gap:7px}
+.pp-hint svg{width:15px;height:15px}
+@media(max-width:820px){.pp-item{height:360px}.pp-nav{display:none}}
+@media(max-width:520px){.pp-item{height:300px}}
 
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.93);display:none;align-items:center;justify-content:center}
@@ -754,23 +763,31 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     <div class="pp-head reveal">
       <span class="pp-vk">Gallery</span>
       <h2>On site <em>at Barcelona.</em></h2>
+      <div class="pp-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M5 12l4-4M5 12l4 4M19 12l-4-4M19 12l-4 4"/></svg> Arrastra o usa las flechas</div>
     </div>
-    <div class="pp-grid">
-      <div class="pp-item wide reveal">
-        <img src="https://heroturfs.es/cdn/shop/files/craft-fisioterapia-001.webp?width=1600" alt="Logo CRAFT integrado en la pista Valhalla" loading="lazy">
+    <div class="pp-film reveal">
+      <button class="pp-nav prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="pp-strip">
+        <div class="pp-item">
+          <img src="https://heroturfs.es/cdn/shop/files/case-study-heroturfs-craft-001.webp?width=700" alt="Sled push sobre la pista Valhalla de Craft" loading="lazy">
+        </div>
+        <div class="pp-item">
+          <img src="https://heroturfs.es/cdn/shop/files/case-study-heroturfs-craft-004.webp?width=1100" alt="Sala de entrenamiento de Craft con la pista" loading="lazy">
+        </div>
+        <div class="pp-item">
+          <img src="https://heroturfs.es/cdn/shop/files/case-study-heroturfs-craft-002.webp?width=700" alt="Trabajo de plancha sobre la pista Valhalla" loading="lazy">
+        </div>
+        <div class="pp-item">
+          <img src="assets/craft-bcn.jpg" alt="Sled push sobre la pista de Craft" loading="lazy">
+        </div>
+        <div class="pp-item">
+          <img src="https://heroturfs.es/cdn/shop/files/case-study-heroturfs-craft-005.webp?width=1100" alt="Pista Valhalla en la sala de Craft Barcelona" loading="lazy">
+        </div>
+        <div class="pp-item">
+          <img src="https://heroturfs.es/cdn/shop/files/case-study-heroturfs-craft-003.webp?width=700" alt="Detalle del logo CRAFT en la pista" loading="lazy">
+        </div>
       </div>
-      <div class="pp-item reveal">
-        <img src="https://heroturfs.es/cdn/shop/files/case-study-heroturfs-craft-004.webp?width=1000" alt="Sala de entrenamiento de Craft con la pista" loading="lazy">
-      </div>
-      <div class="pp-item reveal d1">
-        <img src="https://heroturfs.es/cdn/shop/files/case-study-heroturfs-craft-005.webp?width=1000" alt="Pista Valhalla en la sala de Craft Barcelona" loading="lazy">
-      </div>
-      <div class="pp-item reveal">
-        <img src="assets/craft-bcn.jpg" alt="Sled push sobre la pista de Craft" loading="lazy">
-      </div>
-      <div class="pp-item reveal d1">
-        <img src="https://heroturfs.es/cdn/shop/files/case-study-heroturfs-craft-002.webp?width=1000" alt="Trabajo de plancha sobre la pista Valhalla" loading="lazy">
-      </div>
+      <button class="pp-nav next" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
   </div>
 </section>
@@ -949,6 +966,21 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       else if(e.key === 'ArrowLeft') show(idx-1);
       else if(e.key === 'ArrowRight') show(idx+1);
     });
+  })();
+  // filmstrip carousel — arrows + drag to scroll
+  (function(){
+    const strip = document.querySelector('.pp-strip');
+    if(!strip) return;
+    const prev = document.querySelector('.pp-nav.prev');
+    const next = document.querySelector('.pp-nav.next');
+    const amt = () => Math.max(280, strip.clientWidth * 0.7);
+    prev && prev.addEventListener('click', () => strip.scrollBy({left:-amt(), behavior:'smooth'}));
+    next && next.addEventListener('click', () => strip.scrollBy({left: amt(), behavior:'smooth'}));
+    let down=false, sx=0, sl=0, dragged=false;
+    strip.addEventListener('pointerdown', e => { down=true; dragged=false; sx=e.clientX; sl=strip.scrollLeft; });
+    strip.addEventListener('pointermove', e => { if(!down) return; const dx=e.clientX-sx; if(Math.abs(dx)>6) dragged=true; strip.scrollLeft = sl-dx; });
+    window.addEventListener('pointerup', () => { down=false; });
+    strip.addEventListener('click', e => { if(dragged){ e.stopPropagation(); e.preventDefault(); } }, true);
   })();
   // hero background slideshow
   (function(){
