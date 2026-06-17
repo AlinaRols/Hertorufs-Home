@@ -594,7 +594,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .fact-v{font-family:var(--fd);font-size:24px;font-weight:700;color:#14181c;line-height:1.05}
 
 /* PROJECT GALLERY */
-.proj-photos{background:#fff;padding:0 0 90px}
+.proj-photos{background:#fff;padding:40px 0 96px}
+.pp-head{max-width:980px;margin:0 auto 28px}
+.pp-vk{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.pp-vk::before{content:'';width:24px;height:2px;background:var(--accent)}
+.pp-head h2{font-family:var(--fd);font-size:clamp(28px,3.2vw,42px);font-weight:900;color:#14181c;line-height:1;letter-spacing:-.01em;margin-top:13px}
+.pp-head h2 em{font-style:normal;color:var(--accent)}
 .pp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .pp-item{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/3}
 .pp-item.wide{grid-column:span 2;aspect-ratio:16/7}
@@ -745,6 +750,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <!-- ===== PROJECT GALLERY ===== -->
 <section class="proj-photos">
   <div class="container">
+    <div class="pp-head reveal">
+      <span class="pp-vk">Gallery</span>
+      <h2>On site <em>at Huelva.</em></h2>
+    </div>
     <div class="pp-grid">
       <div class="pp-item wide reveal">
         <img src="https://heroturfs.es/cdn/shop/files/pista-cesped-artificial-deportivo-mars-red-lowfit-huelva.webp" alt="Pista Mars Red en Lowfit Huelva" loading="lazy">
