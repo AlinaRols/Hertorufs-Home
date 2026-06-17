@@ -581,6 +581,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .po-grid h2{font-family:var(--fd);font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1;margin-bottom:20px;color:#14181c}
 .po-grid h2 em{color:var(--accent);font-style:normal}
 .po-grid p{font-size:16px;line-height:1.8;color:#4a5560;margin-bottom:16px}
+/* story steps: reto → solución → resultado */
+.po-step{margin-bottom:24px}
+.po-step:last-child{margin-bottom:0}
+.po-step-k{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+.po-step-k::before{content:'';width:22px;height:2px;background:var(--accent)}
+.po-step p{margin-bottom:0}
+/* highlights / cifras destacadas */
+.po-stats{display:flex;flex-wrap:wrap;margin:0 0 44px;border-top:1px solid #e9ecef;border-bottom:1px solid #e9ecef;padding:26px 0}
+.po-stat{flex:1;min-width:130px;padding:0 30px;border-left:1px solid #e9ecef}
+.po-stat:first-child{border-left:none;padding-left:0}
+.po-stat-v{font-family:var(--fd);font-size:clamp(30px,3.6vw,42px);font-weight:900;color:#14181c;line-height:1}
+.po-stat-v em{font-style:normal;color:var(--accent)}
+.po-stat-l{font-size:12px;color:#6b7680;margin-top:9px;line-height:1.45}
+@media(max-width:600px){.po-stats{padding:20px 0}.po-stat{flex:0 0 50%;min-width:0;padding:10px 16px}.po-stat:nth-child(odd){border-left:none;padding-left:0}}
 .po-more-btn{display:none}
 @media(max-width:820px){
   .po-more{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.22,1,.36,1)}
@@ -761,15 +775,26 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <!-- ===== OVERVIEW + SPECS ===== -->
 <section class="proj-overview">
   <div class="container">
+    <div class="po-stats reveal">
+      <div class="po-stat"><div class="po-stat-v">10<em> m</em></div><div class="po-stat-l">Custom track, fitted to the room</div></div>
+      <div class="po-stat"><div class="po-stat-v">100<em>%</em></div><div class="po-stat-l">Made to measure &amp; seam-free</div></div>
+      <div class="po-stat"><div class="po-stat-v">5<em> yr</em></div><div class="po-stat-l">Heroturfs guarantee</div></div>
+    </div>
     <div class="po-grid">
       <div class="reveal">
         <h2>A surface built <em>for recovery.</em></h2>
-        <p>Craft is a physiotherapy and recovery centre in Barcelona. They needed a floor that could handle daily rehab work — sled pushes, controlled sprints and mobility — while carrying their own identity.</p>
-        <div class="po-more">
-        <p>We installed a custom Valhalla track, 1&nbsp;×&nbsp;10&nbsp;m, in Hades Black with Hermes White metre markings, and integrated the centre's logo directly into the design. The high-density turf absorbs load and keeps its structure session after session.</p>
-        <p>Made to measure for the room, fitted seam-free, and backed by our five-year guarantee.</p>
+        <div class="po-step">
+          <span class="po-step-k">The challenge</span>
+          <p>Craft, a physiotherapy and recovery centre in Barcelona, needed a floor for daily rehab work — sled pushes, controlled sprints and mobility — that could also carry their own identity.</p>
         </div>
-        <button class="po-more-btn" onclick="const m=this.previousElementSibling;this.textContent=m.classList.toggle('open')?'Read less':'Read more';">Read more</button>
+        <div class="po-step">
+          <span class="po-step-k">Our solution</span>
+          <p>A fully custom Valhalla track, 1&nbsp;×&nbsp;10&nbsp;m, in Hades Black with Hermes White metre markings — with the centre's logo integrated directly into the turf. Made to measure for the room and fitted seam-free.</p>
+        </div>
+        <div class="po-step">
+          <span class="po-step-k">The result</span>
+          <p>A recovery surface used every day that holds its structure under the heaviest sled loads, reads as the centre's own brand, and is backed by our five-year guarantee.</p>
+        </div>
       </div>
       <aside class="reveal d1">
         <div class="proj-facts">
