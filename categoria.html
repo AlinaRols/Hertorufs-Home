@@ -651,7 +651,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 }
 
 /* ===== CATEGORY / COLLECTION PAGE ===== */
-.cat-hero{position:relative;background:linear-gradient(120deg,#0c0d0f 0%,#14181c 58%,#232b31 100%);padding:150px 0 72px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+.cat-hero{position:relative;background:#0c0d0f;padding:150px 0 72px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+.cat-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;z-index:0}
+.cat-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(8,9,11,.95) 0%,rgba(8,9,11,.84) 40%,rgba(8,9,11,.45) 72%,rgba(8,9,11,.2) 100%)}
 .cat-hero-inner{position:relative;z-index:2}
 .cat-hero-title{font-family:var(--fd);font-size:clamp(44px,7vw,92px);font-weight:900;line-height:.92;color:#fff;letter-spacing:-.01em;margin:14px 0 0}
 .cat-hero-title em{color:var(--accent);font-style:normal}
@@ -708,10 +710,13 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cat-cta-ghost{color:#fff;border-color:rgba(255,255,255,.45)}
 .cat-cta-ghost:hover{border-color:#fff;color:#fff}
 @media(max-width:900px){.cat-grid{grid-template-columns:repeat(2,1fr)}.cat-feat-grid{grid-template-columns:repeat(2,1fr);gap:34px}}
+@media(max-width:768px){.cat-hero-overlay{background:linear-gradient(180deg,rgba(8,9,11,.5) 0%,rgba(8,9,11,.92) 100%)}}
 @media(max-width:600px){.cat-hero{padding:120px 0 50px}.cat-grid{grid-template-columns:1fr}.cat-feat-grid{grid-template-columns:1fr}.cat-stats{gap:32px}.cat-cta{background:linear-gradient(165deg,var(--accent) 0%,var(--accent) 72%,#14181c 72%,#14181c 100%);padding:40px 26px}}
 </style>
 <!-- ===== HERO ===== -->
 <section class="cat-hero">
+  <img class="cat-hero-img" src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-negro-trineo-con-chico1.webp" alt="" loading="eager">
+  <div class="cat-hero-overlay"></div>
   <div class="container cat-hero-inner">
     <span class="ch-eyebrow reveal">Heroturfs collection · 2026</span>
     <h1 class="cat-hero-title reveal d1">All <em>tracks.</em><br>One standard.</h1>
