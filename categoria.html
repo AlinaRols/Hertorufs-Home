@@ -670,6 +670,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cat-filter:hover{background:#e7e9ec;color:#1a1f24}
 .cat-filter.active{background:#14181c;color:#fff}
 .cat-count{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a96a0}
+.cat-sizebar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:-8px 0 30px}
+.cat-sizelabel{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a96a0;flex-shrink:0}
+.cat-sizes{display:flex;gap:8px;flex-wrap:wrap}
+.cat-size{font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:.04em;color:#5a6672;background:#fff;border:1px solid #d6dbe0;padding:8px 14px;border-radius:40px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.cat-size:hover{border-color:#1a1f24;color:#1a1f24}
+.cat-size.active{background:#1a1f24;color:#fff;border-color:#1a1f24}
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .prod-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:var(--r);overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .prod-card:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(0,0,0,.12)}
@@ -751,8 +757,17 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       </div>
       <div class="cat-count"><span id="catCount">9</span> products</div>
     </div>
+    <div class="cat-sizebar reveal">
+      <span class="cat-sizelabel">Size</span>
+      <div class="cat-sizes">
+        <button class="cat-size active" data-size="all">All sizes</button>
+        <button class="cat-size" data-size="1.0x8.0">1.0 × 8.0 m</button>
+        <button class="cat-size" data-size="1.0x10.0">1.0 × 10.0 m</button>
+        <button class="cat-size" data-size="2.0x10.0">2.0 × 10.0 m</button>
+      </div>
+    </div>
     <div class="cat-grid" id="catGrid">
-      <a href="https://heroturfs.vercel.app/products/black-sled-track-valhalla-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings">
+      <a href="https://heroturfs.vercel.app/products/black-sled-track-valhalla-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x8.0|1.0x10.0|2.0x10.0">
         <div class="prod-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?v=1753602264" alt="Valhalla One" loading="lazy"><span class="prod-badge">Best seller</span><span class="prod-corner">Valhalla One</span></div>
         <div class="prod-body">
           <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?v=1753602264" alt="" loading="lazy"></span><div><div class="prod-name">Valhalla One</div><div class="prod-meta">Black · With markings</div></div></div>
@@ -766,21 +781,21 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">Price</span>£1,610.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
         </div>
       </a>
-      <a href="https://heroturfs.vercel.app/products/green-sled-track-elysium-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings">
+      <a href="https://heroturfs.vercel.app/products/green-sled-track-elysium-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x8.0|1.0x10.0|2.0x10.0">
         <div class="prod-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-verde-elysium-150x1000-01.webp?v=1753602669" alt="Elysium One" loading="lazy"><span class="prod-corner">Elysium One</span></div>
         <div class="prod-body">
           <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-verde-elysium-150x1000-01.webp?v=1753602669" alt="" loading="lazy"></span><div><div class="prod-name">Elysium One</div><div class="prod-meta">Green · With markings</div></div></div>
           <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£372.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
         </div>
       </a>
-      <a href="https://heroturfs.vercel.app/products/blue-sled-track-atlantis-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings">
+      <a href="https://heroturfs.vercel.app/products/blue-sled-track-atlantis-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x8.0|1.0x10.0|2.0x10.0">
         <div class="prod-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-azul-atlantis-150x1000-01.webp?v=1753600183" alt="Atlantis One" loading="lazy"><span class="prod-corner">Atlantis One</span></div>
         <div class="prod-body">
           <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-azul-atlantis-150x1000-01.webp?v=1753600183" alt="" loading="lazy"></span><div><div class="prod-name">Atlantis One</div><div class="prod-meta">Blue · With markings</div></div></div>
           <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£372.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
         </div>
       </a>
-      <a href="https://heroturfs.vercel.app/products/terracotta-sled-track-marathon-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings">
+      <a href="https://heroturfs.vercel.app/products/terracotta-sled-track-marathon-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x8.0|1.0x10.0|2.0x10.0">
         <div class="prod-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp?v=1753602589" alt="Marathon One" loading="lazy"><span class="prod-corner">Marathon One</span></div>
         <div class="prod-body">
           <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp?v=1753602589" alt="" loading="lazy"></span><div><div class="prod-name">Marathon One</div><div class="prod-meta">Red · With markings</div></div></div>
@@ -964,16 +979,28 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     document.querySelectorAll('.proj-card').forEach(c => ioTouch.observe(c));
   }
 
-  // category filters
+  // category filters (type + size, combined)
   (function(){
     const grid=document.getElementById('catGrid');const count=document.getElementById('catCount');
     if(!grid)return;
-    document.querySelectorAll('.cat-filter').forEach(b=>b.addEventListener('click',function(){
-      document.querySelectorAll('.cat-filter').forEach(x=>x.classList.remove('active'));
-      this.classList.add('active');
-      const f=this.getAttribute('data-filter');let n=0;
-      grid.querySelectorAll('.prod-card').forEach(c=>{const show=f==='all'||c.getAttribute('data-cat')===f;c.style.display=show?'':'none';if(show)n++;});
+    let type='all',size='all';
+    function apply(){
+      let n=0;
+      grid.querySelectorAll('.prod-card').forEach(c=>{
+        const okType=type==='all'||c.getAttribute('data-cat')===type;
+        const sz=c.getAttribute('data-sizes')||'';
+        const okSize=size==='all'||sz.split('|').indexOf(size)>-1;
+        const show=okType&&okSize;c.style.display=show?'':'none';if(show)n++;
+      });
       if(count)count.textContent=n;
+    }
+    document.querySelectorAll('.cat-filter').forEach(b=>b.addEventListener('click',function(){
+      document.querySelectorAll('.cat-filter').forEach(x=>x.classList.remove('active'));this.classList.add('active');
+      type=this.getAttribute('data-filter');apply();
+    }));
+    document.querySelectorAll('.cat-size').forEach(b=>b.addEventListener('click',function(){
+      document.querySelectorAll('.cat-size').forEach(x=>x.classList.remove('active'));this.classList.add('active');
+      size=this.getAttribute('data-size');apply();
     }));
   })();
 </script>
