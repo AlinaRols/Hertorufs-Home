@@ -576,7 +576,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .proj-hloc::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent)}
 
 /* OVERVIEW + SPECS */
-.proj-overview{background:#fff;color:#14181c;padding:88px 0}
+.proj-overview{background:#fff;color:#14181c;padding:40px 0 88px}
 .po-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
 .po-grid h2{font-family:var(--fd);font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1;margin-bottom:20px;color:#14181c}
 .po-grid h2 em{color:var(--accent);font-style:normal}
@@ -723,40 +723,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   </div>
 </section>
 
-<!-- ===== OVERVIEW + SPECS ===== -->
-<section class="proj-overview">
-  <div class="container">
-    <div class="po-grid">
-      <div class="reveal">
-        <h2>A surface built <em>for recovery.</em></h2>
-        <p>Craft is a physiotherapy and recovery centre in Barcelona. They needed a floor that could handle daily rehab work — sled pushes, controlled sprints and mobility — while carrying their own identity.</p>
-        <div class="po-more">
-        <p>We installed a custom Valhalla track, 1&nbsp;×&nbsp;10&nbsp;m, in Hades Black with Hermes White metre markings, and integrated the centre's logo directly into the design. The high-density turf absorbs load and keeps its structure session after session.</p>
-        <p>Made to measure for the room, fitted seam-free, and backed by our five-year guarantee.</p>
-        </div>
-        <button class="po-more-btn" onclick="const m=this.previousElementSibling;this.textContent=m.classList.toggle('open')?'Read less':'Read more';">Read more</button>
-      </div>
-      <aside class="reveal d1">
-        <div class="proj-facts">
-          <div class="fact">
-            <span class="fact-ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div><div class="fact-l">Location</div><div class="fact-v">Barcelona, Spain</div></div>
-          </div>
-          <div class="fact">
-            <span class="fact-ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6.5 6.5h11v11h-11z" opacity="0"/><path d="M4 12h2M18 12h2M7 9v6M17 9v6M7 12h10"/></svg></span>
-            <div><div class="fact-l">Type</div><div class="fact-v">Physiotherapy &amp; recovery</div></div>
-          </div>
-          <div class="fact">
-            <span class="fact-ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-            <div><div class="fact-l">Surface</div><div class="fact-v">Valhalla · 1×10 m</div></div>
-          </div>
-        </div>
-        <a href="#" class="btn-primary" style="width:100%;justify-content:center">Request a similar track &rarr;</a>
-      </aside>
-    </div>
-  </div>
-</section>
-
 <!-- ===== PROJECT GALLERY ===== -->
 <section class="proj-photos">
   <div class="container">
@@ -788,6 +754,40 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         </div>
       </div>
       <button class="pp-nav next" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW + SPECS ===== -->
+<section class="proj-overview">
+  <div class="container">
+    <div class="po-grid">
+      <div class="reveal">
+        <h2>A surface built <em>for recovery.</em></h2>
+        <p>Craft is a physiotherapy and recovery centre in Barcelona. They needed a floor that could handle daily rehab work — sled pushes, controlled sprints and mobility — while carrying their own identity.</p>
+        <div class="po-more">
+        <p>We installed a custom Valhalla track, 1&nbsp;×&nbsp;10&nbsp;m, in Hades Black with Hermes White metre markings, and integrated the centre's logo directly into the design. The high-density turf absorbs load and keeps its structure session after session.</p>
+        <p>Made to measure for the room, fitted seam-free, and backed by our five-year guarantee.</p>
+        </div>
+        <button class="po-more-btn" onclick="const m=this.previousElementSibling;this.textContent=m.classList.toggle('open')?'Read less':'Read more';">Read more</button>
+      </div>
+      <aside class="reveal d1">
+        <div class="proj-facts">
+          <div class="fact">
+            <span class="fact-ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="fact-l">Location</div><div class="fact-v">Barcelona, Spain</div></div>
+          </div>
+          <div class="fact">
+            <span class="fact-ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6.5 6.5h11v11h-11z" opacity="0"/><path d="M4 12h2M18 12h2M7 9v6M17 9v6M7 12h10"/></svg></span>
+            <div><div class="fact-l">Type</div><div class="fact-v">Physiotherapy &amp; recovery</div></div>
+          </div>
+          <div class="fact">
+            <span class="fact-ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+            <div><div class="fact-l">Surface</div><div class="fact-v">Valhalla · 1×10 m</div></div>
+          </div>
+        </div>
+        <a href="#" class="btn-primary" style="width:100%;justify-content:center">Request a similar track &rarr;</a>
+      </aside>
     </div>
   </div>
 </section>
