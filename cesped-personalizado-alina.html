@@ -790,8 +790,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-fac{padding:96px 0 0}
 .cp-fac-grid{display:grid;grid-template-columns:0.6fr 1fr;gap:54px;align-items:start}
 .cp-fac-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cp-fac-imgs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
-.cp-fac-imgs .span2{grid-column:span 2;aspect-ratio:auto;height:190px}
+.cp-fac-imgs img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+.cp-fac-imgs .fac-tall{grid-column:1;grid-row:1 / span 3;aspect-ratio:auto}
 .cp-fac-facts{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}
 .cp-fac-facts div{display:flex;flex-direction:column}
 .cp-fac-facts b{font-family:var(--fd);font-size:30px;font-weight:900;color:#14181c;line-height:1}
@@ -812,11 +812,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   <div class="container">
     <div class="cp-fac-grid">
       <div class="cp-fac-imgs reveal">
+        <img class="fac-tall" src="assets/lowfit-xl.jpg" alt="Pista Lowfit XL completa en nuestra fábrica">
         <img src="assets/factory-1.jpg" alt="Custom branded track">
-        <img src="assets/factory-2.jpg" alt="Custom logo detail">
-        <img src="assets/factory-3.jpg" alt="Blue custom track in production">
         <img src="assets/factory-4.jpg" alt="Custom logo track in production">
-        <img class="span2" src="assets/factory-yarn.jpg" alt="Yarn at the Heroturfs factory in Crevillent">
+        <img src="assets/factory-yarn.jpg" alt="Yarn at the Heroturfs factory">
       </div>
       <div class="reveal d1">
         <div class="cp-fac-flag"><img src="https://flagcdn.com/es.svg" alt="Spain"><span>Made in Spain</span></div>
