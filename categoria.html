@@ -662,7 +662,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cat-stats{display:flex;gap:54px;margin-top:42px;flex-wrap:wrap}
 .cat-stat-n{font-family:var(--fd);font-size:clamp(30px,3.5vw,42px);font-weight:900;color:var(--text);line-height:1}
 .cat-stat-l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.5);margin-top:7px}
-.catalogue-section{background:#fff;padding:80px 0}
+.catalogue-section{background:#fff;padding:52px 0 80px}
 .cat-head{margin-bottom:30px}
 .cat-head-sub{font-size:15px;color:#5a6672;line-height:1.7;margin-top:10px;max-width:560px}
 .cat-filterbar{margin-bottom:30px}
@@ -766,7 +766,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cat-cta-ghost:hover{border-color:#fff;color:#fff}
 @media(max-width:900px){.cat-grid{grid-template-columns:repeat(2,1fr)}.cat-feat-grid{grid-template-columns:repeat(2,1fr);gap:34px}}
 @media(max-width:768px){.cat-hero-overlay{background:linear-gradient(180deg,rgba(8,9,11,.5) 0%,rgba(8,9,11,.92) 100%)}}
-@media(max-width:600px){.cat-hero{padding:120px 0 50px}.cat-grid{grid-template-columns:1fr}.cat-feat-grid{grid-template-columns:1fr}.cat-stats{gap:32px}.cat-cta{padding:40px 26px}.cat-cta-grad{background:linear-gradient(168deg,var(--accent) 0%,var(--accent) 68%,rgba(18,21,25,.8) 68%,rgba(18,21,25,.45) 100%)}}
+@media(max-width:600px){.cat-hero{padding:90px 0 40px}.cat-grid{grid-template-columns:1fr}.cat-feat-grid{grid-template-columns:1fr}.cat-hero-sub{margin-top:16px}.cat-stats{display:none}.cat-cta{padding:40px 26px}.cat-cta-grad{background:linear-gradient(168deg,var(--accent) 0%,var(--accent) 68%,rgba(18,21,25,.8) 68%,rgba(18,21,25,.45) 100%)}}
 </style>
 <!-- ===== HERO ===== -->
 <section class="cat-hero">
@@ -787,11 +787,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <!-- ===== CATALOGUE ===== -->
 <section class="catalogue-section">
   <div class="container">
-    <div class="cat-head reveal">
-      <span class="ch-eyebrow">Full catalogue</span>
-      <h2 class="section-title" style="color:#1a1f24;margin-top:12px">The full <em>catalogue.</em></h2>
-      <p class="cat-head-sub">Every track, in every colour. Filter by tone family and choose the finish that best fits your box identity.</p>
-    </div>
     <div class="cat-filterbar reveal">
       <button class="cat-filtoggle" type="button" onclick="toggleCatFilters(this)" aria-expanded="false">
         <span class="cat-filtoggle-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>Filters</span>
