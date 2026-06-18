@@ -590,18 +590,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-step-d{font-size:14px;color:#5a646c;line-height:1.6}
 
 /* COLOUR MARQUEE (dark) */
-.cp-colours{background:#eef0f3;padding:88px 0;overflow:hidden}
-.cp-mq{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.cp-mq-track{display:flex;gap:18px;width:max-content;animation:cpscroll 48s linear infinite}
-.cp-mq-track:has(.cp-chip:hover){animation-play-state:paused}
-@keyframes cpscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.cp-chip{flex:0 0 auto;width:184px}
-.cp-chip-img{width:184px;height:184px;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45)}
-.cp-chip-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
-.cp-chip:hover .cp-chip-img img{transform:scale(1.07)}
-.cp-chip-name{font-family:var(--fd);font-weight:800;font-size:15px;color:#14181c;margin-top:13px;letter-spacing:.02em}
-.cp-chip-sub{font-size:10px;color:#8a949c;margin-top:3px;text-transform:uppercase;letter-spacing:.12em}
-@media(prefers-reduced-motion:reduce){.cp-mq-track{animation:none;flex-wrap:wrap;justify-content:center}}
 
 /* DESIGN + LOGO */
 .cp-design-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
@@ -743,19 +731,186 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   </div>
 </section>
 
-<!-- ===== 17 COLOURS — INTERACTIVE STUDIO ===== -->
-<section class="cp-colours" id="colours">
+<!-- ===== TOTAL CUSTOMIZATION (clickable cards + detail) ===== -->
+<style>
+.cp-cz{background:#f5f6f7;padding:88px 0}
+.cp-cz .eyebrow-label{color:var(--accent)}
+.cp-cz-h2{font-family:var(--fd);font-size:clamp(34px,4.4vw,56px);font-weight:900;color:#14181c;line-height:.98;letter-spacing:-.01em;margin-bottom:14px}
+.cp-cz-lead{font-size:16px;color:#5a646c;line-height:1.6;max-width:560px;margin-bottom:34px}
+.cp-cz-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+.cp-cz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-content:start}
+.cp-cz-panels{display:flex}
+.cp-cz-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:188px;background:#1a1c20 center/cover no-repeat;border:none;border-radius:14px;padding:22px 22px 24px;cursor:pointer;transition:box-shadow .22s,transform .22s;outline:none}
+.cp-cz-card::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 48%,rgba(0,0,0,.22) 100%);transition:background .25s;z-index:0}
+.cp-cz-card>*{position:relative;z-index:1}
+.cp-cz-card:hover{box-shadow:0 16px 34px rgba(20,24,28,.22);transform:translateY(-3px)}
+.cp-cz-card:hover::before{background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.38) 55%,rgba(0,0,0,.1) 100%)}
+.cp-cz-card:focus-visible{box-shadow:0 0 0 3px rgba(227,51,43,.55)}
+.cp-cz-card.active{box-shadow:0 16px 34px rgba(227,51,43,.42)}
+.cp-cz-card.active::before{background:linear-gradient(to top,rgba(227,51,43,.94) 0%,rgba(227,51,43,.7) 55%,rgba(227,51,43,.45) 100%)}
+.cp-cz-card.active:hover::before{background:linear-gradient(to top,rgba(227,51,43,.9) 0%,rgba(227,51,43,.62) 55%,rgba(227,51,43,.38) 100%)}
+.cp-cz-ic{width:30px;height:30px;color:#fff}
+.cp-cz-ic svg{width:100%;height:100%;display:block}
+.cp-cz-txt{margin-top:auto}
+.cp-cz-t{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;line-height:1;margin-bottom:7px;letter-spacing:.01em;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+.cp-cz-s{font-size:13px;color:rgba(255,255,255,.85);line-height:1.4;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.cp-cz-detail{display:none;width:100%;background:#323F49;border:1px solid #323F49;border-radius:16px;padding:32px 34px;box-shadow:0 18px 40px rgba(50,63,73,.28)}
+.cp-cz-detail.show{display:flex;flex-direction:column;animation:czfade .3s ease}
+.cp-cz-detail .cp-cz-cta{margin-top:auto;align-self:flex-start}
+@keyframes czItem{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes czPop{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:none}}
+.cp-cz-detail.show .cp-cz-dt{animation:czItem .4s ease both}
+.cp-cz-detail.show .cp-cz-dd{animation:czItem .4s ease .05s both}
+.cp-cz-detail.show .cp-cz-pill{animation:czPop .4s ease both}
+.cp-cz-detail.show .cp-cz-pill:nth-child(1){animation-delay:.12s}
+.cp-cz-detail.show .cp-cz-pill:nth-child(2){animation-delay:.18s}
+.cp-cz-detail.show .cp-cz-pill:nth-child(3){animation-delay:.24s}
+.cp-cz-detail.show .cp-cz-pill:nth-child(4){animation-delay:.30s}
+.cp-cz-detail.show .cp-cz-cta{animation:czItem .4s ease .34s both}
+.cp-cz-card.active .cp-cz-ic{animation:czPop .45s ease}
+@media(prefers-reduced-motion:reduce){.cp-cz-card.active .cp-cz-ic,.cp-cz-detail.show .cp-cz-dt,.cp-cz-detail.show .cp-cz-dd,.cp-cz-detail.show .cp-cz-pill,.cp-cz-detail.show .cp-cz-cta{animation:none}}
+@keyframes czfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cp-cz-dt{font-family:var(--fd);font-size:26px;font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:-.01em}
+.cp-cz-dd{font-size:15px;color:rgba(255,255,255,.82);line-height:1.6;max-width:760px;margin-bottom:20px}
+.cp-cz-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.cp-cz-pill{font-size:13px;font-weight:600;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:22px;padding:8px 16px}
+.cp-cz-gallery{position:relative;height:344px;margin:10px 0 0}
+.cp-cz-ex{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.cp-cz-ex img{width:100%;height:100%;object-fit:cover;display:block}
+.cp-cz-ex.g1{width:66%;aspect-ratio:16/10;top:8%;left:17%;z-index:1}
+.cp-cz-ex.g2{width:42%;aspect-ratio:4/3;top:0;right:0;transform:rotate(2.5deg);z-index:2}
+.cp-cz-ex.g3{width:42%;aspect-ratio:4/3;bottom:0;left:0;transform:rotate(-2.5deg);z-index:2}
+@media(max-width:560px){.cp-cz-gallery{position:static;height:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}.cp-cz-ex{position:static;width:auto!important;aspect-ratio:4/3;transform:none!important}.cp-cz-ex.g1{grid-column:span 2}.cp-cz-ex:hover{transform:none!important}}
+.cp-cz-swatches{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
+.cp-cz-sw{width:46px;height:46px;border-radius:10px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.28);transition:transform .15s}
+.cp-cz-sw:hover{transform:translateY(-3px) scale(1.07)}
+.cp-cz-sw img{width:100%;height:100%;object-fit:cover;display:block}
+.cp-cz-detail.show .cp-cz-sw{animation:czPop .4s ease both}
+.cp-cz-cta{font-family:var(--fb);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#323F49;background:#fff;border:none;border-radius:8px;padding:13px 22px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;transition:background .2s,color .2s}
+.cp-cz-cta:hover{background:var(--accent);color:#fff}
+@media(max-width:900px){.cp-cz-layout{grid-template-columns:1fr;gap:16px}}
+@media(max-width:460px){.cp-cz-grid{gap:10px}.cp-cz-card{min-height:0;padding:16px}.cp-cz-detail{padding:22px 18px}.cp-cz-t{font-size:19px}}
+</style>
+<section class="cp-cz">
   <div class="container">
-    <div class="cp-head reveal" style="max-width:620px">
-      <span class="eyebrow-label">The colour range</span>
-      <h2 class="cp-h2">Combine <em>17 colours</em> to create your track.</h2>
-      <p class="cp-lead">Real turf, real colours. Pick one for a clean look or mix several into lanes — your track, your palette.</p>
+    <span class="eyebrow-label reveal">Total customization</span>
+    <h2 class="cp-cz-h2 reveal d1">Your track. Exactly how you imagined it.</h2>
+    <p class="cp-cz-lead reveal d1">Every Heroturfs track is made from scratch. Size, colours, lanes and your logo — woven into the turf, you decide every detail.</p>
+
+    <div class="cp-cz-layout reveal d1">
+      <div class="cp-cz-grid">
+      <div class="cp-cz-card" data-cz="logo" role="button" tabindex="0" aria-pressed="true" style="background-image:url('assets/cesped/design-ejercito.jpg')">
+        <span class="cp-cz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/></svg></span>
+        <div class="cp-cz-txt"><div class="cp-cz-t">Your logo</div><div class="cp-cz-s">Woven into the turf, not printed</div></div>
+      </div>
+      <div class="cp-cz-card" data-cz="lanes" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/lowfit/lowfit-lanes.jpg')">
+        <span class="cp-cz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="4" height="16" rx="1"/><rect x="10" y="4" width="4" height="16" rx="1"/><rect x="16" y="4" width="4" height="16" rx="1"/></svg></span>
+        <div class="cp-cz-txt"><div class="cp-cz-t">Lanes</div><div class="cp-cz-s">Number, width and layout</div></div>
+      </div>
+      <div class="cp-cz-card" data-cz="size" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/cesped/lowfit-xl.jpg')">
+        <span class="cp-cz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7 8v3M11 8v4M15 8v3"/></svg></span>
+        <div class="cp-cz-txt"><div class="cp-cz-t">Size</div><div class="cp-cz-s">Any dimension, to fit your space</div></div>
+      </div>
+      <div class="cp-cz-card" data-cz="text" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/cesped/design-wod.jpg')">
+        <span class="cp-cz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20l5.5-15h3L19 20M8.2 14h7.6"/></svg></span>
+        <div class="cp-cz-txt"><div class="cp-cz-t">Text</div><div class="cp-cz-s">Box name, slogan, START / FINISH</div></div>
+      </div>
+      <div class="cp-cz-card" data-cz="colours" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/cesped/factory-yarn.jpg')">
+        <span class="cp-cz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 2 2 0 0 0 0-4 2 2 0 0 1 0-4h2.5A4.5 4.5 0 0 0 19 8.5C19 5.4 15.9 3 12 3z"/><circle cx="7.5" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="7.4" r="1" fill="currentColor" stroke="none"/><circle cx="14.2" cy="7.6" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <div class="cp-cz-txt"><div class="cp-cz-t">Colours</div><div class="cp-cz-s">17 colours, mix them freely</div></div>
+      </div>
+      <div class="cp-cz-card" data-cz="markings" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/cesped/design-testa.jpg')">
+        <span class="cp-cz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <div class="cp-cz-txt"><div class="cp-cz-t">Markings</div><div class="cp-cz-s">Metre marks, zones, start lines</div></div>
+      </div>
+      </div>
+      <div class="cp-cz-panels">
+    <div class="cp-cz-detail show" data-cz="logo">
+      <div class="cp-cz-dt">Your logo, woven in</div>
+      <p class="cp-cz-dd">We weave your logo straight into the turf — it lasts as long as the track, never peels and never fades like a printed graphic. Crest, wordmark or a full lockup across the floor.</p>
+      <div class="cp-cz-gallery">
+        <span class="cp-cz-ex g1"><img src="assets/cesped/design-ejercito.jpg" alt="Woven naval crest" loading="lazy"></span>
+        <span class="cp-cz-ex g2"><img src="assets/cesped/design-training-club.jpg" alt="Woven club logo" loading="lazy"></span>
+        <span class="cp-cz-ex g3"><img src="assets/cesped/design-wod.jpg" alt="Full-width logo lockup" loading="lazy"></span>
+      </div>
+      <a class="cp-cz-cta" href="#quote">Request your design →</a>
+    </div>
+    <div class="cp-cz-detail" data-cz="colours">
+      <div class="cp-cz-dt">17 colours to play with</div>
+      <p class="cp-cz-dd">Pick one for a clean look or mix several into lanes and zones. Real woven colour, not paint — vivid, consistent and built to take a beating every day.</p>
+      <div class="cp-cz-swatches" id="czSwatches"></div>
+      <a class="cp-cz-cta" href="#quote">Choose your colours →</a>
+    </div>
+    <div class="cp-cz-detail" data-cz="lanes">
+      <div class="cp-cz-dt">The lanes you need</div>
+      <p class="cp-cz-dd">From 1 wide lane up to 8 narrow ones, each in a different colour if you like. Ideal for separating training zones, assigning lanes per team or building a design that simply looks the part.</p>
+      <div class="cp-cz-gallery">
+        <span class="cp-cz-ex g1"><img src="assets/lowfit/lowfit-lanes.jpg" alt="Numbered lanes" loading="lazy"></span>
+        <span class="cp-cz-ex g2"><img src="assets/compartidos/lowfit-marathon.jpg" alt="Multi-lane track" loading="lazy"></span>
+        <span class="cp-cz-ex g3"><img src="assets/compartidos/craft-bcn.jpg" alt="Lane layout" loading="lazy"></span>
+      </div>
+      <a class="cp-cz-cta" href="#quote">Design your lanes →</a>
+    </div>
+    <div class="cp-cz-detail" data-cz="size">
+      <div class="cp-cz-dt">Any size, made to measure</div>
+      <p class="cp-cz-dd">Manufactured to your exact dimensions and shipped seam-free — from a single sled lane to a full multi-lane gym floor. Tell us the space, we make it fit.</p>
+      <div class="cp-cz-gallery">
+        <span class="cp-cz-ex g1"><img src="assets/cesped/lowfit-xl.jpg" alt="Full multi-lane floor" loading="lazy"></span>
+        <span class="cp-cz-ex g2"><img src="assets/lowfit/lowfit-room.jpg" alt="Gym floor" loading="lazy"></span>
+        <span class="cp-cz-ex g3"><img src="assets/compartidos/acero-crossfit.jpg" alt="Training box floor" loading="lazy"></span>
+      </div>
+      <a class="cp-cz-cta" href="#quote">Tell us your space →</a>
+    </div>
+    <div class="cp-cz-detail" data-cz="text">
+      <div class="cp-cz-dt">Your words on the track</div>
+      <p class="cp-cz-dd">Box name, motto, lane numbers, START / FINISH — woven in exactly where you train. Your floor speaks your language from the first step.</p>
+      <div class="cp-cz-gallery">
+        <span class="cp-cz-ex g1"><img src="assets/cesped/design-wod.jpg" alt="Box name woven in" loading="lazy"></span>
+        <span class="cp-cz-ex g2"><img src="assets/cesped/design-training-club.jpg" alt="START lettering" loading="lazy"></span>
+        <span class="cp-cz-ex g3"><img src="assets/lowfit/lowfit-lanes.jpg" alt="Lane numbers" loading="lazy"></span>
+      </div>
+      <a class="cp-cz-cta" href="#quote">Add your text →</a>
+    </div>
+    <div class="cp-cz-detail" data-cz="markings">
+      <div class="cp-cz-dt">Markings that mean business</div>
+      <p class="cp-cz-dd">Metre marks, distance zones, start lines and reference points — placed precisely for how you coach and compete, not just for show.</p>
+      <div class="cp-cz-gallery">
+        <span class="cp-cz-ex g1"><img src="assets/cesped/design-testa.jpg" alt="Lane markings and numbers" loading="lazy"></span>
+        <span class="cp-cz-ex g2"><img src="assets/armada/armada-hero-1.jpg" alt="Start lines" loading="lazy"></span>
+        <span class="cp-cz-ex g3"><img src="assets/compartidos/lowfit-marathon.jpg" alt="Metre marks" loading="lazy"></span>
+      </div>
+      <a class="cp-cz-cta" href="#quote">Plan your markings →</a>
+    </div>
+      </div>
     </div>
   </div>
-  <div class="cp-mq reveal">
-    <div class="cp-mq-track" id="cpMqTrack"></div>
-  </div>
 </section>
+<script>
+(function(){
+  const sec = document.querySelector('.cp-cz');
+  if(!sec) return;
+  const cards = [...sec.querySelectorAll('.cp-cz-card')];
+  const panels = sec.querySelectorAll('.cp-cz-detail');
+  function select(key){
+    cards.forEach(c=>{const on=c.dataset.cz===key;c.classList.toggle('active',on);c.setAttribute('aria-pressed',on);});
+    panels.forEach(p=>p.classList.toggle('show', p.dataset.cz===key));
+  }
+  cards.forEach(c=>{
+    c.addEventListener('click', ()=>select(c.dataset.cz));
+    c.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault(); select(c.dataset.cz);} });
+  });
+  select('logo');
+})();
+
+// Colour swatches inside the Colours panel
+(function(){
+  const box = document.getElementById('czSwatches');
+  if(!box) return;
+  const base = 'https://heroturfs.es/cdn/shop/files/';
+  const C = [['Antiope Lime','Heroturf-Antiope-Lime-Vista-4'],['Aphrodite Beige','Heroturf-Aphrodite-Beig-Vista-4'],['Apollo Gold','Heroturf-Apollo-Gold-Vista-4'],['Aurora Orange','Heroturf-Aurora-Orange-Vista-4'],['Baldur Yellow','Heroturf-Baldur-Yellow-Vista-4'],['Freya Pink','Heroturf-Freya-Pink-Vista-4'],['Hermes White','Heroturf-Hermes-White-Vista-4'],['Heimdall Blue','Heroturf-Heimdall-Blue-Vista-4'],['Fenrir Anthracite','Heroturf-Fenrir-Anthracite-Vista-4'],['Loki Blue','Heroturf-Loki-Blue-Vista-4'],['Atlas Grey','Heroturf-Atlas-Grey-Vista-4'],['Mars Red','Heroturf-Mars-Red-Vista-4'],['Minerva Olive','Heroturf-Minerva-Olive-Vista-4'],['Perseus Green','Heroturf-Perseus-Green-Vista-4'],['Odin Purple','Heroturf-Odin-Purple-Vista-4'],['Hades Black','Heroturf-Hades-Black-Vista-4'],['Vulcan Terracotta','Heroturf-Vulcan-Terracota-Vista-4_1']];
+  box.innerHTML = C.map(c=>'<span class="cp-cz-sw" title="'+c[0]+'"><img src="'+base+c[1]+'.webp?width=120&height=120&crop=center" alt="'+c[0]+' turf" loading="lazy"></span>').join('');
+})();
+</script>
 
 <!-- ===== DESIGN + LOGO ===== -->
 <section class="cp-sec" style="background:#fff">
@@ -1021,26 +1176,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     f.innerHTML='<div style="grid-column:span 2;text-align:center;padding:30px 10px"><div style="font-family:var(--fd);font-size:26px;font-weight:900;color:#fff">Thanks! ✓</div><p style="color:rgba(255,255,255,.66);margin-top:10px;font-size:14px">We\'ll get back to you within 48 hours with colours, a layout and your quote.</p></div>';
   }
 
-  // ===== COLOUR MARQUEE (real turf swatches) =====
-  const CP_COLOURS = [
-    ['Antiope Lime','Heroturf-Antiope-Lime-Vista-4'],['Aphrodite Beige','Heroturf-Aphrodite-Beig-Vista-4'],
-    ['Apollo Gold','Heroturf-Apollo-Gold-Vista-4'],['Aurora Orange','Heroturf-Aurora-Orange-Vista-4'],
-    ['Baldur Yellow','Heroturf-Baldur-Yellow-Vista-4'],['Freya Pink','Heroturf-Freya-Pink-Vista-4'],
-    ['Hermes White','Heroturf-Hermes-White-Vista-4'],['Heimdall Blue','Heroturf-Heimdall-Blue-Vista-4'],
-    ['Fenrir Anthracite','Heroturf-Fenrir-Anthracite-Vista-4'],['Loki Blue','Heroturf-Loki-Blue-Vista-4'],
-    ['Atlas Grey','Heroturf-Atlas-Grey-Vista-4'],['Mars Red','Heroturf-Mars-Red-Vista-4'],
-    ['Minerva Olive','Heroturf-Minerva-Olive-Vista-4'],['Perseus Green','Heroturf-Perseus-Green-Vista-4'],
-    ['Odin Purple','Heroturf-Odin-Purple-Vista-4'],['Hades Black','Heroturf-Hades-Black-Vista-4'],
-    ['Vulcan Terracotta','Heroturf-Vulcan-Terracota-Vista-4_1']
-  ];
-  (function(){
-    const track = document.getElementById('cpMqTrack');
-    if(!track) return;
-    const base = 'https://heroturfs.es/cdn/shop/files/';
-    const chip = c => '<div class="cp-chip"><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub">Heroturfs colour</div></div>';
-    const html = CP_COLOURS.map(chip).join('');
-    track.innerHTML = html + html;
-  })();
 
   // Ticker: duplicate items until they cover 2x the viewport so the loop is seamless
   (function(){
