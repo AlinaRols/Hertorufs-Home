@@ -593,7 +593,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-colours{background:#eef0f3;padding:88px 0;overflow:hidden}
 .cp-mq{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
 .cp-mq-track{display:flex;gap:18px;width:max-content;animation:cpscroll 48s linear infinite}
-.cp-colours:hover .cp-mq-track{animation-play-state:paused}
+.cp-mq-track:has(.cp-chip:hover){animation-play-state:paused}
 @keyframes cpscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .cp-chip{flex:0 0 auto;width:184px}
 .cp-chip-img{width:184px;height:184px;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45)}
