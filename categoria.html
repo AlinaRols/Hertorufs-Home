@@ -726,6 +726,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-why-card p{font-size:14px;color:#5a6672;line-height:1.6}
 @media(max-width:900px){.cp-why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.cp-why-grid{grid-template-columns:repeat(2,1fr);gap:10px}.cp-why-card{padding:18px 15px}.cp-why-ico{width:40px;height:40px;border-radius:11px;margin-bottom:13px}.cp-why-ico svg{width:20px;height:20px}.cp-why-card h3{font-size:17px;margin-bottom:7px}.cp-why-card p{font-size:12.5px;line-height:1.5}}
+.cat-uses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cat-uses-grid>div:hover img{transform:scale(1.05)}
+@media(max-width:900px){.cat-uses-grid{grid-template-columns:repeat(2,1fr)}}
 .cat-seo{background:#fff;padding:74px 0;border-top:1px solid rgba(0,0,0,.06)}
 .cat-seo-inner{max-width:860px;margin:0 auto}
 .cat-seo-title{font-family:var(--fd);font-size:clamp(26px,3vw,38px);font-weight:900;color:#1a1f24;line-height:1.1;margin-bottom:22px}
@@ -887,6 +890,25 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   </div>
 </section>
 
+<!-- ===== CUSTOM CTA ===== -->
+<section class="cat-cta-wrap">
+  <div class="container">
+    <div class="cat-cta reveal">
+      <img class="cat-cta-img" src="assets/compartidos/craft-bcn.jpg" alt="" loading="lazy">
+      <div class="cat-cta-grad"></div>
+      <div class="cat-cta-text">
+        <span class="cat-cta-eyebrow" style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:2px;background:rgba(255,255,255,.85);display:inline-block"></span>Custom · No limits</span>
+        <h2 class="cat-cta-title">Can’t find <em>your colour?</em></h2>
+        <p class="cat-cta-sub">We manufacture your track in Spain with your corporate logo, colours and exact dimensions. We send a 3D render before production.</p>
+        <div class="cat-cta-btns">
+          <a href="cesped-personalizado-alina.html" class="btn-primary">Customise your track <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#" class="btn-ghost cat-cta-ghost">Request a quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== SEO / FAQ ===== -->
 <section class="faq-section-d" style="background:#fff">
   <div class="container">
@@ -927,21 +949,51 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   </div>
 </section>
 
-<!-- ===== CUSTOM CTA ===== -->
-<section class="cat-cta-wrap">
+<!-- ===== USE CASES ===== -->
+<section style="background:#fff;padding:40px 0 80px">
   <div class="container">
-    <div class="cat-cta reveal">
-      <img class="cat-cta-img" src="assets/compartidos/craft-bcn.jpg" alt="" loading="lazy">
-      <div class="cat-cta-grad"></div>
-      <div class="cat-cta-text">
-        <span class="cat-cta-eyebrow" style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:2px;background:rgba(255,255,255,.85);display:inline-block"></span>Custom · No limits</span>
-        <h2 class="cat-cta-title">Can’t find <em>your colour?</em></h2>
-        <p class="cat-cta-sub">We manufacture your track in Spain with your corporate logo, colours and exact dimensions. We send a 3D render before production.</p>
-        <div class="cat-cta-btns">
-          <a href="cesped-personalizado-alina.html" class="btn-primary">Customise your track <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          <a href="#" class="btn-ghost cat-cta-ghost">Request a quote</a>
+    <div class="reveal" style="margin-bottom:36px">
+      <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="width:24px;height:2px;background:var(--accent);display:inline-block"></span>What it’s for</span>
+      <h2 style="font-family:var(--fd);font-size:clamp(28px,4vw,54px);font-weight:900;color:#1a1f24;line-height:1">Made for <span style="color:var(--accent)">serious athletes</span></h2>
+    </div>
+    <div class="cat-uses-grid reveal">
+
+      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer">
+        <img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-negro-trineo-con-chico1.webp" alt="Sled drags and sled push on artificial turf for gyms" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+          <div style="font-family:var(--fd);font-size:16px;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">Sled tracks</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.55)">Sled push · Sled pull · Hybrid training</div>
         </div>
       </div>
+
+      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer">
+        <img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-verde-cuerda-chica1.webp" alt="Artificial turf for CrossFit and WOD in CrossFit boxes" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+          <div style="font-family:var(--fd);font-size:16px;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">CrossFit</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.55)">CrossFit boxes · Training tracks</div>
+        </div>
+      </div>
+
+      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer">
+        <img src="assets/home/terracota-funcional.webp" alt="Artificial turf for functional training and HIIT in sports centres" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+          <div style="font-family:var(--fd);font-size:16px;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">Gyms</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.55)">Sports centres · Wellness · EMS</div>
+        </div>
+      </div>
+
+      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer">
+        <img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-azul-chica-2.webp" alt="Artificial turf for physiotherapy and physical rehabilitation in clinics and physiotherapy centres" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%)"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+          <div style="font-family:var(--fd);font-size:16px;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">Physiotherapy</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.55)">Rehabilitation · Sports clinics · Reconditioning</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
