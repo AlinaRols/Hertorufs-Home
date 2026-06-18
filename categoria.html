@@ -692,6 +692,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cat-size:hover{border-color:#1a1f24;color:#1a1f24}
 .cat-size.active{background:#1a1f24;color:#fff;border-color:#1a1f24}
 .cat-size.disabled{display:none}
+.cat-size-custom{border-color:var(--accent);color:var(--accent)}
+.cat-size-custom:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.cat-size-custom.active{background:var(--accent);border-color:var(--accent);color:#fff}
 .cat-empty{display:none;text-align:center;padding:54px 0}
 .cat-empty.show{display:block}
 .cat-empty p{font-size:15px;color:#5a6672;margin-bottom:18px}
@@ -790,18 +793,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     <div class="cat-filterbar reveal">
       <button class="cat-filtoggle" type="button" onclick="toggleCatFilters(this)" aria-expanded="false">
         <span class="cat-filtoggle-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>Filters</span>
-        <span class="cat-filtoggle-r"><span class="js-count">9</span> products<svg class="cat-filtoggle-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="cat-filtoggle-r"><span class="js-count">9</span> <span class="js-count-label">products</span><svg class="cat-filtoggle-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
-      <div class="cat-frow">
-        <span class="cat-flabel">Finish</span>
-        <div class="cat-filters">
-          <button class="cat-filter active" data-filter="all">All</button>
-          <button class="cat-filter" data-filter="markings">With markings</button>
-          <button class="cat-filter" data-filter="single">Single colour</button>
-          <button class="cat-filter" data-filter="custom">Custom</button>
-        </div>
-        <div class="cat-count"><span id="catCount" class="js-count">9</span> products</div>
-      </div>
       <div class="cat-frow">
         <span class="cat-flabel">Size</span>
         <div class="cat-sizes">
@@ -814,7 +807,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <button class="cat-size" data-size="2.0x12.4">2.0 × 12.4 m</button>
           <button class="cat-size" data-size="2.0x15.0">2.0 × 15.0 m</button>
           <button class="cat-size" data-size="2.0x16.1">2.0 × 16.1 m</button>
+          <button class="cat-size cat-size-custom" data-size="custom">Custom size</button>
         </div>
+        <div class="cat-count"><span id="catCount" class="js-count">9</span> <span class="js-count-label">products</span></div>
       </div>
     </div>
     <div class="cat-grid" id="catGrid">
@@ -874,7 +869,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£258.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
         </div>
       </a>
-      <a href="https://heroturfs.vercel.app/products/custom-gym-turf" target="_blank" rel="noopener" class="prod-card reveal" data-cat="custom">
+      <a href="https://heroturfs.vercel.app/products/custom-gym-turf" target="_blank" rel="noopener" class="prod-card reveal" data-cat="custom" data-sizes="custom">
         <div class="prod-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Tigre-150x1000-Vista-1.webp?v=1752476884" alt="Hero4U" loading="lazy"><span class="prod-badge custom">Customisable</span></div>
         <div class="prod-body">
           <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Tigre-150x1000-Vista-1.webp?v=1752476884" alt="" loading="lazy"></span><div><div class="prod-name">Hero4U</div><div class="prod-meta">Your logo · Three colours</div></div></div>
@@ -1167,6 +1162,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         const show=okType&&okSize;c.style.display=show?'':'none';if(show)n++;
       });
       counts.forEach(c=>c.textContent=n);
+      document.querySelectorAll('.js-count-label').forEach(e=>e.textContent=n===1?'product':'products');
       if(empty)empty.classList.toggle('show',n===0);
     }
     document.querySelectorAll('.cat-filter').forEach(b=>b.addEventListener('click',function(){
