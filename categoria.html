@@ -674,6 +674,19 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cat-filter:hover{background:#e7e9ec;color:#1a1f24}
 .cat-filter.active{background:#14181c;color:#fff}
 .cat-count{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a96a0;flex-shrink:0;margin-left:auto}
+.cat-filtoggle{display:none}
+@media(max-width:720px){
+  .cat-filtoggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;background:#fff;border:1px solid #d6dbe0;border-radius:8px;padding:13px 16px;cursor:pointer;font-family:var(--fb)}
+  .cat-filtoggle-l{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:#1a1f24}
+  .cat-filtoggle-l svg{width:16px;height:16px}
+  .cat-filtoggle-r{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a96a0}
+  .cat-filtoggle-chev{width:15px;height:15px;transition:transform .25s}
+  .cat-filterbar.open .cat-filtoggle-chev{transform:rotate(180deg)}
+  .cat-frow{display:none}
+  .cat-filterbar.open .cat-frow{display:flex}
+  .cat-filterbar.open .cat-frow:first-of-type{margin-top:16px}
+  .cat-count{display:none}
+}
 .cat-sizes{display:flex;gap:8px;flex-wrap:wrap}
 .cat-size{font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:.04em;color:#5a6672;background:#fff;border:1px solid #d6dbe0;padding:8px 14px;border-radius:40px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .cat-size:hover{border-color:#1a1f24;color:#1a1f24}
@@ -781,6 +794,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       <p class="cat-head-sub">Every track, in every colour. Filter by tone family and choose the finish that best fits your box identity.</p>
     </div>
     <div class="cat-filterbar reveal">
+      <button class="cat-filtoggle" type="button" onclick="toggleCatFilters(this)" aria-expanded="false">
+        <span class="cat-filtoggle-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>Filters</span>
+        <span class="cat-filtoggle-r"><span class="js-count">9</span> products<svg class="cat-filtoggle-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
       <div class="cat-frow">
         <span class="cat-flabel">Finish</span>
         <div class="cat-filters">
@@ -789,7 +806,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <button class="cat-filter" data-filter="single">Single colour</button>
           <button class="cat-filter" data-filter="custom">Custom</button>
         </div>
-        <div class="cat-count"><span id="catCount">9</span> products</div>
+        <div class="cat-count"><span id="catCount" class="js-count">9</span> products</div>
       </div>
       <div class="cat-frow">
         <span class="cat-flabel">Size</span>
@@ -1118,7 +1135,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
   // category filters (type + size, combined) + empty state
   (function(){
-    const grid=document.getElementById('catGrid');const count=document.getElementById('catCount');const empty=document.getElementById('catEmpty');
+    const grid=document.getElementById('catGrid');const counts=[...document.querySelectorAll('.js-count')];const empty=document.getElementById('catEmpty');
     if(!grid)return;
     let type='all',size='all';
     const sizeBtns=[...document.querySelectorAll('.cat-size')];
@@ -1155,7 +1172,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         const okSize=size==='all'||sz.split('|').indexOf(size)>-1;
         const show=okType&&okSize;c.style.display=show?'':'none';if(show)n++;
       });
-      if(count)count.textContent=n;
+      counts.forEach(c=>c.textContent=n);
       if(empty)empty.classList.toggle('show',n===0);
     }
     document.querySelectorAll('.cat-filter').forEach(b=>b.addEventListener('click',function(){
@@ -1172,6 +1189,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       document.querySelectorAll('.cat-filter').forEach(x=>x.classList.toggle('active',x.getAttribute('data-filter')==='all'));
       sizeBtns.forEach(x=>x.classList.toggle('active',x.getAttribute('data-size')==='all'));
       syncSizes();apply();
+    };
+    window.toggleCatFilters=function(btn){
+      const bar=btn.closest('.cat-filterbar');
+      const open=bar.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
     };
     syncSizes();
   })();
