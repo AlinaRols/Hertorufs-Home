@@ -707,6 +707,29 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cat-clear{font-family:var(--fb);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1a1f24;background:none;border:1px solid rgba(0,0,0,.2);padding:11px 22px;border-radius:6px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .cat-clear:hover{background:#1a1f24;color:#fff;border-color:#1a1f24}
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cat-viewswitch{display:none}
+@media(max-width:720px){
+  .cat-viewswitch{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin:16px 0 18px}
+  .cat-viewswitch .vsw-l{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a96a0;margin-right:4px}
+  .cat-vbtn{width:36px;height:36px;border:1px solid #d6dbe0;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#9aa3ab;padding:0;transition:background .18s,color .18s,border-color .18s}
+  .cat-vbtn svg{width:17px;height:17px}
+  .cat-vbtn.active{background:#14181c;border-color:#14181c;color:#fff}
+  .cat-grid.gv-1{grid-template-columns:1fr;gap:18px}
+  .cat-grid.gv-2{grid-template-columns:1fr 1fr;gap:12px}
+  .cat-grid.gv-4{grid-template-columns:repeat(4,1fr);gap:7px}
+  .cat-grid.gv-2 .prod-body{padding:13px;gap:11px}
+  .cat-grid.gv-2 .prod-thumb{display:none}
+  .cat-grid.gv-2 .prod-name{font-size:13px}
+  .cat-grid.gv-2 .prod-meta{font-size:9px}
+  .cat-grid.gv-2 .prod-price{font-size:15px}
+  .cat-grid.gv-2 .prod-arrow{width:30px;height:30px}
+  .cat-grid.gv-4 .prod-body{padding:7px;gap:5px}
+  .cat-grid.gv-4 .prod-thumb,.cat-grid.gv-4 .prod-meta,.cat-grid.gv-4 .prod-arrow,.cat-grid.gv-4 .ph-nav,.cat-grid.gv-4 .ph-dots,.cat-grid.gv-4 .prod-badge{display:none}
+  .cat-grid.gv-4 .prod-name{font-size:10px;line-height:1.15}
+  .cat-grid.gv-4 .prod-price{font-size:12px}
+  .cat-grid.gv-4 .prod-price-l{display:none}
+  .cat-grid.gv-4 .prod-foot{margin-top:4px}
+}
 .prod-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:var(--r);overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .prod-card:hover{transform:translateY(-5px) scale(1.015);box-shadow:0 20px 46px rgba(0,0,0,.15)}
 .prod-img{position:relative;aspect-ratio:1/1;background:#eceef0;overflow:hidden}
@@ -828,7 +851,13 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <div class="cat-count"><span id="catCount" class="js-count">9</span> <span class="js-count-label">products</span></div>
       </div>
     </div>
-    <div class="cat-grid" id="catGrid">
+    <div class="cat-viewswitch" role="group" aria-label="Gallery view">
+      <span class="vsw-l">View</span>
+      <button class="cat-vbtn active" type="button" data-view="1" aria-label="1 per row"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="14" height="16" rx="2"/></svg></button>
+      <button class="cat-vbtn" type="button" data-view="2" aria-label="2 per row"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="4" width="7.5" height="16" rx="1.6"/><rect x="13" y="4" width="7.5" height="16" rx="1.6"/></svg></button>
+      <button class="cat-vbtn" type="button" data-view="4" aria-label="4 per row"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2.5" y="5" width="3.6" height="14" rx="1"/><rect x="7.3" y="5" width="3.6" height="14" rx="1"/><rect x="13.1" y="5" width="3.6" height="14" rx="1"/><rect x="17.9" y="5" width="3.6" height="14" rx="1"/></svg></button>
+    </div>
+    <div class="cat-grid gv-1" id="catGrid">
       <a href="https://heroturfs.vercel.app/products/black-sled-track-valhalla-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x5.3|1.0x8.0|1.0x10.0|2.0x10.0|2.0x12.4">
         <div class="prod-img">
           <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?v=1753602264" alt="Valhalla One" loading="lazy">
@@ -1307,6 +1336,19 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       card.addEventListener('mouseenter',()=>{ if(i===0) go(1); });
       card.addEventListener('mouseleave',()=>go(0));
     });
+  })();
+
+  // Mobile gallery view switcher (1 / 2 / 4 per row)
+  (function(){
+    const grid = document.getElementById('catGrid');
+    const btns = [...document.querySelectorAll('.cat-vbtn')];
+    if(!grid || !btns.length) return;
+    btns.forEach(b => b.addEventListener('click', () => {
+      const v = b.dataset.view;
+      grid.classList.remove('gv-1','gv-2','gv-4');
+      grid.classList.add('gv-'+v);
+      btns.forEach(x => x.classList.toggle('active', x === b));
+    }));
   })();
 </script>
 <script type="application/ld+json">
