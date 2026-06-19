@@ -761,6 +761,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-lb-fig figcaption{text-align:center;display:flex;flex-direction:column;gap:5px}
 .cp-lb-name{font-family:var(--fd);font-size:30px;font-weight:900;color:#fff;letter-spacing:.02em}
 .cp-lb-sub{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.55)}
+.cp-chip-sub.is-standard,.cp-lb-sub.is-standard{color:#3b7fc4;font-weight:700}
+.cp-chip-sub.is-custom,.cp-lb-sub.is-custom{color:var(--accent);font-weight:700}
 .cp-lb-count{font-size:12px;color:rgba(255,255,255,.42);margin-top:4px}
 .cp-lb-nav{flex:0 0 auto;width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,transform .15s}
 .cp-lb-nav:hover{background:var(--accent);border-color:var(--accent);transform:scale(1.07)}
@@ -802,7 +804,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   const C = [['Antiope Lime','Heroturf-Antiope-Lime-Vista-4'],['Aphrodite Beige','Heroturf-Aphrodite-Beig-Vista-4'],['Apollo Gold','Heroturf-Apollo-Gold-Vista-4'],['Aurora Orange','Heroturf-Aurora-Orange-Vista-4'],['Baldur Yellow','Heroturf-Baldur-Yellow-Vista-4'],['Freya Pink','Heroturf-Freya-Pink-Vista-4'],['Hermes White','Heroturf-Hermes-White-Vista-4'],['Heimdall Blue','Heroturf-Heimdall-Blue-Vista-4'],['Fenrir Anthracite','Heroturf-Fenrir-Anthracite-Vista-4'],['Loki Blue','Heroturf-Loki-Blue-Vista-4'],['Atlas Grey','Heroturf-Atlas-Grey-Vista-4'],['Mars Red','Heroturf-Mars-Red-Vista-4'],['Minerva Olive','Heroturf-Minerva-Olive-Vista-4'],['Perseus Green','Heroturf-Perseus-Green-Vista-4'],['Odin Purple','Heroturf-Odin-Purple-Vista-4'],['Hades Black','Heroturf-Hades-Black-Vista-4'],['Vulcan Terracotta','Heroturf-Vulcan-Terracota-Vista-4_1']];
   const STD = new Set(['Hermes White','Heimdall Blue','Minerva Olive','Hades Black','Vulcan Terracotta']);
   const subLabel = n => STD.has(n) ? 'Standard colour' : 'Full custom colour';
-  track.innerHTML = C.map((c,i)=>'<div class="cp-chip" role="option" data-i="'+i+'" tabindex="-1" aria-label="'+c[0]+'"><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub">'+subLabel(c[0])+'</div></div>').join('');
+  const subClass = n => STD.has(n) ? 'is-standard' : 'is-custom';
+  track.innerHTML = C.map((c,i)=>'<div class="cp-chip" role="option" data-i="'+i+'" tabindex="-1" aria-label="'+c[0]+'"><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub '+subClass(c[0])+'">'+subLabel(c[0])+'</div></div>').join('');
   const chips = [...track.children];
   // strip scroll arrows
   const vp = document.getElementById('crViewport');
@@ -826,6 +829,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     lbImg.alt=C[cur][0]+' turf';
     lbName.textContent=C[cur][0];
     lbSub.textContent=subLabel(C[cur][0]);
+    lbSub.className='cp-lb-sub '+subClass(C[cur][0]);
     lbCount.textContent=(cur+1)+' / '+C.length;
   }
   function open(i){ preloadAll(); show(i); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
