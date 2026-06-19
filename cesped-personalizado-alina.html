@@ -789,7 +789,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     <button class="cp-lb-nav" id="lbPrev" type="button" aria-label="Previous colour">&#10094;</button>
     <figure class="cp-lb-fig">
       <img id="lbImg" src="" alt="">
-      <figcaption><span class="cp-lb-name" id="lbName"></span><span class="cp-lb-sub">Heroturfs colour</span><span class="cp-lb-count" id="lbCount"></span></figcaption>
+      <figcaption><span class="cp-lb-name" id="lbName"></span><span class="cp-lb-sub" id="lbSub">Heroturfs colour</span><span class="cp-lb-count" id="lbCount"></span></figcaption>
     </figure>
     <button class="cp-lb-nav" id="lbNext" type="button" aria-label="Next colour">&#10095;</button>
   </div>
@@ -800,7 +800,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   if(!track) return;
   const base = 'https://heroturfs.es/cdn/shop/files/';
   const C = [['Antiope Lime','Heroturf-Antiope-Lime-Vista-4'],['Aphrodite Beige','Heroturf-Aphrodite-Beig-Vista-4'],['Apollo Gold','Heroturf-Apollo-Gold-Vista-4'],['Aurora Orange','Heroturf-Aurora-Orange-Vista-4'],['Baldur Yellow','Heroturf-Baldur-Yellow-Vista-4'],['Freya Pink','Heroturf-Freya-Pink-Vista-4'],['Hermes White','Heroturf-Hermes-White-Vista-4'],['Heimdall Blue','Heroturf-Heimdall-Blue-Vista-4'],['Fenrir Anthracite','Heroturf-Fenrir-Anthracite-Vista-4'],['Loki Blue','Heroturf-Loki-Blue-Vista-4'],['Atlas Grey','Heroturf-Atlas-Grey-Vista-4'],['Mars Red','Heroturf-Mars-Red-Vista-4'],['Minerva Olive','Heroturf-Minerva-Olive-Vista-4'],['Perseus Green','Heroturf-Perseus-Green-Vista-4'],['Odin Purple','Heroturf-Odin-Purple-Vista-4'],['Hades Black','Heroturf-Hades-Black-Vista-4'],['Vulcan Terracotta','Heroturf-Vulcan-Terracota-Vista-4_1']];
-  track.innerHTML = C.map((c,i)=>'<div class="cp-chip" role="option" data-i="'+i+'" tabindex="-1" aria-label="'+c[0]+'"><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub">Heroturfs colour</div></div>').join('');
+  const STD = new Set(['Hermes White','Heimdall Blue','Minerva Olive','Hades Black','Vulcan Terracotta']);
+  const subLabel = n => STD.has(n) ? 'Standard colour' : 'Full custom colour';
+  track.innerHTML = C.map((c,i)=>'<div class="cp-chip" role="option" data-i="'+i+'" tabindex="-1" aria-label="'+c[0]+'"><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub">'+subLabel(c[0])+'</div></div>').join('');
   const chips = [...track.children];
   // strip scroll arrows
   const vp = document.getElementById('crViewport');
@@ -812,7 +814,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     else if(e.key==='ArrowLeft'){e.preventDefault();vp.scrollBy({left:-200,behavior:'smooth'});}
   });
   // lightbox gallery
-  const lb=document.getElementById('cpLb'), lbImg=document.getElementById('lbImg'), lbName=document.getElementById('lbName'), lbCount=document.getElementById('lbCount');
+  const lb=document.getElementById('cpLb'), lbImg=document.getElementById('lbImg'), lbName=document.getElementById('lbName'), lbCount=document.getElementById('lbCount'), lbSub=document.getElementById('lbSub');
   const lbSrc = c => base+c[1]+'.webp?width=600&height=600&crop=center';
   // preload all full-size colours once so switching is instant
   let preloaded=false;
@@ -823,6 +825,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     lbImg.src=lbSrc(C[cur]);
     lbImg.alt=C[cur][0]+' turf';
     lbName.textContent=C[cur][0];
+    lbSub.textContent=subLabel(C[cur][0]);
     lbCount.textContent=(cur+1)+' / '+C.length;
   }
   function open(i){ preloadAll(); show(i); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
