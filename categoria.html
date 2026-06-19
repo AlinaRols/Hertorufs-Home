@@ -712,6 +712,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .prod-img{position:relative;aspect-ratio:1/1;background:#eceef0;overflow:hidden}
 .prod-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .prod-card:hover .prod-img img{transform:scale(1.05)}
+.prod-img-hover{position:absolute;inset:0;opacity:0;transition:opacity .45s ease,transform .5s cubic-bezier(.22,1,.36,1)}
+@media(hover:hover){.prod-card:hover .prod-img-hover{opacity:1}}
 .prod-badge{position:absolute;top:12px;left:12px;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--accent);padding:5px 10px;border-radius:30px}
 .prod-badge.soldout{background:#5a6672}
 .prod-badge.custom{background:#FF6A00}
@@ -820,7 +822,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     </div>
     <div class="cat-grid" id="catGrid">
       <a href="https://heroturfs.vercel.app/products/black-sled-track-valhalla-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x5.3|1.0x8.0|1.0x10.0|2.0x10.0|2.0x12.4">
-        <div class="prod-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?v=1753602264" alt="Valhalla One" loading="lazy"><span class="prod-badge">Best seller</span></div>
+        <div class="prod-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?v=1753602264" alt="Valhalla One" loading="lazy"><img class="prod-img-hover" src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-negro-trineo-con-chico1.webp" alt="Valhalla One gym sled track in use — athlete pushing a sled" loading="lazy"><span class="prod-badge">Best seller</span></div>
         <div class="prod-body">
           <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?v=1753602264" alt="" loading="lazy"></span><div><div class="prod-name">Valhalla One</div><div class="prod-meta">Black · With markings</div></div></div>
           <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£372.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
