@@ -767,7 +767,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-lb-close{position:absolute;top:22px;right:24px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:26px;line-height:1;cursor:pointer;transition:background .2s}
 .cp-lb-close:hover{background:var(--accent)}
 @media(max-width:560px){.cp-lb-nav{width:44px;height:44px}.cp-lb-name{font-size:24px}.cp-lb{gap:8px;padding:14px}}
-@media(max-width:560px){.cp-chip,.cp-chip-img{width:128px}.cp-chip-img{height:128px}.cp-cr-nav{width:42px;height:42px;margin-top:44px}}
+@media(max-width:560px){.cp-cr{gap:0}.cp-cr-nav{display:none}.cp-cr-track{gap:12px;padding:14px 4px 4px}.cp-chip,.cp-chip-img{width:84px}.cp-chip-img{height:84px;border-radius:12px}.cp-chip-name{font-size:13px;margin-top:9px}.cp-chip-sub{font-size:9px}}
 </style>
 <section class="cp-colours" id="colours">
   <div class="container">
@@ -890,12 +890,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-fac-flag img{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
 .cp-fac-flag span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
 .cp-fac-map{margin-top:32px;display:flex;align-items:center;gap:26px;background:#fff;border:1px solid #e6e8ec;border-radius:14px;padding:22px 26px}
-@media(min-width:961px){.cp-fac-copy{display:flex;flex-direction:column;align-self:stretch}.cp-fac-map{flex:1 1 auto}}
+@media(min-width:961px){.cp-fac-copy{display:flex;flex-direction:column;align-self:stretch}.cp-fac-details{flex:1 1 auto;display:flex;flex-direction:column}.cp-fac-map{flex:1 1 auto}}
 .cp-fac-map img{flex-shrink:0;width:310px;height:auto;display:block}
 .cp-fac-map-cap b{display:block;font-family:var(--fd);font-size:22px;font-weight:900;color:#14181c;line-height:1.08;letter-spacing:-.01em}
 .cp-fac-map-cap b em{font-style:normal;color:var(--accent)}
 .cp-fac-map-cap span{display:block;font-size:13px;color:#5a646c;margin-top:9px}
-@media(max-width:960px){ .cp-fac-grid{grid-template-columns:1fr;gap:36px} .cp-fac-imgs .span2{height:150px} }
+@media(max-width:960px){ .cp-fac-grid{display:flex;flex-direction:column;gap:30px} .cp-fac-copy{display:contents} .cp-fac-intro{order:1} .cp-fac-imgs{order:2} .cp-fac-details{order:3} .cp-fac-facts{margin-top:0} }
 @media(max-width:560px){ .cp-fac-map{flex-direction:column;align-items:flex-start;gap:16px} }
 @media(max-width:768px){ .cp-fac{padding:64px 0 0} }
 </style>
@@ -908,20 +908,24 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <img src="assets/cesped/factory-4.jpg" alt="Custom logo track in production">
         <img src="assets/cesped/factory-yarn.jpg" alt="Yarn at the Heroturfs factory">
       </div>
-      <div class="cp-fac-copy reveal d1">
-        <div class="cp-fac-flag"><img src="https://flagcdn.com/es.svg" alt="Spain"><span>Made in Spain</span></div>
-        <h2 class="cp-h2">Made in our factory in <em>Alicante, Spain.</em></h2>
-        <p class="cp-lead">We don't resell — we manufacture. Every track is woven and finished in our own factory in Crevillent, Alicante. That's how we control quality, customisation and lead times — from the first thread to the final roll that ships to your box.</p>
-        <div class="cp-fac-facts">
-          <div><b>100%</b><span>Made in Spain</span></div>
-          <div><b>86,000</b><span>Stitches / m²</span></div>
-          <div><b>Direct</b><span>From our factory</span></div>
+      <div class="cp-fac-copy">
+        <div class="cp-fac-intro reveal d1">
+          <div class="cp-fac-flag"><img src="https://flagcdn.com/es.svg" alt="Spain"><span>Made in Spain</span></div>
+          <h2 class="cp-h2">Made in our factory in <em>Alicante, Spain.</em></h2>
+          <p class="cp-lead">We don't resell — we manufacture. Every track is woven and finished in our own factory in Crevillent, Alicante. That's how we control quality, customisation and lead times — from the first thread to the final roll that ships to your box.</p>
         </div>
-        <div class="cp-fac-map reveal d2">
-          <img src="assets/cesped/europe-map.svg" alt="Mapa de Europa: envíos desde nuestra fábrica en Alicante" loading="lazy">
-          <div class="cp-fac-map-cap">
-            <b>From one factory<br>to <em>all of Europe.</em></b>
-            <span>Woven in Alicante · delivered Europe-wide.</span>
+        <div class="cp-fac-details reveal d2">
+          <div class="cp-fac-facts">
+            <div><b>100%</b><span>Made in Spain</span></div>
+            <div><b>86,000</b><span>Stitches / m²</span></div>
+            <div><b>Direct</b><span>From our factory</span></div>
+          </div>
+          <div class="cp-fac-map">
+            <img src="assets/cesped/europe-map.svg" alt="Mapa de Europa: envíos desde nuestra fábrica en Alicante" loading="lazy">
+            <div class="cp-fac-map-cap">
+              <b>From one factory<br>to <em>all of Europe.</em></b>
+              <span>Woven in Alicante · delivered Europe-wide.</span>
+            </div>
           </div>
         </div>
       </div>
