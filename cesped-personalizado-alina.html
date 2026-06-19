@@ -731,179 +731,115 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   </div>
 </section>
 
-<!-- ===== TOTAL CUSTOMIZATION (clickable cards + detail) ===== -->
+<!-- ===== 17 COLOURS — CAROUSEL ===== -->
 <style>
-.cp-cz{background:#f5f6f7;padding:88px 0}
-.cp-cz .eyebrow-label{color:var(--accent)}
-.cp-cz-h2{font-family:var(--fd);font-size:clamp(34px,4.4vw,56px);font-weight:900;color:#14181c;line-height:.98;letter-spacing:-.01em;margin-bottom:14px}
-.cp-cz-lead{font-size:16px;color:#5a646c;line-height:1.6;max-width:560px;margin-bottom:34px}
-.cp-cz-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
-.cp-cz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-content:start}
-.cp-cz-panels{display:flex}
-.cp-cz-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:188px;background:#1a1c20 center/cover no-repeat;border:none;border-radius:14px;padding:22px 22px 24px;cursor:pointer;transition:box-shadow .22s,transform .22s;outline:none}
-.cp-cz-card::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 48%,rgba(0,0,0,.22) 100%);transition:background .25s;z-index:0}
-.cp-cz-card>*{position:relative;z-index:1}
-.cp-cz-card:hover{box-shadow:0 16px 34px rgba(20,24,28,.22);transform:translateY(-3px)}
-.cp-cz-card:hover::before{background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.38) 55%,rgba(0,0,0,.1) 100%)}
-.cp-cz-card:focus-visible{box-shadow:0 0 0 3px rgba(227,51,43,.55)}
-.cp-cz-card.active{box-shadow:0 16px 34px rgba(0,0,0,.34)}
-.cp-cz-card.active::before{background:linear-gradient(to top,rgba(11,13,15,.94) 0%,rgba(11,13,15,.8) 55%,rgba(11,13,15,.64) 100%)}
-.cp-cz-card.active:hover::before{background:linear-gradient(to top,rgba(11,13,15,.92) 0%,rgba(11,13,15,.76) 55%,rgba(11,13,15,.58) 100%)}
-.cp-cz-ic{width:30px;height:30px;color:#fff}
-.cp-cz-ic svg{width:100%;height:100%;display:block}
-.cp-cz-txt{margin-top:auto}
-.cp-cz-t{font-family:var(--fd);font-size:clamp(26px,2.5vw,33px);font-weight:900;color:#fff;line-height:1;margin-bottom:8px;letter-spacing:.01em;text-shadow:0 1px 12px rgba(0,0,0,.4)}
-.cp-cz-s{font-size:13px;color:rgba(255,255,255,.85);line-height:1.4;text-shadow:0 1px 8px rgba(0,0,0,.35)}
-.cp-cz-detail{display:none;width:100%;background:#323F49;border:1px solid #323F49;border-radius:16px;padding:32px 34px;box-shadow:0 18px 40px rgba(50,63,73,.28)}
-.cp-cz-detail.show{display:flex;flex-direction:column;animation:czfade .3s ease}
-.cp-cz-detail .cp-cz-cta{margin-top:auto;align-self:flex-start}
-@keyframes czItem{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes czPop{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:none}}
-.cp-cz-detail.show .cp-cz-dt{animation:czItem .4s ease both}
-.cp-cz-detail.show .cp-cz-dd{animation:czItem .4s ease .05s both}
-.cp-cz-detail.show .cp-cz-pill{animation:czPop .4s ease both}
-.cp-cz-detail.show .cp-cz-pill:nth-child(1){animation-delay:.12s}
-.cp-cz-detail.show .cp-cz-pill:nth-child(2){animation-delay:.18s}
-.cp-cz-detail.show .cp-cz-pill:nth-child(3){animation-delay:.24s}
-.cp-cz-detail.show .cp-cz-pill:nth-child(4){animation-delay:.30s}
-.cp-cz-detail.show .cp-cz-cta{animation:czItem .4s ease .34s both}
-.cp-cz-card.active .cp-cz-ic{animation:czPop .45s ease}
-@media(prefers-reduced-motion:reduce){.cp-cz-card.active .cp-cz-ic,.cp-cz-detail.show .cp-cz-dt,.cp-cz-detail.show .cp-cz-dd,.cp-cz-detail.show .cp-cz-pill,.cp-cz-detail.show .cp-cz-cta{animation:none}}
-@keyframes czfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.cp-cz-dt{font-family:var(--fd);font-size:26px;font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:-.01em}
-.cp-cz-dd{font-size:15px;color:rgba(255,255,255,.82);line-height:1.6;max-width:760px;margin-bottom:20px}
-.cp-cz-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
-.cp-cz-pill{font-size:13px;font-weight:600;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:22px;padding:8px 16px}
-.cp-cz-gallery{position:relative;height:344px;margin:10px 0 0}
-.cp-cz-ex{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.45)}
-.cp-cz-ex img{width:100%;height:100%;object-fit:cover;display:block}
-.cp-cz-ex.g1{width:66%;aspect-ratio:16/10;top:8%;left:17%;z-index:1}
-.cp-cz-ex.g2{width:42%;aspect-ratio:4/3;top:0;right:0;transform:rotate(2.5deg);z-index:2}
-.cp-cz-ex.g3{width:42%;aspect-ratio:4/3;bottom:0;left:0;transform:rotate(-2.5deg);z-index:2}
-@media(max-width:560px){.cp-cz-gallery{position:static;height:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}.cp-cz-ex{position:static;width:auto!important;aspect-ratio:4/3;transform:none!important}.cp-cz-ex.g1{grid-column:span 2}.cp-cz-ex:hover{transform:none!important}}
-.cp-cz-swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:11px;margin:6px 0 0}
-.cp-cz-sw{aspect-ratio:1;border-radius:12px;overflow:hidden;box-shadow:0 5px 14px rgba(0,0,0,.32);transition:transform .15s}
-.cp-cz-sw:hover{transform:translateY(-3px) scale(1.06)}
-@media(max-width:560px){.cp-cz-swatches{grid-template-columns:repeat(5,1fr);gap:8px}}
-.cp-cz-sw img{width:100%;height:100%;object-fit:cover;display:block}
-.cp-cz-detail.show .cp-cz-sw{animation:czPop .4s ease both}
-.cp-cz-cta{font-family:var(--fb);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#323F49;background:#fff;border:none;border-radius:8px;padding:13px 22px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;transition:background .2s,color .2s}
-.cp-cz-cta:hover{background:var(--accent);color:#fff}
-@media(max-width:900px){.cp-cz-layout{grid-template-columns:1fr;gap:16px}}
-@media(max-width:460px){.cp-cz-grid{gap:10px}.cp-cz-card{min-height:0;padding:16px}.cp-cz-detail{padding:22px 18px}.cp-cz-t{font-size:19px}}
+.cp-colours{background:#eef0f3;padding:88px 0;overflow:hidden}
+.cp-colours .cp-h2{color:#14181c}
+.cp-colours .eyebrow-label{color:var(--accent)}
+.cp-cr{position:relative;display:flex;align-items:flex-start;gap:14px;margin-top:30px}
+.cp-cr-viewport{flex:1;overflow-x:auto;scrollbar-width:none;scroll-behavior:smooth;-webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.cp-cr-viewport::-webkit-scrollbar{display:none}
+.cp-cr-viewport:focus-visible{outline:none}
+.cp-cr-track{display:flex;gap:18px;padding:16px 8px 8px;width:max-content}
+.cp-chip{flex:0 0 auto;width:158px;cursor:pointer;outline:none;transition:transform .25s}
+.cp-chip-img{width:158px;height:158px;border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.16);outline:0 solid var(--accent);outline-offset:3px;transition:box-shadow .25s,outline-width .15s}
+.cp-chip-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.cp-chip-name{font-family:var(--fd);font-weight:800;font-size:16px;color:#14181c;margin-top:13px;letter-spacing:.02em}
+.cp-chip-sub{font-size:10px;color:#8a949c;margin-top:3px;text-transform:uppercase;letter-spacing:.12em}
+.cp-chip.active{transform:scale(1.07)}
+.cp-chip.active .cp-chip-img{box-shadow:0 18px 40px rgba(0,0,0,.3);outline-width:3px}
+.cp-chip.active .cp-chip-img img{transform:scale(1.04)}
+.cp-chip.active .cp-chip-name{color:var(--accent)}
+.cp-cr-nav{flex:0 0 auto;width:48px;height:48px;margin-top:55px;border-radius:50%;border:1px solid #d5dae0;background:#fff;color:#14181c;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.1);transition:background .2s,color .2s,border-color .2s,transform .15s}
+.cp-cr-nav:hover{background:var(--accent);color:#fff;border-color:var(--accent);transform:scale(1.07)}
+.cp-cr-nav:active{transform:scale(.96)}
+.cp-chip-img{cursor:zoom-in}
+.cp-lb{position:fixed;inset:0;z-index:9999;background:rgba(10,12,14,.93);display:none;align-items:center;justify-content:center;gap:18px;padding:24px}
+.cp-lb.open{display:flex;animation:czfade .25s ease}
+.cp-lb-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:16px}
+.cp-lb-fig img{width:min(78vw,460px);height:min(78vw,460px);max-height:60vh;object-fit:cover;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.cp-lb-fig figcaption{text-align:center;display:flex;flex-direction:column;gap:5px}
+.cp-lb-name{font-family:var(--fd);font-size:30px;font-weight:900;color:#fff;letter-spacing:.02em}
+.cp-lb-sub{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.55)}
+.cp-lb-count{font-size:12px;color:rgba(255,255,255,.42);margin-top:4px}
+.cp-lb-nav{flex:0 0 auto;width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,transform .15s}
+.cp-lb-nav:hover{background:var(--accent);border-color:var(--accent);transform:scale(1.07)}
+.cp-lb-close{position:absolute;top:22px;right:24px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:26px;line-height:1;cursor:pointer;transition:background .2s}
+.cp-lb-close:hover{background:var(--accent)}
+@media(max-width:560px){.cp-lb-nav{width:44px;height:44px}.cp-lb-name{font-size:24px}.cp-lb{gap:8px;padding:14px}}
+@media(max-width:560px){.cp-chip,.cp-chip-img{width:128px}.cp-chip-img{height:128px}.cp-cr-nav{width:42px;height:42px;margin-top:44px}}
 </style>
-<section class="cp-cz">
+<section class="cp-colours" id="colours">
   <div class="container">
-    <span class="eyebrow-label reveal">Total customization</span>
-    <h2 class="cp-cz-h2 reveal d1">Your track. Exactly how you imagined it.</h2>
-    <p class="cp-cz-lead reveal d1">Every Heroturfs track is made from scratch. Size, colours, lanes and your logo — woven into the turf, you decide every detail.</p>
-
-    <div class="cp-cz-layout reveal d1">
-      <div class="cp-cz-grid">
-      <div class="cp-cz-card" data-cz="logo" role="button" tabindex="0" aria-pressed="true" style="background-image:url('assets/cesped/design-ejercito.jpg')">
-        <div class="cp-cz-txt"><div class="cp-cz-t">Your logo</div><div class="cp-cz-s">Woven into the turf, not printed</div></div>
-      </div>
-      <div class="cp-cz-card" data-cz="lanes" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/lowfit/lowfit-lanes.jpg')">
-        <div class="cp-cz-txt"><div class="cp-cz-t">Lanes</div><div class="cp-cz-s">Number, width and layout</div></div>
-      </div>
-      <div class="cp-cz-card" data-cz="size" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/cesped/lowfit-xl.jpg')">
-        <div class="cp-cz-txt"><div class="cp-cz-t">Size</div><div class="cp-cz-s">Any dimension, to fit your space</div></div>
-      </div>
-      <div class="cp-cz-card" data-cz="text" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/cesped/design-wod.jpg')">
-        <div class="cp-cz-txt"><div class="cp-cz-t">Text</div><div class="cp-cz-s">Box name, slogan, START / FINISH</div></div>
-      </div>
-      <div class="cp-cz-card" data-cz="colours" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/cesped/factory-yarn.jpg')">
-        <div class="cp-cz-txt"><div class="cp-cz-t">Colours</div><div class="cp-cz-s">17 colours, mix them freely</div></div>
-      </div>
-      <div class="cp-cz-card" data-cz="markings" role="button" tabindex="0" aria-pressed="false" style="background-image:url('assets/cesped/design-testa.jpg')">
-        <div class="cp-cz-txt"><div class="cp-cz-t">Markings</div><div class="cp-cz-s">Metre marks, zones, start lines</div></div>
-      </div>
-      </div>
-      <div class="cp-cz-panels">
-    <div class="cp-cz-detail show" data-cz="logo">
-      <div class="cp-cz-dt">Your logo, woven in</div>
-      <p class="cp-cz-dd">We weave your logo straight into the turf — it lasts as long as the track, never peels and never fades like a printed graphic. Crest, wordmark or a full lockup across the floor.</p>
-      <div class="cp-cz-gallery">
-        <span class="cp-cz-ex g1"><img src="assets/cesped/design-ejercito.jpg" alt="Woven naval crest" loading="lazy"></span>
-        <span class="cp-cz-ex g2"><img src="assets/cesped/design-training-club.jpg" alt="Woven club logo" loading="lazy"></span>
-        <span class="cp-cz-ex g3"><img src="assets/cesped/design-wod.jpg" alt="Full-width logo lockup" loading="lazy"></span>
-      </div>
-      <a class="cp-cz-cta" href="#quote">Request your design →</a>
+    <div class="cp-head reveal" style="max-width:620px">
+      <span class="eyebrow-label">The colour range</span>
+      <h2 class="cp-h2">Combine <em>17 colours</em> to create your track.</h2>
+      <p class="cp-lead">Real turf, real colours. Click any colour to open it full-size — then browse them all with the arrows or your keyboard.</p>
     </div>
-    <div class="cp-cz-detail" data-cz="colours">
-      <div class="cp-cz-dt">17 colours to play with</div>
-      <p class="cp-cz-dd">Pick one for a clean look or mix several into lanes and zones. Real woven colour, not paint — vivid, consistent and built to take a beating every day.</p>
-      <div class="cp-cz-swatches" id="czSwatches"></div>
-      <a class="cp-cz-cta" href="#quote">Choose your colours →</a>
-    </div>
-    <div class="cp-cz-detail" data-cz="lanes">
-      <div class="cp-cz-dt">The lanes you need</div>
-      <p class="cp-cz-dd">From 1 wide lane up to 8 narrow ones, each in a different colour if you like. Ideal for separating training zones, assigning lanes per team or building a design that simply looks the part.</p>
-      <div class="cp-cz-gallery">
-        <span class="cp-cz-ex g1"><img src="assets/lowfit/lowfit-lanes.jpg" alt="Numbered lanes" loading="lazy"></span>
-        <span class="cp-cz-ex g2"><img src="assets/compartidos/lowfit-marathon.jpg" alt="Multi-lane track" loading="lazy"></span>
-        <span class="cp-cz-ex g3"><img src="assets/compartidos/craft-bcn.jpg" alt="Lane layout" loading="lazy"></span>
+    <div class="cp-cr reveal">
+      <button class="cp-cr-nav" id="crPrev" type="button" aria-label="Previous colour">&#10094;</button>
+      <div class="cp-cr-viewport" id="crViewport" tabindex="0" role="listbox" aria-label="Turf colours">
+        <div class="cp-cr-track" id="cpCrTrack"></div>
       </div>
-      <a class="cp-cz-cta" href="#quote">Design your lanes →</a>
+      <button class="cp-cr-nav" id="crNext" type="button" aria-label="Next colour">&#10095;</button>
     </div>
-    <div class="cp-cz-detail" data-cz="size">
-      <div class="cp-cz-dt">Any size, made to measure</div>
-      <p class="cp-cz-dd">Manufactured to your exact dimensions and shipped seam-free — from a single sled lane to a full multi-lane gym floor. Tell us the space, we make it fit.</p>
-      <div class="cp-cz-gallery">
-        <span class="cp-cz-ex g1"><img src="assets/cesped/lowfit-xl.jpg" alt="Full multi-lane floor" loading="lazy"></span>
-        <span class="cp-cz-ex g2"><img src="assets/lowfit/lowfit-room.jpg" alt="Gym floor" loading="lazy"></span>
-        <span class="cp-cz-ex g3"><img src="assets/compartidos/acero-crossfit.jpg" alt="Training box floor" loading="lazy"></span>
-      </div>
-      <a class="cp-cz-cta" href="#quote">Tell us your space →</a>
-    </div>
-    <div class="cp-cz-detail" data-cz="text">
-      <div class="cp-cz-dt">Your words on the track</div>
-      <p class="cp-cz-dd">Box name, motto, lane numbers, START / FINISH — woven in exactly where you train. Your floor speaks your language from the first step.</p>
-      <div class="cp-cz-gallery">
-        <span class="cp-cz-ex g1"><img src="assets/cesped/design-wod.jpg" alt="Box name woven in" loading="lazy"></span>
-        <span class="cp-cz-ex g2"><img src="assets/cesped/design-training-club.jpg" alt="START lettering" loading="lazy"></span>
-        <span class="cp-cz-ex g3"><img src="assets/lowfit/lowfit-lanes.jpg" alt="Lane numbers" loading="lazy"></span>
-      </div>
-      <a class="cp-cz-cta" href="#quote">Add your text →</a>
-    </div>
-    <div class="cp-cz-detail" data-cz="markings">
-      <div class="cp-cz-dt">Markings that mean business</div>
-      <p class="cp-cz-dd">Metre marks, distance zones, start lines and reference points — placed precisely for how you coach and compete, not just for show.</p>
-      <div class="cp-cz-gallery">
-        <span class="cp-cz-ex g1"><img src="assets/cesped/design-testa.jpg" alt="Lane markings and numbers" loading="lazy"></span>
-        <span class="cp-cz-ex g2"><img src="assets/armada/armada-hero-1.jpg" alt="Start lines" loading="lazy"></span>
-        <span class="cp-cz-ex g3"><img src="assets/compartidos/lowfit-marathon.jpg" alt="Metre marks" loading="lazy"></span>
-      </div>
-      <a class="cp-cz-cta" href="#quote">Plan your markings →</a>
-    </div>
-      </div>
-    </div>
+  </div>
+  <div class="cp-lb" id="cpLb" aria-hidden="true" role="dialog" aria-label="Colour preview">
+    <button class="cp-lb-close" id="lbClose" type="button" aria-label="Close">&times;</button>
+    <button class="cp-lb-nav" id="lbPrev" type="button" aria-label="Previous colour">&#10094;</button>
+    <figure class="cp-lb-fig">
+      <img id="lbImg" src="" alt="">
+      <figcaption><span class="cp-lb-name" id="lbName"></span><span class="cp-lb-sub">Heroturfs colour</span><span class="cp-lb-count" id="lbCount"></span></figcaption>
+    </figure>
+    <button class="cp-lb-nav" id="lbNext" type="button" aria-label="Next colour">&#10095;</button>
   </div>
 </section>
 <script>
 (function(){
-  const sec = document.querySelector('.cp-cz');
-  if(!sec) return;
-  const cards = [...sec.querySelectorAll('.cp-cz-card')];
-  const panels = sec.querySelectorAll('.cp-cz-detail');
-  function select(key){
-    cards.forEach(c=>{const on=c.dataset.cz===key;c.classList.toggle('active',on);c.setAttribute('aria-pressed',on);});
-    panels.forEach(p=>p.classList.toggle('show', p.dataset.cz===key));
-  }
-  cards.forEach(c=>{
-    c.addEventListener('click', ()=>select(c.dataset.cz));
-    c.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault(); select(c.dataset.cz);} });
-  });
-  select('logo');
-})();
-
-// Colour swatches inside the Colours panel
-(function(){
-  const box = document.getElementById('czSwatches');
-  if(!box) return;
+  const track = document.getElementById('cpCrTrack');
+  if(!track) return;
   const base = 'https://heroturfs.es/cdn/shop/files/';
   const C = [['Antiope Lime','Heroturf-Antiope-Lime-Vista-4'],['Aphrodite Beige','Heroturf-Aphrodite-Beig-Vista-4'],['Apollo Gold','Heroturf-Apollo-Gold-Vista-4'],['Aurora Orange','Heroturf-Aurora-Orange-Vista-4'],['Baldur Yellow','Heroturf-Baldur-Yellow-Vista-4'],['Freya Pink','Heroturf-Freya-Pink-Vista-4'],['Hermes White','Heroturf-Hermes-White-Vista-4'],['Heimdall Blue','Heroturf-Heimdall-Blue-Vista-4'],['Fenrir Anthracite','Heroturf-Fenrir-Anthracite-Vista-4'],['Loki Blue','Heroturf-Loki-Blue-Vista-4'],['Atlas Grey','Heroturf-Atlas-Grey-Vista-4'],['Mars Red','Heroturf-Mars-Red-Vista-4'],['Minerva Olive','Heroturf-Minerva-Olive-Vista-4'],['Perseus Green','Heroturf-Perseus-Green-Vista-4'],['Odin Purple','Heroturf-Odin-Purple-Vista-4'],['Hades Black','Heroturf-Hades-Black-Vista-4'],['Vulcan Terracotta','Heroturf-Vulcan-Terracota-Vista-4_1']];
-  box.innerHTML = C.map(c=>'<span class="cp-cz-sw" title="'+c[0]+'"><img src="'+base+c[1]+'.webp?width=120&height=120&crop=center" alt="'+c[0]+' turf" loading="lazy"></span>').join('');
+  track.innerHTML = C.map((c,i)=>'<div class="cp-chip" role="option" data-i="'+i+'" tabindex="-1" aria-label="'+c[0]+'"><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub">Heroturfs colour</div></div>').join('');
+  const chips = [...track.children];
+  // strip scroll arrows
+  const vp = document.getElementById('crViewport');
+  document.getElementById('crPrev').addEventListener('click',()=>vp.scrollBy({left:-vp.clientWidth*0.7,behavior:'smooth'}));
+  document.getElementById('crNext').addEventListener('click',()=>vp.scrollBy({left: vp.clientWidth*0.7,behavior:'smooth'}));
+  vp.addEventListener('keydown',e=>{
+    if(lb.classList.contains('open')) return;
+    if(e.key==='ArrowRight'){e.preventDefault();vp.scrollBy({left:200,behavior:'smooth'});}
+    else if(e.key==='ArrowLeft'){e.preventDefault();vp.scrollBy({left:-200,behavior:'smooth'});}
+  });
+  // lightbox gallery
+  const lb=document.getElementById('cpLb'), lbImg=document.getElementById('lbImg'), lbName=document.getElementById('lbName'), lbCount=document.getElementById('lbCount');
+  const lbSrc = c => base+c[1]+'.webp?width=600&height=600&crop=center';
+  // preload all full-size colours once so switching is instant
+  let preloaded=false;
+  function preloadAll(){ if(preloaded) return; preloaded=true; C.forEach(c=>{ const im=new Image(); im.src=lbSrc(c); }); }
+  let cur=0;
+  function show(i){
+    cur=(i+C.length)%C.length;
+    lbImg.src=lbSrc(C[cur]);
+    lbImg.alt=C[cur][0]+' turf';
+    lbName.textContent=C[cur][0];
+    lbCount.textContent=(cur+1)+' / '+C.length;
+  }
+  function open(i){ preloadAll(); show(i); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  // warm the cache shortly after load so the very first switches are instant too
+  setTimeout(preloadAll, 1200);
+  function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  chips.forEach((ch,n)=>ch.addEventListener('click',()=>open(n)));
+  document.getElementById('lbPrev').addEventListener('click',()=>show(cur-1));
+  document.getElementById('lbNext').addEventListener('click',()=>show(cur+1));
+  document.getElementById('lbClose').addEventListener('click',close);
+  lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowRight') show(cur+1);
+    else if(e.key==='ArrowLeft') show(cur-1);
+  });
 })();
 </script>
 
