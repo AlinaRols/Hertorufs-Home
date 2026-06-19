@@ -159,6 +159,12 @@ section{padding:88px 0}
 .cta-title{font-family:var(--fd);font-size:clamp(42px,5.5vw,76px);font-weight:900;color:#14181c;line-height:.92;margin-bottom:16px;letter-spacing:-.01em}
 .cta-title em{color:var(--accent);font-style:normal}
 .cta-sub{font-size:15px;color:#5a646c;margin-bottom:40px;line-height:1.65}
+.proj-cta{background:#f5f6f7;text-align:center;padding:88px 0}
+.proj-cta .section-title{margin-bottom:14px;color:#1a1f24}
+.proj-cta-sub{font-size:15px;color:#5a6672;max-width:480px;margin:0 auto 30px;line-height:1.7}
+.proj-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.proj-cta .btn-ghost{color:#1a1f24;border-color:rgba(0,0,0,.18)}
+.proj-cta .btn-ghost:hover{color:#1a1f24;border-color:rgba(0,0,0,.4)}
 .cta-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
 
 /* FOOTER */
@@ -895,14 +901,14 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="cta-section">
+<section class="proj-cta">
   <div class="container">
-    <span class="cta-eyebrow">Start your project</span>
-    <h2 class="cta-title">Your space,<br><em>your track.</em></h2>
-    <p class="cta-sub">Tell us about your box, gym or centre and we'll design a track that fits.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="#" class="btn-primary">Request a quote</a>
-      <a href="index.html" class="btn-ghost" style="color:#14181c;border-color:rgba(0,0,0,.22)">Back to projects</a>
+    <span class="eyebrow-label" style="display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:24px;height:2px;background:var(--accent);display:inline-block"></span>Your project next</span>
+    <h2 class="section-title">Shall we design the track<br>for <em>your project?</em></h2>
+    <p class="proj-cta-sub">Whether you need a solution for a few square metres or you're planning a project spanning thousands, we'll always offer you the best options.</p>
+    <div class="proj-cta-btns">
+      <a href="index.html#personalizar" class="btn-primary">Design your own <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="index.html#gamas" class="btn-ghost">See tracks in stock</a>
     </div>
   </div>
 </section>
