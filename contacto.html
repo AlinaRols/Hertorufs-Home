@@ -653,9 +653,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cf-status.ok{color:#1f9d57;font-weight:600}
 .cf-status.err{color:var(--accent);font-weight:600}
 .cf-submit{margin-left:auto}
-.contact-aside{position:relative;overflow:hidden;background:#323f49 url('assets/compartidos/heroturfs-team.jpg') center/cover no-repeat;border-radius:18px;padding:32px 30px;color:#fff}
-.contact-aside::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,26,.62) 0%,rgba(18,22,26,.74) 45%,rgba(18,22,26,.93) 100%);z-index:0}
-.contact-aside>*{position:relative;z-index:1}
+.contact-aside{overflow:hidden;background:#323f49;border-radius:18px;color:#fff}
+.ca-photo{height:262px;background:#26303a url('assets/compartidos/heroturfs-team.jpg') center 42%/cover no-repeat}
+.ca-panel{padding:30px 30px 34px}
 .ca-title{font-family:var(--fd);font-size:21px;font-weight:900;color:#fff;line-height:1.14;margin-bottom:26px}
 .ca-list{display:flex;flex-direction:column;gap:22px}
 .ca-item{display:flex;gap:14px;align-items:flex-start;text-align:left}
@@ -752,6 +752,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
     <!-- alt contact (desktop sidebar) -->
     <aside class="contact-aside">
+      <div class="ca-photo" role="img" aria-label="The Heroturfs team at our factory in Spain"></div>
+      <div class="ca-panel">
       <h2 class="ca-title">Prefer to reach us another way?</h2>
       <div class="ca-list">
         <div class="ca-item">
@@ -774,6 +776,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <div class="ca-t">Opening hours</div>
           <div class="ca-d">Mon–Thu 09:30–13:00 &amp; 15:30–18:00<br>Fri 09:30–13:00</div>
         </div>
+      </div>
       </div>
     </aside>
     </div>
