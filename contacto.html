@@ -653,13 +653,15 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cf-status.ok{color:#1f9d57;font-weight:600}
 .cf-status.err{color:var(--accent);font-weight:600}
 .cf-submit{margin-left:auto}
-.contact-aside{background:#323f49;border-radius:18px;padding:32px 30px;color:#fff}
+.contact-aside{position:relative;overflow:hidden;background:#323f49 url('assets/compartidos/heroturfs-team.jpg') center/cover no-repeat;border-radius:18px;padding:32px 30px;color:#fff}
+.contact-aside::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,26,.62) 0%,rgba(18,22,26,.74) 45%,rgba(18,22,26,.93) 100%);z-index:0}
+.contact-aside>*{position:relative;z-index:1}
 .ca-title{font-family:var(--fd);font-size:21px;font-weight:900;color:#fff;line-height:1.14;margin-bottom:26px}
 .ca-list{display:flex;flex-direction:column;gap:22px}
 .ca-item{display:flex;gap:14px;align-items:flex-start;text-align:left}
 .ca-ico{width:42px;height:42px;border-radius:12px;background:rgba(255,106,94,.16);color:#ff6a5e;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ca-ico svg{width:20px;height:20px}
-.ca-t{font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:3px}
+.ca-t{font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:3px}
 .ca-d{font-size:14px;color:#fff;line-height:1.5}
 .ca-d a{color:#fff;text-decoration:none}
 .ca-d a:hover{color:#ff6a5e}
