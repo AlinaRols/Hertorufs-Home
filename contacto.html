@@ -631,8 +631,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .contact-title{font-family:var(--fd);font-size:clamp(40px,5.4vw,66px);font-weight:900;color:#14181c;line-height:.94;letter-spacing:-.01em;margin:10px 0 0}
 .contact-title em{color:var(--accent);font-style:normal}
 .contact-sub{font-size:15px;color:#5a646c;line-height:1.6;margin-top:12px}
-.contact-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start;max-width:1180px;margin:0 auto}
-.contact-form{background:#f5f6f7;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:28px}
+.contact-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:stretch;max-width:1180px;margin:0 auto}
+.contact-form{background:#f5f6f7;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:28px;display:flex;flex-direction:column}
 .cf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .cf-field{display:flex;flex-direction:column;min-width:0}
 .cf-field.col-2{grid-column:span 2}
@@ -681,8 +681,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cf-status.ok{color:#1f9d57;font-weight:600}
 .cf-status.err{color:var(--accent);font-weight:600}
 .cf-submit{margin-left:auto}
-.contact-aside{overflow:hidden;background:#323f49;border-radius:18px;color:#fff}
-.ca-photo{height:262px;background:#26303a url('assets/compartidos/heroturfs-team.jpg') center 42%/cover no-repeat}
+.contact-aside{overflow:hidden;background:#323f49;border-radius:18px;color:#fff;display:flex;flex-direction:column}
+.ca-photo{flex:1 1 262px;min-height:220px;background:#26303a url('assets/compartidos/heroturfs-team.jpg') center 42%/cover no-repeat}
 .ca-panel{padding:30px 30px 34px}
 .ca-title{font-family:var(--fd);font-size:21px;font-weight:900;color:#fff;line-height:1.14;margin-bottom:26px}
 .ca-list{display:flex;flex-direction:column;gap:22px}
@@ -693,7 +693,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .ca-d{font-size:14px;color:#fff;line-height:1.5}
 .ca-d a{color:#fff;text-decoration:none}
 .ca-d a:hover{color:#ff6a5e}
-@media(max-width:900px){.contact-body{grid-template-columns:1fr;gap:22px}}
+@media(min-width:901px){.contact-form .cf-grid{flex:1 1 auto;grid-template-rows:auto auto auto 1fr}.contact-form .cf-field.col-3{min-height:0}.contact-form #cf-message{flex:1 1 auto;min-height:84px}}
+@media(max-width:900px){.contact-body{grid-template-columns:1fr;gap:22px}.contact-aside{min-height:0}.ca-photo{flex:0 0 auto;height:262px}}
 @media(max-width:600px){.contact-sec{padding:100px 0 52px}.contact-form{padding:24px 16px;border-radius:14px}.cf-grid{grid-template-columns:1fr}.cf-field.col-2,.cf-field.col-3{grid-column:span 1}.cf-submit{width:100%;justify-content:center}.contact-aside{padding:26px 22px}}
 </style>
 <section class="contact-sec">
@@ -734,8 +735,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           </div>
         </div>
         <div class="cf-field">
-          <label class="cf-label" for="cf-city">City</label>
-          <input class="cf-input" id="cf-city" type="text" name="city" autocomplete="address-level2">
+          <label class="cf-label" for="cf-city">City <span class="req">*</span></label>
+          <input class="cf-input" id="cf-city" type="text" name="city" autocomplete="address-level2" required>
         </div>
         <div class="cf-field">
           <label class="cf-label" for="cf-phone">Phone <span class="req">*</span></label>
