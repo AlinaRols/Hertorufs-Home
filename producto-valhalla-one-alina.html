@@ -922,13 +922,36 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   }
   var sw=document.getElementById('pdpSwatches');
   var cn=document.getElementById('pdpColourName');
+  // Per-colour galleries (8 photos each, same layout: hero, action, track, track, track, action-wide, track, track)
+  var B='https://cdn.shopify.com/s/files/1/0960/0047/5401/files/';
+  var W=[1100,700,700,700,700,1100,700,700];
+  var COLOURS={
+    'Negro · Hades':['cesped-gimnasio-valhalla-negro-150x1000-01.webp','cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp','cesped-gimnasio-valhalla-negro-150x1000-02.webp','cesped-gimnasio-valhalla-negro-150x1000-03.webp','cesped-gimnasio-valhalla-negro-150x1000-04.webp','cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg','cesped-gimnasio-valhalla-negro-150x1000-05.webp','cesped-gimnasio-valhalla-negro-150x1000-06.webp'],
+    'Azul · Atlantis':['cesped-gimnasio-azul-atlantis-150x1000-01.webp','Cesped-artificial-gimnasio-azul-chica1.jpg','cesped-gimnasio-azul-atlantis-150x1000-02.webp','cesped-gimnasio-azul-atlantis-150x1000-03.webp','cesped-gimnasio-azul-atlantis-150x1000-04.webp','cesped-artificial-gimnasio-azul-chica-2.webp','cesped-gimnasio-azul-atlantis-150x1000-05.webp','cesped-gimnasio-azul-atlantis-150x1000-06.webp'],
+    'Verde · Elysium':['cesped-gimnasio-verde-elysium-150x1000-01.webp','cesped-artificial-gimnasio-verde-cuerda-chica1.webp','cesped-gimnasio-verde-elysium-150x1000-02.webp','cesped-gimnasio-verde-elysium-150x1000-03.webp','cesped-gimnasio-verde-elysium-150x1000-04.webp','cesped-artificial-gimnasio-verde-cuerda-chica2_93d746d8-cb73-4b30-a27b-10c5ca1fc8e7.webp','cesped-gimnasio-verde-elysium-150x1000-05.webp','cesped-gimnasio-verde-elysium-150x1000-06.webp'],
+    'Rojo · Marathon':['cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp','Pista-Marathon-One-con-personas.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-1.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-2.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-3.webp','Pista-Marathon-One-con-trineo.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-4.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-5.webp']
+  };
+  var shots=document.querySelectorAll('.pdp-gallery .pdp-shot img');
+  function setColour(name){
+    var arr=COLOURS[name];
+    if(!arr||!shots.length)return;
+    shots.forEach(function(img,i){
+      if(arr[i])img.src=B+arr[i]+'?width='+(W[i]||700);
+    });
+    // preload other colours so switching is instant
+  }
+  // warm cache for all colours
+  Object.keys(COLOURS).forEach(function(k){COLOURS[k].forEach(function(f,i){var p=new Image();p.src=B+f+'?width='+(W[i]||700);});});
   if(sw){
     sw.addEventListener('click',function(e){
       var btn=e.target.closest('.pdp-sw');
       if(!btn)return;
       sw.querySelectorAll('.pdp-sw').forEach(function(s){s.classList.remove('active');});
       btn.classList.add('active');
-      if(cn&&btn.dataset.name)cn.textContent=btn.dataset.name;
+      if(btn.dataset.name){
+        if(cn)cn.textContent=btn.dataset.name;
+        setColour(btn.dataset.name);
+      }
     });
   }
 })();
