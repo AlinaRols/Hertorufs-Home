@@ -613,6 +613,14 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-proj-name{font-family:var(--fd);font-size:20px;font-weight:800;color:#fff;line-height:1}
 .cp-proj-loc{font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px;display:flex;align-items:center;gap:6px}
 .cp-proj-loc::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent)}
+/* projects marquee — moving row, seamless loop, pauses on hover (off for reduced-motion) */
+.cp-proj-marquee{overflow:hidden;width:100%;margin-top:34px;-webkit-mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent)}
+.cp-proj-marquee-track{display:flex;width:max-content;animation:cpProjMarquee 55s linear infinite}
+.cp-proj-marquee:hover .cp-proj-marquee-track{animation-play-state:paused}
+.cp-proj-marquee .cp-proj{flex:0 0 auto;width:236px;margin-right:14px}
+@keyframes cpProjMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.cp-proj-marquee-track{animation:none}}
+@media(max-width:560px){.cp-proj-marquee{margin-top:26px}.cp-proj-marquee .cp-proj{width:200px;margin-right:12px}}
 
 /* FORM (dark band) */
 .cp-form-sec{background:#323F49;padding:96px 0}
@@ -1006,24 +1014,46 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       </div>
       <a href="projects.html" class="btn-ghost" style="color:#14181c;border-color:rgba(0,0,0,.2)">See all projects →</a>
     </div>
-    <div class="cp-proj-grid">
-      <a href="proyecto-lowfit.html" class="cp-proj reveal">
+  </div>
+  <div class="cp-proj-marquee">
+    <div class="cp-proj-marquee-track">
+      <a href="proyecto-lowfit.html" class="cp-proj">
         <img src="assets/compartidos/lowfit-marathon.jpg" alt="Lowfit Huelva">
         <div class="cp-proj-ov"></div>
         <div class="cp-proj-cap"><div class="cp-proj-name">Lowfit</div><div class="cp-proj-loc">Huelva · Mars Red</div></div>
       </a>
-      <a href="projects.html" class="cp-proj reveal d1">
+      <a href="projects.html" class="cp-proj">
         <img src="assets/compartidos/acero-crossfit.jpg" alt="Acero Crossfit">
         <div class="cp-proj-ov"></div>
         <div class="cp-proj-cap"><div class="cp-proj-name">Acero Crossfit</div><div class="cp-proj-loc">Toledo · Atlas Grey</div></div>
       </a>
-      <a href="projects.html" class="cp-proj reveal d2">
+      <a href="projects.html" class="cp-proj">
         <img src="assets/compartidos/finestrat-aritz.jpg" alt="Finestrat Aritz">
         <div class="cp-proj-ov"></div>
         <div class="cp-proj-cap"><div class="cp-proj-name">Finestrat Aritz</div><div class="cp-proj-loc">Alicante · Hades Black</div></div>
       </a>
-      <a href="projects.html" class="cp-proj reveal d3">
+      <a href="projects.html" class="cp-proj">
         <img src="assets/compartidos/bollodromo.jpg" alt="Bollodromo">
+        <div class="cp-proj-ov"></div>
+        <div class="cp-proj-cap"><div class="cp-proj-name">Bollodromo</div><div class="cp-proj-loc">Custom logo &amp; markings</div></div>
+      </a>
+      <a href="proyecto-lowfit.html" class="cp-proj" aria-hidden="true" tabindex="-1">
+        <img src="assets/compartidos/lowfit-marathon.jpg" alt="">
+        <div class="cp-proj-ov"></div>
+        <div class="cp-proj-cap"><div class="cp-proj-name">Lowfit</div><div class="cp-proj-loc">Huelva · Mars Red</div></div>
+      </a>
+      <a href="projects.html" class="cp-proj" aria-hidden="true" tabindex="-1">
+        <img src="assets/compartidos/acero-crossfit.jpg" alt="">
+        <div class="cp-proj-ov"></div>
+        <div class="cp-proj-cap"><div class="cp-proj-name">Acero Crossfit</div><div class="cp-proj-loc">Toledo · Atlas Grey</div></div>
+      </a>
+      <a href="projects.html" class="cp-proj" aria-hidden="true" tabindex="-1">
+        <img src="assets/compartidos/finestrat-aritz.jpg" alt="">
+        <div class="cp-proj-ov"></div>
+        <div class="cp-proj-cap"><div class="cp-proj-name">Finestrat Aritz</div><div class="cp-proj-loc">Alicante · Hades Black</div></div>
+      </a>
+      <a href="projects.html" class="cp-proj" aria-hidden="true" tabindex="-1">
+        <img src="assets/compartidos/bollodromo.jpg" alt="">
         <div class="cp-proj-ov"></div>
         <div class="cp-proj-cap"><div class="cp-proj-name">Bollodromo</div><div class="cp-proj-loc">Custom logo &amp; markings</div></div>
       </a>
