@@ -766,7 +766,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-colours .cp-h2{color:#14181c}
 .cp-colours .eyebrow-label{color:var(--accent)}
 .cp-cr{position:relative;display:flex;align-items:flex-start;gap:14px;margin-top:30px}
-.cp-cr-viewport{flex:1;overflow-x:auto;scrollbar-width:none;scroll-behavior:smooth;-webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.cp-cr-viewport{flex:1;overflow-x:auto;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
 .cp-cr-viewport::-webkit-scrollbar{display:none}
 .cp-cr-viewport:focus-visible{outline:none}
 .cp-cr-track{display:flex;gap:18px;padding:16px 8px 8px;width:max-content}
@@ -834,7 +834,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   const STD = new Set(['Hermes White','Heimdall Blue','Minerva Olive','Hades Black','Vulcan Terracotta']);
   const subLabel = n => STD.has(n) ? 'Standard colour' : 'Full custom colour';
   const subClass = n => STD.has(n) ? 'is-standard' : 'is-custom';
-  track.innerHTML = C.map((c,i)=>'<div class="cp-chip" role="option" data-i="'+i+'" tabindex="-1" aria-label="'+c[0]+'"><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub '+subClass(c[0])+'">'+subLabel(c[0])+'</div></div>').join('');
+  const chipHTML = (c,i,dup)=>'<div class="cp-chip" role="option" data-i="'+i+'" tabindex="-1" aria-label="'+c[0]+'"'+(dup?' aria-hidden="true"':'')+'><div class="cp-chip-img"><img src="'+base+c[1]+'.webp?width=400&height=400&crop=center" alt="'+c[0]+' turf" loading="lazy"></div><div class="cp-chip-name">'+c[0]+'</div><div class="cp-chip-sub '+subClass(c[0])+'">'+subLabel(c[0])+'</div></div>';
+  // duplicate the set once so the auto-scroll can loop seamlessly
+  track.innerHTML = C.map((c,i)=>chipHTML(c,i,false)).join('') + C.map((c,i)=>chipHTML(c,i,true)).join('');
   const chips = [...track.children];
   // strip scroll arrows
   const vp = document.getElementById('crViewport');
@@ -865,7 +867,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   // warm the cache shortly after load so the very first switches are instant too
   setTimeout(preloadAll, 1200);
   function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-  chips.forEach((ch,n)=>ch.addEventListener('click',()=>open(n)));
+  chips.forEach(ch=>ch.addEventListener('click',()=>open(parseInt(ch.dataset.i,10))));
   document.getElementById('lbPrev').addEventListener('click',()=>show(cur-1));
   document.getElementById('lbNext').addEventListener('click',()=>show(cur+1));
   document.getElementById('lbClose').addEventListener('click',close);
@@ -876,6 +878,28 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     else if(e.key==='ArrowRight') show(cur+1);
     else if(e.key==='ArrowLeft') show(cur-1);
   });
+  // gentle continuous movement — pauses on hover / keyboard focus / lightbox; off on touch & reduced-motion
+  (function(){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(pointer: coarse)').matches) return;
+    let period=0, paused=false, pos=0;
+    function measureP(){ period = chips[C.length] ? (chips[C.length].offsetLeft - chips[0].offsetLeft) : 0; }
+    function sync(){ pos = vp.scrollLeft; }
+    measureP();
+    window.addEventListener('resize',()=>{ measureP(); sync(); });
+    const cr=document.querySelector('.cp-cr');
+    cr.addEventListener('mouseenter',()=>{ paused=true; });
+    cr.addEventListener('mouseleave',()=>{ sync(); paused=false; });
+    vp.addEventListener('focusin',()=>{ paused=true; });
+    vp.addEventListener('focusout',()=>{ sync(); paused=false; });
+    (function loop(){
+      if(!paused && !lb.classList.contains('open')){
+        pos+=0.5;
+        if(period && pos>=period) pos-=period;
+        vp.scrollLeft=pos;
+      }
+      requestAnimationFrame(loop);
+    })();
+  })();
 })();
 </script>
 
@@ -901,6 +925,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
             <div><div class="cp-feat-t">Any size, seam-free</div><div class="cp-feat-d">Made to your exact dimensions and fitted without visible joins.</div></div>
           </div>
         </div>
+        <a href="#quote" class="btn-primary" style="margin-top:28px">Request your quote →</a>
       </div>
       <div class="cp-design-imgs reveal d1">
         <img class="dp" src="assets/cesped/design-ejercito.jpg" alt="Custom naval crest track">
