@@ -709,7 +709,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     <form class="contact-form" id="contactForm" action="mailto:info@heroturfs.com" method="POST">
       <div class="cf-grid">
         <div class="cf-field">
-          <label class="cf-label" for="cf-name">Name <span class="req">*</span></label>
+          <label class="cf-label" for="cf-name">First name <span class="req">*</span></label>
           <input class="cf-input" id="cf-name" type="text" name="name" autocomplete="given-name" required>
         </div>
         <div class="cf-field">
@@ -831,7 +831,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   var form=document.getElementById('contactForm');
   if(!form) return;
   var status=document.getElementById('cfStatus');
-  var labels={name:'Name',last_name:'Last name',email:'E-mail',country:'Country',city:'City',phone:'Phone',industry:'Industry',company:'Company',message:'Message'};
+  var labels={name:'First name',last_name:'Last name',email:'E-mail',country:'Country',city:'City',phone:'Phone',industry:'Industry',company:'Company',message:'Message'};
   var order=['name','last_name','email','country','city','phone','industry','company','message'];
   form.addEventListener('submit',function(e){
     e.preventDefault();
