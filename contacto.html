@@ -758,9 +758,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           </div>
         </div>
         <div class="cf-field">
-          <label class="cf-label" for="cf-industry">Industry <span class="req">*</span></label>
+          <label class="cf-label" for="cf-industry">Project type <span class="req">*</span></label>
           <select class="cf-select" id="cf-industry" name="industry" required>
-            <option value="" disabled selected>Select your industry</option>
+            <option value="" disabled selected>Select your project</option>
             <option>Gym</option>
             <option>CrossFit</option>
             <option>Hyrox</option>
@@ -838,7 +838,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   var form=document.getElementById('contactForm');
   if(!form) return;
   var status=document.getElementById('cfStatus');
-  var labels={name:'First name',last_name:'Last name',email:'E-mail',country:'Country',city:'City',phone:'Phone',industry:'Industry',company:'Company',message:'Message'};
+  var labels={name:'First name',last_name:'Last name',email:'E-mail',country:'Country',city:'City',phone:'Phone',industry:'Project type',company:'Company',message:'Message'};
   var order=['name','last_name','email','country','city','phone','industry','company','message'];
   form.addEventListener('submit',function(e){
     e.preventDefault();
