@@ -630,6 +630,35 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-field input:focus,.cp-field select:focus,.cp-field textarea:focus{outline:none;border-color:var(--accent)}
 .cp-field textarea{resize:vertical;min-height:96px}
 .cp-form .btn-primary{grid-column:span 2;justify-content:center;padding:15px}
+/* contact-style widgets: searchable country + phone prefix + consent */
+.cp-form .cf-combo{position:relative}
+.cp-form .cf-combo-btn{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;font-family:var(--fb);font-size:14px;color:#14181c;background:#fff;border:1px solid rgba(0,0,0,.15);border-radius:8px;padding:13px 14px;cursor:pointer;text-align:left;transition:border-color .2s}
+.cp-form .cf-combo-btn:focus,.cp-form .cf-combo.open .cf-combo-btn{outline:none;border-color:var(--accent)}
+.cp-form .cf-combo.invalid .cf-combo-btn{border-color:var(--accent)}
+.cp-form .cf-combo-val{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cp-form .cf-combo-val.placeholder{color:#9aa3ab}
+.cp-form .cf-combo-chev{width:13px;height:13px;color:#8a96a0;flex-shrink:0;transition:transform .2s}
+.cp-form .cf-combo.open .cf-combo-chev{transform:rotate(180deg)}
+.cp-form .cf-combo-panel{position:absolute;z-index:30;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid #d6dbe0;border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.18);padding:10px;max-height:280px;display:flex;flex-direction:column}
+.cp-form .cf-combo-panel[hidden]{display:none}
+.cp-form .cf-combo-search{font-family:var(--fb);font-size:14px;color:#14181c;background:#fff;border:1px solid #d6dbe0;border-radius:7px;padding:10px 12px;margin-bottom:8px;width:100%}
+.cp-form .cf-combo-search::placeholder{color:#9aa3ab}
+.cp-form .cf-combo-search:focus{outline:none;border-color:var(--accent)}
+.cp-form .cf-combo-list{list-style:none;margin:0;padding:0;overflow-y:auto;flex:1}
+.cp-form .cf-combo-list li{padding:10px 12px;font-size:14px;color:#14181c;border-radius:7px;cursor:pointer}
+.cp-form .cf-combo-list li:hover,.cp-form .cf-combo-list li.active{background:#f1f3f5}
+.cp-form .cf-combo-list li[aria-selected="true"]{color:var(--accent);font-weight:600}
+.cp-form .cf-combo-empty{padding:10px 12px;font-size:14px;color:#8a96a0}
+.cp-form .cf-phone{display:flex;align-items:stretch;background:#fff;border:1px solid rgba(0,0,0,.15);border-radius:8px;overflow:hidden;transition:border-color .2s}
+.cp-form .cf-phone:focus-within{border-color:var(--accent)}
+.cp-form .cf-cc{flex:0 0 auto;font-family:var(--fb);font-size:13px;font-weight:600;color:#14181c;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a96a0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 9px center;border:none;border-right:1px solid #e2e6ea;border-radius:0;padding:13px 27px 13px 13px;appearance:none;-webkit-appearance:none;cursor:pointer}
+.cp-form .cf-cc:focus{outline:none}
+.cp-form .cf-phonenum{flex:1;min-width:0;font-family:var(--fb);font-size:14px;color:#14181c;background:transparent;border:none;border-radius:0;padding:13px 14px}
+.cp-form .cf-phonenum:focus{outline:none}
+.cp-form .cf-phonenum::placeholder{color:#9aa3ab}
+.cp-consent{grid-column:span 2;display:flex;align-items:flex-start;gap:10px;font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.5;cursor:pointer;margin-top:2px}
+.cp-consent input{margin-top:1px;width:16px;height:16px;accent-color:var(--accent);flex-shrink:0;cursor:pointer}
+.cp-consent a{color:#fff;text-decoration:underline}
 
 /* responsive */
 @media(max-width:960px){
@@ -644,7 +673,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 @media(max-width:560px){
   .cp-proj-grid{grid-template-columns:1fr}
   .cp-form{grid-template-columns:1fr}
-  .cp-field.full,.cp-form .btn-primary{grid-column:span 1}
+  .cp-field.full,.cp-form .btn-primary,.cp-consent{grid-column:span 1}
   .cp-design-imgs .dw{grid-column:span 2}
 }
 </style>
@@ -990,12 +1019,64 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <div><span>✓</span> Made in Spain · 5-year guarantee</div>
         </div>
       </div>
-      <form class="cp-form reveal d1" onsubmit="cpSubmit(event)">
-        <div class="cp-field"><label>Name</label><input type="text" name="name" required placeholder="Your name"></div>
-        <div class="cp-field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com"></div>
-        <div class="cp-field"><label>Phone</label><input type="tel" name="phone" placeholder="+34 ..."></div>
-        <div class="cp-field"><label>Project type</label><select name="type"><option>CrossFit box</option><option>Gym</option><option>Sports centre</option><option>Physio / rehab</option><option>Other</option></select></div>
-        <div class="cp-field full"><label>Tell us about your track</label><textarea name="message" placeholder="Approx. size, colours you like, logo, deadline..."></textarea></div>
+      <form class="cp-form reveal d1" id="cpQuoteForm" onsubmit="cpSubmit(event)">
+        <div class="cp-field"><label>First name <span style="color:var(--accent)">*</span></label><input type="text" name="name" required placeholder="Your name" autocomplete="given-name"></div>
+        <div class="cp-field"><label>Last name <span style="color:var(--accent)">*</span></label><input type="text" name="last_name" required placeholder="Your last name" autocomplete="family-name"></div>
+        <div class="cp-field"><label>E-mail <span style="color:var(--accent)">*</span></label><input type="email" name="email" required placeholder="you@email.com" autocomplete="email"></div>
+        <div class="cp-field"><label>Phone <span style="color:var(--accent)">*</span></label>
+          <div class="cf-phone">
+            <select class="cf-cc" name="phone_code" aria-label="Country dialling code">
+              <option value="+44" selected>🇬🇧 +44</option>
+              <option value="+353">🇮🇪 +353</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+351">🇵🇹 +351</option>
+              <option value="+31">🇳🇱 +31</option>
+              <option value="+32">🇧🇪 +32</option>
+              <option value="+41">🇨🇭 +41</option>
+              <option value="+1">🇺🇸 +1</option>
+            </select>
+            <input class="cf-phonenum" type="tel" name="phone" autocomplete="tel" placeholder="7700 900 000" required>
+          </div>
+        </div>
+        <div class="cp-field"><label>Country <span style="color:var(--accent)">*</span></label>
+          <div class="cf-combo" data-combo data-options="countries">
+            <button type="button" class="cf-combo-btn" aria-haspopup="listbox" aria-expanded="false">
+              <span class="cf-combo-val placeholder" data-placeholder="Select your country">Select your country</span>
+              <svg class="cf-combo-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <input type="hidden" name="country">
+            <div class="cf-combo-panel" hidden>
+              <input type="text" class="cf-combo-search" placeholder="Search…" autocomplete="off" aria-label="Search country">
+              <ul class="cf-combo-list" role="listbox"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="cp-field"><label>City <span style="color:var(--accent)">*</span></label><input type="text" name="city" required placeholder="Your city" autocomplete="address-level2"></div>
+        <div class="cp-field"><label>Project type <span style="color:var(--accent)">*</span></label>
+          <select name="type" required>
+            <option value="" disabled selected>Select your project</option>
+            <option>Gym</option>
+            <option>CrossFit</option>
+            <option>Hyrox</option>
+            <option>Gym franchise</option>
+            <option>Functional training</option>
+            <option>Multisport</option>
+            <option>Other sports facilities</option>
+            <option>Private use</option>
+            <option>Distributor</option>
+            <option>Hotel</option>
+            <option>Architect</option>
+            <option>Interior designer</option>
+            <option>Retail</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="cp-field"><label>Company name</label><input type="text" name="company" placeholder="Optional" autocomplete="organization"></div>
+        <div class="cp-field full"><label>Message <span style="color:var(--accent)">*</span></label><textarea name="message" required placeholder="Approx. size, colours you like, logo, deadline..."></textarea></div>
+        <label class="cp-consent"><input type="checkbox" name="consent" required><span>I agree to the storage and processing of my personal data in accordance with Heroturfs' <a href="#">privacy policy</a>. <span style="color:var(--accent)">*</span></span></label>
         <button type="submit" class="btn-primary">Request my quote →</button>
       </form>
     </div>
@@ -1116,8 +1197,60 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   function cpSubmit(e){
     e.preventDefault();
     const f=e.target;
+    if(!f.checkValidity()){ f.reportValidity(); return; }
+    const country=f.querySelector('input[name="country"]');
+    if(country && !country.value){
+      const combo=country.closest('[data-combo]');
+      if(combo){ combo.classList.add('invalid'); combo.scrollIntoView({block:'center'}); const b=combo.querySelector('.cf-combo-btn'); if(b) b.focus(); }
+      return;
+    }
+    const fd=new FormData(f);
+    const labels={name:'First name',last_name:'Last name',email:'E-mail',country:'Country',city:'City',phone:'Phone',type:'Project type',company:'Company',message:'Message'};
+    const order=['name','last_name','email','country','city','phone','type','company','message'];
+    const lines=order.filter(k=>fd.get(k)).map(k=>{
+      let v=fd.get(k);
+      if(k==='phone'){ v=((fd.get('phone_code')||'')+' '+v).trim(); }
+      return labels[k]+': '+v;
+    });
+    const subject='New quote request — '+(fd.get('name')||'')+' '+(fd.get('last_name')||'');
+    window.location.href='mailto:info@heroturfs.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
     f.innerHTML='<div style="grid-column:span 2;text-align:center;padding:30px 10px"><div style="font-family:var(--fd);font-size:26px;font-weight:900;color:#fff">Thanks! ✓</div><p style="color:rgba(255,255,255,.66);margin-top:10px;font-size:14px">We\'ll get back to you within 48 hours with colours, a layout and your quote.</p></div>';
   }
+
+  /* searchable country combobox */
+  (function(){
+    var COUNTRIES=["United Kingdom","Ireland","Spain","Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Israel","Italy","Ivory Coast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe","Other / not listed"];
+    Array.prototype.forEach.call(document.querySelectorAll('[data-combo]'),function(combo){
+      var btn=combo.querySelector('.cf-combo-btn'),val=combo.querySelector('.cf-combo-val'),hidden=combo.querySelector('input[type="hidden"]'),panel=combo.querySelector('.cf-combo-panel'),search=combo.querySelector('.cf-combo-search'),list=combo.querySelector('.cf-combo-list');
+      var items=combo.getAttribute('data-options')==='countries'?COUNTRIES:[];
+      var filtered=items.slice(),active=-1;
+      function render(){
+        list.innerHTML='';
+        if(!filtered.length){var e=document.createElement('div');e.className='cf-combo-empty';e.textContent='No matches';list.appendChild(e);return;}
+        filtered.forEach(function(name,i){
+          var li=document.createElement('li');li.textContent=name;li.setAttribute('role','option');
+          if(name===hidden.value)li.setAttribute('aria-selected','true');
+          if(i===active)li.className='active';
+          li.addEventListener('mousedown',function(ev){ev.preventDefault();choose(name);});
+          list.appendChild(li);
+        });
+      }
+      function openP(){combo.classList.add('open');panel.hidden=false;btn.setAttribute('aria-expanded','true');search.value='';filtered=items.slice();active=-1;render();setTimeout(function(){search.focus();},0);}
+      function closeP(){combo.classList.remove('open');panel.hidden=true;btn.setAttribute('aria-expanded','false');}
+      function choose(name){hidden.value=name;val.textContent=name;val.classList.remove('placeholder');combo.classList.remove('invalid');closeP();btn.focus();}
+      function ensure(){var el=list.children[active];if(el&&el.scrollIntoView)el.scrollIntoView({block:'nearest'});}
+      btn.addEventListener('click',function(){combo.classList.contains('open')?closeP():openP();});
+      search.addEventListener('input',function(){var q=search.value.trim().toLowerCase();filtered=q?items.filter(function(n){return n.toLowerCase().indexOf(q)>-1;}):items.slice();active=filtered.length?0:-1;render();});
+      search.addEventListener('keydown',function(ev){
+        if(ev.key==='ArrowDown'){ev.preventDefault();active=Math.min(active+1,filtered.length-1);render();ensure();}
+        else if(ev.key==='ArrowUp'){ev.preventDefault();active=Math.max(active-1,0);render();ensure();}
+        else if(ev.key==='Enter'){ev.preventDefault();if(active>-1&&filtered[active])choose(filtered[active]);}
+        else if(ev.key==='Escape'){ev.preventDefault();closeP();btn.focus();}
+      });
+      document.addEventListener('mousedown',function(ev){if(!combo.contains(ev.target))closeP();});
+      document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&combo.classList.contains('open')){closeP();btn.focus();}});
+    });
+  })();
 
 
   // Ticker: duplicate items until they cover 2x the viewport so the loop is seamless
