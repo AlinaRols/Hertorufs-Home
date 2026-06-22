@@ -645,6 +645,13 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cf-input:focus,.cf-select:focus,.cf-textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(227,51,43,.12)}
 .cf-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a96a0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
 .cf-textarea{resize:vertical;min-height:140px;line-height:1.55}
+.cf-phone{display:flex;align-items:stretch;background:#fff;border:1px solid #d6dbe0;border-radius:9px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.cf-phone:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(227,51,43,.12)}
+.cf-cc{flex:0 0 auto;font-family:var(--fb);font-size:14px;font-weight:600;color:#14181c;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a96a0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 9px center;border:none;border-right:1px solid #e2e6ea;padding:13px 27px 13px 13px;appearance:none;-webkit-appearance:none;cursor:pointer}
+.cf-cc:focus{outline:none}
+.cf-phonenum{flex:1;min-width:0;font-family:var(--fb);font-size:15px;color:#14181c;background:transparent;border:none;padding:13px 14px}
+.cf-phonenum:focus{outline:none}
+.cf-phonenum::placeholder{color:#aab3bb}
 .cf-consent{display:flex;align-items:flex-start;gap:11px;margin-top:24px;font-size:13px;color:#5a646c;line-height:1.5;cursor:pointer}
 .cf-consent input{margin-top:1px;width:17px;height:17px;accent-color:var(--accent);flex-shrink:0;cursor:pointer}
 .cf-consent a{color:var(--accent);text-decoration:underline}
@@ -714,7 +721,22 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         </div>
         <div class="cf-field">
           <label class="cf-label" for="cf-phone">Phone <span class="req">*</span></label>
-          <input class="cf-input" id="cf-phone" type="tel" name="phone" autocomplete="tel" placeholder="+44 …" required>
+          <div class="cf-phone">
+            <select class="cf-cc" name="phone_code" aria-label="Country dialling code">
+              <option value="+44" selected>🇬🇧 +44</option>
+              <option value="+353">🇮🇪 +353</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+351">🇵🇹 +351</option>
+              <option value="+31">🇳🇱 +31</option>
+              <option value="+32">🇧🇪 +32</option>
+              <option value="+41">🇨🇭 +41</option>
+              <option value="+1">🇺🇸 +1</option>
+            </select>
+            <input class="cf-phonenum" id="cf-phone" type="tel" name="phone" autocomplete="tel" placeholder="7700 900 000" required>
+          </div>
         </div>
         <div class="cf-field">
           <label class="cf-label" for="cf-industry">Industry <span class="req">*</span></label>
@@ -794,7 +816,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     e.preventDefault();
     if(!form.checkValidity()){ form.reportValidity(); return; }
     var fd=new FormData(form);
-    var lines=order.filter(function(k){return fd.get(k);}).map(function(k){return labels[k]+': '+fd.get(k);});
+    var lines=order.filter(function(k){return fd.get(k);}).map(function(k){
+      var v=fd.get(k);
+      if(k==='phone'){ v=((fd.get('phone_code')||'')+' '+v).trim(); }
+      return labels[k]+': '+v;
+    });
     var subject='New enquiry — '+(fd.get('name')||'')+' '+(fd.get('last_name')||'');
     window.location.href='mailto:info@heroturfs.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
     status.className='cf-status ok';
