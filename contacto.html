@@ -878,7 +878,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       else if(ev.key==='Enter'){ev.preventDefault();if(active>-1&&filtered[active])choose(filtered[active]);}
       else if(ev.key==='Escape'){ev.preventDefault();closeP();btn.focus();}
     });
-    document.addEventListener('click',function(ev){if(!combo.contains(ev.target))closeP();});
+    document.addEventListener('mousedown',function(ev){if(!combo.contains(ev.target))closeP();});
+    document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&combo.classList.contains('open')){closeP();btn.focus();}});
   });
 })();
 </script>
