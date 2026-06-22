@@ -716,19 +716,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .cat-vbtn.active{background:#14181c;border-color:#14181c;color:#fff}
   .cat-grid.gv-1{grid-template-columns:1fr;gap:18px}
   .cat-grid.gv-2{grid-template-columns:1fr 1fr;gap:12px}
-  .cat-grid.gv-4{grid-template-columns:repeat(4,1fr);gap:7px}
   .cat-grid.gv-2 .prod-body{padding:13px;gap:11px}
   .cat-grid.gv-2 .prod-thumb{display:none}
   .cat-grid.gv-2 .prod-name{font-size:13px}
   .cat-grid.gv-2 .prod-meta{font-size:9px}
   .cat-grid.gv-2 .prod-price{font-size:15px}
   .cat-grid.gv-2 .prod-arrow{width:30px;height:30px}
-  .cat-grid.gv-4 .prod-body{padding:7px;gap:5px}
-  .cat-grid.gv-4 .prod-thumb,.cat-grid.gv-4 .prod-meta,.cat-grid.gv-4 .prod-arrow,.cat-grid.gv-4 .ph-nav,.cat-grid.gv-4 .ph-dots,.cat-grid.gv-4 .prod-badge{display:none}
-  .cat-grid.gv-4 .prod-name{font-size:10px;line-height:1.15}
-  .cat-grid.gv-4 .prod-price{font-size:12px}
-  .cat-grid.gv-4 .prod-price-l{display:none}
-  .cat-grid.gv-4 .prod-foot{margin-top:4px}
 }
 .prod-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:var(--r);overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .prod-card:hover{transform:translateY(-5px) scale(1.015);box-shadow:0 20px 46px rgba(0,0,0,.15)}
@@ -855,7 +848,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       <span class="vsw-l">View</span>
       <button class="cat-vbtn active" type="button" data-view="1" aria-label="1 per row"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="14" height="16" rx="2"/></svg></button>
       <button class="cat-vbtn" type="button" data-view="2" aria-label="2 per row"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="4" width="7.5" height="16" rx="1.6"/><rect x="13" y="4" width="7.5" height="16" rx="1.6"/></svg></button>
-      <button class="cat-vbtn" type="button" data-view="4" aria-label="4 per row"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2.5" y="5" width="3.6" height="14" rx="1"/><rect x="7.3" y="5" width="3.6" height="14" rx="1"/><rect x="13.1" y="5" width="3.6" height="14" rx="1"/><rect x="17.9" y="5" width="3.6" height="14" rx="1"/></svg></button>
     </div>
     <div class="cat-grid gv-1" id="catGrid">
       <a href="https://heroturfs.vercel.app/products/black-sled-track-valhalla-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x5.3|1.0x8.0|1.0x10.0|2.0x10.0|2.0x12.4">
@@ -1345,7 +1337,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     if(!grid || !btns.length) return;
     btns.forEach(b => b.addEventListener('click', () => {
       const v = b.dataset.view;
-      grid.classList.remove('gv-1','gv-2','gv-4');
+      grid.classList.remove('gv-1','gv-2');
       grid.classList.add('gv-'+v);
       btns.forEach(x => x.classList.toggle('active', x === b));
     }));
