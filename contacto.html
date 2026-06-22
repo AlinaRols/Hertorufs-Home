@@ -640,6 +640,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cf-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#3a444d;margin-bottom:7px}
 .cf-label .req{color:var(--accent)}
 .cf-hint{font-size:12px;color:#8a96a0;margin:-2px 0 8px;line-height:1.4}
+.cf-labelrow{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.cf-labelrow .cf-label{margin-bottom:0}
+.cf-labelrow .cf-hint{margin:0;font-size:11px}
 .cf-input,.cf-select,.cf-textarea{font-family:var(--fb);font-size:15px;color:#14181c;background:#fff;border:1px solid #d6dbe0;border-radius:9px;padding:13px 14px;width:100%;transition:border-color .2s,box-shadow .2s}
 .cf-input::placeholder,.cf-textarea::placeholder{color:#aab3bb}
 .cf-input:focus,.cf-select:focus,.cf-textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(227,51,43,.12)}
@@ -767,8 +770,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           </select>
         </div>
         <div class="cf-field col-2">
-          <label class="cf-label" for="cf-company">Company name</label>
-          <div class="cf-hint">Fill in if this is a professional enquiry.</div>
+          <div class="cf-labelrow">
+            <label class="cf-label" for="cf-company">Company name</label>
+            <span class="cf-hint">Fill in if this is a professional enquiry.</span>
+          </div>
           <input class="cf-input" id="cf-company" type="text" name="company" autocomplete="organization">
         </div>
         <div class="cf-field col-3">
