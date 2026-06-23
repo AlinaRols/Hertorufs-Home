@@ -639,6 +639,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-shot:hover img{transform:scale(1.04)}
 .pdp-shot.hero{grid-column:1 / -1;aspect-ratio:4/3}
 .pdp-shot.wide{grid-column:1 / -1;aspect-ratio:16/9}
+.pdp-gallery-wrap{position:relative;min-width:0}
+.pdp-gnav,.pdp-gdots{display:none}
 
 /* buy box */
 .pdp-buy{padding-top:4px;position:sticky;top:90px}
@@ -732,13 +734,22 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .pdp-feats-grid{grid-template-columns:1fr 1fr}
   .pdp-specs-grid{grid-template-columns:1fr;gap:30px}
   .pdp-rev-grid{grid-template-columns:1fr}
+  /* gallery -> swipe carousel (one photo at a time) */
+  .pdp-gallery{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;border-radius:16px;scrollbar-width:none}
+  .pdp-gallery::-webkit-scrollbar{display:none}
+  .pdp-shot,.pdp-shot.hero,.pdp-shot.wide{flex:0 0 100%;width:100%;aspect-ratio:4/3;scroll-snap-align:center}
+  .pdp-gnav{display:flex;position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:none;align-items:center;justify-content:center;color:#15181c;cursor:pointer;z-index:2;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+  .pdp-gnav svg{width:18px;height:18px}
+  .pdp-gnav.prev{left:10px}
+  .pdp-gnav.next{right:10px}
+  .pdp-gdots{display:flex;justify-content:center;gap:7px;margin-top:13px}
+  .pdp-gdot{width:7px;height:7px;border-radius:50%;background:#cdd3d8;transition:background .2s,width .2s}
+  .pdp-gdot.active{width:20px;border-radius:4px;background:#15181c}
 }
 @media(max-width:560px){
   .pdp-container{padding-top:22px}
   .pdp-feats{padding-top:60px}
   .pdp-feats-grid{grid-template-columns:1fr}
-  .pdp-gallery{grid-template-columns:1fr}
-  .pdp-shot,.pdp-shot.hero,.pdp-shot.wide{aspect-ratio:4/3}
 }
 </style>
 
@@ -748,6 +759,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
     <div class="pdp-main">
       <!-- GALLERY -->
+      <div class="pdp-gallery-wrap">
       <div class="pdp-gallery">
         <div class="pdp-shot hero"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?width=1100" alt="Valhalla One black sled track with white lines and numbers" loading="eager"></div>
         <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp?width=700" alt="Athlete pushing a sled on the Valhalla One track" loading="lazy"></div>
@@ -757,6 +769,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <div class="pdp-shot wide"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg?width=1100" alt="Sled workout in progress on the Valhalla One track" loading="lazy"></div>
         <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-05.webp?width=700" alt="Valhalla One track numbers detail" loading="lazy"></div>
         <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-06.webp?width=700" alt="Valhalla One track full view" loading="lazy"></div>
+      </div>
+        <button class="pdp-gnav prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="pdp-gnav next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button>
+        <div class="pdp-gdots" aria-hidden="true"></div>
       </div>
 
       <!-- BUY BOX -->
@@ -954,6 +970,25 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       }
     });
   }
+})();
+</script>
+
+<!-- mobile gallery carousel (dots + arrows) -->
+<script>
+(function(){
+  var wrap=document.querySelector('.pdp-gallery-wrap');if(!wrap)return;
+  var gal=wrap.querySelector('.pdp-gallery');
+  var slides=gal.querySelectorAll('.pdp-shot');
+  var dots=wrap.querySelector('.pdp-gdots');
+  var prev=wrap.querySelector('.pdp-gnav.prev');
+  var next=wrap.querySelector('.pdp-gnav.next');
+  for(var i=0;i<slides.length;i++){var d=document.createElement('span');d.className='pdp-gdot'+(i===0?' active':'');dots.appendChild(d);}
+  var dotEls=dots.querySelectorAll('.pdp-gdot');
+  function upd(){var c=Math.round(gal.scrollLeft/gal.clientWidth);dotEls.forEach(function(d,i){d.classList.toggle('active',i===c);});}
+  var raf;gal.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(upd);});
+  function go(dir){gal.scrollBy({left:dir*gal.clientWidth,behavior:'smooth'});}
+  if(prev)prev.addEventListener('click',function(){go(-1);});
+  if(next)next.addEventListener('click',function(){go(1);});
 })();
 </script>
 
