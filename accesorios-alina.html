@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valhalla One — Black Sled Track with Markings | Heroturfs</title>
-<meta name="description" content="Valhalla One: high-performance black sled track with integrated white lines and numbers. Made in Spain for sled push and functional training. From £559, free shipping, 5-year guarantee.">
-<meta property="og:type" content="product">
-<meta property="og:title" content="Valhalla One — Black Sled Track with Markings | Heroturfs">
-<meta property="og:description" content="High-performance black sled track with integrated white lines and numbers. Made in Spain, free shipping, 5-year guarantee.">
-<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp">
+<title>Accessories — installation tape &amp; essentials | Heroturfs</title>
+<meta name="description" content="Heroturfs accessories: Endurance double-sided installation tape and the essentials to fit your gym sled track. Pro-grade, made for heavy use.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Accessories — installation tape &amp; essentials | Heroturfs">
+<meta property="og:description" content="Endurance double-sided installation tape and the essentials to fit your Heroturfs track.">
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Cinta-doble-cara-cesped-artificial-extra-fuerte-para-gimnasio_3.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
@@ -418,9 +418,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .rsb-stars{display:flex;gap:2px;margin-bottom:2px}
 .rsb-stars svg{width:14px;height:14px;fill:#e8a020}
 .rsb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a96a0}
-.reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:16px;margin-bottom:32px;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
-.reviews-grid-photo::-webkit-scrollbar{display:none}
-.review-photo-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.reviews-grid-photo{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.review-photo-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .review-photo-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
 .rpc-img{aspect-ratio:4/3;overflow:hidden;flex-shrink:0}
 .rpc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
@@ -450,7 +449,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
 @media(max-width:1024px){
   .proyectos-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:220px}
-  .review-photo-card{flex:0 0 calc((100% - 16px)/2)}
+  .reviews-grid-photo{grid-template-columns:1fr 1fr}
   .faq-inner-d{grid-template-columns:1fr;gap:36px}
   .footer-top{grid-template-columns:1fr 1fr 1fr;gap:32px}
   [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important}
@@ -623,777 +622,132 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   <a href="contacto.html" onclick="toggleMenu()">Contact</a>
 </div>
 
-<!-- ===== PRODUCT (PDP) ===== -->
+<!-- ===== ACCESSORIES ===== -->
 <style>
-.pdp-wrap{background:#fff;color:#1a1f24;padding-top:64px}
-/* long dash before section eyebrows */
-.pdp-wrap .eyebrow-label,.pdp-reviews .eyebrow-label{display:inline-flex;align-items:center;gap:9px}
-.pdp-wrap .eyebrow-label::before,.pdp-reviews .eyebrow-label::before{content:"";width:24px;height:2px;background:var(--accent);flex-shrink:0;display:inline-block}
-.pdp-container{max-width:1480px;padding-top:34px}
-.pdp-crumbs{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#9aa3ab;margin-bottom:26px}
-.pdp-crumbs a{color:#5a6672;text-decoration:none}
-.pdp-crumbs a:hover{color:var(--accent)}
-.pdp-crumbs span{margin:0 7px;color:#cdd3d8}
-.pdp-main{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:start}
+.acc-wrap{background:#fff;color:#1a1f24;padding-top:64px}
+.acc-wrap .eyebrow-label{display:inline-flex;align-items:center;gap:9px}
+.acc-wrap .eyebrow-label::before{content:"";width:24px;height:2px;background:var(--accent);flex-shrink:0;display:inline-block}
+.acc-hero{background:#15181c;color:#fff;padding:80px 24px 68px;text-align:center}
+.acc-hero .eyebrow-label{justify-content:center;color:#ff8079;margin-bottom:14px}
+.acc-hero h1{font-family:var(--fd);font-size:clamp(34px,5vw,58px);font-weight:900;line-height:1;margin-bottom:14px}
+.acc-hero h1 em{color:var(--accent);font-style:normal}
+.acc-hero p{font-size:15px;color:rgba(255,255,255,.62);max-width:54ch;margin:0 auto}
 
-/* gallery */
-.pdp-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0}
-.pdp-shot{position:relative;width:100%;background:#f3f5f7;border-radius:16px;overflow:hidden;aspect-ratio:1/1;min-width:0;min-height:0}
-.pdp-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.22,1,.36,1)}
-.pdp-shot:hover img{transform:scale(1.04)}
-.pdp-shot.hero{grid-column:1 / -1;aspect-ratio:4/3}
-.pdp-shot.wide{grid-column:1 / -1;aspect-ratio:16/9}
-.pdp-gallery-wrap{position:relative;min-width:0}
-.pdp-gnav,.pdp-gdots{display:none}
+.acc-feature{max-width:1180px;margin:0 auto;padding:70px 24px;display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.acc-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+.acc-shot{position:relative;border-radius:16px;overflow:hidden;background:#f3f5f7;aspect-ratio:1/1;min-width:0}
+.acc-shot.big{grid-column:1 / -1;aspect-ratio:16/10}
+.acc-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.acc-shot:hover img{transform:scale(1.04)}
+.acc-info .eyebrow-label{color:var(--accent);margin-bottom:12px}
+.acc-name{font-family:var(--fd);font-size:clamp(28px,3.4vw,42px);font-weight:900;color:#15181c;line-height:1.02;margin-bottom:6px}
+.acc-name em{color:var(--accent);font-style:normal}
+.acc-tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a96a0;margin-bottom:16px}
+.acc-price{font-family:var(--fd);font-size:32px;font-weight:900;color:#15181c}
+.acc-tax{font-size:12px;color:#8a96a0;margin-bottom:18px}
+.acc-desc{font-size:15px;color:#5a6672;line-height:1.65;margin-bottom:20px;max-width:46ch}
+.acc-bullets{list-style:none;display:grid;gap:11px;margin-bottom:26px}
+.acc-bullets li{display:flex;gap:10px;font-size:14px;color:#3a444c;line-height:1.45}
+.acc-bullets svg{width:17px;height:17px;color:var(--accent);flex-shrink:0;margin-top:2px}
+.acc-actions{display:flex;flex-direction:column;gap:11px;max-width:360px}
+.acc-add{justify-content:center;width:100%;padding:16px;font-size:13px}
+.acc-add.added{background:#1f9d55;box-shadow:0 4px 16px rgba(31,157,85,.28)}
+.acc-checkout-link{font-size:13px;font-weight:600;color:#5a6672;text-decoration:none;text-align:center;display:none}
+.acc-checkout-link.show{display:flex;align-items:center;justify-content:center;gap:6px}
+.acc-checkout-link:hover{color:var(--accent)}
 
-/* buy box */
-.pdp-buy{padding-top:4px;position:sticky;top:90px}
-.pdp-rating{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#5a6672;margin-bottom:14px}
-.pdp-stars{color:#f5a623;letter-spacing:1px;font-size:15px}
-.pdp-title{font-family:var(--fd);font-size:clamp(30px,3.6vw,46px);font-weight:900;line-height:1.0;color:#15181c;margin-bottom:14px}
-.pdp-title em{color:var(--accent);font-style:normal}
-.pdp-price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px}
-.pdp-price #pdpPrice{font-family:var(--fd);font-size:34px;font-weight:900;color:#15181c}
-.pdp-tax{font-size:12px;font-weight:600;color:#8a96a0}
-.pdp-desc{font-size:15px;color:#5a6672;line-height:1.65;margin-bottom:26px;max-width:46ch}
-.pdp-opt{margin-bottom:24px}
-.pdp-opt-h{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#15181c;margin-bottom:11px}
-.pdp-opt-h span{color:#8a96a0;font-weight:600;letter-spacing:.02em;text-transform:none;margin-left:6px}
+.acc-strip{background:#f5f6f7;padding:64px 0}
+.acc-strip .container{max-width:1180px}
+.acc-strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.acc-card{background:#fff;border-radius:14px;padding:26px 22px;border:1px solid rgba(0,0,0,.05)}
+.acc-card-ico{width:42px;height:42px;border-radius:11px;background:#f5f6f7;display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:15px}
+.acc-card-ico svg{width:21px;height:21px}
+.acc-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:#15181c;margin-bottom:7px}
+.acc-card p{font-size:13px;color:#5a6672;line-height:1.55}
+.acc-soon{text-align:center;font-size:13px;color:#8a96a0;margin-top:34px}
 
-/* swatches */
-.pdp-swatches{display:flex;gap:11px}
-.pdp-sw{width:34px;height:34px;border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1.5px #d6dbe0;padding:0;transition:box-shadow .16s,transform .12s}
-.pdp-sw:hover{transform:translateY(-1px)}
-.pdp-sw.active{box-shadow:0 0 0 2px #15181c}
-
-/* sizes */
-.pdp-sizes{display:flex;flex-wrap:wrap;gap:9px}
-.pdp-size{font-family:var(--fb);font-size:13px;font-weight:600;color:#1a1f24;background:#fff;border:1px solid #d6dbe0;border-radius:9px;padding:10px 15px;cursor:pointer;transition:border-color .16s,background .16s,color .16s}
-.pdp-size:hover:not(:disabled):not(.active){border-color:#9aa3ab}
-.pdp-size.active{background:#15181c;border-color:#15181c;color:#fff}
-.pdp-size:disabled{color:#c2c9cf;border-style:dashed;cursor:not-allowed;text-decoration:line-through}
-
-/* actions */
-.pdp-actions{display:flex;flex-direction:column;gap:13px;margin:30px 0 26px}
-.pdp-add{justify-content:center;width:100%;padding:16px;font-size:13px}
-.pdp-custom-link{font-size:13px;font-weight:600;color:#5a6672;text-decoration:none;text-align:center;transition:color .18s}
-.pdp-custom-link:hover{color:var(--accent)}
-
-/* trust */
-.pdp-trust{list-style:none;border-top:1px solid #e7eaed;padding-top:20px;display:grid;gap:13px}
-.pdp-trust li{display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#3a444c;line-height:1.45}
-.pdp-trust svg{flex-shrink:0;width:18px;height:18px;color:var(--accent);margin-top:1px}
-.pdp-trust b{color:#15181c;font-weight:700}
-
-/* features */
-.pdp-feats{background:#fff;padding:84px 0 14px}
-.pdp-feats .container{max-width:1380px}
-.pdp-feats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}
-.pdp-feat{background:#f5f6f7;border-radius:14px;padding:26px 22px}
-.pdp-feat-ico{width:42px;height:42px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-.pdp-feat-ico svg{width:21px;height:21px}
-.pdp-feat h3{font-family:var(--fd);font-size:19px;font-weight:800;color:#15181c;margin-bottom:7px;line-height:1.05}
-.pdp-feat p{font-size:13px;color:#5a6672;line-height:1.55}
-
-/* specs */
-.pdp-specs{background:#fff;padding:22px 0 20px}
-.pdp-specs .container{max-width:1380px}
-.pdp-specs-title{margin-bottom:36px}
-.pdp-specs-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
-.pdp-spec-table{width:100%;border-collapse:collapse}
-.pdp-spec-table th,.pdp-spec-table td{text-align:left;padding:13px 0;border-bottom:1px solid #e7eaed;font-size:14px;vertical-align:top}
-.pdp-spec-table th{color:#8a96a0;font-weight:600;width:42%;letter-spacing:.02em}
-.pdp-spec-table td{color:#15181c;font-weight:600}
-.pdp-incl{background:#f5f6f7;border-radius:14px;padding:28px 26px}
-.pdp-incl h3{font-family:var(--fd);font-size:22px;font-weight:800;color:#15181c;margin-bottom:16px}
-.pdp-incl ul{list-style:none;display:grid;gap:11px}
-.pdp-incl li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a444c;line-height:1.45}
-.pdp-incl svg{flex-shrink:0;width:17px;height:17px;color:var(--accent);margin-top:2px}
-
-/* reviews */
-.pdp-rev{background:#f5f6f7;padding:80px 0}
-.pdp-rev .container{max-width:1380px}
-.pdp-rev-head{display:flex;align-items:center;gap:18px;margin-bottom:38px;flex-wrap:wrap}
-.pdp-rev-score{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;padding:12px 18px}
-.pdp-rev-num{font-family:var(--fd);font-size:34px;font-weight:900;color:#15181c;line-height:1}
-.pdp-rev-meta{font-size:12px;color:#8a96a0;font-weight:600}
-.pdp-rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.pdp-rev-card{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:13px;padding:24px}
-.pdp-rev-stars{color:#f5a623;letter-spacing:1px;font-size:14px;margin-bottom:11px}
-.pdp-rev-text{font-size:14px;color:#1a1f24;line-height:1.6;margin-bottom:16px}
-.pdp-rev-name{font-size:13px;font-weight:700;color:#15181c}
-.pdp-rev-role{font-size:12px;color:#8a96a0}
-
-/* cta */
-.pdp-final-cta{background:#f5f6f7;padding:84px 0;text-align:center}
-.pdp-final-cta .section-title{color:#1a1f24}
-.pdp-final-cta .eyebrow-label{color:var(--accent)}
-.pdp-final-cta p{font-size:15px;color:#5a6672;max-width:46ch;margin:14px auto 28px}
-.pdp-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.pdp-cta-ghost{font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1a1f24;background:transparent;border:1px solid rgba(0,0,0,.18);padding:14px 26px;border-radius:var(--rs);text-decoration:none;transition:border-color .2s,background .2s}
-.pdp-cta-ghost:hover{border-color:rgba(0,0,0,.4);background:rgba(0,0,0,.04)}
-
-@media(max-width:900px){
-  .pdp-main{grid-template-columns:1fr;gap:30px}
-  .pdp-buy{position:static;top:auto}
-  .pdp-feats-grid{grid-template-columns:1fr 1fr}
-  .pdp-specs-grid{grid-template-columns:1fr;gap:30px}
-  .pdp-rev-grid{grid-template-columns:1fr}
-  /* gallery -> swipe carousel (one photo at a time) */
-  .pdp-gallery{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;border-radius:16px;scrollbar-width:none}
-  .pdp-gallery::-webkit-scrollbar{display:none}
-  .pdp-shot,.pdp-shot.hero,.pdp-shot.wide{flex:0 0 100%;width:100%;aspect-ratio:4/3;scroll-snap-align:center}
-  .pdp-gnav{display:flex;position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:none;align-items:center;justify-content:center;color:#15181c;cursor:pointer;z-index:2;box-shadow:0 2px 12px rgba(0,0,0,.2)}
-  .pdp-gnav svg{width:18px;height:18px}
-  .pdp-gnav.prev{left:10px}
-  .pdp-gnav.next{right:10px}
-  .pdp-gdots{display:flex;justify-content:center;gap:7px;margin-top:13px}
-  .pdp-gdot{width:7px;height:7px;border-radius:50%;background:#cdd3d8;transition:background .2s,width .2s}
-  .pdp-gdot.active{width:20px;border-radius:4px;background:#15181c}
-}
-@media(max-width:560px){
-  .pdp-container{padding-top:22px}
-  .pdp-feats{padding-top:60px}
-  .pdp-feats-grid{grid-template-columns:1fr}
-}
-/* PRODUCT DETAILS accordion */
-.pdp-details{background:#f5f6f7;padding:64px 0 84px}
-.pdp-details .container{max-width:1380px}
-.pdp-acc{border-top:1px solid rgba(0,0,0,.1);margin-top:26px}
-.pdp-acc-item{border-bottom:1px solid rgba(0,0,0,.1)}
-.pdp-acc-btn{width:100%;display:flex;align-items:center;gap:16px;background:none;border:none;padding:22px 0;cursor:pointer;text-align:left;font-family:var(--fb);font-size:15px;font-weight:600;color:#1a1f24;transition:color .2s}
-.pdp-acc-btn:hover{color:var(--accent)}
-.pdp-acc-ico{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:19px;line-height:0;color:#5a6672;transition:background .2s,border-color .2s,color .2s,transform .3s}
-.pdp-acc-btn:hover .pdp-acc-ico{border-color:var(--accent);background:var(--accent);color:#fff}
-.pdp-acc-item.open .pdp-acc-ico{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
-.pdp-acc-panel{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.pdp-acc-body{padding:2px 0 26px 44px;font-size:14.5px;color:#5a6672;line-height:1.75}
-.pdp-acc-body p{margin:0 0 12px}
-.pdp-acc-body p:last-child{margin-bottom:0}
-.pdp-acc-body ul{margin:0 0 12px;padding-left:18px}
-.pdp-acc-body li{margin-bottom:7px}
-.pdp-acc-body strong{color:#1a1f24}
-.pdp-acc-body a{color:var(--accent);text-decoration:underline}
-.pdp-dl{display:grid;grid-template-columns:auto 1fr;gap:9px 22px;margin:0}
-.pdp-dl dt{color:#8a96a0;font-weight:600}
-.pdp-dl dd{margin:0;color:#15181c;font-weight:600}
-.pdp-cert{margin-top:6px;font-size:13px}
-.pdp-cert-row{display:grid;grid-template-columns:30% 30% 1fr;gap:14px;padding:9px 0;border-bottom:1px solid #e2e5e9;line-height:1.5}
-.pdp-cert-row span:first-child{color:#15181c;font-weight:600}
-.pdp-cert-row span:nth-child(2){color:#8a96a0}
-.pdp-cert-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.pdp-cert-head span,.pdp-cert-head span:first-child{color:#8a96a0!important;font-weight:700}
-@media(max-width:640px){
-  .pdp-details{padding:52px 0 64px}
-  .pdp-acc-body{padding-left:0}
-  .pdp-dl{grid-template-columns:1fr;gap:2px 0}
-  .pdp-dl dt{margin-top:9px}
-  .pdp-cert-head{display:none}
-  .pdp-cert-row{grid-template-columns:1fr;gap:2px;padding:10px 0}
-  .pdp-cert-row span:nth-child(2)::before{content:'Standard: '}
-  .pdp-cert-row span:nth-child(3)::before{content:'Result: ';color:#8a96a0}
-}
+@media(max-width:860px){.acc-feature{grid-template-columns:1fr;gap:28px;padding:48px 22px}.acc-strip-grid{grid-template-columns:1fr}}
 </style>
 
-<div class="pdp-wrap">
-  <div class="container pdp-container">
-    <nav class="pdp-crumbs"><a href="categoria-alina.html">Tracks</a><span>/</span><a href="categoria-alina.html">In stock</a><span>/</span>Valhalla One</nav>
+<div class="acc-wrap">
+  <section class="acc-hero">
+    <span class="eyebrow-label">Accessories</span>
+    <h1>Everything to <em>install</em> it right.</h1>
+    <p>The essentials we use ourselves to fit Heroturfs tracks — built to the same standard as the turf.</p>
+  </section>
 
-    <div class="pdp-main">
-      <!-- GALLERY -->
-      <div class="pdp-gallery-wrap">
-      <div class="pdp-gallery">
-        <div class="pdp-shot hero"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?width=1100" alt="Valhalla One black sled track with white lines and numbers" loading="eager"></div>
-        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp?width=700" alt="Athlete pushing a sled on the Valhalla One track" loading="lazy"></div>
-        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-02.webp?width=700" alt="Valhalla One track detail" loading="lazy"></div>
-        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-03.webp?width=700" alt="Valhalla One track markings close-up" loading="lazy"></div>
-        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-04.webp?width=700" alt="Valhalla One track surface texture" loading="lazy"></div>
-        <div class="pdp-shot wide"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg?width=1100" alt="Sled workout in progress on the Valhalla One track" loading="lazy"></div>
-        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-05.webp?width=700" alt="Valhalla One track numbers detail" loading="lazy"></div>
-        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-06.webp?width=700" alt="Valhalla One track full view" loading="lazy"></div>
-      </div>
-        <button class="pdp-gnav prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <button class="pdp-gnav next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button>
-        <div class="pdp-gdots" aria-hidden="true"></div>
-      </div>
-
-      <!-- BUY BOX -->
-      <div class="pdp-buy">
-        <div class="pdp-rating"><span class="pdp-stars">★★★★★</span> 4.8 · 72 reviews</div>
-        <h1 class="pdp-title">Black Sled Track with Markings — <em>Valhalla One</em></h1>
-        <div class="pdp-price"><span id="pdpPrice">£783.00</span> <span class="pdp-tax">Tax included · Free shipping</span></div>
-        <p class="pdp-desc">High-performance black sled track with integrated white lines and numbers — built for functional training, sled pushes and high-intensity fitness zones.</p>
-
-        <!-- colour -->
-        <div class="pdp-opt">
-          <div class="pdp-opt-h">Colour <span id="pdpColourName">Negro · Hades</span></div>
-          <div class="pdp-swatches" id="pdpSwatches">
-            <button class="pdp-sw active" type="button" data-name="Negro · Hades" style="background:#15171a" aria-label="Negro Hades"></button>
-            <button class="pdp-sw" type="button" data-name="Azul · Atlantis" style="background:#2a5fd0" aria-label="Azul Atlantis"></button>
-            <button class="pdp-sw" type="button" data-name="Verde · Elysium" style="background:#3f9d4a" aria-label="Verde Elysium"></button>
-            <button class="pdp-sw" type="button" data-name="Rojo · Marathon" style="background:#cf2e2e" aria-label="Rojo Marathon"></button>
-          </div>
-        </div>
-
-        <!-- size -->
-        <div class="pdp-opt">
-          <div class="pdp-opt-h">Size</div>
-          <div class="pdp-sizes" id="pdpSizes">
-            <button class="pdp-size" type="button" data-price="£559.00">1.0 × 10.0 m</button>
-            <button class="pdp-size active" type="button" data-price="£783.00">1.5 × 10.0 m</button>
-            <button class="pdp-size" type="button" data-price="£1,040.00">2.0 × 10.0 m</button>
-            <button class="pdp-size" type="button" data-price="£1,279.00">2.0 × 12.4 m</button>
-            <button class="pdp-size" type="button" disabled>1.0 × 8.0 m</button>
-            <button class="pdp-size" type="button" disabled>1.0 × 5.3 m</button>
-          </div>
-        </div>
-
-        <div class="pdp-actions">
-          <a href="#" class="btn-primary pdp-add">Add to cart</a>
-          <a href="cesped-personalizado-alina.html" class="pdp-custom-link">Need a custom size or colour? Design your own →</a>
-        </div>
-
-        <ul class="pdp-trust">
-          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span><b>5-year guarantee</b> against manufacturing defects.</span></li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span><b>Free shipping</b> to mainland Spain &amp; the Balearics.</span></li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span><b>Made in Spain</b> with quality certification.</span></li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>In-stock tracks ship in <b>48–72 h</b> (3–5 working days prep) · 14-day returns.</span></li>
-        </ul>
-      </div>
+  <section class="acc-feature">
+    <div class="acc-gallery">
+      <div class="acc-shot big"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Cinta-doble-cara-cesped-artificial-extra-fuerte-para-gimnasio_3.webp?width=900" alt="Endurance double-sided installation tape" loading="eager"></div>
+      <div class="acc-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=500" alt="Endurance tape roll" loading="lazy"></div>
+      <div class="acc-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-5_2.webp?width=500" alt="Endurance tape detail" loading="lazy"></div>
     </div>
-  </div>
-
-  <!-- FEATURES -->
-  <section class="pdp-feats">
-    <div class="container">
-      <span class="eyebrow-label">Why Valhalla One</span>
-      <h2 class="section-title" style="color:#15181c">Built for the <em>hardest</em> sessions.</h2>
-      <div class="pdp-feats-grid">
-        <div class="pdp-feat">
-          <div class="pdp-feat-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 18L8 6l4 8 4-10 4 14"/></svg></div>
-          <h3>Integrated markings</h3>
-          <p>White lines and numbers woven in — they never peel, fade or wear off under the sled.</p>
-        </div>
-        <div class="pdp-feat">
-          <div class="pdp-feat-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
-          <h3>Heavy-traffic ready</h3>
-          <p>Resists daily foot traffic, sled dragging and loaded weight without flattening.</p>
-        </div>
-        <div class="pdp-feat">
-          <div class="pdp-feat-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <h3>Pro fitness zones</h3>
-          <p>Clean, professional look that turns any floor into a defined functional-training lane.</p>
-        </div>
-        <div class="pdp-feat">
-          <div class="pdp-feat-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>5-year guarantee</h3>
-          <p>Backed against manufacturing defects, made in Spain to a certified standard.</p>
-        </div>
+    <div class="acc-info">
+      <span class="eyebrow-label">Installation</span>
+      <h2 class="acc-name">Endurance <em>Installation Tape</em></h2>
+      <div class="acc-tag">Double-sided · extra-strong</div>
+      <div class="acc-price">£97.00</div>
+      <div class="acc-tax">Tax included · Free shipping mainland &amp; Balearics</div>
+      <p class="acc-desc">Heavy-duty double-sided tape to bond your track seams and edges to almost any floor. The same tape our installers use — strong, weather-resistant and built to last under heavy traffic.</p>
+      <ul class="acc-bullets">
+        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Extra-strong, permanent double-sided bond</li>
+        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Water-resistant — indoor &amp; outdoor</li>
+        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Keeps seams flat and invisible</li>
+        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>One roll covers the seams of a standard track</li>
+      </ul>
+      <div class="acc-actions">
+        <a href="#" class="btn-primary acc-add" id="accAdd">Add to cart</a>
+        <a href="checkout.html" class="acc-checkout-link" id="accCheckout">Go to checkout <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </section>
 
-  <!-- SPECS -->
-  <section class="pdp-specs">
+  <section class="acc-strip">
     <div class="container">
-      <span class="eyebrow-label">Spec sheet</span>
-      <h2 class="section-title pdp-specs-title" style="color:#15181c">Technical <em style="color:var(--accent);font-style:normal">specifications</em></h2>
-      <div class="pdp-specs-grid">
-        <table class="pdp-spec-table">
-          <tr><th>Model</th><td>Valhalla One</td></tr>
-          <tr><th>Colour</th><td>Negro · Hades (also Atlantis, Elysium, Marathon)</td></tr>
-          <tr><th>Markings</th><td>Integrated white lines &amp; numbers</td></tr>
-          <tr><th>Widths</th><td>1.0 m / 1.5 m / 2.0 m</td></tr>
-          <tr><th>Lengths</th><td>5.3 m – 12.4 m (custom available)</td></tr>
-          <tr><th>Use</th><td>Sled push · prowler · functional training</td></tr>
-          <tr><th>Origin</th><td>Made in Spain · quality certified</td></tr>
-          <tr><th>Guarantee</th><td>5 years against manufacturing defects</td></tr>
-        </table>
-        <div class="pdp-incl">
-          <h3>Delivery &amp; returns</h3>
-          <ul>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>In-stock tracks prepared in 3–5 working days.</li>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Shipped within 48–72 h, tracking on dispatch.</li>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Free shipping to mainland Spain &amp; the Balearics.</li>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Returns within 14 days if unused &amp; in original packaging.</li>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Technical team replies within 24 h for sizing &amp; colour advice.</li>
-          </ul>
+      <span class="eyebrow-label">Why it matters</span>
+      <h2 class="section-title" style="color:#15181c">A track is only as good as its <em>fit</em>.</h2>
+      <div class="acc-strip-grid">
+        <div class="acc-card">
+          <div class="acc-card-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></div>
+          <h3>Invisible seams</h3>
+          <p>Bonds panels edge-to-edge so joins disappear and the markings line up perfectly.</p>
+        </div>
+        <div class="acc-card">
+          <div class="acc-card-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+          <h3>Holds under load</h3>
+          <p>Designed for sled drags and heavy daily traffic — edges stay down, no lifting.</p>
+        </div>
+        <div class="acc-card">
+          <div class="acc-card-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Pro-grade</h3>
+          <p>The exact tape our own install team uses on every Heroturfs project.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT DETAILS -->
-  <section class="pdp-details">
-    <div class="container">
-      <span class="eyebrow-label">In detail</span>
-      <h2 class="section-title" style="color:#15181c">Product <em>details.</em></h2>
-      <div class="pdp-acc">
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Product description</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <p>High-performance textured artificial turf track with integrated markings and numbering — ideal for functional training, movement drills and sled work.</p>
-            <ul>
-              <li>High fibre density: <strong>86,000 stitches/m²</strong> for exceptional grip and comfort on high-intensity floor work.</li>
-              <li>Excellent impact resistance, built for heavy daily use in gyms.</li>
-              <li>Easy to clean and maintain, with quick, simple installation.</li>
-              <li>Available in several sizes — and we also make <a href="cesped-personalizado-alina.html">custom tracks</a> to fit your exact project.</li>
-              <li>Made in the EU in a facility with over 100 years of textile experience in technical carpets and mats.</li>
-            </ul>
-          </div></div>
-        </div>
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Technical data sheet</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <dl class="pdp-dl">
-              <dt>Fibre type</dt><dd>Textured polyethylene monofilament</dd>
-              <dt>Gauge</dt><dd>1/7 inch</dd>
-              <dt>Total height</dt><dd>15 mm (whole system, fibre + backing, measured flat). As the fibre is texturised, the visible height in use is around 11–12 mm.</dd>
-              <dt>Pile height</dt><dd>12 mm (±5%)</dd>
-              <dt>Fibre weight</dt><dd>1,550 g/m² (±10%)</dd>
-              <dt>Stitches/m²</dt><dd>86,000 (±10%)</dd>
-              <dt>Yarn weight</dt><dd>5,500 dtex (±10%)</dd>
-              <dt>Total weight</dt><dd>approx. 2,400 g/m² (±10%)</dd>
-            </dl>
-          </div></div>
-        </div>
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Tests and certifications</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <p>Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
-            <div class="pdp-cert">
-              <div class="pdp-cert-row pdp-cert-head"><span>Property</span><span>Standard</span><span>Result</span></div>
-              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
-              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
-              <div class="pdp-cert-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
-              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
-              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
-              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
-              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
-              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
-              <div class="pdp-cert-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
-              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
-              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
-              <div class="pdp-cert-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
-              <div class="pdp-cert-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
-            </div>
-          </div></div>
-        </div>
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Installation manual</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <p>Designed for quick, clean installation — all you need is a level surface, extra-strong double-sided tape and a few simple steps.</p>
-            <p>Our full step-by-step guide covers preparing the area, laying the turf and ensuring long-lasting fixing, even for heavy sled work.</p>
-          </div></div>
-        </div>
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Maintenance and warranty</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <p>Built to take intensive use with minimal upkeep. A little regular care keeps it looking like day one:</p>
-            <ul>
-              <li>Regular vacuuming to remove dust, chalk, fibres or rubber.</li>
-              <li>Spot-clean with water and mild soap for stains or spills.</li>
-              <li>Periodic checks of the installation and seams.</li>
-            </ul>
-            <p>All tracks include a <strong>5-year guarantee</strong> against manufacturing defects and functional failures under normal use.</p>
-          </div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-<section class="reviews-section-d pdp-reviews" style="padding:34px 0 80px">
-  <div class="container" style="max-width:1380px">
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px" class="reveal">
-      <div>
-        <span class="eyebrow-label">Featured reviews</span>
-        <h2 class="section-title" style="color:#1a1f24;font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1">The verdict<br><em style="color:var(--accent);font-style:normal">from the floor</em></h2>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:9px" class="reveal d2">
-        <div class="reviews-score-badge">
-          <div class="rsb-num">4.79</div>
-        <div class="rsb-right">
-          <div class="rsb-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div class="rsb-label">72 reviews</div>
-          </div>
-        </div>
-        <div style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#5a6672"><span style="width:16px;height:16px;border-radius:4px;background:#00b27a;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Verified reviews on <strong style="color:#1a1f24;font-weight:800;margin-left:1px">Judge.me</strong></div>
-      </div>
-    </div>
-    <div class="reviews-carousel">
-    <div class="reviews-grid-photo" id="reviewsTrack">
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp?width=700" alt="Valhalla One track in use" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">8 Sep 2025</span></div>
-          <p class="rpc-text rpc-en">"Excellent-quality artificial turf. We use it for sled training and it bounces back really well."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Césped artificial de muy buena calidad. Lo usamos para entrenamiento con trineos y se recupera muy bien."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Isidro Carvajal</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="assets/compartidos/bollodromo.jpg" alt="Bollodromo · custom Valhalla turf" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">19 May 2026</span></div>
-          <p class="rpc-text rpc-en">"We're a strength-training centre. We ordered a strip of turf in our colours with our logo. The quality has been superb — it feels great underfoot and is comfortable for strength work. For now we're really happy with the result."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Somos un centro deportivo especializado en el entrenamiento de fuerza. Hemos encargado una tira de césped con nuestros colores y logo. La calidad ha sido estupenda, el tacto se siente muy bien y parece cómoda a la hora de utilizarla para entrenamiento de fuerza. Estamos deseando ver cómo se mantiene con el tiempo, pero, por ahora, estamos muy satisfechos con el resultado de su trabajo."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Bollodromo</div><div class="rpc-role">Strength training centre · Tarragona</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-02.webp?width=700" alt="Valhalla One black track" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">5 Jun 2026</span></div>
-          <p class="rpc-text rpc-en">"I bought the turf for our home gym. Top-quality product — it meets our expectations."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Compré el césped para el gimnasio de nuestra casa. Producto de gran calidad, cumple con nuestras expectativas."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Jose</div><div class="rpc-role">Home gym</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-03.webp?width=700" alt="Valhalla One black track detail" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">25 Apr 2026</span></div>
-          <p class="rpc-text rpc-en">"All great — the turf is really dense and hard-wearing, with a very comfortable feel."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Todo genial, el césped muy tupido y resistente. Sensación muy confortable."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Verified buyer</div><div class="rpc-role">Heroturfs customer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg?width=700" alt="Sled workout on Valhalla One" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 May 2026</span></div>
-          <p class="rpc-text rpc-en">"Great material — I'm really happy with it."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Buen material, estoy contento."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Gustavonerja</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-05.webp?width=700" alt="Valhalla One black track" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 Jun 2026</span></div>
-          <p class="rpc-text rpc-en">"Top quality."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Top qualité."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Sophie W.</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-    <button class="reviews-arrow reviews-arrow-prev" onclick="scrollReviews(-1)" aria-label="Previous review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <button class="reviews-arrow reviews-arrow-next" onclick="scrollReviews(1)" aria-label="Next review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
-    <div class="reviews-dots">
-      <button class="rev-dot active" onclick="goReview(0)" aria-label="Review 1"></button>
-      <button class="rev-dot" onclick="goReview(1)" aria-label="Review 2"></button>
-      <button class="rev-dot" onclick="goReview(2)" aria-label="Review 3"></button>
-      <button class="rev-dot" onclick="goReview(3)" aria-label="Review 4"></button>
-      <button class="rev-dot" onclick="goReview(4)" aria-label="Review 5"></button>
-      <button class="rev-dot" onclick="goReview(5)" aria-label="Review 6"></button>
-    </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:28px">
-      <a href="#" class="reviews-cta">Read all 72 reviews <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-</section>
-
-  <!-- CTA -->
-  <section class="pdp-final-cta">
-    <div class="container">
-      <span class="eyebrow-label">Your track, your size</span>
-      <h2 class="section-title">Can't find the exact fit?</h2>
-      <p>Every Heroturfs track can be made to measure — your width, length and colour, produced in Spain and shipped in 48 h.</p>
-      <div class="pdp-cta-btns">
-        <a href="cesped-personalizado-alina.html" class="btn-primary">Design your own</a>
-        <a href="categoria-alina.html" class="pdp-cta-ghost">See tracks in stock</a>
-      </div>
+      <p class="acc-soon">More accessories coming soon.</p>
     </div>
   </section>
 </div>
 
 <script>
 (function(){
-  var sizes=document.getElementById('pdpSizes');
-  var price=document.getElementById('pdpPrice');
-  if(sizes){
-    sizes.addEventListener('click',function(e){
-      var btn=e.target.closest('.pdp-size');
-      if(!btn||btn.disabled)return;
-      sizes.querySelectorAll('.pdp-size').forEach(function(s){s.classList.remove('active');});
-      btn.classList.add('active');
-      if(btn.dataset.price)price.textContent=btn.dataset.price;
-    });
-  }
-  var sw=document.getElementById('pdpSwatches');
-  var cn=document.getElementById('pdpColourName');
-  // Per-colour galleries (8 photos each, same layout: hero, action, track, track, track, action-wide, track, track)
-  var B='https://cdn.shopify.com/s/files/1/0960/0047/5401/files/';
-  var W=[1100,700,700,700,700,1100,700,700];
-  var COLOURS={
-    'Negro · Hades':['cesped-gimnasio-valhalla-negro-150x1000-01.webp','cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp','cesped-gimnasio-valhalla-negro-150x1000-02.webp','cesped-gimnasio-valhalla-negro-150x1000-03.webp','cesped-gimnasio-valhalla-negro-150x1000-04.webp','cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg','cesped-gimnasio-valhalla-negro-150x1000-05.webp','cesped-gimnasio-valhalla-negro-150x1000-06.webp'],
-    'Azul · Atlantis':['cesped-gimnasio-azul-atlantis-150x1000-01.webp','Cesped-artificial-gimnasio-azul-chica1.jpg','cesped-gimnasio-azul-atlantis-150x1000-02.webp','cesped-gimnasio-azul-atlantis-150x1000-03.webp','cesped-gimnasio-azul-atlantis-150x1000-04.webp','cesped-artificial-gimnasio-azul-chica-2.webp','cesped-gimnasio-azul-atlantis-150x1000-05.webp','cesped-gimnasio-azul-atlantis-150x1000-06.webp'],
-    'Verde · Elysium':['cesped-gimnasio-verde-elysium-150x1000-01.webp','cesped-artificial-gimnasio-verde-cuerda-chica1.webp','cesped-gimnasio-verde-elysium-150x1000-02.webp','cesped-gimnasio-verde-elysium-150x1000-03.webp','cesped-gimnasio-verde-elysium-150x1000-04.webp','cesped-artificial-gimnasio-verde-cuerda-chica2_93d746d8-cb73-4b30-a27b-10c5ca1fc8e7.webp','cesped-gimnasio-verde-elysium-150x1000-05.webp','cesped-gimnasio-verde-elysium-150x1000-06.webp'],
-    'Rojo · Marathon':['cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp','Pista-Marathon-One-con-personas.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-1.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-2.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-3.webp','Pista-Marathon-One-con-trineo.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-4.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-5.webp']
-  };
-  var shots=document.querySelectorAll('.pdp-gallery .pdp-shot img');
-  function setColour(name){
-    var arr=COLOURS[name];
-    if(!arr||!shots.length)return;
-    shots.forEach(function(img,i){
-      if(arr[i])img.src=B+arr[i]+'?width='+(W[i]||700);
-    });
-    // preload other colours so switching is instant
-  }
-  // warm cache for all colours
-  Object.keys(COLOURS).forEach(function(k){COLOURS[k].forEach(function(f,i){var p=new Image();p.src=B+f+'?width='+(W[i]||700);});});
-  if(sw){
-    sw.addEventListener('click',function(e){
-      var btn=e.target.closest('.pdp-sw');
-      if(!btn)return;
-      sw.querySelectorAll('.pdp-sw').forEach(function(s){s.classList.remove('active');});
-      btn.classList.add('active');
-      if(btn.dataset.name){
-        if(cn)cn.textContent=btn.dataset.name;
-        setColour(btn.dataset.name);
-      }
-    });
-  }
-})();
-</script>
-
-<!-- mobile gallery carousel (dots + arrows) -->
-<script>
-(function(){
-  var wrap=document.querySelector('.pdp-gallery-wrap');if(!wrap)return;
-  var gal=wrap.querySelector('.pdp-gallery');
-  var slides=gal.querySelectorAll('.pdp-shot');
-  var dots=wrap.querySelector('.pdp-gdots');
-  var prev=wrap.querySelector('.pdp-gnav.prev');
-  var next=wrap.querySelector('.pdp-gnav.next');
-  for(var i=0;i<slides.length;i++){var d=document.createElement('span');d.className='pdp-gdot'+(i===0?' active':'');dots.appendChild(d);}
-  var dotEls=dots.querySelectorAll('.pdp-gdot');
-  function upd(){var c=Math.round(gal.scrollLeft/gal.clientWidth);dotEls.forEach(function(d,i){d.classList.toggle('active',i===c);});}
-  var raf;gal.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(upd);});
-  function tween(to){
-    var start=gal.scrollLeft,dist=to-start,t0=null;
-    gal.style.scrollSnapType='none';
-    function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/320);var e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;gal.scrollLeft=start+dist*e;if(p<1){requestAnimationFrame(step);}else{gal.scrollLeft=to;gal.style.scrollSnapType='';upd();}}
-    requestAnimationFrame(step);
-  }
-  function go(dir){var idx=Math.round(gal.scrollLeft/gal.clientWidth);var t=Math.max(0,Math.min(slides.length-1,idx+dir));tween(t*gal.clientWidth);}
-  if(prev)prev.addEventListener('click',function(){go(-1);});
-  if(next)next.addEventListener('click',function(){go(1);});
-})();
-</script>
-
-
-<!-- reviews carousel + autoplay (ported from home) -->
-<script>
-function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
-  function toggleReviewLang(b,lang){
-    const body=b.closest('.rpc-body');
-    const en=body.querySelector('.rpc-en'),orig=body.querySelector('.rpc-orig');
-    const showOrig=orig.style.display==='none';
-    orig.style.display=showOrig?'':'none';
-    en.style.display=showOrig?'none':'';
-    b.textContent=showOrig?'Read translation · EN':('Read original · '+lang);
-    if(window.stopReviewsAutoplay)window.stopReviewsAutoplay();
-  }
-  // "Read more": clamp reviews to 3 lines and add an expand toggle only where text overflows
-  window.addEventListener('load',function(){
-    document.querySelectorAll('.review-photo-card .rpc-body').forEach(function(body){
-      const texts=[...body.querySelectorAll('.rpc-text')];
-      if(!texts.length)return;
-      const overflows=texts.some(function(p){
-        const hidden=p.style.display==='none';
-        if(hidden){p.style.visibility='hidden';p.style.display='';}
-        const o=p.scrollHeight>p.clientHeight+2;
-        if(hidden){p.style.display='none';p.style.visibility='';}
-        return o;
-      });
-      const row=document.createElement('div');
-      row.className='rpc-links';
-      if(overflows){
-        const b=document.createElement('button');
-        b.className='rpc-lang';
-        b.textContent='Read more';
-        b.onclick=function(){
-          const ex=!texts[0].classList.contains('expanded');
-          texts.forEach(function(t){t.classList.toggle('expanded',ex);});
-          b.textContent=ex?'Read less':'Read more';
-          if(window.stopReviewsAutoplay)window.stopReviewsAutoplay();
-        };
-        row.appendChild(b);
-      }
-      const lang=body.querySelector('.rpc-lang:not(.rpc-links .rpc-lang)');
-      if(lang&&lang.parentElement===body)row.appendChild(lang);
-      if(row.children.length)body.insertBefore(row,body.querySelector('.rpc-foot'));
-    });
-  });
-  function scrollReviews(dir){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');t.scrollBy({left:dir*(c.offsetWidth+reviewGap(t)),behavior:'smooth'});}
-  function goReview(i){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');t.scrollTo({left:i*(c.offsetWidth+reviewGap(t)),behavior:'smooth'});}
-  function updateReviewDots(){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');if(!c)return;const dots=document.querySelectorAll('.rev-dot');if(!dots.length)return;const i=Math.round(t.scrollLeft/(c.offsetWidth+reviewGap(t)))%dots.length;dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));}
-  document.getElementById('reviewsTrack').addEventListener('scroll',()=>window.requestAnimationFrame(updateReviewDots));
-
-  // Reviews marquee: continuous scroll that only pauses on hover; stops for good on real horizontal interaction
-  (function(){
-    const t=document.getElementById('reviewsTrack');
-    if(!t)return;
-    let stopped=false,paused=false;
-    window.stopReviewsAutoplay=function(){stopped=true};
-    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)stopped=true;
-    // Duplicate the cards once so the loop is seamless (like the ticker)
-    const originals=[...t.querySelectorAll('.review-photo-card')];
-    originals.forEach(function(c){const k=c.cloneNode(true);k.classList.add('visible');t.appendChild(k);});
-    const SPEED=48; // px per second
-    let pos=t.scrollLeft,last=null;
-    function frame(ts){
-      if(last!==null&&!stopped&&!paused&&!document.hidden){
-        const dt=Math.min(ts-last,100)/1000;
-        if(Math.abs(t.scrollLeft-pos)>2)pos=t.scrollLeft;
-        const c=t.querySelector('.review-photo-card');
-        const h=originals.length*(c.offsetWidth+reviewGap(t));
-        pos+=SPEED*dt;
-        if(pos>=h)pos-=h;
-        t.scrollLeft=pos;
-      }
-      last=ts;
-      requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-    t.addEventListener('mouseenter',function(){paused=true});
-    t.addEventListener('mouseleave',function(){paused=false});
-    // Stop only on real horizontal interaction; vertical page scrolling over the carousel must not kill autoplay
-    let px=0,py=0;
-    t.addEventListener('pointerdown',function(e){px=e.clientX;py=e.clientY},{passive:true});
-    t.addEventListener('pointermove',function(e){if(e.buttons&&Math.abs(e.clientX-px)>12&&Math.abs(e.clientX-px)>Math.abs(e.clientY-py))stopped=true},{passive:true});
-    t.addEventListener('touchstart',function(e){px=e.touches[0].clientX;py=e.touches[0].clientY},{passive:true});
-    t.addEventListener('touchmove',function(e){const dx=Math.abs(e.touches[0].clientX-px),dy=Math.abs(e.touches[0].clientY-py);if(dx>12&&dx>dy)stopped=true},{passive:true});
-    t.addEventListener('wheel',function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY))stopped=true},{passive:true});
-    document.querySelectorAll('.reviews-arrow,.rev-dot').forEach(function(b){b.addEventListener('click',function(){stopped=true})});
-  })();
-</script>
-
-<!-- ===== CART DRAWER (mockup) ===== -->
-<style>
-.cart-ov{position:fixed;inset:0;background:rgba(10,12,14,.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:300}
-.cart-ov.open{opacity:1;pointer-events:auto}
-.cart-drawer{position:fixed;top:0;right:0;height:100%;width:390px;max-width:92vw;background:#fff;z-index:301;transform:translateX(100%);transition:transform .38s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;box-shadow:-12px 0 44px rgba(0,0,0,.16)}
-.cart-drawer.open{transform:none}
-.cart-head{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid #e7eaed}
-.cart-head h3{font-family:var(--fd);font-size:21px;font-weight:800;color:#15181c;letter-spacing:.01em;display:inline-flex;align-items:center;gap:7px}
-.cart-head .cart-count{font-family:var(--fb);font-size:13px;font-weight:700;color:var(--accent)}
-.cart-close{background:none;border:none;cursor:pointer;color:#8a96a0;padding:4px;display:flex}
-.cart-close:hover{color:#15181c}
-.cart-body{flex:1;overflow-y:auto;padding:8px 24px}
-.cart-empty{color:#8a96a0;font-size:14px;text-align:center;margin-top:56px}
-.cart-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid #eef0f2}
-.cart-item-img{width:74px;height:74px;border-radius:10px;object-fit:cover;background:#f3f5f7;flex-shrink:0}
-.cart-item-info{flex:1;min-width:0}
-.cart-item-name{font-size:14px;font-weight:700;color:#15181c;line-height:1.2}
-.cart-item-meta{font-size:12px;color:#8a96a0;margin:4px 0 10px}
-.cart-item-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.cart-qty{display:inline-flex;align-items:center;border:1px solid #d6dbe0;border-radius:8px;overflow:hidden}
-.cart-qty button{width:28px;height:28px;border:none;background:#fff;cursor:pointer;color:#15181c;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center}
-.cart-qty button:hover{background:#f3f5f7}
-.cart-qty span{min-width:30px;text-align:center;font-size:13px;font-weight:700;color:var(--accent)}
-.cart-item-price{font-family:var(--fd);font-size:17px;font-weight:800;color:#15181c;white-space:nowrap}
-.cart-item-rm{background:none;border:none;color:#b9c0c6;cursor:pointer;font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding:0;margin-top:8px;font-weight:600}
-.cart-item-rm:hover{color:var(--accent)}
-.cart-foot{border-top:1px solid #e7eaed;padding:20px 24px}
-.cart-sub{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
-.cart-sub-l{font-size:13px;font-weight:700;color:#5a6672;text-transform:uppercase;letter-spacing:.06em}
-.cart-sub-v{font-family:var(--fd);font-size:25px;font-weight:900;color:#15181c}
-.cart-note{font-size:11px;color:#8a96a0;margin-bottom:15px}
-.cart-checkout{justify-content:center;width:100%;padding:15px;font-size:13px}
-.cart-cont{display:block;width:100%;text-align:center;margin-top:11px;font-size:12px;font-weight:600;color:#5a6672;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;background:none;border:none}
-.cart-cont:hover{color:#15181c}
-.pdp-add.added{background:#1f9d55;box-shadow:0 4px 16px rgba(31,157,85,.28)}
-</style>
-<div class="cart-ov" id="cartOv"></div>
-<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
-  <div class="cart-head"><h3>Your cart<span class="cart-count" id="cartHeadCount"></span></h3><button class="cart-close" id="cartClose" aria-label="Close cart"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-  <div class="cart-body" id="cartBody"><p class="cart-empty">Your cart is empty.</p></div>
-  <div class="cart-foot" id="cartFoot" style="display:none">
-    <div class="cart-sub"><span class="cart-sub-l">Subtotal</span><span class="cart-sub-v" id="cartSub">£0.00</span></div>
-    <p class="cart-note">Tax included · Free shipping to mainland Spain &amp; the Balearics</p>
-    <a href="checkout.html" class="btn-primary cart-checkout">Checkout</a>
-    <button class="cart-cont" id="cartCont">Continue shopping</button>
-  </div>
-</aside>
-<script>
-(function(){
-  var ov=document.getElementById('cartOv'),drawer=document.getElementById('cartDrawer');
-  var body=document.getElementById('cartBody'),foot=document.getElementById('cartFoot');
-  var subEl=document.getElementById('cartSub'),headCount=document.getElementById('cartHeadCount');
-  var badge=document.querySelector('.nav-badge');
-  var addBtn=document.querySelector('.pdp-add');
   var cart=[];try{cart=JSON.parse(localStorage.getItem('ht_cart')||'[]')||[];}catch(e){cart=[];}
-  function save(){try{localStorage.setItem('ht_cart',JSON.stringify(cart));}catch(e){}}
-  function num(s){return parseFloat(String(s).replace(/[^0-9.]/g,''))||0;}
-  function money(n){return '£'+n.toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});}
-  function open(){ov.classList.add('open');drawer.classList.add('open');document.body.style.overflow='hidden';}
-  function close(){ov.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';}
-  function render(){
-    var count=cart.reduce(function(a,i){return a+i.qty;},0);
-    var total=cart.reduce(function(a,i){return a+i.price*i.qty;},0);
-    save();
-    if(badge){badge.textContent=count;badge.style.display=count?'flex':'none';}
-    headCount.textContent=count?'('+count+')':'';
-    if(!cart.length){body.innerHTML='<p class="cart-empty">Your cart is empty.</p>';foot.style.display='none';return;}
-    foot.style.display='block';subEl.textContent=money(total);
-    body.innerHTML=cart.map(function(it,i){
-      return '<div class="cart-item"><img class="cart-item-img" src="'+it.img+'" alt=""><div class="cart-item-info">'+
-        '<div class="cart-item-name">'+it.name+'</div>'+
-        '<div class="cart-item-meta">'+it.colour+' · '+it.size+'</div>'+
-        '<div class="cart-item-row"><div class="cart-qty"><button data-a="dec" data-i="'+i+'" aria-label="Decrease">−</button><span>'+it.qty+'</span><button data-a="inc" data-i="'+i+'" aria-label="Increase">+</button></div>'+
-        '<div class="cart-item-price">'+money(it.price*it.qty)+'</div></div>'+
-        '<button class="cart-item-rm" data-a="rm" data-i="'+i+'">Remove</button>'+
-        '</div></div>';
-    }).join('');
-  }
-  function add(){
-    var colour=(document.getElementById('pdpColourName')||{}).textContent||'Negro · Hades';
-    var sz=document.querySelector('.pdp-size.active');
-    var size=sz?sz.textContent.trim():'1.5 × 10.0 m';
-    var price=num(sz&&sz.dataset.price?sz.dataset.price:document.getElementById('pdpPrice').textContent);
-    var img=(document.querySelector('.pdp-shot.hero img')||{}).src||'';
-    var key=colour+'|'+size;
-    var ex=cart.filter(function(i){return i.key===key;})[0];
-    if(ex){ex.qty++;}else{cart.push({key:key,name:'Valhalla One',colour:colour,size:size,price:price,img:img,qty:1});}
-    render();open();
-  }
-  body.addEventListener('click',function(e){
-    var b=e.target.closest('[data-a]');if(!b)return;
-    var i=+b.dataset.i,a=b.dataset.a;
-    if(a==='inc')cart[i].qty++;
-    else if(a==='dec'){cart[i].qty--;if(cart[i].qty<1)cart.splice(i,1);}
-    else if(a==='rm')cart.splice(i,1);
-    render();
+  var badge=document.querySelector('.nav-badge');
+  function count(){return cart.reduce(function(a,i){return a+i.qty;},0);}
+  function paint(){if(badge){var c=count();badge.textContent=c;badge.style.display=c?'flex':'none';}}
+  paint();
+  var btn=document.getElementById('accAdd');var link=document.getElementById('accCheckout');
+  if(btn)btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var key='endurance-tape';var ex=cart.filter(function(i){return i.key===key;})[0];
+    if(ex)ex.qty++;else cart.push({key:key,name:'Endurance Installation Tape',colour:'Double-sided',size:'1 roll',price:97,img:"https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=200",qty:1});
+    try{localStorage.setItem('ht_cart',JSON.stringify(cart));}catch(e){}
+    paint();
+    btn.classList.add('added');btn.textContent='Added \u2713';
+    if(link)link.classList.add('show');
+    setTimeout(function(){btn.classList.remove('added');btn.textContent='Add to cart';},1300);
   });
-  if(addBtn){addBtn.addEventListener('click',function(e){
-    e.preventDefault();add();
-    addBtn.classList.add('added');var t=addBtn.textContent;addBtn.textContent='Added ✓';
-    setTimeout(function(){addBtn.classList.remove('added');addBtn.textContent=t;},1100);
-  });}
-  document.getElementById('cartClose').addEventListener('click',close);
-  document.getElementById('cartCont').addEventListener('click',close);
-  ov.addEventListener('click',close);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-  // open cart from the nav cart icon too
-  var navCart=document.querySelector('.nav-badge')&&document.querySelector('.nav-badge').closest('.nav-icon');
-  if(navCart)navCart.addEventListener('click',function(e){e.preventDefault();open();});
-  render(); // reflect any persisted cart on load
+  var navCart=badge&&badge.closest('.nav-icon');
+  if(navCart)navCart.addEventListener('click',function(e){e.preventDefault();location.href='checkout.html';});
 })();
 </script>
 
@@ -1609,29 +963,6 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
       grid.classList.add('gv-'+v);
       btns.forEach(x => x.classList.toggle('active', x === b));
     }));
-  })();
-
-  /* Product details accordion */
-  (function(){
-    var btns = document.querySelectorAll('.pdp-acc-btn');
-    btns.forEach(function(btn){
-      var item = btn.closest('.pdp-acc-item');
-      var panel = item.querySelector('.pdp-acc-panel');
-      btn.addEventListener('click', function(){
-        if(item.classList.contains('open')){
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-          void panel.offsetHeight;
-          item.classList.remove('open');
-          panel.style.maxHeight = '0px';
-        } else {
-          item.classList.add('open');
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-        }
-      });
-      panel.addEventListener('transitionend', function(e){
-        if(e.propertyName === 'max-height' && item.classList.contains('open')){ panel.style.maxHeight = 'none'; }
-      });
-    });
   })();
 </script>
 <script type="application/ld+json">
