@@ -755,6 +755,43 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .pdp-feats{padding-top:60px}
   .pdp-feats-grid{grid-template-columns:1fr}
 }
+/* PRODUCT DETAILS accordion */
+.pdp-details{background:#f5f6f7;padding:64px 0 84px}
+.pdp-details .container{max-width:1380px}
+.pdp-acc{border-top:1px solid rgba(0,0,0,.1);margin-top:26px}
+.pdp-acc-item{border-bottom:1px solid rgba(0,0,0,.1)}
+.pdp-acc-btn{width:100%;display:flex;align-items:center;gap:16px;background:none;border:none;padding:22px 0;cursor:pointer;text-align:left;font-family:var(--fb);font-size:15px;font-weight:600;color:#1a1f24;transition:color .2s}
+.pdp-acc-btn:hover{color:var(--accent)}
+.pdp-acc-ico{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:19px;line-height:0;color:#5a6672;transition:background .2s,border-color .2s,color .2s,transform .3s}
+.pdp-acc-btn:hover .pdp-acc-ico{border-color:var(--accent);background:var(--accent);color:#fff}
+.pdp-acc-item.open .pdp-acc-ico{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
+.pdp-acc-panel{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.pdp-acc-body{padding:2px 0 26px 44px;font-size:14.5px;color:#5a6672;line-height:1.75}
+.pdp-acc-body p{margin:0 0 12px}
+.pdp-acc-body p:last-child{margin-bottom:0}
+.pdp-acc-body ul{margin:0 0 12px;padding-left:18px}
+.pdp-acc-body li{margin-bottom:7px}
+.pdp-acc-body strong{color:#1a1f24}
+.pdp-acc-body a{color:var(--accent);text-decoration:underline}
+.pdp-dl{display:grid;grid-template-columns:auto 1fr;gap:9px 22px;margin:0}
+.pdp-dl dt{color:#8a96a0;font-weight:600}
+.pdp-dl dd{margin:0;color:#15181c;font-weight:600}
+.pdp-cert{margin-top:6px;font-size:13px}
+.pdp-cert-row{display:grid;grid-template-columns:30% 30% 1fr;gap:14px;padding:9px 0;border-bottom:1px solid #e2e5e9;line-height:1.5}
+.pdp-cert-row span:first-child{color:#15181c;font-weight:600}
+.pdp-cert-row span:nth-child(2){color:#8a96a0}
+.pdp-cert-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.pdp-cert-head span,.pdp-cert-head span:first-child{color:#8a96a0!important;font-weight:700}
+@media(max-width:640px){
+  .pdp-details{padding:52px 0 64px}
+  .pdp-acc-body{padding-left:0}
+  .pdp-dl{grid-template-columns:1fr;gap:2px 0}
+  .pdp-dl dt{margin-top:9px}
+  .pdp-cert-head{display:none}
+  .pdp-cert-row{grid-template-columns:1fr;gap:2px;padding:10px 0}
+  .pdp-cert-row span:nth-child(2)::before{content:'Standard: '}
+  .pdp-cert-row span:nth-child(3)::before{content:'Result: ';color:#8a96a0}
+}
 </style>
 
 <div class="pdp-wrap">
@@ -881,6 +918,91 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
             <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Technical team replies within 24 h for sizing &amp; colour advice.</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAILS -->
+  <section class="pdp-details">
+    <div class="container">
+      <span class="eyebrow-label">In detail</span>
+      <h2 class="section-title" style="color:#15181c">Product <em>details.</em></h2>
+      <div class="pdp-acc">
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Product description</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <p>High-performance textured artificial turf track with integrated markings and numbering — ideal for functional training, movement drills and sled work.</p>
+            <ul>
+              <li>High fibre density: <strong>86,000 stitches/m²</strong> for exceptional grip and comfort on high-intensity floor work.</li>
+              <li>Excellent impact resistance, built for heavy daily use in gyms.</li>
+              <li>Easy to clean and maintain, with quick, simple installation.</li>
+              <li>Available in several sizes — and we also make <a href="cesped-personalizado-alina.html">custom tracks</a> to fit your exact project.</li>
+              <li>Made in the EU in a facility with over 100 years of textile experience in technical carpets and mats.</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Technical data sheet</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <dl class="pdp-dl">
+              <dt>Fibre type</dt><dd>Textured polyethylene monofilament</dd>
+              <dt>Gauge</dt><dd>1/7 inch</dd>
+              <dt>Total height</dt><dd>15 mm (whole system, fibre + backing, measured flat). As the fibre is texturised, the visible height in use is around 11–12 mm.</dd>
+              <dt>Pile height</dt><dd>12 mm (±5%)</dd>
+              <dt>Fibre weight</dt><dd>1,550 g/m² (±10%)</dd>
+              <dt>Stitches/m²</dt><dd>86,000 (±10%)</dd>
+              <dt>Yarn weight</dt><dd>5,500 dtex (±10%)</dd>
+              <dt>Total weight</dt><dd>approx. 2,400 g/m² (±10%)</dd>
+            </dl>
+          </div></div>
+        </div>
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Tests and certifications</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <p>Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
+            <div class="pdp-cert">
+              <div class="pdp-cert-row pdp-cert-head"><span>Property</span><span>Standard</span><span>Result</span></div>
+              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
+              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
+              <div class="pdp-cert-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
+              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
+              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
+              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
+              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
+              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
+              <div class="pdp-cert-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
+              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
+              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
+              <div class="pdp-cert-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
+              <div class="pdp-cert-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Installation manual</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <p>Designed for quick, clean installation — all you need is a level surface, extra-strong double-sided tape and a few simple steps.</p>
+            <p>Our full step-by-step guide covers preparing the area, laying the turf and ensuring long-lasting fixing, even for heavy sled work.</p>
+          </div></div>
+        </div>
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Maintenance and warranty</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <p>Built to take intensive use with minimal upkeep. A little regular care keeps it looking like day one:</p>
+            <ul>
+              <li>Regular vacuuming to remove dust, chalk, fibres or rubber.</li>
+              <li>Spot-clean with water and mild soap for stains or spills.</li>
+              <li>Periodic checks of the installation and seams.</li>
+            </ul>
+            <p>All tracks include a <strong>5-year guarantee</strong> against manufacturing defects and functional failures under normal use.</p>
+          </div></div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1505,6 +1627,29 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
       grid.classList.add('gv-'+v);
       btns.forEach(x => x.classList.toggle('active', x === b));
     }));
+  })();
+
+  /* Product details accordion */
+  (function(){
+    var btns = document.querySelectorAll('.pdp-acc-btn');
+    btns.forEach(function(btn){
+      var item = btn.closest('.pdp-acc-item');
+      var panel = item.querySelector('.pdp-acc-panel');
+      btn.addEventListener('click', function(){
+        if(item.classList.contains('open')){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          void panel.offsetHeight;
+          item.classList.remove('open');
+          panel.style.maxHeight = '0px';
+        } else {
+          item.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+      panel.addEventListener('transitionend', function(e){
+        if(e.propertyName === 'max-height' && item.classList.contains('open')){ panel.style.maxHeight = 'none'; }
+      });
+    });
   })();
 </script>
 <script type="application/ld+json">
