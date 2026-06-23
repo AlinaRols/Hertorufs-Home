@@ -807,6 +807,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <!-- ===== ACCESSORIES ===== -->
 <style>
 .acc-grid-center{grid-template-columns:repeat(auto-fill,minmax(300px,360px))!important;justify-content:center}
+.eyebrow-label{display:inline-flex;align-items:center;gap:9px;line-height:1}
+.eyebrow-label::before{content:'';width:24px;height:2px;background:var(--accent);flex-shrink:0}
 .acc-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:#15181c;color:#fff;font-size:13px;font-weight:600;padding:13px 22px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:400;display:flex;align-items:center;gap:9px}
 .acc-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .acc-toast svg{width:16px;height:16px;color:#46d17f}
@@ -831,7 +833,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <!-- CATALOGUE -->
 <section class="catalogue-section">
   <div class="container">
-    <div class="section-header reveal" style="text-align:center;margin-bottom:34px">
+    <div class="section-header reveal" style="margin-bottom:34px">
       <span class="eyebrow-label">Shop accessories</span>
       <h2 class="section-title">Everything to <em>install it right.</em></h2>
       <p class="section-sub">Pro-grade essentials to fit and finish your track.</p>
