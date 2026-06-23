@@ -988,7 +988,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   var raf;gal.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(upd);});
   function tween(to){
     var start=gal.scrollLeft,dist=to-start,t0=null;
-    function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/320);var e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;gal.scrollLeft=start+dist*e;if(p<1)requestAnimationFrame(step);else upd();}
+    gal.style.scrollSnapType='none';
+    function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/320);var e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;gal.scrollLeft=start+dist*e;if(p<1){requestAnimationFrame(step);}else{gal.scrollLeft=to;gal.style.scrollSnapType='';upd();}}
     requestAnimationFrame(step);
   }
   function go(dir){var idx=Math.round(gal.scrollLeft/gal.clientWidth);var t=Math.max(0,Math.min(slides.length-1,idx+dir));tween(t*gal.clientWidth);}
