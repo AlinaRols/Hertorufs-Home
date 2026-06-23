@@ -1327,7 +1327,7 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
   <div class="cart-foot" id="cartFoot" style="display:none">
     <div class="cart-sub"><span class="cart-sub-l">Subtotal</span><span class="cart-sub-v" id="cartSub">£0.00</span></div>
     <p class="cart-note">Tax included · Free shipping to mainland Spain &amp; the Balearics</p>
-    <a href="#" class="btn-primary cart-checkout">Checkout</a>
+    <a href="checkout.html" class="btn-primary cart-checkout">Checkout</a>
     <button class="cart-cont" id="cartCont">Continue shopping</button>
   </div>
 </aside>
@@ -1338,7 +1338,8 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
   var subEl=document.getElementById('cartSub'),headCount=document.getElementById('cartHeadCount');
   var badge=document.querySelector('.nav-badge');
   var addBtn=document.querySelector('.pdp-add');
-  var cart=[];
+  var cart=[];try{cart=JSON.parse(localStorage.getItem('ht_cart')||'[]')||[];}catch(e){cart=[];}
+  function save(){try{localStorage.setItem('ht_cart',JSON.stringify(cart));}catch(e){}}
   function num(s){return parseFloat(String(s).replace(/[^0-9.]/g,''))||0;}
   function money(n){return '£'+n.toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});}
   function open(){ov.classList.add('open');drawer.classList.add('open');document.body.style.overflow='hidden';}
@@ -1346,6 +1347,7 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
   function render(){
     var count=cart.reduce(function(a,i){return a+i.qty;},0);
     var total=cart.reduce(function(a,i){return a+i.price*i.qty;},0);
+    save();
     if(badge){badge.textContent=count;badge.style.display=count?'flex':'none';}
     headCount.textContent=count?'('+count+')':'';
     if(!cart.length){body.innerHTML='<p class="cart-empty">Your cart is empty.</p>';foot.style.display='none';return;}
@@ -1391,6 +1393,7 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
   // open cart from the nav cart icon too
   var navCart=document.querySelector('.nav-badge')&&document.querySelector('.nav-badge').closest('.nav-icon');
   if(navCart)navCart.addEventListener('click',function(e){e.preventDefault();open();});
+  render(); // reflect any persisted cart on load
 })();
 </script>
 
