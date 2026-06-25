@@ -819,7 +819,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .gd2-body .inner{max-width:520px}
 .gd2-split.rev .gd2-media{order:2}
 /* align WHY text with the .container content edge (hero/method use max-width:1600 centered) */
-.gd2-split.rev .gd2-body{padding-left:max(24px,calc((100vw - 1600px)/2 + 24px))}
+.gd2-split.rev .gd2-body{padding-left:24px}
+@media(min-width:1648px){.gd2-split.rev .gd2-body{padding-left:calc((100vw - 1600px) / 2 + 24px)}}
 .gd2-lead{font-size:16px;color:#5a6672;line-height:1.7;margin:14px 0 22px}
 .gd2-points{list-style:none;display:grid;gap:15px}
 .gd2-points li{display:flex;gap:12px;font-size:15px;color:#3a444c;line-height:1.5}
