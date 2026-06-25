@@ -823,7 +823,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .gd2-points li{display:flex;gap:12px;font-size:15px;color:#3a444c;line-height:1.5}
 .gd2-points svg{width:20px;height:20px;color:var(--accent);flex-shrink:0;margin-top:2px}
 .gd2-points b{color:#15181c}
-.gd2-steps{background:#fff;padding:80px 0 24px}
+.gd2-steps{background:#fff;padding:40px 0 24px}
 .gd2-steps-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center;margin-top:8px}
 .gd2-steps-img{border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#15181c}
 .gd2-steps-img img{width:100%;height:100%;object-fit:cover;display:block}
@@ -864,9 +864,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .gd2-ctr .eyebrow-label{justify-content:flex-start}
 @media(max-width:860px){
  .gd2-split{grid-template-columns:1fr}
- .gd2-split.rev .gd2-media{order:0}
- .gd2-media{min-height:300px}
- .gd2-body{padding:46px 24px}
+ .gd2-body{order:1;padding:40px 24px 28px}
+ .gd2-media{order:2;min-height:300px}
  .gd2-steps-grid{grid-template-columns:1fr;gap:26px}
  .gd2-tools-grid{grid-template-columns:1fr 1fr}
  .gd2-freq-grid{grid-template-columns:1fr;gap:34px}
@@ -888,21 +887,22 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .gd2-glance-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:26px}
 .gd2-glance-head h3{font-family:var(--fd);font-size:23px;font-weight:800;color:#15181c}
 .gd2-glance-head span{font-size:13.5px;color:#5a6672;max-width:42ch}
-.gd2-chips{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.gd2-chip{border:1px solid #e2e6ea;background:#fff;border-radius:12px;padding:16px 16px 18px}
-.gd2-chip-n{font-family:var(--fd);font-size:15px;font-weight:900;color:var(--accent);letter-spacing:.05em;margin-bottom:9px}
-.gd2-chip h4{font-family:var(--fd);font-size:16px;font-weight:800;color:#15181c;margin-bottom:5px}
-.gd2-chip p{font-size:12.5px;color:#5a6672;line-height:1.45}
-.gd2-chip{cursor:pointer;text-align:left;width:100%;font-family:var(--fb);transition:border-color .2s,background .2s,transform .12s}
-.gd2-chip:hover{border-color:rgba(0,0,0,.22);transform:translateY(-2px)}
-.gd2-chip.active{border-color:var(--accent);background:rgba(227,51,43,.06)}
-.gd2-stepdetail{margin-top:22px;border-top:1px solid #e2e6ea;padding-top:26px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;animation:gd2fade .3s ease}
-@keyframes gd2fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.gd2-stepdetail-n{font-family:var(--fd);font-size:50px;font-weight:900;color:rgba(227,51,43,.85);line-height:.82}
-.gd2-stepdetail h3{font-family:var(--fd);font-size:25px;font-weight:800;color:#15181c;margin-bottom:9px}
-.gd2-stepdetail p{font-size:15px;color:#5a6672;line-height:1.6;max-width:62ch;margin-bottom:16px}
-.gd2-stepdetail .gd2-steptool{color:var(--accent);background:rgba(227,51,43,.08);border-color:rgba(227,51,43,.2)}
-@media(max-width:560px){.gd2-stepdetail{grid-template-columns:1fr;gap:8px}.gd2-stepdetail-n{font-size:38px}}
+.gd2-acc{display:grid;gap:12px}
+.gd2-acc-item{border:1px solid #e2e6ea;background:#fff;border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.gd2-acc-item.open{border-color:var(--accent);box-shadow:0 6px 20px -12px rgba(227,51,43,.5)}
+.gd2-acc-head{display:flex;align-items:center;gap:16px;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:16px 18px;font-family:var(--fb)}
+.gd2-acc-n{font-family:var(--fd);font-size:15px;font-weight:900;color:var(--accent);letter-spacing:.05em;min-width:24px}
+.gd2-acc-tt{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.gd2-acc-tt b{font-family:var(--fd);font-size:16px;font-weight:800;color:#15181c}
+.gd2-acc-tt em{font-style:normal;font-size:12.5px;color:#5a6672;line-height:1.4}
+.gd2-acc-chev{color:#9aa4ad;transition:transform .25s,color .2s;flex-shrink:0;display:flex}
+.gd2-acc-chev svg{width:18px;height:18px;display:block}
+.gd2-acc-item.open .gd2-acc-chev{transform:rotate(180deg);color:var(--accent)}
+.gd2-acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease}
+.gd2-acc-item.open .gd2-acc-panel{grid-template-rows:1fr}
+.gd2-acc-inner{overflow:hidden;min-height:0;padding:0 18px 0 58px}
+.gd2-acc-item.open .gd2-acc-inner{padding:2px 18px 18px 58px}
+.gd2-acc-inner p{font-size:14.5px;color:#5a6672;line-height:1.6;max-width:64ch}
 /* step tool tag + note */
 .gd2-steptool{display:inline-flex;align-items:center;gap:7px;margin-top:11px;font-size:12px;font-weight:600;color:var(--accent);background:rgba(227,51,43,.08);border:1px solid rgba(227,51,43,.2);border-radius:20px;padding:5px 12px}
 .gd2-steptool svg{width:13px;height:13px}
@@ -919,11 +919,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .gd2-table tr td:nth-child(2){font-weight:600;color:#15181c}
 .gd2-table tbody tr:nth-child(even){background:#f9fafb}
 @media(max-width:860px){
- .gd2-chips{grid-template-columns:1fr 1fr}
  .gd2-glance-card{padding:30px 24px}
  .gd2-table th:nth-child(3),.gd2-table td:nth-child(3){display:none}
 }
-@media(max-width:520px){.gd2-chips{grid-template-columns:1fr}}
 </style>
 <div class="gd2">
   <!-- HERO -->
@@ -972,14 +970,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <h3>5 steps. ~10 minutes a week.</h3>
           <span>Tap any step for the full how-to.</span>
         </div>
-        <div class="gd2-chips" id="stepChips">
-          <button type="button" class="gd2-chip active" data-step="0"><div class="gd2-chip-n">01</div><h4>Brush / vacuum</h4><p>Weekly — lift dust, chalk &amp; hair.</p></button>
-          <button type="button" class="gd2-chip" data-step="1"><div class="gd2-chip-n">02</div><h4>Rinse</h4><p>Water rinse every 3–6 months.</p></button>
-          <button type="button" class="gd2-chip" data-step="2"><div class="gd2-chip-n">03</div><h4>Mild soap</h4><p>Neutral only — never bleach.</p></button>
-          <button type="button" class="gd2-chip" data-step="3"><div class="gd2-chip-n">04</div><h4>Brush fibres</h4><p>Keep them upright &amp; grippy.</p></button>
-          <button type="button" class="gd2-chip" data-step="4"><div class="gd2-chip-n">05</div><h4>Air it out</h4><p>Ventilate &amp; dry fully.</p></button>
-        </div>
-        <div class="gd2-stepdetail" id="stepDetail"></div>
+        <div class="gd2-acc" id="stepAcc"></div>
       </div>
       <div class="gd2-note"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg><p><b>Skip the bleach.</b> Bleach and abrasive cleaners break down the fibres and fade the markings. Diluted neutral soap is all you ever need — and on sled-drag zones, leave out the loose silica infill.</p></div>
     </div>
@@ -1328,26 +1319,37 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <script>
 (function(){
   var STEPS=[
-    {n:'01',t:'Surface clean',d:'Weekly–biweekly, lift dust, chalk and hair before it works into the fibres.',tl:'Soft-bristle brush or vacuum',sv:'<path d="M3 21l3-3m0 0a4 4 0 105.66-5.66L9 9"/><path d="M14 4l6 6"/>'},
-    {n:'02',t:'Rinse with water',d:"A water rinse every 3–6 months clears deeper grime the brush can't reach.",tl:'Hose & clean water',sv:'<path d="M12 2.5S5 10 5 14a7 7 0 0014 0c0-4-7-11.5-7-11.5z"/>'},
-    {n:'03',t:'Safe products',d:'Only if you need to disinfect — apply diluted, rinse well, no harsh chemicals.',tl:'Mild, neutral soap',sv:'<path d="M9 3h6v4l3 6v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6l3-6z"/>'},
-    {n:'04',t:'Brush the fibres',d:'Brush against the lay to keep fibres upright so it looks and plays like new.',tl:'Brush + silica-sand spreader',sv:'<path d="M4 20h16M6 16l4-9 4 9"/>'},
-    {n:'05',t:'Air it out',d:'Ventilate enclosed spaces and dry the surface fully to stop odours and damp.',tl:'Absorbent mop + ventilation',sv:'<path d="M3 12h13a3 3 0 10-3-3M3 17h10a3 3 0 11-3 3"/>'}
+    {n:'01',h:'Brush / vacuum',s:'Weekly — lift dust, chalk &amp; hair.',d:'Weekly–biweekly, lift dust, chalk and hair before it works into the fibres.',tl:'Soft-bristle brush or vacuum',sv:'<path d="M3 21l3-3m0 0a4 4 0 105.66-5.66L9 9"/><path d="M14 4l6 6"/>'},
+    {n:'02',h:'Rinse',s:'Water rinse every 3–6 months.',d:"A water rinse every 3–6 months clears deeper grime the brush can't reach.",tl:'Hose & clean water',sv:'<path d="M12 2.5S5 10 5 14a7 7 0 0014 0c0-4-7-11.5-7-11.5z"/>'},
+    {n:'03',h:'Mild soap',s:'Neutral only — never bleach.',d:'Only if you need to disinfect — apply diluted, rinse well, no harsh chemicals.',tl:'Mild, neutral soap',sv:'<path d="M9 3h6v4l3 6v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6l3-6z"/>'},
+    {n:'04',h:'Brush fibres',s:'Keep them upright &amp; grippy.',d:'Brush against the lay to keep fibres upright so it looks and plays like new.',tl:'Brush + silica-sand spreader',sv:'<path d="M4 20h16M6 16l4-9 4 9"/>'},
+    {n:'05',h:'Air it out',s:'Ventilate &amp; dry fully.',d:'Ventilate enclosed spaces and dry the surface fully to stop odours and damp.',tl:'Absorbent mop + ventilation',sv:'<path d="M3 12h13a3 3 0 10-3-3M3 17h10a3 3 0 11-3 3"/>'}
   ];
-  var chips=document.getElementById('stepChips'),detail=document.getElementById('stepDetail');
-  if(!chips||!detail)return;
-  function render(i){
-    var s=STEPS[i];
-    detail.innerHTML='<div class="gd2-stepdetail-n">'+s.n+'</div><div><h3>'+s.t+'</h3><p>'+s.d+'</p>'+
-      '<span class="gd2-steptool"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">'+s.sv+'</svg>'+s.tl+'</span></div>';
-  }
-  chips.addEventListener('click',function(e){
-    var b=e.target.closest('.gd2-chip');if(!b)return;
-    chips.querySelectorAll('.gd2-chip').forEach(function(c){c.classList.remove('active');});
-    b.classList.add('active');
-    render(+b.dataset.step);
+  var acc=document.getElementById('stepAcc');
+  if(!acc)return;
+  var html='';
+  STEPS.forEach(function(s,i){
+    html+='<div class="gd2-acc-item'+(i===0?' open':'')+'">'+
+      '<button type="button" class="gd2-acc-head" aria-expanded="'+(i===0?'true':'false')+'">'+
+        '<span class="gd2-acc-n">'+s.n+'</span>'+
+        '<span class="gd2-acc-tt"><b>'+s.h+'</b><em>'+s.s+'</em></span>'+
+        '<span class="gd2-acc-chev"><svg fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>'+
+      '</button>'+
+      '<div class="gd2-acc-panel"><div class="gd2-acc-inner"><p>'+s.d+'</p>'+
+        '<span class="gd2-steptool"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">'+s.sv+'</svg>'+s.tl+'</span>'+
+      '</div></div>'+
+    '</div>';
   });
-  render(0);
+  acc.innerHTML=html;
+  acc.addEventListener('click',function(e){
+    var head=e.target.closest('.gd2-acc-head');if(!head)return;
+    var item=head.parentNode,isOpen=item.classList.contains('open');
+    acc.querySelectorAll('.gd2-acc-item').forEach(function(it){
+      it.classList.remove('open');
+      it.querySelector('.gd2-acc-head').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){item.classList.add('open');head.setAttribute('aria-expanded','true');}
+  });
 })();
 </script>
 </body>
