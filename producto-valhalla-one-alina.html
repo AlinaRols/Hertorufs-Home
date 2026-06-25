@@ -678,6 +678,14 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-add{justify-content:center;width:100%;padding:16px;font-size:13px}
 .pdp-custom-link{font-size:13px;font-weight:600;color:#5a6672;text-decoration:none;text-align:center;transition:color .18s}
 .pdp-custom-link:hover{color:var(--accent)}
+/* recommended installation add-on */
+.pdp-addon{display:flex;align-items:center;gap:14px;margin:-6px 0 26px;padding:13px 14px;border:1px solid rgba(0,0,0,.12);border-radius:12px;background:#fafbfc}
+.pdp-addon-img{width:52px;height:52px;border-radius:9px;object-fit:cover;flex-shrink:0;background:#eef1f4}
+.pdp-addon-info{flex:1;min-width:0}
+.pdp-addon-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.pdp-addon-name{font-size:13.5px;font-weight:600;color:#1a1f24;line-height:1.35}
+.pdp-addon-btn{flex-shrink:0;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:var(--fb);font-weight:700;font-size:13px;padding:10px 22px;cursor:pointer;transition:background .2s}
+.pdp-addon-btn:hover{background:var(--accent-h)}
 
 /* trust */
 .pdp-trust{list-style:none;border-top:1px solid #e7eaed;padding-top:20px;display:grid;gap:13px}
@@ -851,6 +859,15 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <div class="pdp-actions">
           <a href="#" class="btn-primary pdp-add">Add to cart</a>
           <a href="cesped-personalizado-alina.html" class="pdp-custom-link">Need a custom size or colour? Design your own →</a>
+        </div>
+
+        <div class="pdp-addon" id="pdpAddon" data-key="tape-1" data-name="Endurance Installation Tape" data-meta="Double-sided" data-unit="1 roll" data-price="97.00" data-img="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=200">
+          <img class="pdp-addon-img" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=160" alt="Endurance double-sided installation tape" loading="lazy">
+          <div class="pdp-addon-info">
+            <span class="pdp-addon-label">Recommended installation add-on</span>
+            <div class="pdp-addon-name">Endurance Installation Tape — 1 roll</div>
+          </div>
+          <button type="button" class="pdp-addon-btn">Add</button>
         </div>
 
         <ul class="pdp-trust">
@@ -1386,6 +1403,19 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
     addBtn.classList.add('added');var t=addBtn.textContent;addBtn.textContent='Added ✓';
     setTimeout(function(){addBtn.classList.remove('added');addBtn.textContent=t;},1100);
   });}
+  // recommended installation add-on
+  var addon=document.getElementById('pdpAddon');
+  if(addon){
+    var addonBtn=addon.querySelector('.pdp-addon-btn');
+    addonBtn.addEventListener('click',function(){
+      var k=addon.dataset.key;
+      var ex=cart.filter(function(i){return i.key===k;})[0];
+      if(ex){ex.qty++;}else{cart.push({key:k,name:addon.dataset.name,colour:addon.dataset.meta,size:addon.dataset.unit,price:parseFloat(addon.dataset.price),img:addon.dataset.img,qty:1});}
+      render();open();
+      var t=addonBtn.textContent;addonBtn.textContent='Added ✓';
+      setTimeout(function(){addonBtn.textContent=t;},1100);
+    });
+  }
   document.getElementById('cartClose').addEventListener('click',close);
   document.getElementById('cartCont').addEventListener('click',close);
   ov.addEventListener('click',close);
