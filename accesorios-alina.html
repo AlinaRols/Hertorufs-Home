@@ -727,6 +727,25 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .tape-calc .tc-add{justify-content:center;width:100%;padding:16px;font-size:12.5px}
 .tc-foot{font-size:11.5px;color:#8a96a0;line-height:1.5;margin-top:16px}
 .tc-foot a{color:var(--accent);text-decoration:underline}
+/* custom size */
+.tc-size-custom{border-style:dashed}
+.tc-size-custom.active{border-style:solid}
+.tc-custom{margin-bottom:24px}
+.tc-custom[hidden]{display:none}
+.tc-cf{display:flex;align-items:flex-end;gap:12px}
+.tc-cf-grp{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:7px}
+.tc-cf-grp label{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#15181c}
+.tc-cf-grp input{font-family:var(--fb);font-size:15px;font-weight:600;color:#15181c;background:#fff;border:1px solid rgba(0,0,0,.18);border-radius:10px;padding:11px 13px;width:100%;transition:border-color .18s}
+.tc-cf-grp input::placeholder{color:#b3bcc4;font-weight:500}
+.tc-cf-grp input:focus{outline:none;border-color:var(--accent)}
+.tc-cf-x{font-size:16px;color:#8a96a0;padding-bottom:12px}
+.tc-opt{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 0}
+.tc-opt+.tc-opt{margin-top:9px;padding-top:10px;border-top:1px solid rgba(0,0,0,.08)}
+.tc-opt-size{font-family:var(--fb);font-size:13px;font-weight:600;color:#5a6672;display:flex;align-items:center}
+.tc-opt-n{font-family:var(--fd);font-size:18px;font-weight:800;color:#15181c;line-height:1;white-space:nowrap}
+.tc-opt.best .tc-opt-n{color:var(--accent)}
+.tc-rec{font-size:8.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:rgba(227,51,43,.12);padding:2px 7px;border-radius:20px;margin-left:8px}
+.tc-hint{font-family:var(--fb);font-size:13px;font-weight:600;color:#8a96a0;line-height:1.4}
 @media(max-width:860px){.acc-layout{grid-template-columns:1fr;gap:18px}.tape-calc{padding:24px 22px}}
 .cat-viewswitch{display:none}
 @media(max-width:720px){
@@ -893,6 +912,14 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <button type="button" class="tc-size" data-need="1 roll · 50&nbsp;cm × 50&nbsp;m">2.0 × 10.0</button>
           <button type="button" class="tc-size" data-need="1 roll · 50&nbsp;cm × 50&nbsp;m">2.0 × 12.4</button>
           <button type="button" class="tc-size" data-need="2 rolls · 50&nbsp;cm × 50&nbsp;m">2.0 × 15.0</button>
+          <button type="button" class="tc-size tc-size-custom" data-custom="1">Custom size</button>
+        </div>
+        <div class="tc-custom" id="tcCustom" hidden>
+          <div class="tc-cf">
+            <div class="tc-cf-grp"><label for="tcW">Width (m)</label><input type="number" id="tcW" min="0.5" step="0.1" inputmode="decimal" placeholder="1.5"></div>
+            <span class="tc-cf-x">×</span>
+            <div class="tc-cf-grp"><label for="tcL">Length (m)</label><input type="number" id="tcL" min="1" step="0.1" inputmode="decimal" placeholder="12"></div>
+          </div>
         </div>
         <div class="tc-result">
           <span class="tc-result-label">You'll need</span>
@@ -966,14 +993,36 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
   // tape calculator
   var tcSizes=document.getElementById('tcSizes'),tcNeed=document.getElementById('tcNeed');
+  var tcCustom=document.getElementById('tcCustom'),tcW=document.getElementById('tcW'),tcL=document.getElementById('tcL');
+  function tcFmt(n){return n+(n===1?' roll':' rolls');}
+  function tcCompute(){
+    var w=parseFloat(tcW.value),l=parseFloat(tcL.value);
+    if(!(w>0)||!(l>0)){tcNeed.innerHTML='<span class="tc-hint">Enter width and length to see the rolls you need.</span>';return;}
+    // Excel formula: rolls = ROUNDUP((width / tape-width 0.5) * (length / roll-length))
+    var strips=w/0.5;
+    var r25=Math.ceil(strips*(l/25)),r50=Math.ceil(strips*(l/50));
+    // recommend the smaller 50x25 roll only when it ties on roll count (less waste, cheaper); otherwise the 50x50
+    var best25=(r25===r50);
+    function row(size,n,best){return '<div class="tc-opt'+(best?' best':'')+'"><span class="tc-opt-size">'+size+(best?'<span class="tc-rec">Best value</span>':'')+'</span><span class="tc-opt-n">'+tcFmt(n)+'</span></div>';}
+    tcNeed.innerHTML=row('50&nbsp;cm × 25&nbsp;m',r25,best25)+row('50&nbsp;cm × 50&nbsp;m',r50,!best25);
+  }
   if(tcSizes&&tcNeed){
     tcSizes.addEventListener('click',function(e){
       var b=e.target.closest('.tc-size');if(!b)return;
       tcSizes.querySelectorAll('.tc-size').forEach(function(x){x.classList.remove('active');});
       b.classList.add('active');
-      tcNeed.innerHTML=b.dataset.need;
+      if(b.dataset.custom){
+        if(tcCustom)tcCustom.hidden=false;
+        tcCompute();
+        if(tcW)setTimeout(function(){tcW.focus();},10);
+      }else{
+        if(tcCustom)tcCustom.hidden=true;
+        tcNeed.innerHTML=b.dataset.need;
+      }
     });
   }
+  if(tcW)tcW.addEventListener('input',tcCompute);
+  if(tcL)tcL.addEventListener('input',tcCompute);
   var tcAdd=document.getElementById('tcAdd');
   if(tcAdd){
     tcAdd.addEventListener('click',function(){
