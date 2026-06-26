@@ -745,6 +745,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .tc-opt-n{font-family:var(--fd);font-size:18px;font-weight:800;color:#15181c;line-height:1;white-space:nowrap}
 .tc-opt.best .tc-opt-n{color:var(--accent)}
 .tc-rec{font-size:8.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:rgba(227,51,43,.12);padding:2px 7px;border-radius:20px;margin-left:8px}
+.tc-or{display:flex;align-items:center;gap:10px;margin:9px 0;color:#aab2ba;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.tc-or::before,.tc-or::after{content:'';flex:1;height:1px;background:rgba(0,0,0,.08)}
 .tc-hint{font-family:var(--fb);font-size:13px;font-weight:600;color:#8a96a0;line-height:1.4}
 @media(max-width:860px){.acc-layout{grid-template-columns:1fr;gap:18px}.tape-calc{padding:24px 22px}}
 .cat-viewswitch{display:none}
@@ -1004,7 +1006,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     // recommend the smaller 50x25 roll only when it ties on roll count (less waste, cheaper); otherwise the 50x50
     var best25=(r25===r50);
     function row(size,n,best){return '<div class="tc-opt'+(best?' best':'')+'"><span class="tc-opt-size">'+size+(best?'<span class="tc-rec">Best value</span>':'')+'</span><span class="tc-opt-n">'+tcFmt(n)+'</span></div>';}
-    tcNeed.innerHTML=row('50&nbsp;cm × 25&nbsp;m',r25,best25)+row('50&nbsp;cm × 50&nbsp;m',r50,!best25);
+    tcNeed.innerHTML=row('50&nbsp;cm × 25&nbsp;m',r25,best25)+'<div class="tc-or">or</div>'+row('50&nbsp;cm × 50&nbsp;m',r50,!best25);
   }
   if(tcSizes&&tcNeed){
     tcSizes.addEventListener('click',function(e){
