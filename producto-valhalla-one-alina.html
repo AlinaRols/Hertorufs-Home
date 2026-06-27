@@ -667,15 +667,27 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-sw.active{box-shadow:0 0 0 2px #15181c}
 
 /* sizes */
-.pdp-sizes{display:flex;flex-wrap:wrap;gap:9px}
-.pdp-size{font-family:var(--fb);font-size:13px;font-weight:600;color:#1a1f24;background:#fff;border:1px solid #d6dbe0;border-radius:9px;padding:10px 15px;cursor:pointer;transition:border-color .16s,background .16s,color .16s}
+.pdp-sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pdp-size{font-family:var(--fb);background:#fff;border:1px solid #d6dbe0;border-radius:10px;padding:12px 14px;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;min-width:0;transition:border-color .16s,background .16s}
+.pdp-size-d{font-size:13.5px;font-weight:700;color:#15181c;line-height:1.2}
+.pdp-size-p{font-size:12px;font-weight:600;color:#8a96a0;line-height:1.2}
 .pdp-size:hover:not(:disabled):not(.active){border-color:#9aa3ab}
-.pdp-size.active{background:#15181c;border-color:#15181c;color:#fff}
-.pdp-size:disabled{color:#c2c9cf;border-style:dashed;cursor:not-allowed;text-decoration:line-through}
+.pdp-size.active{background:#15181c;border-color:#15181c}
+.pdp-size.active .pdp-size-d{color:#fff}
+.pdp-size.active .pdp-size-p{color:rgba(255,255,255,.72)}
+.pdp-size:disabled{cursor:not-allowed;background:#fcfcfd;border-color:#e9ecef}
+.pdp-size:disabled .pdp-size-d{color:#bcc3c9}
+.pdp-size:disabled .pdp-size-p{color:#c6cdd2}
 
 /* actions */
 .pdp-actions{display:flex;flex-direction:column;gap:13px;margin:30px 0 26px}
 .pdp-add{justify-content:center;width:100%;padding:16px;font-size:13px}
+.pdp-buy-row{display:flex;gap:12px;align-items:stretch}
+.pdp-buy-row .pdp-add{flex:1;width:auto}
+.pdp-qty{display:flex;align-items:stretch;border:1px solid #d6dbe0;border-radius:10px;overflow:hidden;flex-shrink:0}
+.pdp-qty-btn{width:42px;background:#fff;border:none;font-size:19px;line-height:1;color:#15181c;cursor:pointer;font-family:var(--fb);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.pdp-qty-btn:hover{background:#f2f3f5}
+.pdp-qty-n{min-width:34px;display:flex;align-items:center;justify-content:center;font-family:var(--fb);font-size:15px;font-weight:700;color:#15181c}
 .pdp-custom-link{font-size:13px;font-weight:600;color:#5a6672;text-decoration:none;text-align:center;transition:color .18s}
 .pdp-custom-link:hover{color:var(--accent)}
 /* recommended installation add-on */
@@ -847,19 +859,26 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
         <!-- size -->
         <div class="pdp-opt">
-          <div class="pdp-opt-h">Size</div>
+          <div class="pdp-opt-h">Selected size <span id="pdpSizeName">1.5 × 10.0 m</span></div>
           <div class="pdp-sizes" id="pdpSizes">
-            <button class="pdp-size" type="button" data-price="£559.00">1.0 × 10.0 m</button>
-            <button class="pdp-size active" type="button" data-price="£783.00">1.5 × 10.0 m</button>
-            <button class="pdp-size" type="button" data-price="£1,040.00">2.0 × 10.0 m</button>
-            <button class="pdp-size" type="button" data-price="£1,279.00">2.0 × 12.4 m</button>
-            <button class="pdp-size" type="button" disabled>1.0 × 8.0 m</button>
-            <button class="pdp-size" type="button" disabled>1.0 × 5.3 m</button>
+            <button class="pdp-size active" type="button" data-price="£783.00"><span class="pdp-size-d">1.5 × 10.0 m</span><span class="pdp-size-p">£783.00</span></button>
+            <button class="pdp-size" type="button" data-price="£559.00"><span class="pdp-size-d">1.0 × 10.0 m</span><span class="pdp-size-p">£559.00</span></button>
+            <button class="pdp-size" type="button" data-price="£1,040.00"><span class="pdp-size-d">2.0 × 10.0 m</span><span class="pdp-size-p">£1,040.00</span></button>
+            <button class="pdp-size" type="button" data-price="£1,279.00"><span class="pdp-size-d">2.0 × 12.4 m</span><span class="pdp-size-p">£1,279.00</span></button>
+            <button class="pdp-size" type="button" disabled><span class="pdp-size-d">1.0 × 8.0 m</span><span class="pdp-size-p">Sold out</span></button>
+            <button class="pdp-size" type="button" disabled><span class="pdp-size-d">1.0 × 5.3 m</span><span class="pdp-size-p">Sold out</span></button>
           </div>
         </div>
 
         <div class="pdp-actions">
-          <a href="#" class="btn-primary pdp-add">Add to cart</a>
+          <div class="pdp-buy-row">
+            <div class="pdp-qty">
+              <button type="button" class="pdp-qty-btn" data-q="dec" aria-label="Decrease quantity">−</button>
+              <span class="pdp-qty-n" id="pdpQty">1</span>
+              <button type="button" class="pdp-qty-btn" data-q="inc" aria-label="Increase quantity">+</button>
+            </div>
+            <a href="#" class="btn-primary pdp-add">Add to cart</a>
+          </div>
           <a href="cesped-personalizado-alina.html" class="pdp-custom-link">Need a custom size or colour? Design your own →</a>
         </div>
 
@@ -1145,12 +1164,15 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 (function(){
   var sizes=document.getElementById('pdpSizes');
   var price=document.getElementById('pdpPrice');
+  var sizeName=document.getElementById('pdpSizeName');
   if(sizes){
     sizes.addEventListener('click',function(e){
       var btn=e.target.closest('.pdp-size');
       if(!btn||btn.disabled)return;
       sizes.querySelectorAll('.pdp-size').forEach(function(s){s.classList.remove('active');});
       btn.classList.add('active');
+      var d=btn.querySelector('.pdp-size-d');
+      if(sizeName&&d)sizeName.textContent=d.textContent.trim();
       if(btn.dataset.price)price.textContent=btn.dataset.price;
     });
   }
@@ -1385,12 +1407,15 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
   function add(){
     var colour=(document.getElementById('pdpColourName')||{}).textContent||'Black · Valhalla One';
     var sz=document.querySelector('.pdp-size.active');
-    var size=sz?sz.textContent.trim():'1.5 × 10.0 m';
+    var szD=sz?sz.querySelector('.pdp-size-d'):null;
+    var size=szD?szD.textContent.trim():(sz?sz.textContent.trim():'1.5 × 10.0 m');
     var price=num(sz&&sz.dataset.price?sz.dataset.price:document.getElementById('pdpPrice').textContent);
+    var qtyEl=document.getElementById('pdpQty');
+    var qty=qtyEl?Math.max(1,parseInt(qtyEl.textContent,10)||1):1;
     var img=(document.querySelector('.pdp-shot.hero img')||{}).src||'';
     var key=colour+'|'+size;
     var ex=cart.filter(function(i){return i.key===key;})[0];
-    if(ex){ex.qty++;}else{cart.push({key:key,name:'Valhalla One',colour:colour,size:size,price:price,img:img,qty:1});}
+    if(ex){ex.qty+=qty;}else{cart.push({key:key,name:'Valhalla One',colour:colour,size:size,price:price,img:img,qty:qty});}
     render();open();
   }
   body.addEventListener('click',function(e){
@@ -1405,6 +1430,15 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
     e.preventDefault();add();
     addBtn.classList.add('added');var t=addBtn.textContent;addBtn.textContent='Added ✓';
     setTimeout(function(){addBtn.classList.remove('added');addBtn.textContent=t;},1100);
+  });}
+  // quantity stepper
+  var qtyN=document.getElementById('pdpQty');
+  var qtyBox=qtyN?qtyN.closest('.pdp-qty'):null;
+  if(qtyBox){qtyBox.addEventListener('click',function(e){
+    var b=e.target.closest('.pdp-qty-btn');if(!b)return;
+    var n=parseInt(qtyN.textContent,10)||1;
+    n=(b.dataset.q==='inc')?n+1:Math.max(1,n-1);
+    qtyN.textContent=n;
   });}
   // recommended installation add-on
   var addon=document.getElementById('pdpAddon');
