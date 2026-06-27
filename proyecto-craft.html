@@ -479,12 +479,14 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 <style>
 /* ===== MOBILE IMPROVEMENTS (lowfit) ===== */
 @media(max-width:640px){
-  .dp-hero{min-height:74vh}
-  .dp-hero-inner{padding:0 22px 40px}
-  .dp-hero-dots{right:18px;bottom:20px}
-  .dp-title{font-size:clamp(52px,15vw,72px)}
-  .dp-loc{font-size:14px}
-  .dp-crumbs{margin-bottom:18px}
+  /* compact, content-sized hero like the main category page (was min-height:74vh).
+     selectors are bumped to section.dp-hero so they beat the later base rules in source order */
+  section.dp-hero{min-height:0}
+  section.dp-hero .dp-hero-inner{padding:96px 22px 40px}
+  section.dp-hero .dp-hero-dots{right:18px;top:78px;bottom:auto}
+  section.dp-hero .dp-title{font-size:clamp(52px,15vw,72px)}
+  section.dp-hero .dp-loc{font-size:14px}
+  section.dp-hero .dp-crumbs{margin-bottom:18px}
 }
 </style>
 </head>
