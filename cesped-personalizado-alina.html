@@ -695,9 +695,13 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .cp-design-imgs .dw{grid-column:span 2}
 }
 @media(max-width:640px){
-  /* compact hero like the main category page (was min-height:88vh, bottom-anchored) */
+  /* compact hero like the main category page (was min-height:88vh, bottom-anchored).
+     also shrink the headline/sub so it doesn't fill the whole phone screen */
   .cp-hero{min-height:0}
-  .cp-hero-inner{padding:96px 22px 44px}
+  .cp-hero-inner{padding:86px 22px 36px}
+  .cp-hero-eyebrow{margin-bottom:14px}
+  .cp-hero h1{font-size:clamp(36px,9.5vw,50px)}
+  .cp-hero-sub{font-size:14px;line-height:1.6;margin:16px 0 24px}
 }
 </style>
 
