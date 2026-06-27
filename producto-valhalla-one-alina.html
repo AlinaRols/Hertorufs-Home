@@ -653,7 +653,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-title{font-family:var(--fd);font-size:clamp(26px,2.6vw,36px);font-weight:900;line-height:1.1;color:#15181c;margin-bottom:14px}
 .pdp-title em{color:var(--accent);font-style:normal}
 .pdp-price{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:18px}
-.pdp-price #pdpPrice{font-family:var(--fd);font-size:34px;font-weight:900;color:#15181c}
+.pdp-price #pdpPrice{font-family:var(--fd);font-size:clamp(30px,2.9vw,40px);font-weight:900;color:#15181c}
 .pdp-tax{font-size:12px;font-weight:600;color:#8a96a0}
 .pdp-desc{font-size:15px;color:#5a6672;line-height:1.65;margin-bottom:26px;max-width:72ch}
 .pdp-opt{margin-bottom:24px}
@@ -836,12 +836,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
         <!-- colour -->
         <div class="pdp-opt">
-          <div class="pdp-opt-h">Colour <span id="pdpColourName">Negro · Valhalla One</span></div>
+          <div class="pdp-opt-h">Colour <span id="pdpColourName">Black · Valhalla One</span></div>
           <div class="pdp-swatches" id="pdpSwatches">
-            <button class="pdp-sw active" type="button" data-name="Negro · Valhalla One" style="background:#15171a" aria-label="Negro Valhalla One"></button>
-            <button class="pdp-sw" type="button" data-name="Azul · Atlantis" style="background:#2a5fd0" aria-label="Azul Atlantis"></button>
-            <button class="pdp-sw" type="button" data-name="Verde · Elysium" style="background:#3f9d4a" aria-label="Verde Elysium"></button>
-            <button class="pdp-sw" type="button" data-name="Rojo · Marathon" style="background:#cf2e2e" aria-label="Rojo Marathon"></button>
+            <button class="pdp-sw active" type="button" data-name="Black · Valhalla One" style="background:#15171a" aria-label="Black Valhalla One"></button>
+            <button class="pdp-sw" type="button" data-name="Blue · Atlantis" style="background:#2a5fd0" aria-label="Blue Atlantis"></button>
+            <button class="pdp-sw" type="button" data-name="Green · Elysium" style="background:#3f9d4a" aria-label="Green Elysium"></button>
+            <button class="pdp-sw" type="button" data-name="Red · Marathon" style="background:#cf2e2e" aria-label="Red Marathon"></button>
           </div>
         </div>
 
@@ -921,7 +921,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       <div class="pdp-specs-grid">
         <table class="pdp-spec-table">
           <tr><th>Model</th><td>Valhalla One</td></tr>
-          <tr><th>Colour</th><td>Negro · Valhalla One (also Atlantis, Elysium, Marathon)</td></tr>
+          <tr><th>Colour</th><td>Black · Valhalla One (also Atlantis, Elysium, Marathon)</td></tr>
           <tr><th>Markings</th><td>Integrated white lines &amp; numbers</td></tr>
           <tr><th>Widths</th><td>1.0 m / 1.5 m / 2.0 m</td></tr>
           <tr><th>Lengths</th><td>5.3 m – 12.4 m (custom available)</td></tr>
@@ -1160,10 +1160,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   var B='https://cdn.shopify.com/s/files/1/0960/0047/5401/files/';
   var W=[1100,700,700,700,700,1100,700,700];
   var COLOURS={
-    'Negro · Valhalla One':['cesped-gimnasio-valhalla-negro-150x1000-01.webp','cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp','cesped-gimnasio-valhalla-negro-150x1000-02.webp','cesped-gimnasio-valhalla-negro-150x1000-03.webp','cesped-gimnasio-valhalla-negro-150x1000-04.webp','cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg','cesped-gimnasio-valhalla-negro-150x1000-05.webp','cesped-gimnasio-valhalla-negro-150x1000-06.webp'],
-    'Azul · Atlantis':['cesped-gimnasio-azul-atlantis-150x1000-01.webp','Cesped-artificial-gimnasio-azul-chica1.jpg','cesped-gimnasio-azul-atlantis-150x1000-02.webp','cesped-gimnasio-azul-atlantis-150x1000-03.webp','cesped-gimnasio-azul-atlantis-150x1000-04.webp','cesped-artificial-gimnasio-azul-chica-2.webp','cesped-gimnasio-azul-atlantis-150x1000-05.webp','cesped-gimnasio-azul-atlantis-150x1000-06.webp'],
-    'Verde · Elysium':['cesped-gimnasio-verde-elysium-150x1000-01.webp','cesped-artificial-gimnasio-verde-cuerda-chica1.webp','cesped-gimnasio-verde-elysium-150x1000-02.webp','cesped-gimnasio-verde-elysium-150x1000-03.webp','cesped-gimnasio-verde-elysium-150x1000-04.webp','cesped-artificial-gimnasio-verde-cuerda-chica2_93d746d8-cb73-4b30-a27b-10c5ca1fc8e7.webp','cesped-gimnasio-verde-elysium-150x1000-05.webp','cesped-gimnasio-verde-elysium-150x1000-06.webp'],
-    'Rojo · Marathon':['cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp','Pista-Marathon-One-con-personas.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-1.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-2.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-3.webp','Pista-Marathon-One-con-trineo.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-4.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-5.webp']
+    'Black · Valhalla One':['cesped-gimnasio-valhalla-negro-150x1000-01.webp','cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp','cesped-gimnasio-valhalla-negro-150x1000-02.webp','cesped-gimnasio-valhalla-negro-150x1000-03.webp','cesped-gimnasio-valhalla-negro-150x1000-04.webp','cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg','cesped-gimnasio-valhalla-negro-150x1000-05.webp','cesped-gimnasio-valhalla-negro-150x1000-06.webp'],
+    'Blue · Atlantis':['cesped-gimnasio-azul-atlantis-150x1000-01.webp','Cesped-artificial-gimnasio-azul-chica1.jpg','cesped-gimnasio-azul-atlantis-150x1000-02.webp','cesped-gimnasio-azul-atlantis-150x1000-03.webp','cesped-gimnasio-azul-atlantis-150x1000-04.webp','cesped-artificial-gimnasio-azul-chica-2.webp','cesped-gimnasio-azul-atlantis-150x1000-05.webp','cesped-gimnasio-azul-atlantis-150x1000-06.webp'],
+    'Green · Elysium':['cesped-gimnasio-verde-elysium-150x1000-01.webp','cesped-artificial-gimnasio-verde-cuerda-chica1.webp','cesped-gimnasio-verde-elysium-150x1000-02.webp','cesped-gimnasio-verde-elysium-150x1000-03.webp','cesped-gimnasio-verde-elysium-150x1000-04.webp','cesped-artificial-gimnasio-verde-cuerda-chica2_93d746d8-cb73-4b30-a27b-10c5ca1fc8e7.webp','cesped-gimnasio-verde-elysium-150x1000-05.webp','cesped-gimnasio-verde-elysium-150x1000-06.webp'],
+    'Red · Marathon':['cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp','Pista-Marathon-One-con-personas.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-1.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-2.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-3.webp','Pista-Marathon-One-con-trineo.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-4.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-5.webp']
   };
   var shots=document.querySelectorAll('.pdp-gallery .pdp-shot img');
   function setColour(name){
@@ -1383,7 +1383,7 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
     }).join('');
   }
   function add(){
-    var colour=(document.getElementById('pdpColourName')||{}).textContent||'Negro · Valhalla One';
+    var colour=(document.getElementById('pdpColourName')||{}).textContent||'Black · Valhalla One';
     var sz=document.querySelector('.pdp-size.active');
     var size=sz?sz.textContent.trim():'1.5 × 10.0 m';
     var price=num(sz&&sz.dataset.price?sz.dataset.price:document.getElementById('pdpPrice').textContent);
