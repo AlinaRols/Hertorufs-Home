@@ -822,6 +822,47 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-acc-dark .pdp-cert-row span:nth-child(2){color:rgba(255,255,255,.55)}
 .pdp-acc-dark .pdp-cert-head span,.pdp-acc-dark .pdp-cert-head span:first-child{color:rgba(255,255,255,.55)!important}
 .pdp-acc-dark .pdp-cert-row span:nth-child(3)::before{color:rgba(255,255,255,.55)}
+/* ===== CERTIFICATIONS (interactive showcase) ===== */
+.pcert{background:#11151a;color:#fff;padding:84px 0;overflow:hidden}
+.pcert-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.pcert-visual{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#0b0e12;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.pcert-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04)}
+.pcert-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,12,16,.2),rgba(8,12,16,.62))}
+.pcert-hud{position:absolute;inset:0;z-index:2;background-image:linear-gradient(rgba(54,224,209,.20) 1px,transparent 1px),linear-gradient(90deg,rgba(54,224,209,.20) 1px,transparent 1px);background-size:38px 38px;-webkit-mask-image:radial-gradient(circle at 46% 54%,#000 28%,transparent 80%);mask-image:radial-gradient(circle at 46% 54%,#000 28%,transparent 80%)}
+.pcert-scan{position:absolute;left:0;right:0;top:8%;height:2px;z-index:3;background:linear-gradient(90deg,transparent,rgba(54,224,209,.95),transparent);box-shadow:0 0 18px rgba(54,224,209,.75);animation:pcertScan 4.6s ease-in-out infinite}
+@keyframes pcertScan{0%{top:6%}50%{top:90%}100%{top:6%}}
+.pcert-reticle{position:absolute;z-index:4;width:74px;height:74px;left:40%;top:53%;transform:translate(-50%,-50%);color:#36e0d1;animation:pcertPulse 2.6s ease-in-out infinite}
+.pcert-reticle svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.4;filter:drop-shadow(0 0 6px rgba(54,224,209,.6))}
+@keyframes pcertPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.92}50%{transform:translate(-50%,-50%) scale(1.13);opacity:.5}}
+.pcert-corner{position:absolute;z-index:4;width:22px;height:22px;border:2px solid rgba(54,224,209,.6)}
+.pcert-corner.tl{top:14px;left:14px;border-right:0;border-bottom:0}
+.pcert-corner.tr{top:14px;right:14px;border-left:0;border-bottom:0}
+.pcert-corner.bl{bottom:14px;left:14px;border-right:0;border-top:0}
+.pcert-corner.br{bottom:14px;right:14px;border-left:0;border-top:0}
+.pcert-tag{position:absolute;z-index:4;top:16px;left:46px;display:flex;align-items:center;gap:7px;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9ff3ea;background:rgba(8,14,18,.55);backdrop-filter:blur(4px);border:1px solid rgba(54,224,209,.32);padding:5px 11px;border-radius:30px}
+.pcert-dot{width:6px;height:6px;border-radius:50%;background:#36e0d1;box-shadow:0 0 8px #36e0d1;animation:pcertBlink 1.4s infinite}
+@keyframes pcertBlink{0%,100%{opacity:1}50%{opacity:.2}}
+.pcert-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.pcert-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent)}
+.pcert-title{font-family:var(--fd);font-size:clamp(30px,3.4vw,46px);font-weight:900;line-height:1.02;color:#fff;margin-bottom:16px}
+.pcert-title em{color:var(--accent);font-style:normal}
+.pcert-intro{font-size:15.5px;color:rgba(255,255,255,.74);line-height:1.7;margin-bottom:16px;max-width:54ch}
+.pcert-sub{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.86);margin-bottom:10px}
+.pcert-list{list-style:none;margin:0 0 28px;display:flex;flex-direction:column;gap:6px}
+.pcert-item{display:flex;gap:15px;align-items:flex-start;padding:14px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);transition:background .2s,border-color .2s,transform .2s}
+.pcert-item:hover{background:rgba(227,51,43,.08);border-color:rgba(227,51,43,.4);transform:translateX(4px)}
+.pcert-ico{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.pcert-item:hover .pcert-ico{background:var(--accent);color:#fff}
+.pcert-ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pcert-it-h{font-size:15px;font-weight:600;color:#fff;line-height:1.4}
+.pcert-num{font-family:var(--fd);font-weight:900;color:var(--accent);font-size:1.18em}
+.pcert-std{font-size:12px;color:rgba(255,255,255,.5);max-height:0;opacity:0;overflow:hidden;transition:max-height .3s ease,opacity .3s ease,margin-top .3s ease}
+.pcert-item:hover .pcert-std{max-height:42px;opacity:1;margin-top:5px}
+.pcert-link{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:3px;transition:gap .2s,color .2s}
+.pcert-link:hover{gap:13px;color:#ff6a5e}
+@media(hover:none){.pcert-std{max-height:42px;opacity:1;margin-top:5px}}
+@media(max-width:900px){.pcert{padding:58px 0}.pcert-grid{grid-template-columns:1fr;gap:30px}.pcert-visual{aspect-ratio:16/11;max-height:420px}}
+@media(prefers-reduced-motion:reduce){.pcert-scan,.pcert-reticle,.pcert-dot{animation:none}}
 @media(max-width:640px){
   .pdp-details{padding:52px 0 64px}
   .pdp-acc-body{padding-left:0}
@@ -1170,6 +1211,59 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           </div></div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS (interactive showcase) -->
+  <section class="pcert">
+    <div class="container">
+      <div class="pcert-grid">
+        <div class="pcert-visual reveal">
+          <img src="assets/home/cesped-verde-marcaje.webp" alt="Heroturfs sports turf with woven markings under certified testing" loading="lazy">
+          <div class="pcert-hud"></div>
+          <div class="pcert-scan"></div>
+          <span class="pcert-corner tl"></span><span class="pcert-corner tr"></span><span class="pcert-corner bl"></span><span class="pcert-corner br"></span>
+          <div class="pcert-reticle"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="6"/><path d="M50 8v15M50 77v15M8 50h15M77 50h15"/></svg></div>
+          <span class="pcert-tag"><span class="pcert-dot"></span>Scanning · Certified</span>
+        </div>
+        <div class="pcert-content">
+          <span class="pcert-eyebrow">Tested &amp; certified</span>
+          <h2 class="pcert-title reveal">Certifications that <em>make a difference.</em></h2>
+          <p class="pcert-intro reveal">Heroturfs is the only brand in the industry with official tests certifying the durability, safety and performance of every model.</p>
+          <p class="pcert-sub reveal">Our sports turf solutions offer:</p>
+          <ul class="pcert-list reveal">
+            <li class="pcert-item">
+              <span class="pcert-ico"><svg viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+              <div class="pcert-it">
+                <div class="pcert-it-h">More than <span class="pcert-num" data-count="50000">50,000</span> certified wear cycles.</div>
+                <div class="pcert-std">Lisport abrasion · UNE-EN 15306:2014 — no fibrillation or breakage.</div>
+              </div>
+            </li>
+            <li class="pcert-item">
+              <span class="pcert-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              <div class="pcert-it">
+                <div class="pcert-it-h">Anti-slip properties, shock absorption and sound insulation.</div>
+                <div class="pcert-std">Slip EN 14904 · Impact EN 14808 · Acoustic ISO 10140-3 (18 dB).</div>
+              </div>
+            </li>
+            <li class="pcert-item">
+              <span class="pcert-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span>
+              <div class="pcert-it">
+                <div class="pcert-it-h">Responsible manufacturing and CE-certified products.</div>
+                <div class="pcert-std">CE marking · B Corp (Moquetas Rols S.A.) · fire behaviour CFL-s1.</div>
+              </div>
+            </li>
+            <li class="pcert-item">
+              <span class="pcert-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+              <div class="pcert-it">
+                <div class="pcert-it-h">Total confidence for you, and complete safety for everyone who uses it.</div>
+                <div class="pcert-std">Every batch tested before dispatch to the strictest European standards.</div>
+              </div>
+            </li>
+          </ul>
+          <a href="#" class="pcert-link" id="pcertSeeAll">See the full test results <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
@@ -1827,6 +1921,38 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
       });
     });
   })();
+</script>
+<script>
+/* certifications section — count-up + open full results */
+(function(){
+  var nums=document.querySelectorAll('.pcert-num');
+  if(nums.length && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting)return;
+        var el=en.target; io.unobserve(el);
+        var target=parseInt(el.dataset.count,10)||0, start=null, dur=1500;
+        function step(ts){ if(start===null)start=ts; var p=Math.min(1,(ts-start)/dur);
+          var val=Math.floor((1-Math.pow(1-p,3))*target);
+          el.textContent=val.toLocaleString('en-GB');
+          if(p<1)requestAnimationFrame(step); else el.textContent=target.toLocaleString('en-GB'); }
+        requestAnimationFrame(step);
+      });
+    },{threshold:.5});
+    nums.forEach(function(n){io.observe(n);});
+  }
+  var seeAll=document.getElementById('pcertSeeAll');
+  if(seeAll){seeAll.addEventListener('click',function(e){
+    e.preventDefault();
+    var target=null;
+    document.querySelectorAll('.pdp-acc-dark .pdp-acc-btn').forEach(function(b){ if(/Tests and certifications/i.test(b.textContent)) target=b; });
+    if(target){
+      var item=target.closest('.pdp-acc-item');
+      if(item && !item.classList.contains('open')) target.click();
+      setTimeout(function(){ (item||target).scrollIntoView({behavior:'smooth',block:'start'}); }, 80);
+    }
+  });}
+})();
 </script>
 <script type="application/ld+json">
 {
