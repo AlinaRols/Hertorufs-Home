@@ -858,8 +858,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pcert-num{font-family:var(--fd);font-weight:900;color:var(--accent);font-size:1.18em}
 .pcert-std{font-size:12px;color:rgba(255,255,255,.5);max-height:0;opacity:0;overflow:hidden;transition:max-height .3s ease,opacity .3s ease,margin-top .3s ease}
 .pcert-item:hover .pcert-std{max-height:42px;opacity:1;margin-top:5px}
-.pcert-link{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:13.5px;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:3px;transition:gap .2s,color .2s}
+.pcert-link{display:inline-flex;align-items:center;gap:8px;color:#fff;font-family:var(--fb);font-weight:700;font-size:13.5px;text-decoration:none;background:none;border:none;border-bottom:2px solid var(--accent);padding:0 0 3px;cursor:pointer;transition:gap .2s,color .2s}
 .pcert-link:hover{gap:13px;color:#ff6a5e}
+.pcert-link .chev{transition:transform .3s}
+.pcert-link[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.pcert-results{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.pcert-rt-intro{font-size:14px;color:rgba(255,255,255,.7);margin:0 0 14px;padding-top:28px;max-width:74ch}
+.pcert-rt{font-size:13px;border-top:1px solid rgba(255,255,255,.14)}
+.pcert-rt-row{display:grid;grid-template-columns:26% 26% 1fr;gap:18px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);line-height:1.5}
+.pcert-rt-row span:first-child{color:#fff;font-weight:600}
+.pcert-rt-row span:nth-child(2){color:rgba(255,255,255,.5)}
+.pcert-rt-row span:last-child{color:rgba(255,255,255,.82)}
+.pcert-rt-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.pcert-rt-head span{color:rgba(255,255,255,.45)!important;font-weight:700}
+@media(max-width:560px){.pcert-rt-head{display:none}.pcert-rt-row{grid-template-columns:1fr;gap:3px;padding:13px 0}.pcert-rt-row span:nth-child(2)::before{content:'Standard: ';color:rgba(255,255,255,.4)}.pcert-rt-row span:last-child::before{content:'Result: ';color:rgba(255,255,255,.4)}}
 @media(hover:none){.pcert-std{max-height:42px;opacity:1;margin-top:5px}}
 @media(max-width:900px){.pcert{padding:58px 0}.pcert-grid{grid-template-columns:1fr;gap:30px}.pcert-visual{aspect-ratio:16/11;max-height:420px}}
 @media(prefers-reduced-motion:reduce){.pcert-scan,.pcert-reticle,.pcert-dot{animation:none}}
@@ -1262,7 +1274,26 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
               </div>
             </li>
           </ul>
-          <a href="#" class="pcert-link" id="pcertSeeAll">See the full test results <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button type="button" class="pcert-link" id="pcertToggle" aria-expanded="false"><span class="pcert-link-txt">See the full test results</span> <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        </div>
+      </div>
+      <div class="pcert-results" id="pcertResults">
+        <p class="pcert-rt-intro">Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
+        <div class="pcert-rt">
+          <div class="pcert-rt-row pcert-rt-head"><span>Property</span><span>Standard</span><span>Result</span></div>
+          <div class="pcert-rt-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
+          <div class="pcert-rt-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
+          <div class="pcert-rt-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
+          <div class="pcert-rt-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
+          <div class="pcert-rt-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
+          <div class="pcert-rt-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
+          <div class="pcert-rt-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
+          <div class="pcert-rt-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
+          <div class="pcert-rt-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
+          <div class="pcert-rt-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
+          <div class="pcert-rt-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
+          <div class="pcert-rt-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
+          <div class="pcert-rt-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
         </div>
       </div>
     </div>
@@ -1941,17 +1972,27 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
     },{threshold:.5});
     nums.forEach(function(n){io.observe(n);});
   }
-  var seeAll=document.getElementById('pcertSeeAll');
-  if(seeAll){seeAll.addEventListener('click',function(e){
-    e.preventDefault();
-    var target=null;
-    document.querySelectorAll('.pdp-acc-dark .pdp-acc-btn').forEach(function(b){ if(/Tests and certifications/i.test(b.textContent)) target=b; });
-    if(target){
-      var item=target.closest('.pdp-acc-item');
-      if(item && !item.classList.contains('open')) target.click();
-      setTimeout(function(){ (item||target).scrollIntoView({behavior:'smooth',block:'start'}); }, 80);
-    }
-  });}
+  var toggle=document.getElementById('pcertToggle');
+  var panel=document.getElementById('pcertResults');
+  var txt=toggle&&toggle.querySelector('.pcert-link-txt');
+  if(toggle&&panel){
+    toggle.addEventListener('click',function(){
+      if(panel.classList.contains('open')){
+        panel.style.maxHeight=panel.scrollHeight+'px'; void panel.offsetHeight;
+        panel.classList.remove('open'); panel.style.maxHeight='0px';
+        toggle.setAttribute('aria-expanded','false');
+        if(txt)txt.textContent='See the full test results';
+      } else {
+        panel.classList.add('open');
+        panel.style.maxHeight=panel.scrollHeight+'px';
+        toggle.setAttribute('aria-expanded','true');
+        if(txt)txt.textContent='Hide the full test results';
+      }
+    });
+    panel.addEventListener('transitionend',function(e){
+      if(e.propertyName==='max-height'&&panel.classList.contains('open')) panel.style.maxHeight='none';
+    });
+  }
 })();
 </script>
 <script type="application/ld+json">
