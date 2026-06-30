@@ -860,13 +860,15 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .istep-cta.show{display:inline-flex}
 .istep-cta:hover{background:var(--accent-h)}
 .istep-cta svg{width:14px;height:14px}
-.istep-nav{display:flex;align-items:center;gap:14px;margin-top:28px}
-.istep-arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(0,0,0,.18);background:#fff;color:#15181c;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s;flex-shrink:0;font-family:var(--fb)}
-.istep-arrow:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-.istep-dots{display:flex;gap:8px;flex:1;justify-content:center}
+.istep-nav{display:flex;align-items:center;justify-content:center;margin-top:24px}
+.istep-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:#15181c;font-size:21px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s;box-shadow:0 2px 10px rgba(0,0,0,.22);font-family:var(--fb)}
+.istep-arrow-prev{left:14px}
+.istep-arrow-next{right:14px}
+.istep-arrow:hover{background:var(--accent);color:#fff}
+.istep-dots{display:flex;gap:8px;justify-content:center}
 .istep-dot{width:9px;height:9px;border-radius:50%;background:#d3d8dd;border:none;padding:0;cursor:pointer;transition:background .2s,transform .2s}
 .istep-dot.active{background:var(--accent);transform:scale(1.25)}
-@media(max-width:860px){.istep{grid-template-columns:1fr;grid-template-rows:auto auto auto;grid-template-areas:"head" "media" "body"}.istep-head{padding:20px 20px 14px}.istep-media{min-height:0;height:190px}.istep-panel{padding:14px 20px 22px}.istep-bar{margin-bottom:16px}}
+@media(max-width:860px){.istep{grid-template-columns:1fr;grid-template-rows:auto auto auto;grid-template-areas:"head" "media" "body"}.istep-head{padding:20px 20px 14px}.istep-media{min-height:0;height:190px}.istep-panel{padding:14px 20px 22px}.istep-bar{margin-bottom:16px}.istep-arrow{width:40px;height:40px;font-size:19px}.istep-arrow-prev{left:10px}.istep-arrow-next{right:10px}.istep-nav{margin-top:18px}}
 .gd2-steps-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center;margin-top:8px}
 .gd2-steps-img{border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#15181c}
 .gd2-steps-img img{width:100%;height:100%;object-fit:cover;display:block}
@@ -1035,6 +1037,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <div class="istep-media">
           <img id="istepImg" src="" alt="">
           <span class="istep-count"><b id="istepNum">01</b> / 05</span>
+          <button class="istep-arrow istep-arrow-prev" id="istepPrev" type="button" aria-label="Previous step">&#8249;</button>
+          <button class="istep-arrow istep-arrow-next" id="istepNext" type="button" aria-label="Next step">&#8250;</button>
         </div>
         <div class="istep-panel">
           <div class="istep-desc" id="istepDesc"></div>
@@ -1043,9 +1047,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
             <a class="istep-cta" id="istepCta" href="#">Shop Endurance tape <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
           <div class="istep-nav">
-            <button class="istep-arrow" id="istepPrev" type="button" aria-label="Previous step">&#8249;</button>
             <div class="istep-dots" id="istepDots"></div>
-            <button class="istep-arrow" id="istepNext" type="button" aria-label="Next step">&#8250;</button>
           </div>
         </div>
       </div>
