@@ -428,7 +428,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .rpc-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
 .rpc-stars{display:flex;gap:2px}
 .rpc-stars svg{width:13px;height:13px;fill:#e8a020}
-.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;flex:1}
+.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rpc-text.expanded{display:block;-webkit-line-clamp:unset}
+.rpc-links{display:flex;align-items:center;gap:14px}
 .rpc-foot{padding-top:12px;border-top:1px solid rgba(0,0,0,.07)}
 .rpc-name{font-size:13px;font-weight:700;color:#1a1f24}
 .rpc-role{font-size:11px;color:#8a96a0;margin-top:2px}
@@ -1083,6 +1085,127 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     </div>
   </section>
 
+  <!-- REVIEWS (featured — same content as home) -->
+<section class="reviews-section-d pdp-reviews" style="padding:80px 0 40px">
+  <div class="container">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px" class="reveal">
+      <div>
+        <span class="eyebrow-label">Featured reviews</span>
+        <h2 class="section-title" style="color:#1a1f24;font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1">The verdict<br><em style="color:var(--accent);font-style:normal">from the floor</em></h2>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:9px" class="reveal d2">
+        <div class="reviews-score-badge">
+          <div class="rsb-num">4.80</div>
+        <div class="rsb-right">
+          <div class="rsb-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="rsb-label">76 reviews</div>
+          </div>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#5a6672"><span style="width:16px;height:16px;border-radius:4px;background:#00b27a;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Verified reviews on <strong style="color:#1a1f24;font-weight:800;margin-left:1px">Judge.me</strong></div>
+      </div>
+    </div>
+    <div class="reviews-carousel">
+    <div class="reviews-grid-photo" id="reviewsTrack">
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/compartidos/bollodromo.jpg" alt="Bollodromo · custom weightlifting turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">19 May 2026</span></div>
+          <p class="rpc-text rpc-en">"We're a sports centre specialising in strength training. We ordered a strip of turf with our colours and logo. The quality has been superb — it feels great underfoot and is comfortable for strength work. We're keen to see how it holds up over time, but for now we're really happy with the result."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Somos un centro deportivo especializado en el entrenamiento de fuerza. Hemos encargado una tira de césped con nuestros colores y logo. La calidad ha sido estupenda, el tacto se siente muy bien y parece cómoda a la hora de utilizarla para entrenamiento de fuerza. Estamos deseando ver cómo se mantiene con el tiempo, pero, por ahora, estamos muy satisfechos con el resultado de su trabajo."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Bollodromo</div><div class="rpc-role">Strength training centre · Tarragona</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/crossfit-camp-major.avif" alt="CrossFit Camp Major · custom track with logo" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" style="fill:rgba(26,31,36,.15)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">10 Jun 2026</span></div>
+          <p class="rpc-text rpc-en">"The track has arrived and it's superb — we had great communication with Ivan throughout. The logo looks brilliant and the designer did a great job. The track feels solid for sled work and for intensive Hyrox use."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"La piste est arrivée, elle est magnifique, nous avons eu une très bonne communication avec Ivan. Le logo est superbe et le designer a fait un très bon travail. La piste a l'air solide pour le SLED et pour l'usage intensif d'Hyrox."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
+          <div class="rpc-foot"><div><div class="rpc-name">CrossFit Camp Major</div><div class="rpc-role">CrossFit box · Aubagne, France</div></div><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div><div class="review-photo-card reveal d3">
+        <div class="rpc-img"><img src="assets/home/mark-gaye-tracks.jpg" alt="Custom sprint tracks installed in Belgium" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">27 Apr 2026</span></div>
+          <p class="rpc-text rpc-en">"I'd like to highlight the high quality of their service for tracks and sprint tracks. The products delivered are of an excellent standard, both in design and in on-field performance — a level of quality that reflects real expertise. Beyond the product itself, their service clearly stands out: structured support, precise and responsive follow-up, and smooth communication at every stage of the project. The after-sales service is equally up to the task — available and efficient — which builds long-term trust. This very positive collaboration confirms the seriousness of the company and makes them a reference I'll recommend without reservation."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Je tiens à souligner la grande qualité de votre prestation concernant les pistes et sprintracks. Les produits livrés sont d’un excellent niveau, tant en termes de conception que de performance sur le terrain. Cette exigence de qualité reflète un réel savoir-faire. Au-delà du produit, votre service se distingue clairement : accompagnement structuré, suivi de dossier précis et réactif, avec une communication fluide à chaque étape du projet. Le service après-vente est également à la hauteur, disponible et efficace, ce qui renforce la confiance sur le long terme. Cette collaboration très positive confirme le sérieux de votre entreprise et constitue une référence que je recommanderai sans réserve."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Mark Gaye</div><div class="rpc-role">Kinaxis · Belgium</div></div><img class="flag" src="https://flagcdn.com/be.svg" alt="Belgium" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/testa-fitness.jpg" alt="Testa Fitness · black turf track with sleds" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">5 Feb 2026</span></div>
+          <p class="rpc-text rpc-en">"From the very first moment the service was friendly, and the information they provide makes the whole process easy. Unbeatable value for money — and they made shipping to the Canary Islands simple."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Desde el primer momento el trato fue amable y la información que dan hace que toda la gestión resulte cómoda. Relación calidad/precio insuperable y ponen facilidades para enviar a Canarias."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Testa Fitness</div><div class="rpc-role">Gym · Canary Islands</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/compartidos/acero-crossfit.jpg" alt="Acero CrossFit · Toledo" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">28 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"Everything was perfect from day one — serious and professional. They fitted us a custom turf and it turned out brilliantly. We'll definitely be back!"</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Todo perfecto desde el inicio, serios y formales. Nos pusieron un césped personalizado y quedó de cine. Repetiré seguro!"</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Acero CrossFit</div><div class="rpc-role">CrossFit box · Toledo</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/wellbox-leganes.jpg" alt="WellBox Leganés · custom turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">23 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"Great-quality custom turf — really happy with the product."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Césped personalizado de gran calidad, muy contento con el producto."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">WellBox</div><div class="rpc-role">Gym · Leganés</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d2">
+        <div class="rpc-img"><img src="assets/home/lowfit-review.jpg" alt="Lowfit Huelva · custom sled turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"At Lowfit we don’t do things by halves — we do everything in a big way, which is why we asked Heroturfs for the most spectacular sled turf ever seen, and the result has been exactly that: spectacular. They stayed in touch with us at every step to make sure everything turned out perfect. We’ll trust them again, 100%."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"En Lowfit no andamos con medias tintas y todo lo hacemos a lo grande, por eso le encargamos a Heroturfs el césped para trineos más espectacular que se haya visto, y el resultado ha sido espectacular. Estuvieron en contacto con nosotros en todo momento y pendientes para que todo saliera perfecto. Volveremos a confiar en ellos 100%."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Jonathan Gómez</div><div class="rpc-role">Director · Lowfit Huelva</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d1">
+        <div class="rpc-img"><img src="assets/home/lions-gym.jpg" alt="Lion's Gym · LionX area track in Palma de Mallorca" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">3 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"We bought the track for the LionX (Hyrox) area of our Lion's Gym in Palma de Mallorca from this company, and it's honestly excellent. The material is top quality and the custom design they made for us was exactly what we had in mind. From day one the whole process was impeccable: outstanding service, quick responses and constant support at every step. Thank you so much for everything — we'll certainly be back for future projects. A company we recommend 100%, both for the quality of the product and for the service and professionalism they work with."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Compramos con esta empresa la pista que instalamos en el sector de LionX (Hyrox) de nuestro gimnasio Lion’s Gym en Palma de Mallorca, y la verdad es que es excelente. El material es de muy buena calidad y el diseño personalizado que nos hicieron fue exactamente lo que teníamos pensado. Desde el primer día, la gestión fue impecable: una atención inmejorable, respuestas rápidas y un acompañamiento constante en todo el proceso. Muchísimas gracias por todo, sin dudas los volveré a contactar para futuros trabajos. Una empresa 100% recomendable, tanto por la calidad del producto como por el servicio y la seriedad con la que trabajan."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Lion's Gym</div><div class="rpc-role">Gym · Palma de Mallorca</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+
+    </div>
+    <button class="reviews-arrow reviews-arrow-prev" onclick="scrollReviews(-1)" aria-label="Previous review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="reviews-arrow reviews-arrow-next" onclick="scrollReviews(1)" aria-label="Next review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    <div class="reviews-dots">
+      <button class="rev-dot active" onclick="goReview(0)" aria-label="Review 1"></button>
+      <button class="rev-dot" onclick="goReview(1)" aria-label="Review 2"></button>
+      <button class="rev-dot" onclick="goReview(2)" aria-label="Review 3"></button>
+      <button class="rev-dot" onclick="goReview(3)" aria-label="Review 4"></button>
+      <button class="rev-dot" onclick="goReview(4)" aria-label="Review 5"></button>
+      <button class="rev-dot" onclick="goReview(5)" aria-label="Review 6"></button>
+      <button class="rev-dot" onclick="goReview(6)" aria-label="Review 7"></button>
+      <button class="rev-dot" onclick="goReview(7)" aria-label="Review 8"></button>
+    </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:28px">
+      <a href="#" class="reviews-cta">Read all 76 reviews <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
   <!-- FEATURES -->
   <section class="pdp-feats">
     <div class="container">
@@ -1299,105 +1422,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       </div>
     </div>
   </section>
-
-  <!-- REVIEWS -->
-<section class="reviews-section-d pdp-reviews" style="padding:34px 0 80px">
-  <div class="container" style="max-width:1380px">
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px" class="reveal">
-      <div>
-        <span class="eyebrow-label">Featured reviews</span>
-        <h2 class="section-title" style="color:#1a1f24;font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1">The verdict<br><em style="color:var(--accent);font-style:normal">from the floor</em></h2>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:9px" class="reveal d2">
-        <div class="reviews-score-badge">
-          <div class="rsb-num">4.79</div>
-        <div class="rsb-right">
-          <div class="rsb-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div class="rsb-label">72 reviews</div>
-          </div>
-        </div>
-        <div style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#5a6672"><span style="width:16px;height:16px;border-radius:4px;background:#00b27a;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Verified reviews on <strong style="color:#1a1f24;font-weight:800;margin-left:1px">Judge.me</strong></div>
-      </div>
-    </div>
-    <div class="reviews-carousel">
-    <div class="reviews-grid-photo" id="reviewsTrack">
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp?width=700" alt="Valhalla One track in use" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">8 Sep 2025</span></div>
-          <p class="rpc-text rpc-en">"Excellent-quality artificial turf. We use it for sled training and it bounces back really well."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Césped artificial de muy buena calidad. Lo usamos para entrenamiento con trineos y se recupera muy bien."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Isidro Carvajal</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="assets/compartidos/bollodromo.jpg" alt="Bollodromo · custom Valhalla turf" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">19 May 2026</span></div>
-          <p class="rpc-text rpc-en">"We're a strength-training centre. We ordered a strip of turf in our colours with our logo. The quality has been superb — it feels great underfoot and is comfortable for strength work. For now we're really happy with the result."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Somos un centro deportivo especializado en el entrenamiento de fuerza. Hemos encargado una tira de césped con nuestros colores y logo. La calidad ha sido estupenda, el tacto se siente muy bien y parece cómoda a la hora de utilizarla para entrenamiento de fuerza. Estamos deseando ver cómo se mantiene con el tiempo, pero, por ahora, estamos muy satisfechos con el resultado de su trabajo."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Bollodromo</div><div class="rpc-role">Strength training centre · Tarragona</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-02.webp?width=700" alt="Valhalla One black track" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">5 Jun 2026</span></div>
-          <p class="rpc-text rpc-en">"I bought the turf for our home gym. Top-quality product — it meets our expectations."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Compré el césped para el gimnasio de nuestra casa. Producto de gran calidad, cumple con nuestras expectativas."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Jose</div><div class="rpc-role">Home gym</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-03.webp?width=700" alt="Valhalla One black track detail" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">25 Apr 2026</span></div>
-          <p class="rpc-text rpc-en">"All great — the turf is really dense and hard-wearing, with a very comfortable feel."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Todo genial, el césped muy tupido y resistente. Sensación muy confortable."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Verified buyer</div><div class="rpc-role">Heroturfs customer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg?width=700" alt="Sled workout on Valhalla One" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 May 2026</span></div>
-          <p class="rpc-text rpc-en">"Great material — I'm really happy with it."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Buen material, estoy contento."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Gustavonerja</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-05.webp?width=700" alt="Valhalla One black track" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 Jun 2026</span></div>
-          <p class="rpc-text rpc-en">"Top quality."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Top qualité."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Sophie W.</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-    <button class="reviews-arrow reviews-arrow-prev" onclick="scrollReviews(-1)" aria-label="Previous review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <button class="reviews-arrow reviews-arrow-next" onclick="scrollReviews(1)" aria-label="Next review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
-    <div class="reviews-dots">
-      <button class="rev-dot active" onclick="goReview(0)" aria-label="Review 1"></button>
-      <button class="rev-dot" onclick="goReview(1)" aria-label="Review 2"></button>
-      <button class="rev-dot" onclick="goReview(2)" aria-label="Review 3"></button>
-      <button class="rev-dot" onclick="goReview(3)" aria-label="Review 4"></button>
-      <button class="rev-dot" onclick="goReview(4)" aria-label="Review 5"></button>
-      <button class="rev-dot" onclick="goReview(5)" aria-label="Review 6"></button>
-    </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:28px">
-      <a href="#" class="reviews-cta">Read all 72 reviews <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-</section>
 
   <!-- CTA -->
   <section class="pdp-final-cta">
