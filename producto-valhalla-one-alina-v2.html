@@ -418,7 +418,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .rsb-stars{display:flex;gap:2px;margin-bottom:2px}
 .rsb-stars svg{width:14px;height:14px;fill:#e8a020}
 .rsb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a96a0}
-.reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:16px;margin-bottom:32px;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
+.reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:16px;margin-bottom:32px;scrollbar-width:none;-ms-overflow-style:none}
 .reviews-grid-photo::-webkit-scrollbar{display:none}
 .review-photo-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .review-photo-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
@@ -426,10 +426,16 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .rpc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .review-photo-card:hover .rpc-img img{transform:scale(1.04)}
 .rpc-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.rpc-stars{display:flex;gap:2px}
+.rpc-stars{display:flex;gap:2px;align-items:center}
 .rpc-stars svg{width:13px;height:13px;fill:#e8a020}
-.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;flex:1}
-.rpc-foot{padding-top:12px;border-top:1px solid rgba(0,0,0,.07)}
+.rpc-date{margin-left:auto;font-size:11px;color:#8a96a0;font-weight:500}
+.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rpc-text.expanded{display:block;-webkit-line-clamp:unset}
+.rpc-links{display:flex;align-items:center;gap:14px}
+.rpc-lang{background:none;border:none;padding:0;font-size:11px;font-weight:600;color:#8a96a0;cursor:pointer;text-decoration:underline;text-underline-offset:2px;align-self:flex-start;font-family:var(--fb);transition:color .2s}
+.rpc-lang:hover{color:#1a1f24}
+.rpc-foot{margin-top:auto;padding-top:12px;border-top:1px solid rgba(0,0,0,.07);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rpc-foot .flag{box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 .rpc-name{font-size:13px;font-weight:700;color:#1a1f24}
 .rpc-role{font-size:11px;color:#8a96a0;margin-top:2px}
 
@@ -442,15 +448,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu a:hover,.mobile-menu a:active{background:rgba(255,255,255,.06);color:#fff}
 .reviews-carousel{position:relative}
-.reviews-arrow{display:none;position:absolute;top:110px;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:#1a1f24;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28)}
+.reviews-arrow{display:flex;position:absolute;top:140px;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:#1a1f24;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28);transition:background .2s}
+.reviews-arrow:hover{background:#fff}
 .reviews-arrow:active{background:#fff}
 .reviews-arrow-prev{left:2px}
 .reviews-arrow-next{right:2px}
-.reviews-dots{display:none}
+.reviews-dots{display:flex;justify-content:center;gap:9px;margin-top:4px}
+.rev-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.18);cursor:pointer;padding:0;transition:background .25s,width .25s}
+.rev-dot.active{background:var(--accent);width:22px;border-radius:5px}
+.reviews-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:1px solid rgba(0,0,0,.22);border-radius:6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a1f24;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.reviews-cta:hover{background:#1a1f24;color:#fff;border-color:#1a1f24}
 
 @media(max-width:1024px){
   .proyectos-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:220px}
-  .review-photo-card{flex:0 0 calc((100% - 16px)/2)}
+  .review-photo-card{flex-basis:calc((100% - 16px)/2)}
   .faq-inner-d{grid-template-columns:1fr;gap:36px}
   .footer-top{grid-template-columns:1fr 1fr 1fr;gap:32px}
   [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important}
@@ -469,15 +480,13 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .split-big-grid{grid-template-columns:1fr}
   .split-big-card{height:360px}
   .split-big-content{padding:28px 24px}
-  .reviews-grid-photo{display:flex;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+  .reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:14px;scrollbar-width:none;-ms-overflow-style:none}
   .reviews-grid-photo::-webkit-scrollbar{display:none}
   .review-photo-card{flex:0 0 86%;scroll-snap-align:start}
   .rpc-img{aspect-ratio:auto;height:220px}
   .reviews-carousel .reveal{opacity:1;transform:none}
-  .reviews-arrow{display:flex}
-  .reviews-dots{display:flex;justify-content:center;gap:9px;margin-top:20px}
-  .rev-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.18);cursor:pointer;padding:0;transition:background .25s,width .25s}
-  .rev-dot.active{background:var(--accent);width:22px;border-radius:5px}
+  .reviews-arrow{top:110px}
+  .reviews-dots{margin-top:20px}
   .footer-top{grid-template-columns:1fr 1fr;gap:28px}
   [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
 }
@@ -629,7 +638,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 /* long dash before section eyebrows */
 .pdp-wrap .eyebrow-label,.pdp-reviews .eyebrow-label{display:inline-flex;align-items:center;gap:9px}
 .pdp-wrap .eyebrow-label::before,.pdp-reviews .eyebrow-label::before{content:"";width:24px;height:2px;background:var(--accent);flex-shrink:0;display:inline-block}
-.pdp-container{max-width:1600px;padding-top:34px}
+.pdp-container{max-width:1600px;padding-top:34px;padding-bottom:64px}
 .pdp-crumbs{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#9aa3ab;margin-bottom:26px}
 .pdp-crumbs a{color:#5a6672;text-decoration:none}
 .pdp-crumbs a:hover{color:var(--accent)}
@@ -643,6 +652,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-shot:hover img{transform:scale(1.04)}
 .pdp-shot.hero{grid-column:1 / -1;aspect-ratio:4/3}
 .pdp-shot.wide{grid-column:1 / -1;aspect-ratio:16/9}
+.pdp-shot.spec{grid-column:1 / -1;aspect-ratio:4/3}
+.pdp-shot.spec img{object-position:center bottom}
+.pdp-shot.spec:hover img{transform:none}
 .pdp-gallery-wrap{position:relative;min-width:0}
 .pdp-gnav,.pdp-gdots{display:none}
 
@@ -652,8 +664,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-stars{color:#f5a623;letter-spacing:1px;font-size:15px}
 .pdp-title{font-family:var(--fd);font-size:clamp(26px,2.6vw,36px);font-weight:900;line-height:1.1;color:#15181c;margin-bottom:14px}
 .pdp-title em{color:var(--accent);font-style:normal}
-.pdp-price{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:18px}
-.pdp-price #pdpPrice{font-family:var(--fd);font-size:clamp(30px,2.9vw,40px);font-weight:900;color:#15181c}
+.pdp-price{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-bottom:18px}
+.pdp-price #pdpPrice{font-family:var(--fd);font-size:clamp(30px,2.9vw,40px);font-weight:900;color:#15181c;line-height:1}
 .pdp-tax{font-size:12px;font-weight:600;color:#8a96a0}
 .pdp-desc{font-size:15px;color:#5a6672;line-height:1.65;margin-bottom:26px;max-width:72ch}
 .pdp-opt{margin-bottom:24px}
@@ -800,9 +812,16 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-dl dt{color:#8a96a0;font-weight:600}
 .pdp-dl dd{margin:0;color:#15181c;font-weight:600}
 .pdp-cert{margin-top:6px;font-size:13px}
-.pdp-cert-row{display:grid;grid-template-columns:30% 30% 1fr;gap:14px;padding:9px 0;border-bottom:1px solid #e2e5e9;line-height:1.5}
+.pdp-cert-row{display:grid;grid-template-columns:30% 30% 1fr;gap:14px;padding:9px 12px 9px 9px;border-bottom:1px solid #e2e5e9;border-left:3px solid transparent;line-height:1.5;transition:background .15s}
+.pdp-cert-row:not(.pdp-cert-head):hover{background:rgba(0,0,0,.035)}
+.pdp-cert-row.star{border-left-color:var(--accent)}
 .pdp-cert-row span:first-child{color:#15181c;font-weight:600}
-.pdp-cert-row span:nth-child(2){color:#8a96a0}
+.pdp-cert-row span:nth-child(2){color:#a8b1b9;font-size:12px}
+.pdp-cert-row span:last-child b{color:#15181c;font-weight:700}
+.pdp-cert-group{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:20px 12px 7px 9px;border-bottom:1px solid #e2e5e9}
+.cert-pass{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:#dff3e8;color:#1f9d55;font-style:normal;font-weight:800;font-size:9px;margin-right:7px;transform:translateY(2px)}
+.pdp-cert-note{font-size:12.5px;color:#8a96a0;margin-top:16px;padding-left:9px}
+.pdp-cert-note a{color:var(--accent);text-decoration:underline}
 .pdp-cert-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .pdp-cert-head span,.pdp-cert-head span:first-child{color:#8a96a0!important;font-weight:700}
 /* dark variant of the product-details accordion (on the slate value band) */
@@ -824,8 +843,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-acc-dark .pdp-cert-row span:nth-child(3)::before{color:rgba(255,255,255,.55)}
 /* ===== CERTIFICATIONS (interactive showcase) ===== */
 .pcert{background:#323f49;color:#fff;padding:84px 0;overflow:hidden}
-.pcert-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
-.pcert-visual{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#0b0e12;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.pcert-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:stretch}
+.pcert-visual{position:relative;border-radius:16px;overflow:hidden;min-height:440px;background:#0b0e12;box-shadow:0 30px 70px rgba(0,0,0,.5)}
 .pcert-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04)}
 .pcert-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,12,16,.2),rgba(8,12,16,.62))}
 .pcert-hud{position:absolute;inset:0;z-index:2;background-image:linear-gradient(rgba(54,224,209,.20) 1px,transparent 1px),linear-gradient(90deg,rgba(54,224,209,.20) 1px,transparent 1px);background-size:38px 38px;-webkit-mask-image:radial-gradient(circle at 46% 54%,#000 28%,transparent 80%);mask-image:radial-gradient(circle at 46% 54%,#000 28%,transparent 80%)}
@@ -865,15 +884,22 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pcert-results{max-height:0;overflow:hidden;transition:max-height .45s ease}
 .pcert-rt-intro{font-size:14px;color:rgba(255,255,255,.7);margin:0 0 14px;padding-top:28px;max-width:74ch}
 .pcert-rt{font-size:13px;border-top:1px solid rgba(255,255,255,.14)}
-.pcert-rt-row{display:grid;grid-template-columns:26% 26% 1fr;gap:18px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);line-height:1.5}
+.pcert-rt-row{display:grid;grid-template-columns:26% 26% 1fr;gap:18px;padding:11px 12px 11px 9px;border-bottom:1px solid rgba(255,255,255,.1);border-left:3px solid transparent;line-height:1.5;transition:background .15s}
+.pcert-rt-row:not(.pcert-rt-head):hover{background:rgba(255,255,255,.045)}
+.pcert-rt-row.star{border-left-color:var(--accent)}
 .pcert-rt-row span:first-child{color:#fff;font-weight:600}
-.pcert-rt-row span:nth-child(2){color:rgba(255,255,255,.5)}
+.pcert-rt-row span:nth-child(2){color:rgba(255,255,255,.42);font-size:12px}
 .pcert-rt-row span:last-child{color:rgba(255,255,255,.82)}
+.pcert-rt-row span:last-child b{color:#fff;font-weight:700}
+.pcert-rt-group{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:20px 12px 7px 9px;border-bottom:1px solid rgba(255,255,255,.14)}
+.pcert-rt .cert-pass{background:rgba(70,209,127,.16);color:#4cd688}
+.pcert-rt-note{font-size:12.5px;color:rgba(255,255,255,.55);margin-top:16px;padding-left:9px}
+.pcert-rt-note a{color:#fff;text-decoration:underline}
 .pcert-rt-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .pcert-rt-head span{color:rgba(255,255,255,.45)!important;font-weight:700}
-@media(max-width:560px){.pcert-rt-head{display:none}.pcert-rt-row{grid-template-columns:1fr;gap:3px;padding:13px 0}.pcert-rt-row span:nth-child(2)::before{content:'Standard: ';color:rgba(255,255,255,.4)}.pcert-rt-row span:last-child::before{content:'Result: ';color:rgba(255,255,255,.4)}}
+@media(max-width:560px){.pcert-rt-head{display:none}.pcert-rt-row{grid-template-columns:1fr;gap:3px;padding:13px 10px 13px 9px}.pcert-rt-group{padding:16px 10px 5px 9px}.pcert-rt-row span:nth-child(2)::before{content:'Standard: ';color:rgba(255,255,255,.4)}.pcert-rt-row span:last-child::before{content:'Result: ';color:rgba(255,255,255,.4)}}
 @media(hover:none){.pcert-std{max-height:42px;opacity:1;margin-top:5px}}
-@media(max-width:900px){.pcert{padding:58px 0}.pcert-grid{grid-template-columns:1fr;gap:30px}.pcert-visual{aspect-ratio:16/11;max-height:420px}}
+@media(max-width:900px){.pcert{padding:58px 0}.pcert-grid{grid-template-columns:1fr;gap:30px}.pcert-visual{aspect-ratio:16/11;max-height:420px;min-height:0}}
 @media(prefers-reduced-motion:reduce){.pcert-scan,.pcert-reticle,.pcert-dot{animation:none}}
 @media(max-width:640px){
   .pdp-details{padding:52px 0 64px}
@@ -881,7 +907,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .pdp-dl{grid-template-columns:1fr;gap:2px 0}
   .pdp-dl dt{margin-top:9px}
   .pdp-cert-head{display:none}
-  .pdp-cert-row{grid-template-columns:1fr;gap:2px;padding:10px 0}
+  .pdp-cert-row{grid-template-columns:1fr;gap:2px;padding:10px 10px 10px 9px}
+  .pdp-cert-group{padding:16px 10px 5px 9px}
   .pdp-cert-row span:nth-child(2)::before{content:'Standard: '}
   .pdp-cert-row span:nth-child(3)::before{content:'Result: ';color:#8a96a0}
 }
@@ -903,6 +930,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <div class="pdp-shot wide"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg?width=1100" alt="Sled workout in progress on the Valhalla One track" loading="lazy"></div>
         <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-05.webp?width=700" alt="Valhalla One track numbers detail" loading="lazy"></div>
         <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-06.webp?width=700" alt="Valhalla One track full view" loading="lazy"></div>
+        <div class="pdp-shot spec"><img src="assets/cesped/valhalla-detail-specs.webp" alt="Valhalla One turf cross-section — 86,000 stitches per m² and 12 mm apparent total height" loading="lazy"></div>
       </div>
         <button class="pdp-gnav prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
         <button class="pdp-gnav next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button>
@@ -971,183 +999,39 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     </div>
   </div>
 
-  <!-- FEATURES -->
-  <section class="pdp-feats">
+  <!-- PRODUCT HIGHLIGHTS (light — title + key stats + full-details accordion) -->
+  <section class="pdp-highlights" style="background:#f5f6f7;padding:64px 0 72px">
     <div class="container">
-      <span class="eyebrow-label">Why Valhalla One</span>
-      <h2 class="section-title" style="color:#15181c">Built for the <em>hardest</em> sessions.</h2>
-      <div class="pdp-feats-grid">
-        <div class="pdp-feat">
-          <div class="pdp-feat-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 18L8 6l4 8 4-10 4 14"/></svg></div>
-          <h3>Integrated markings</h3>
-          <p>White lines and numbers woven in — they never peel, fade or wear off under the sled.</p>
-        </div>
-        <div class="pdp-feat">
-          <div class="pdp-feat-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
-          <h3>Heavy-traffic ready</h3>
-          <p>Resists daily foot traffic, sled dragging and loaded weight without flattening.</p>
-        </div>
-        <div class="pdp-feat">
-          <div class="pdp-feat-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <h3>Pro fitness zones</h3>
-          <p>Clean, professional look that turns any floor into a defined functional-training lane.</p>
-        </div>
-        <div class="pdp-feat">
-          <div class="pdp-feat-ico"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>5-year guarantee</h3>
-          <p>Backed against manufacturing defects, made in Spain to a certified standard.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPECS -->
-  <section class="pdp-specs">
-    <div class="container">
-      <span class="eyebrow-label">Spec sheet</span>
-      <h2 class="section-title pdp-specs-title" style="color:#15181c">Technical <em style="color:var(--accent);font-style:normal">specifications</em></h2>
-      <div class="pdp-specs-grid">
-        <table class="pdp-spec-table">
-          <tr><th>Model</th><td>Valhalla One</td></tr>
-          <tr><th>Colour</th><td>Black · Valhalla One (also Atlantis, Elysium, Marathon)</td></tr>
-          <tr><th>Markings</th><td>Integrated white lines &amp; numbers</td></tr>
-          <tr><th>Widths</th><td>1.0 m / 1.5 m / 2.0 m</td></tr>
-          <tr><th>Lengths</th><td>5.3 m – 12.4 m (custom available)</td></tr>
-          <tr><th>Use</th><td>Sled push · prowler · functional training</td></tr>
-          <tr><th>Origin</th><td>Made in Spain · quality certified</td></tr>
-          <tr><th>Guarantee</th><td>5 years against manufacturing defects</td></tr>
-        </table>
-        <div class="pdp-incl">
-          <h3>Delivery &amp; returns</h3>
-          <ul>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>In-stock tracks prepared in 3–5 working days.</li>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Shipped within 48–72 h, tracking on dispatch.</li>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Free shipping to Mainland UK.</li>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Returns within 14 days if unused &amp; in original packaging.</li>
-            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Technical team replies within 24 h for sizing &amp; colour advice.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT DETAILS -->
-  <section class="pdp-details">
-    <div class="container">
-      <span class="eyebrow-label">In detail</span>
-      <h2 class="section-title" style="color:#15181c">Product <em>details.</em></h2>
-      <div class="pdp-acc">
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Product description</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <p>High-performance textured artificial turf track with integrated markings and numbering — ideal for functional training, movement drills and sled work.</p>
-            <ul>
-              <li>High fibre density: <strong>86,000 stitches/m²</strong> for exceptional grip and comfort on high-intensity floor work.</li>
-              <li>Excellent impact resistance, built for heavy daily use in gyms.</li>
-              <li>Easy to clean and maintain, with quick, simple installation.</li>
-              <li>Available in several sizes — and we also make <a href="cesped-personalizado-alina.html">custom tracks</a> to fit your exact project.</li>
-              <li>Made in the EU in a facility with over 100 years of textile experience in technical carpets and mats.</li>
-            </ul>
-          </div></div>
-        </div>
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Technical data sheet</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <dl class="pdp-dl">
-              <dt>Fibre type</dt><dd>Textured polyethylene monofilament</dd>
-              <dt>Gauge</dt><dd>1/7 inch</dd>
-              <dt>Total height</dt><dd>15 mm (whole system, fibre + backing, measured flat). As the fibre is texturised, the visible height in use is around 11–12 mm.</dd>
-              <dt>Pile height</dt><dd>12 mm (±5%)</dd>
-              <dt>Fibre weight</dt><dd>1,550 g/m² (±10%)</dd>
-              <dt>Stitches/m²</dt><dd>86,000 (±10%)</dd>
-              <dt>Yarn weight</dt><dd>5,500 dtex (±10%)</dd>
-              <dt>Total weight</dt><dd>approx. 2,400 g/m² (±10%)</dd>
-            </dl>
-          </div></div>
-        </div>
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Tests and certifications</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <p>Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
-            <div class="pdp-cert">
-              <div class="pdp-cert-row pdp-cert-head"><span>Property</span><span>Standard</span><span>Result</span></div>
-              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
-              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
-              <div class="pdp-cert-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
-              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
-              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
-              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
-              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
-              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
-              <div class="pdp-cert-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
-              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
-              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
-              <div class="pdp-cert-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
-              <div class="pdp-cert-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
-            </div>
-          </div></div>
-        </div>
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Installation manual</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <p>Designed for quick, clean installation — all you need is a level surface, extra-strong double-sided tape and a few simple steps.</p>
-            <p>Our full step-by-step guide covers preparing the area, laying the turf and ensuring long-lasting fixing, even for heavy sled work.</p>
-          </div></div>
-        </div>
-
-        <div class="pdp-acc-item">
-          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Maintenance and warranty</span></button>
-          <div class="pdp-acc-panel"><div class="pdp-acc-body">
-            <p>Built to take intensive use with minimal upkeep. A little regular care keeps it looking like day one:</p>
-            <ul>
-              <li>Regular vacuuming to remove dust, chalk, fibres or rubber.</li>
-              <li>Spot-clean with water and mild soap for stains or spills.</li>
-              <li>Periodic checks of the installation and seams.</li>
-            </ul>
-            <p>All tracks include a <strong>5-year guarantee</strong> against manufacturing defects and functional failures under normal use.</p>
-          </div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT DETAILS (dark — title + key stats + accordion) -->
-  <section class="pdp-details-dark" style="background:#323f49;padding:64px 0 72px">
-    <div class="container">
-      <span class="eyebrow-label">In detail</span>
-      <h2 class="section-title reveal" style="color:#fff;margin-bottom:26px">Product <em>details.</em></h2>
-      <div class="reveal" style="border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden">
+      <span class="eyebrow-label">At a glance</span>
+      <h2 class="section-title reveal" style="color:#15181c;margin-bottom:26px">Product <em>highlights.</em></h2>
+      <div class="reveal" style="border:1px solid rgba(0,0,0,.09);border-radius:12px;overflow:hidden;background:#fff">
         <div style="display:grid;grid-template-columns:repeat(4,1fr)">
-          <div style="padding:28px 24px;border-right:1px solid rgba(255,255,255,.1)">
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.82);margin-bottom:10px">Density</div>
-            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#fff;line-height:1;margin-bottom:8px">86,000<span style="font-size:.52em;color:rgba(255,255,255,.82);font-weight:600"> st/m²</span></div>
-            <div style="font-size:12px;color:rgba(255,255,255,.82);line-height:1.6">Fibre that won’t flatten under repeated load or intensive daily use.</div>
+          <div style="padding:28px 24px;border-right:1px solid rgba(0,0,0,.08)">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Density</div>
+            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">86,000<span style="font-size:.52em;color:#8a96a0;font-weight:600"> st/m²</span></div>
+            <div style="font-size:12px;color:#5a6672;line-height:1.6">Fibre that won’t flatten under repeated load or intensive daily use.</div>
           </div>
-          <div style="padding:28px 24px;border-right:1px solid rgba(255,255,255,.1)">
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.82);margin-bottom:10px">Height</div>
-            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#fff;line-height:1;margin-bottom:8px">12<span style="font-size:.52em;color:rgba(255,255,255,.82);font-weight:600"> mm visible height</span></div>
-            <div style="font-size:12px;color:rgba(255,255,255,.82);line-height:1.6">Low-profile pile that keeps footing stable and lets the sled glide smoothly.</div>
+          <div style="padding:28px 24px;border-right:1px solid rgba(0,0,0,.08)">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Height</div>
+            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">12<span style="font-size:.52em;color:#8a96a0;font-weight:600"> mm visible height</span></div>
+            <div style="font-size:12px;color:#5a6672;line-height:1.6">Low-profile pile that keeps footing stable and lets the sled glide smoothly.</div>
           </div>
-          <div style="padding:28px 24px;border-right:1px solid rgba(255,255,255,.1)">
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.82);margin-bottom:10px">Guarantee</div>
-            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#fff;line-height:1;margin-bottom:8px">5<span style="font-size:.52em;color:rgba(255,255,255,.82);font-weight:600"> years</span></div>
-            <div style="font-size:12px;color:rgba(255,255,255,.82);line-height:1.6">Manufactured directly, no middlemen. We stand behind the product.</div>
+          <div style="padding:28px 24px;border-right:1px solid rgba(0,0,0,.08)">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Guarantee</div>
+            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">5<span style="font-size:.52em;color:#8a96a0;font-weight:600"> years</span></div>
+            <div style="font-size:12px;color:#5a6672;line-height:1.6">Manufactured directly, no middlemen. We stand behind the product.</div>
           </div>
           <div style="padding:28px 24px">
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.82);margin-bottom:10px">Durability</div>
-            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#fff;line-height:1;margin-bottom:8px">50,000+<span style="font-size:.52em;color:rgba(255,255,255,.82);font-weight:600"> Lisport cycles</span></div>
-            <div style="font-size:12px;color:rgba(255,255,255,.82);line-height:1.6">Tested to UNE-EN 15306:2014 — no fibrillation or breaks, with good visual retention.</div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Durability</div>
+            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">50,000+<span style="font-size:.52em;color:#8a96a0;font-weight:600"> Lisport cycles</span></div>
+            <div style="font-size:12px;color:#5a6672;line-height:1.6">Tested to UNE-EN 15306:2014 — no fibrillation or breaks, with good visual retention.</div>
           </div>
         </div>
       </div>
 
-      <!-- accordion (same content as the light Product details, dark styling) -->
-      <div class="pdp-acc pdp-acc-dark">
+      <!-- accordion (full details, light styling) -->
+      <span class="eyebrow-label" style="margin:38px 0 0">Full details</span>
+      <div class="pdp-acc" style="margin-top:12px">
 
         <div class="pdp-acc-item">
           <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Product description</span></button>
@@ -1185,19 +1069,27 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
             <p>Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
             <div class="pdp-cert">
               <div class="pdp-cert-row pdp-cert-head"><span>Property</span><span>Standard</span><span>Result</span></div>
-              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
-              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
-              <div class="pdp-cert-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
-              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
-              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
-              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
-              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
-              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
-              <div class="pdp-cert-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
-              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
-              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
-              <div class="pdp-cert-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
-              <div class="pdp-cert-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
+
+              <div class="pdp-cert-group">Durability &amp; wear</div>
+              <div class="pdp-cert-row star"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span><i class="cert-pass">✓</i><b>≥50,000 cycles</b> — no fibrillation or breakage; good visual retention.</span></div>
+              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span><i class="cert-pass">✓</i><b>0.52% mass loss</b> @5,000 cycles — excellent wear resistance.</span></div>
+              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span><i class="cert-pass">✓</i><b>Appearance 5 · colour 5</b> after 4,000 rotations; 4 · 4 after 12,000.</span></div>
+              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span><i class="cert-pass">✓</i><b>Colour change 5</b> after 5,200 h UVA; tensile loss −10%.</span></div>
+              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span><i class="cert-pass">✓</i><b>Commercial 33 (intensive)</b> · Domestic 23 (intensive).</span></div>
+
+              <div class="pdp-cert-group">Safety &amp; comfort</div>
+              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span><i class="cert-pass">✓</i><b>Compliant</b> — suitable for indoor sports facilities.</span></div>
+              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span><i class="cert-pass">✓</i><b>25.01% ±2%</b> — suitable for sports flooring.</span></div>
+              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span><i class="cert-pass">✓</i><b>11.18 kPa at 40% · 904.78 kPa at 70%</b> load.</span></div>
+              <div class="pdp-cert-row star"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span><i class="cert-pass">✓</i><b>CFL-s1</b> (bonded with Forbo 540 FR adhesive).</span></div>
+              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span><i class="cert-pass">✓</i><b>18 dB</b> impact noise reduction.</span></div>
+
+              <div class="pdp-cert-group">Hygiene &amp; compliance</div>
+              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span><i class="cert-pass">✓</i><b>Fungal growth 0 (absent)</b> after 28 days.</span></div>
+              <div class="pdp-cert-row star"><span>Product certification</span><span>CE marking</span><span><i class="cert-pass">✓</i><b>Compliant</b> — EU safety, health &amp; environmental requirements.</span></div>
+              <div class="pdp-cert-row star"><span>Responsible manufacturing</span><span>B Corp</span><span><i class="cert-pass">✓</i><b>Certified</b> — made by Moquetas Rols S.A. for its environmental &amp; social commitment.</span></div>
+
+              <p class="pdp-cert-note">Need the full test reports? <a href="contacto.html">Ask us</a> and we'll send them over.</p>
             </div>
           </div></div>
         </div>
@@ -1226,6 +1118,127 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       </div>
     </div>
   </section>
+
+  <!-- REVIEWS (featured — same content as home) -->
+<section class="reviews-section-d pdp-reviews" style="padding:80px 0 40px">
+  <div class="container">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px" class="reveal">
+      <div>
+        <span class="eyebrow-label">Featured reviews</span>
+        <h2 class="section-title" style="color:#1a1f24;font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1">The verdict<br><em style="color:var(--accent);font-style:normal">from the floor</em></h2>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:9px" class="reveal d2">
+        <div class="reviews-score-badge">
+          <div class="rsb-num">4.80</div>
+        <div class="rsb-right">
+          <div class="rsb-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="rsb-label">76 reviews</div>
+          </div>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#5a6672"><span style="width:16px;height:16px;border-radius:4px;background:#00b27a;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Verified reviews on <strong style="color:#1a1f24;font-weight:800;margin-left:1px">Judge.me</strong></div>
+      </div>
+    </div>
+    <div class="reviews-carousel">
+    <div class="reviews-grid-photo" id="reviewsTrack">
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/compartidos/bollodromo.jpg" alt="Bollodromo · custom weightlifting turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">19 May 2026</span></div>
+          <p class="rpc-text rpc-en">"We're a sports centre specialising in strength training. We ordered a strip of turf with our colours and logo. The quality has been superb — it feels great underfoot and is comfortable for strength work. We're keen to see how it holds up over time, but for now we're really happy with the result."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Somos un centro deportivo especializado en el entrenamiento de fuerza. Hemos encargado una tira de césped con nuestros colores y logo. La calidad ha sido estupenda, el tacto se siente muy bien y parece cómoda a la hora de utilizarla para entrenamiento de fuerza. Estamos deseando ver cómo se mantiene con el tiempo, pero, por ahora, estamos muy satisfechos con el resultado de su trabajo."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Bollodromo</div><div class="rpc-role">Strength training centre · Tarragona</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/crossfit-camp-major.avif" alt="CrossFit Camp Major · custom track with logo" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" style="fill:rgba(26,31,36,.15)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">10 Jun 2026</span></div>
+          <p class="rpc-text rpc-en">"The track has arrived and it's superb — we had great communication with Ivan throughout. The logo looks brilliant and the designer did a great job. The track feels solid for sled work and for intensive Hyrox use."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"La piste est arrivée, elle est magnifique, nous avons eu une très bonne communication avec Ivan. Le logo est superbe et le designer a fait un très bon travail. La piste a l'air solide pour le SLED et pour l'usage intensif d'Hyrox."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
+          <div class="rpc-foot"><div><div class="rpc-name">CrossFit Camp Major</div><div class="rpc-role">CrossFit box · Aubagne, France</div></div><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div><div class="review-photo-card reveal d3">
+        <div class="rpc-img"><img src="assets/home/mark-gaye-tracks.jpg" alt="Custom sprint tracks installed in Belgium" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">27 Apr 2026</span></div>
+          <p class="rpc-text rpc-en">"I'd like to highlight the high quality of their service for tracks and sprint tracks. The products delivered are of an excellent standard, both in design and in on-field performance — a level of quality that reflects real expertise. Beyond the product itself, their service clearly stands out: structured support, precise and responsive follow-up, and smooth communication at every stage of the project. The after-sales service is equally up to the task — available and efficient — which builds long-term trust. This very positive collaboration confirms the seriousness of the company and makes them a reference I'll recommend without reservation."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Je tiens à souligner la grande qualité de votre prestation concernant les pistes et sprintracks. Les produits livrés sont d’un excellent niveau, tant en termes de conception que de performance sur le terrain. Cette exigence de qualité reflète un réel savoir-faire. Au-delà du produit, votre service se distingue clairement : accompagnement structuré, suivi de dossier précis et réactif, avec une communication fluide à chaque étape du projet. Le service après-vente est également à la hauteur, disponible et efficace, ce qui renforce la confiance sur le long terme. Cette collaboration très positive confirme le sérieux de votre entreprise et constitue une référence que je recommanderai sans réserve."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Mark Gaye</div><div class="rpc-role">Kinaxis · Belgium</div></div><img class="flag" src="https://flagcdn.com/be.svg" alt="Belgium" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/testa-fitness.jpg" alt="Testa Fitness · black turf track with sleds" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">5 Feb 2026</span></div>
+          <p class="rpc-text rpc-en">"From the very first moment the service was friendly, and the information they provide makes the whole process easy. Unbeatable value for money — and they made shipping to the Canary Islands simple."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Desde el primer momento el trato fue amable y la información que dan hace que toda la gestión resulte cómoda. Relación calidad/precio insuperable y ponen facilidades para enviar a Canarias."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Testa Fitness</div><div class="rpc-role">Gym · Canary Islands</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/compartidos/acero-crossfit.jpg" alt="Acero CrossFit · Toledo" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">28 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"Everything was perfect from day one — serious and professional. They fitted us a custom turf and it turned out brilliantly. We'll definitely be back!"</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Todo perfecto desde el inicio, serios y formales. Nos pusieron un césped personalizado y quedó de cine. Repetiré seguro!"</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Acero CrossFit</div><div class="rpc-role">CrossFit box · Toledo</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/wellbox-leganes.jpg" alt="WellBox Leganés · custom turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">23 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"Great-quality custom turf — really happy with the product."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Césped personalizado de gran calidad, muy contento con el producto."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">WellBox</div><div class="rpc-role">Gym · Leganés</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d2">
+        <div class="rpc-img"><img src="assets/home/lowfit-review.jpg" alt="Lowfit Huelva · custom sled turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"At Lowfit we don’t do things by halves — we do everything in a big way, which is why we asked Heroturfs for the most spectacular sled turf ever seen, and the result has been exactly that: spectacular. They stayed in touch with us at every step to make sure everything turned out perfect. We’ll trust them again, 100%."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"En Lowfit no andamos con medias tintas y todo lo hacemos a lo grande, por eso le encargamos a Heroturfs el césped para trineos más espectacular que se haya visto, y el resultado ha sido espectacular. Estuvieron en contacto con nosotros en todo momento y pendientes para que todo saliera perfecto. Volveremos a confiar en ellos 100%."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Jonathan Gómez</div><div class="rpc-role">Director · Lowfit Huelva</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d1">
+        <div class="rpc-img"><img src="assets/home/lions-gym.jpg" alt="Lion's Gym · LionX area track in Palma de Mallorca" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">3 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"We bought the track for the LionX (Hyrox) area of our Lion's Gym in Palma de Mallorca from this company, and it's honestly excellent. The material is top quality and the custom design they made for us was exactly what we had in mind. From day one the whole process was impeccable: outstanding service, quick responses and constant support at every step. Thank you so much for everything — we'll certainly be back for future projects. A company we recommend 100%, both for the quality of the product and for the service and professionalism they work with."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Compramos con esta empresa la pista que instalamos en el sector de LionX (Hyrox) de nuestro gimnasio Lion’s Gym en Palma de Mallorca, y la verdad es que es excelente. El material es de muy buena calidad y el diseño personalizado que nos hicieron fue exactamente lo que teníamos pensado. Desde el primer día, la gestión fue impecable: una atención inmejorable, respuestas rápidas y un acompañamiento constante en todo el proceso. Muchísimas gracias por todo, sin dudas los volveré a contactar para futuros trabajos. Una empresa 100% recomendable, tanto por la calidad del producto como por el servicio y la seriedad con la que trabajan."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Lion's Gym</div><div class="rpc-role">Gym · Palma de Mallorca</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+
+    </div>
+    <button class="reviews-arrow reviews-arrow-prev" onclick="scrollReviews(-1)" aria-label="Previous review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="reviews-arrow reviews-arrow-next" onclick="scrollReviews(1)" aria-label="Next review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    <div class="reviews-dots">
+      <button class="rev-dot active" onclick="goReview(0)" aria-label="Review 1"></button>
+      <button class="rev-dot" onclick="goReview(1)" aria-label="Review 2"></button>
+      <button class="rev-dot" onclick="goReview(2)" aria-label="Review 3"></button>
+      <button class="rev-dot" onclick="goReview(3)" aria-label="Review 4"></button>
+      <button class="rev-dot" onclick="goReview(4)" aria-label="Review 5"></button>
+      <button class="rev-dot" onclick="goReview(5)" aria-label="Review 6"></button>
+      <button class="rev-dot" onclick="goReview(6)" aria-label="Review 7"></button>
+      <button class="rev-dot" onclick="goReview(7)" aria-label="Review 8"></button>
+    </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:28px">
+      <a href="#" class="reviews-cta">Read all 76 reviews <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
 
   <!-- CERTIFICATIONS (interactive showcase) -->
   <section class="pcert">
@@ -1281,129 +1294,38 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <p class="pcert-rt-intro">Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
         <div class="pcert-rt">
           <div class="pcert-rt-row pcert-rt-head"><span>Property</span><span>Standard</span><span>Result</span></div>
-          <div class="pcert-rt-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
-          <div class="pcert-rt-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
-          <div class="pcert-rt-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
-          <div class="pcert-rt-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
-          <div class="pcert-rt-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
-          <div class="pcert-rt-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
-          <div class="pcert-rt-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
-          <div class="pcert-rt-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
-          <div class="pcert-rt-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
-          <div class="pcert-rt-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
-          <div class="pcert-rt-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
-          <div class="pcert-rt-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
-          <div class="pcert-rt-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
+
+          <div class="pcert-rt-group">Durability &amp; wear</div>
+          <div class="pcert-rt-row star"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span><i class="cert-pass">✓</i><b>≥50,000 cycles</b> — no fibrillation or breakage; good visual retention.</span></div>
+          <div class="pcert-rt-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span><i class="cert-pass">✓</i><b>0.52% mass loss</b> @5,000 cycles — excellent wear resistance.</span></div>
+          <div class="pcert-rt-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span><i class="cert-pass">✓</i><b>Appearance 5 · colour 5</b> after 4,000 rotations; 4 · 4 after 12,000.</span></div>
+          <div class="pcert-rt-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span><i class="cert-pass">✓</i><b>Colour change 5</b> after 5,200 h UVA; tensile loss −10%.</span></div>
+          <div class="pcert-rt-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span><i class="cert-pass">✓</i><b>Commercial 33 (intensive)</b> · Domestic 23 (intensive).</span></div>
+
+          <div class="pcert-rt-group">Safety &amp; comfort</div>
+          <div class="pcert-rt-row"><span>Slip resistance</span><span>EN 14904:2006</span><span><i class="cert-pass">✓</i><b>Compliant</b> — suitable for indoor sports facilities.</span></div>
+          <div class="pcert-rt-row"><span>Impact absorption</span><span>EN 14808:2005</span><span><i class="cert-pass">✓</i><b>25.01% ±2%</b> — suitable for sports flooring.</span></div>
+          <div class="pcert-rt-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span><i class="cert-pass">✓</i><b>11.18 kPa at 40% · 904.78 kPa at 70%</b> load.</span></div>
+          <div class="pcert-rt-row star"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span><i class="cert-pass">✓</i><b>CFL-s1</b> (bonded with Forbo 540 FR adhesive).</span></div>
+          <div class="pcert-rt-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span><i class="cert-pass">✓</i><b>18 dB</b> impact noise reduction.</span></div>
+
+          <div class="pcert-rt-group">Hygiene &amp; compliance</div>
+          <div class="pcert-rt-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span><i class="cert-pass">✓</i><b>Fungal growth 0 (absent)</b> after 28 days.</span></div>
+          <div class="pcert-rt-row star"><span>Product certification</span><span>CE marking</span><span><i class="cert-pass">✓</i><b>Compliant</b> — EU safety, health &amp; environmental requirements.</span></div>
+          <div class="pcert-rt-row star"><span>Responsible manufacturing</span><span>B Corp</span><span><i class="cert-pass">✓</i><b>Certified</b> — made by Moquetas Rols S.A. for its environmental &amp; social commitment.</span></div>
+
+          <p class="pcert-rt-note">Need the full test reports? <a href="contacto.html">Ask us</a> and we'll send them over.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- REVIEWS -->
-<section class="reviews-section-d pdp-reviews" style="padding:34px 0 80px">
-  <div class="container" style="max-width:1380px">
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px" class="reveal">
-      <div>
-        <span class="eyebrow-label">Featured reviews</span>
-        <h2 class="section-title" style="color:#1a1f24;font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1">The verdict<br><em style="color:var(--accent);font-style:normal">from the floor</em></h2>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:9px" class="reveal d2">
-        <div class="reviews-score-badge">
-          <div class="rsb-num">4.79</div>
-        <div class="rsb-right">
-          <div class="rsb-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div class="rsb-label">72 reviews</div>
-          </div>
-        </div>
-        <div style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#5a6672"><span style="width:16px;height:16px;border-radius:4px;background:#00b27a;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Verified reviews on <strong style="color:#1a1f24;font-weight:800;margin-left:1px">Judge.me</strong></div>
-      </div>
-    </div>
-    <div class="reviews-carousel">
-    <div class="reviews-grid-photo" id="reviewsTrack">
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp?width=700" alt="Valhalla One track in use" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">8 Sep 2025</span></div>
-          <p class="rpc-text rpc-en">"Excellent-quality artificial turf. We use it for sled training and it bounces back really well."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Césped artificial de muy buena calidad. Lo usamos para entrenamiento con trineos y se recupera muy bien."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Isidro Carvajal</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="assets/compartidos/bollodromo.jpg" alt="Bollodromo · custom Valhalla turf" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">19 May 2026</span></div>
-          <p class="rpc-text rpc-en">"We're a strength-training centre. We ordered a strip of turf in our colours with our logo. The quality has been superb — it feels great underfoot and is comfortable for strength work. For now we're really happy with the result."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Somos un centro deportivo especializado en el entrenamiento de fuerza. Hemos encargado una tira de césped con nuestros colores y logo. La calidad ha sido estupenda, el tacto se siente muy bien y parece cómoda a la hora de utilizarla para entrenamiento de fuerza. Estamos deseando ver cómo se mantiene con el tiempo, pero, por ahora, estamos muy satisfechos con el resultado de su trabajo."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Bollodromo</div><div class="rpc-role">Strength training centre · Tarragona</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-02.webp?width=700" alt="Valhalla One black track" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">5 Jun 2026</span></div>
-          <p class="rpc-text rpc-en">"I bought the turf for our home gym. Top-quality product — it meets our expectations."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Compré el césped para el gimnasio de nuestra casa. Producto de gran calidad, cumple con nuestras expectativas."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Jose</div><div class="rpc-role">Home gym</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-03.webp?width=700" alt="Valhalla One black track detail" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">25 Apr 2026</span></div>
-          <p class="rpc-text rpc-en">"All great — the turf is really dense and hard-wearing, with a very comfortable feel."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Todo genial, el césped muy tupido y resistente. Sensación muy confortable."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Verified buyer</div><div class="rpc-role">Heroturfs customer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg?width=700" alt="Sled workout on Valhalla One" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 May 2026</span></div>
-          <p class="rpc-text rpc-en">"Great material — I'm really happy with it."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Buen material, estoy contento."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Gustavonerja</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="review-photo-card reveal d4">
-        <div class="rpc-img"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-05.webp?width=700" alt="Valhalla One black track" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
-        <div class="rpc-body">
-          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 Jun 2026</span></div>
-          <p class="rpc-text rpc-en">"Top quality."</p>
-          <p class="rpc-text rpc-orig" style="display:none">"Top qualité."</p>
-          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
-          <div class="rpc-foot"><div><div class="rpc-name">Sophie W.</div><div class="rpc-role">Verified buyer</div></div><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-    <button class="reviews-arrow reviews-arrow-prev" onclick="scrollReviews(-1)" aria-label="Previous review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <button class="reviews-arrow reviews-arrow-next" onclick="scrollReviews(1)" aria-label="Next review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
-    <div class="reviews-dots">
-      <button class="rev-dot active" onclick="goReview(0)" aria-label="Review 1"></button>
-      <button class="rev-dot" onclick="goReview(1)" aria-label="Review 2"></button>
-      <button class="rev-dot" onclick="goReview(2)" aria-label="Review 3"></button>
-      <button class="rev-dot" onclick="goReview(3)" aria-label="Review 4"></button>
-      <button class="rev-dot" onclick="goReview(4)" aria-label="Review 5"></button>
-      <button class="rev-dot" onclick="goReview(5)" aria-label="Review 6"></button>
-    </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:28px">
-      <a href="#" class="reviews-cta">Read all 72 reviews <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-</section>
 
   <!-- CTA -->
   <section class="pdp-final-cta">
     <div class="container">
       <span class="eyebrow-label">Your track, your size</span>
       <h2 class="section-title">Can't find the exact fit?</h2>
-      <p>Every Heroturfs track can be made to measure — your width, length and colour, produced in Spain and shipped in 48 h.</p>
+      <p>Every Heroturfs track can be made to measure — your width, length and colour, produced in Spain.</p>
       <div class="pdp-cta-btns">
         <a href="cesped-personalizado-alina.html" class="btn-primary">Design your own</a>
         <a href="categoria-alina.html" class="pdp-cta-ghost">See tracks in stock</a>
