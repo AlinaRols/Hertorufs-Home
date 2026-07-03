@@ -802,9 +802,16 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-dl dt{color:#8a96a0;font-weight:600}
 .pdp-dl dd{margin:0;color:#15181c;font-weight:600}
 .pdp-cert{margin-top:6px;font-size:13px}
-.pdp-cert-row{display:grid;grid-template-columns:30% 30% 1fr;gap:14px;padding:9px 0;border-bottom:1px solid #e2e5e9;line-height:1.5}
+.pdp-cert-row{display:grid;grid-template-columns:30% 30% 1fr;gap:14px;padding:9px 12px 9px 9px;border-bottom:1px solid #e2e5e9;border-left:3px solid transparent;line-height:1.5;transition:background .15s}
+.pdp-cert-row:not(.pdp-cert-head):hover{background:rgba(0,0,0,.035)}
+.pdp-cert-row.star{border-left-color:var(--accent)}
 .pdp-cert-row span:first-child{color:#15181c;font-weight:600}
-.pdp-cert-row span:nth-child(2){color:#8a96a0}
+.pdp-cert-row span:nth-child(2){color:#a8b1b9;font-size:12px}
+.pdp-cert-row span:last-child b{color:#15181c;font-weight:700}
+.pdp-cert-group{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:20px 12px 7px 9px;border-bottom:1px solid #e2e5e9}
+.cert-pass{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:#dff3e8;color:#1f9d55;font-style:normal;font-weight:800;font-size:9px;margin-right:7px;transform:translateY(2px)}
+.pdp-cert-note{font-size:12.5px;color:#8a96a0;margin-top:16px;padding-left:9px}
+.pdp-cert-note a{color:var(--accent);text-decoration:underline}
 .pdp-cert-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .pdp-cert-head span,.pdp-cert-head span:first-child{color:#8a96a0!important;font-weight:700}
 /* dark variant of the product-details accordion (on the slate value band) */
@@ -867,13 +874,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pcert-results{max-height:0;overflow:hidden;transition:max-height .45s ease}
 .pcert-rt-intro{font-size:14px;color:rgba(255,255,255,.7);margin:0 0 14px;padding-top:28px;max-width:74ch}
 .pcert-rt{font-size:13px;border-top:1px solid rgba(255,255,255,.14)}
-.pcert-rt-row{display:grid;grid-template-columns:26% 26% 1fr;gap:18px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);line-height:1.5}
+.pcert-rt-row{display:grid;grid-template-columns:26% 26% 1fr;gap:18px;padding:11px 12px 11px 9px;border-bottom:1px solid rgba(255,255,255,.1);border-left:3px solid transparent;line-height:1.5;transition:background .15s}
+.pcert-rt-row:not(.pcert-rt-head):hover{background:rgba(255,255,255,.045)}
+.pcert-rt-row.star{border-left-color:var(--accent)}
 .pcert-rt-row span:first-child{color:#fff;font-weight:600}
-.pcert-rt-row span:nth-child(2){color:rgba(255,255,255,.5)}
+.pcert-rt-row span:nth-child(2){color:rgba(255,255,255,.42);font-size:12px}
 .pcert-rt-row span:last-child{color:rgba(255,255,255,.82)}
+.pcert-rt-row span:last-child b{color:#fff;font-weight:700}
+.pcert-rt-group{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:20px 12px 7px 9px;border-bottom:1px solid rgba(255,255,255,.14)}
+.pcert-rt .cert-pass{background:rgba(70,209,127,.16);color:#4cd688}
+.pcert-rt-note{font-size:12.5px;color:rgba(255,255,255,.55);margin-top:16px;padding-left:9px}
+.pcert-rt-note a{color:#fff;text-decoration:underline}
 .pcert-rt-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .pcert-rt-head span{color:rgba(255,255,255,.45)!important;font-weight:700}
-@media(max-width:560px){.pcert-rt-head{display:none}.pcert-rt-row{grid-template-columns:1fr;gap:3px;padding:13px 0}.pcert-rt-row span:nth-child(2)::before{content:'Standard: ';color:rgba(255,255,255,.4)}.pcert-rt-row span:last-child::before{content:'Result: ';color:rgba(255,255,255,.4)}}
+@media(max-width:560px){.pcert-rt-head{display:none}.pcert-rt-row{grid-template-columns:1fr;gap:3px;padding:13px 10px 13px 9px}.pcert-rt-group{padding:16px 10px 5px 9px}.pcert-rt-row span:nth-child(2)::before{content:'Standard: ';color:rgba(255,255,255,.4)}.pcert-rt-row span:last-child::before{content:'Result: ';color:rgba(255,255,255,.4)}}
 @media(hover:none){.pcert-std{max-height:42px;opacity:1;margin-top:5px}}
 @media(max-width:900px){.pcert{padding:58px 0}.pcert-grid{grid-template-columns:1fr;gap:30px}.pcert-visual{aspect-ratio:16/11;max-height:420px}}
 @media(prefers-reduced-motion:reduce){.pcert-scan,.pcert-reticle,.pcert-dot{animation:none}}
@@ -883,7 +897,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .pdp-dl{grid-template-columns:1fr;gap:2px 0}
   .pdp-dl dt{margin-top:9px}
   .pdp-cert-head{display:none}
-  .pdp-cert-row{grid-template-columns:1fr;gap:2px;padding:10px 0}
+  .pdp-cert-row{grid-template-columns:1fr;gap:2px;padding:10px 10px 10px 9px}
+  .pdp-cert-group{padding:16px 10px 5px 9px}
   .pdp-cert-row span:nth-child(2)::before{content:'Standard: '}
   .pdp-cert-row span:nth-child(3)::before{content:'Result: ';color:#8a96a0}
 }
@@ -1043,19 +1058,27 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
             <p>Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
             <div class="pdp-cert">
               <div class="pdp-cert-row pdp-cert-head"><span>Property</span><span>Standard</span><span>Result</span></div>
-              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
-              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
-              <div class="pdp-cert-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
-              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
-              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
-              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
-              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
-              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
-              <div class="pdp-cert-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
-              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
-              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
-              <div class="pdp-cert-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
-              <div class="pdp-cert-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
+
+              <div class="pdp-cert-group">Durability &amp; wear</div>
+              <div class="pdp-cert-row star"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span><i class="cert-pass">✓</i><b>≥50,000 cycles</b> — no fibrillation or breakage; good visual retention.</span></div>
+              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span><i class="cert-pass">✓</i><b>0.52% mass loss</b> @5,000 cycles — excellent wear resistance.</span></div>
+              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span><i class="cert-pass">✓</i><b>Appearance 5 · colour 5</b> after 4,000 rotations; 4 · 4 after 12,000.</span></div>
+              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span><i class="cert-pass">✓</i><b>Colour change 5</b> after 5,200 h UVA; tensile loss −10%.</span></div>
+              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span><i class="cert-pass">✓</i><b>Commercial 33 (intensive)</b> · Domestic 23 (intensive).</span></div>
+
+              <div class="pdp-cert-group">Safety &amp; comfort</div>
+              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span><i class="cert-pass">✓</i><b>Compliant</b> — suitable for indoor sports facilities.</span></div>
+              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span><i class="cert-pass">✓</i><b>25.01% ±2%</b> — suitable for sports flooring.</span></div>
+              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span><i class="cert-pass">✓</i><b>11.18 kPa at 40% · 904.78 kPa at 70%</b> load.</span></div>
+              <div class="pdp-cert-row star"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span><i class="cert-pass">✓</i><b>CFL-s1</b> (bonded with Forbo 540 FR adhesive).</span></div>
+              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span><i class="cert-pass">✓</i><b>18 dB</b> impact noise reduction.</span></div>
+
+              <div class="pdp-cert-group">Hygiene &amp; compliance</div>
+              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span><i class="cert-pass">✓</i><b>Fungal growth 0 (absent)</b> after 28 days.</span></div>
+              <div class="pdp-cert-row star"><span>Product certification</span><span>CE marking</span><span><i class="cert-pass">✓</i><b>Compliant</b> — EU safety, health &amp; environmental requirements.</span></div>
+              <div class="pdp-cert-row star"><span>Responsible manufacturing</span><span>B Corp</span><span><i class="cert-pass">✓</i><b>Certified</b> — made by Moquetas Rols S.A. for its environmental &amp; social commitment.</span></div>
+
+              <p class="pdp-cert-note">Need the full test reports? <a href="contacto.html">Ask us</a> and we'll send them over.</p>
             </div>
           </div></div>
         </div>
@@ -1309,19 +1332,27 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
             <p>Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
             <div class="pdp-cert">
               <div class="pdp-cert-row pdp-cert-head"><span>Property</span><span>Standard</span><span>Result</span></div>
-              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
-              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
-              <div class="pdp-cert-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
-              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
-              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
-              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
-              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
-              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
-              <div class="pdp-cert-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
-              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
-              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
-              <div class="pdp-cert-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
-              <div class="pdp-cert-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
+
+              <div class="pdp-cert-group">Durability &amp; wear</div>
+              <div class="pdp-cert-row star"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span><i class="cert-pass">✓</i><b>≥50,000 cycles</b> — no fibrillation or breakage; good visual retention.</span></div>
+              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span><i class="cert-pass">✓</i><b>0.52% mass loss</b> @5,000 cycles — excellent wear resistance.</span></div>
+              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span><i class="cert-pass">✓</i><b>Appearance 5 · colour 5</b> after 4,000 rotations; 4 · 4 after 12,000.</span></div>
+              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span><i class="cert-pass">✓</i><b>Colour change 5</b> after 5,200 h UVA; tensile loss −10%.</span></div>
+              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span><i class="cert-pass">✓</i><b>Commercial 33 (intensive)</b> · Domestic 23 (intensive).</span></div>
+
+              <div class="pdp-cert-group">Safety &amp; comfort</div>
+              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span><i class="cert-pass">✓</i><b>Compliant</b> — suitable for indoor sports facilities.</span></div>
+              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span><i class="cert-pass">✓</i><b>25.01% ±2%</b> — suitable for sports flooring.</span></div>
+              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span><i class="cert-pass">✓</i><b>11.18 kPa at 40% · 904.78 kPa at 70%</b> load.</span></div>
+              <div class="pdp-cert-row star"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span><i class="cert-pass">✓</i><b>CFL-s1</b> (bonded with Forbo 540 FR adhesive).</span></div>
+              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span><i class="cert-pass">✓</i><b>18 dB</b> impact noise reduction.</span></div>
+
+              <div class="pdp-cert-group">Hygiene &amp; compliance</div>
+              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span><i class="cert-pass">✓</i><b>Fungal growth 0 (absent)</b> after 28 days.</span></div>
+              <div class="pdp-cert-row star"><span>Product certification</span><span>CE marking</span><span><i class="cert-pass">✓</i><b>Compliant</b> — EU safety, health &amp; environmental requirements.</span></div>
+              <div class="pdp-cert-row star"><span>Responsible manufacturing</span><span>B Corp</span><span><i class="cert-pass">✓</i><b>Certified</b> — made by Moquetas Rols S.A. for its environmental &amp; social commitment.</span></div>
+
+              <p class="pdp-cert-note">Need the full test reports? <a href="contacto.html">Ask us</a> and we'll send them over.</p>
             </div>
           </div></div>
         </div>
@@ -1405,19 +1436,27 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <p class="pcert-rt-intro">Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
         <div class="pcert-rt">
           <div class="pcert-rt-row pcert-rt-head"><span>Property</span><span>Standard</span><span>Result</span></div>
-          <div class="pcert-rt-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span>After 4,000 rotations: appearance 5, colour 5. After 12,000: appearance 4, colour 4.</span></div>
-          <div class="pcert-rt-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span>Domestic 23 (intensive) · Commercial 33 (intensive).</span></div>
-          <div class="pcert-rt-row"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span>≥50,000 cycles. No fibrillation or breakage; good visual retention.</span></div>
-          <div class="pcert-rt-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span>Mass loss 0.52% @5,000 cycles. Excellent wear resistance.</span></div>
-          <div class="pcert-rt-row"><span>Impact absorption</span><span>EN 14808:2005</span><span>25.01% ±2%. Suitable for sports flooring.</span></div>
-          <div class="pcert-rt-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span>Load at 40%: 11.18 kPa · at 70%: 904.78 kPa.</span></div>
-          <div class="pcert-rt-row"><span>Slip resistance</span><span>EN 14904:2006</span><span>Compliant. Suitable for indoor sports facilities.</span></div>
-          <div class="pcert-rt-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span>Impact noise reduction: 18 dB.</span></div>
-          <div class="pcert-rt-row"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span>CFL-s1 (bonded with Forbo 540 FR adhesive).</span></div>
-          <div class="pcert-rt-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span>Fungal growth 0 (absent) after 28 days.</span></div>
-          <div class="pcert-rt-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span>After 5,200 h UVA: colour change 5; tensile loss −10%.</span></div>
-          <div class="pcert-rt-row"><span>Product certification</span><span>CE marking</span><span>Compliant with EU safety, health &amp; environmental requirements.</span></div>
-          <div class="pcert-rt-row"><span>Responsible manufacturing</span><span>B Corp</span><span>Made by Moquetas Rols S.A., certified for its environmental &amp; social commitment.</span></div>
+
+          <div class="pcert-rt-group">Durability &amp; wear</div>
+          <div class="pcert-rt-row star"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span><i class="cert-pass">✓</i><b>≥50,000 cycles</b> — no fibrillation or breakage; good visual retention.</span></div>
+          <div class="pcert-rt-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span><i class="cert-pass">✓</i><b>0.52% mass loss</b> @5,000 cycles — excellent wear resistance.</span></div>
+          <div class="pcert-rt-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span><i class="cert-pass">✓</i><b>Appearance 5 · colour 5</b> after 4,000 rotations; 4 · 4 after 12,000.</span></div>
+          <div class="pcert-rt-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span><i class="cert-pass">✓</i><b>Colour change 5</b> after 5,200 h UVA; tensile loss −10%.</span></div>
+          <div class="pcert-rt-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span><i class="cert-pass">✓</i><b>Commercial 33 (intensive)</b> · Domestic 23 (intensive).</span></div>
+
+          <div class="pcert-rt-group">Safety &amp; comfort</div>
+          <div class="pcert-rt-row"><span>Slip resistance</span><span>EN 14904:2006</span><span><i class="cert-pass">✓</i><b>Compliant</b> — suitable for indoor sports facilities.</span></div>
+          <div class="pcert-rt-row"><span>Impact absorption</span><span>EN 14808:2005</span><span><i class="cert-pass">✓</i><b>25.01% ±2%</b> — suitable for sports flooring.</span></div>
+          <div class="pcert-rt-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span><i class="cert-pass">✓</i><b>11.18 kPa at 40% · 904.78 kPa at 70%</b> load.</span></div>
+          <div class="pcert-rt-row star"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span><i class="cert-pass">✓</i><b>CFL-s1</b> (bonded with Forbo 540 FR adhesive).</span></div>
+          <div class="pcert-rt-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span><i class="cert-pass">✓</i><b>18 dB</b> impact noise reduction.</span></div>
+
+          <div class="pcert-rt-group">Hygiene &amp; compliance</div>
+          <div class="pcert-rt-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span><i class="cert-pass">✓</i><b>Fungal growth 0 (absent)</b> after 28 days.</span></div>
+          <div class="pcert-rt-row star"><span>Product certification</span><span>CE marking</span><span><i class="cert-pass">✓</i><b>Compliant</b> — EU safety, health &amp; environmental requirements.</span></div>
+          <div class="pcert-rt-row star"><span>Responsible manufacturing</span><span>B Corp</span><span><i class="cert-pass">✓</i><b>Certified</b> — made by Moquetas Rols S.A. for its environmental &amp; social commitment.</span></div>
+
+          <p class="pcert-rt-note">Need the full test reports? <a href="contacto.html">Ask us</a> and we'll send them over.</p>
         </div>
       </div>
     </div>
