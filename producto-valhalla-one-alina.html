@@ -841,6 +841,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-acc-dark .pdp-cert-row span:nth-child(2){color:rgba(255,255,255,.55)}
 .pdp-acc-dark .pdp-cert-head span,.pdp-acc-dark .pdp-cert-head span:first-child{color:rgba(255,255,255,.55)!important}
 .pdp-acc-dark .pdp-cert-row span:nth-child(3)::before{color:rgba(255,255,255,.55)}
+/* product highlights v2 — stats 2x2 + detail image */
+.pdp-hl2-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:22px;align-items:stretch}
+.pdp-hl2-stats{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:12px;overflow:hidden}
+.pdp-hl2-cell{padding:26px 24px}
+.pdp-hl2-cell:nth-child(1){border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)}
+.pdp-hl2-cell:nth-child(2){border-bottom:1px solid rgba(0,0,0,.08)}
+.pdp-hl2-cell:nth-child(3){border-right:1px solid rgba(0,0,0,.08)}
+.pdp-hl2-k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px}
+.pdp-hl2-n{font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px}
+.pdp-hl2-n span{font-size:.52em;color:#8a96a0;font-weight:600}
+.pdp-hl2-p{font-size:12px;color:#5a6672;line-height:1.6}
+.pdp-hl2-img{position:relative;border-radius:12px;overflow:hidden;background:#111;min-height:300px}
+.pdp-hl2-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.pdp-hl2-grid{grid-template-columns:1fr}.pdp-hl2-img{min-height:0;aspect-ratio:16/9}}
 /* ===== CERTIFICATIONS (interactive showcase) ===== */
 .pcert{background:#323f49;color:#fff;padding:84px 0;overflow:hidden}
 .pcert-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:stretch}
@@ -1115,6 +1129,39 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           </div></div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT HIGHLIGHTS V2 (stats 2x2 + detail image) — alternative version, compare with the one above -->
+  <section class="pdp-hl2" style="background:#f5f6f7;padding:64px 0 72px">
+    <div class="container">
+      <span class="eyebrow-label">At a glance</span>
+      <h2 class="section-title reveal" style="color:#15181c;margin-bottom:26px">Product <em>highlights.</em></h2>
+      <div class="pdp-hl2-grid reveal">
+        <div class="pdp-hl2-stats">
+          <div class="pdp-hl2-cell">
+            <div class="pdp-hl2-k">Density</div>
+            <div class="pdp-hl2-n">86,000<span> st/m²</span></div>
+            <div class="pdp-hl2-p">Fibre that won’t flatten under repeated load or intensive daily use.</div>
+          </div>
+          <div class="pdp-hl2-cell">
+            <div class="pdp-hl2-k">Height</div>
+            <div class="pdp-hl2-n">12<span> mm visible height</span></div>
+            <div class="pdp-hl2-p">Low-profile pile that keeps footing stable and lets the sled glide smoothly.</div>
+          </div>
+          <div class="pdp-hl2-cell">
+            <div class="pdp-hl2-k">Guarantee</div>
+            <div class="pdp-hl2-n">5<span> years</span></div>
+            <div class="pdp-hl2-p">Manufactured directly, no middlemen. We stand behind the product.</div>
+          </div>
+          <div class="pdp-hl2-cell">
+            <div class="pdp-hl2-k">Durability</div>
+            <div class="pdp-hl2-n">50,000+<span> Lisport cycles</span></div>
+            <div class="pdp-hl2-p">Tested to UNE-EN 15306:2014 — no fibrillation or breaks, with good visual retention.</div>
+          </div>
+        </div>
+        <div class="pdp-hl2-img"><img src="assets/cesped/valhalla-detail-close.webp" alt="Valhalla One turf cross-section — 86,000 stitches per m² and 12 mm apparent total height" loading="lazy"></div>
       </div>
     </div>
   </section>
