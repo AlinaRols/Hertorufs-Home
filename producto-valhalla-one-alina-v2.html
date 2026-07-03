@@ -650,7 +650,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-shot{position:relative;width:100%;background:#f3f5f7;border-radius:16px;overflow:hidden;aspect-ratio:1/1;min-width:0;min-height:0}
 .pdp-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.22,1,.36,1)}
 .pdp-shot:hover img{transform:scale(1.04)}
-.pdp-shot.hero{grid-column:1 / -1;aspect-ratio:4/3}
+.pdp-shot.hero{grid-column:1 / -1;aspect-ratio:1/1}
 .pdp-shot.wide{grid-column:1 / -1;aspect-ratio:16/9}
 .pdp-shot.spec{grid-column:1 / -1;aspect-ratio:4/3}
 .pdp-shot.spec img{object-position:center bottom}
@@ -777,6 +777,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .pdp-gallery{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;border-radius:16px;scrollbar-width:none}
   .pdp-gallery::-webkit-scrollbar{display:none}
   .pdp-shot,.pdp-shot.hero,.pdp-shot.wide{flex:0 0 100%;width:100%;aspect-ratio:4/3;scroll-snap-align:center}
+  .pdp-shot.hero{aspect-ratio:1/1}
   .pdp-gnav{display:flex;position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:none;align-items:center;justify-content:center;color:#15181c;cursor:pointer;z-index:2;box-shadow:0 2px 12px rgba(0,0,0,.2)}
   .pdp-gnav svg{width:18px;height:18px}
   .pdp-gnav.prev{left:10px}
