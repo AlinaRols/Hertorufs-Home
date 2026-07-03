@@ -1008,32 +1008,31 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         .pdp-hl-split{display:grid;grid-template-columns:.88fr 1.12fr;align-items:stretch}
         .pdp-hl-media{background:#0f1113;border-right:1px solid rgba(0,0,0,.08);display:flex}
         .pdp-hl-media img{width:100%;height:auto;display:block;align-self:center}
-        .pdp-hl-stats{display:grid;grid-template-columns:1fr 1fr}
-        .pdp-hl-stats>div{padding:28px 24px;display:flex;flex-direction:column;justify-content:center}
-        .pdp-hl-stats>div:nth-child(1),.pdp-hl-stats>div:nth-child(2){border-bottom:1px solid rgba(0,0,0,.08)}
-        .pdp-hl-stats>div:nth-child(1),.pdp-hl-stats>div:nth-child(3){border-right:1px solid rgba(0,0,0,.08)}
-        @media(max-width:768px){.pdp-hl-split{grid-template-columns:1fr}.pdp-hl-media{border-right:none;border-bottom:1px solid rgba(0,0,0,.08)}}
+        .pdp-hl-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:20px;align-content:center}
+        .pdp-hl-stats>div{border:1px solid #e2e6ea;background:#fff;border-radius:12px;padding:20px 20px 22px;display:flex;flex-direction:column;justify-content:center;transition:border-color .2s,transform .12s}
+        .pdp-hl-stats>div:hover{border-color:rgba(0,0,0,.22);transform:translateY(-2px)}
+        @media(max-width:768px){.pdp-hl-split{grid-template-columns:1fr}.pdp-hl-media{border-right:none;border-bottom:1px solid rgba(0,0,0,.08)}.pdp-hl-stats{gap:10px;padding:14px}.pdp-hl-stats>div{padding:16px}}
       </style>
       <div class="reveal pdp-hl-split" style="border:1px solid rgba(0,0,0,.09);border-radius:12px;overflow:hidden;background:#fff">
-        <div class="pdp-hl-media"><img src="assets/cesped/valhalla-detail-specs.webp" alt="Valhalla One — 86,000 stitches/m² density and 12 mm visible pile height"></div>
+        <div class="pdp-hl-media"><img src="assets/cesped/valhalla-detail-specs-en.jpg" alt="Valhalla One — 86,000 stitches/m² density and 12 mm visible pile height"></div>
         <div class="pdp-hl-stats">
           <div>
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Density</div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px">Density</div>
             <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">86,000<span style="font-size:.52em;color:#8a96a0;font-weight:600"> st/m²</span></div>
             <div style="font-size:12px;color:#5a6672;line-height:1.6">Fibre that won’t flatten under repeated load or intensive daily use.</div>
           </div>
           <div>
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Height</div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px">Height</div>
             <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">12<span style="font-size:.52em;color:#8a96a0;font-weight:600"> mm visible height</span></div>
             <div style="font-size:12px;color:#5a6672;line-height:1.6">Low-profile pile that keeps footing stable and lets the sled glide smoothly.</div>
           </div>
           <div>
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Guarantee</div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px">Guarantee</div>
             <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">5<span style="font-size:.52em;color:#8a96a0;font-weight:600"> years</span></div>
             <div style="font-size:12px;color:#5a6672;line-height:1.6">Manufactured directly, no middlemen. We stand behind the product.</div>
           </div>
           <div>
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Durability</div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px">Durability</div>
             <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">50,000+<span style="font-size:.52em;color:#8a96a0;font-weight:600"> Lisport cycles</span></div>
             <div style="font-size:12px;color:#5a6672;line-height:1.6">Tested to UNE-EN 15306:2014 — no fibrillation or breaks, with good visual retention.</div>
           </div>
