@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sled tracks for gyms — turf, carpet &amp; flooring | Heroturfs</title>
-<meta name="description" content="High-density sled tracks for gyms — sled push turf, carpets, mats and flooring. Made in Spain in custom sizes and colours, built for prowler and sled work.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sled tracks for gyms — turf, carpet &amp; flooring | Heroturfs">
-<meta property="og:description" content="High-density gym sled tracks — sled push turf, carpets, mats and flooring. Made in Spain, custom sizes and colours.">
-<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-negro-trineo-con-chico1.webp">
+<title>Custom Gym Turf – Hero4U | Heroturfs</title>
+<meta name="description" content="Valhalla One: high-performance black sled track with integrated white lines and numbers. Made in Spain for sled push and functional training. From £559, free shipping, 5-year guarantee.">
+<meta property="og:type" content="product">
+<meta property="og:title" content="Valhalla One — Black Sled Track with Markings | Heroturfs">
+<meta property="og:description" content="High-performance black sled track with integrated white lines and numbers. Made in Spain, free shipping, 5-year guarantee.">
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
@@ -418,17 +418,24 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .rsb-stars{display:flex;gap:2px;margin-bottom:2px}
 .rsb-stars svg{width:14px;height:14px;fill:#e8a020}
 .rsb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a96a0}
-.reviews-grid-photo{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
-.review-photo-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:16px;margin-bottom:32px;scrollbar-width:none;-ms-overflow-style:none}
+.reviews-grid-photo::-webkit-scrollbar{display:none}
+.review-photo-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .review-photo-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
 .rpc-img{aspect-ratio:4/3;overflow:hidden;flex-shrink:0}
 .rpc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .review-photo-card:hover .rpc-img img{transform:scale(1.04)}
 .rpc-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.rpc-stars{display:flex;gap:2px}
+.rpc-stars{display:flex;gap:2px;align-items:center}
 .rpc-stars svg{width:13px;height:13px;fill:#e8a020}
-.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;flex:1}
-.rpc-foot{padding-top:12px;border-top:1px solid rgba(0,0,0,.07)}
+.rpc-date{margin-left:auto;font-size:11px;color:#8a96a0;font-weight:500}
+.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rpc-text.expanded{display:block;-webkit-line-clamp:unset}
+.rpc-links{display:flex;align-items:center;gap:14px}
+.rpc-lang{background:none;border:none;padding:0;font-size:11px;font-weight:600;color:#8a96a0;cursor:pointer;text-decoration:underline;text-underline-offset:2px;align-self:flex-start;font-family:var(--fb);transition:color .2s}
+.rpc-lang:hover{color:#1a1f24}
+.rpc-foot{margin-top:auto;padding-top:12px;border-top:1px solid rgba(0,0,0,.07);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rpc-foot .flag{box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 .rpc-name{font-size:13px;font-weight:700;color:#1a1f24}
 .rpc-role{font-size:11px;color:#8a96a0;margin-top:2px}
 
@@ -441,15 +448,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu a:hover,.mobile-menu a:active{background:rgba(255,255,255,.06);color:#fff}
 .reviews-carousel{position:relative}
-.reviews-arrow{display:none;position:absolute;top:110px;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:#1a1f24;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28)}
+.reviews-arrow{display:flex;position:absolute;top:140px;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:#1a1f24;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28);transition:background .2s}
+.reviews-arrow:hover{background:#fff}
 .reviews-arrow:active{background:#fff}
 .reviews-arrow-prev{left:2px}
 .reviews-arrow-next{right:2px}
-.reviews-dots{display:none}
+.reviews-dots{display:flex;justify-content:center;gap:9px;margin-top:4px}
+.rev-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.18);cursor:pointer;padding:0;transition:background .25s,width .25s}
+.rev-dot.active{background:var(--accent);width:22px;border-radius:5px}
+.reviews-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:1px solid rgba(0,0,0,.22);border-radius:6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a1f24;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.reviews-cta:hover{background:#1a1f24;color:#fff;border-color:#1a1f24}
 
 @media(max-width:1024px){
   .proyectos-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:220px}
-  .reviews-grid-photo{grid-template-columns:1fr 1fr}
+  .review-photo-card{flex-basis:calc((100% - 16px)/2)}
   .faq-inner-d{grid-template-columns:1fr;gap:36px}
   .footer-top{grid-template-columns:1fr 1fr 1fr;gap:32px}
   [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important}
@@ -468,15 +480,13 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   .split-big-grid{grid-template-columns:1fr}
   .split-big-card{height:360px}
   .split-big-content{padding:28px 24px}
-  .reviews-grid-photo{display:flex;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+  .reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:14px;scrollbar-width:none;-ms-overflow-style:none}
   .reviews-grid-photo::-webkit-scrollbar{display:none}
   .review-photo-card{flex:0 0 86%;scroll-snap-align:start}
   .rpc-img{aspect-ratio:auto;height:220px}
   .reviews-carousel .reveal{opacity:1;transform:none}
-  .reviews-arrow{display:flex}
-  .reviews-dots{display:flex;justify-content:center;gap:9px;margin-top:20px}
-  .rev-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.18);cursor:pointer;padding:0;transition:background .25s,width .25s}
-  .rev-dot.active{background:var(--accent);width:22px;border-radius:5px}
+  .reviews-arrow{top:110px}
+  .reviews-dots{margin-top:20px}
   .footer-top{grid-template-columns:1fr 1fr;gap:28px}
   [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
 }
@@ -622,512 +632,1042 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   <a href="contacto.html" onclick="toggleMenu()">Contact</a>
 </div>
 
-<!-- ===== COLLAGE HERO (full-bleed) ===== -->
+<!-- ===== PRODUCT (PDP) ===== -->
 <style>
-.collage-hero{background:#fff;padding:104px 0 0;color:#14181c}
-.ch-head{padding-bottom:28px}
-.ch-eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.ch-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent)}
-.ch-title{font-family:var(--fd);font-size:clamp(46px,6.2vw,88px);font-weight:900;line-height:.88;letter-spacing:-.01em;margin:14px 0 16px}
-.ch-title em{color:var(--accent);font-style:normal}
-.ch-sub{color:#5a646c;max-width:540px;font-size:16px;line-height:1.7}
-.ch-collage{display:grid;grid-template-columns:1.7fr 1fr 1fr;grid-auto-rows:1fr;gap:8px;padding:0 16px 16px;height:min(74vh,660px)}
-.ch-tile{position:relative;overflow:hidden;border-radius:12px;display:block;cursor:pointer}
-.ch-tile.big{grid-row:span 2}
-.ch-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-.ch-tile:hover img{transform:scale(1.05)}
-.ch-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.1) 55%,transparent 100%)}
-.ch-tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(227,51,43,.94);color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:5px 11px;border-radius:20px}
-.ch-cap{position:absolute;left:0;bottom:0;z-index:2;padding:20px}
-.ch-name{font-family:var(--fd);font-size:24px;font-weight:700;color:#fff;line-height:1;letter-spacing:.02em}
-.ch-tile.big .ch-name{font-size:30px}
-.ch-loc{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.66);margin-top:8px}
-.ch-loc::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.pdp-wrap{background:#fff;color:#1a1f24;padding-top:64px}
+/* long dash before section eyebrows */
+.pdp-wrap .eyebrow-label,.pdp-reviews .eyebrow-label{display:inline-flex;align-items:center;gap:9px}
+.pdp-wrap .eyebrow-label::before,.pdp-reviews .eyebrow-label::before{content:"";width:24px;height:2px;background:var(--accent);flex-shrink:0;display:inline-block}
+.pdp-container{max-width:1600px;padding-top:34px;padding-bottom:64px}
+.pdp-crumbs{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#9aa3ab;margin-bottom:26px}
+.pdp-crumbs a{color:#5a6672;text-decoration:none}
+.pdp-crumbs a:hover{color:var(--accent)}
+.pdp-crumbs span{margin:0 7px;color:#cdd3d8}
+.pdp-main{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+
+/* gallery */
+.pdp-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0}
+.pdp-shot{position:relative;width:100%;background:#f3f5f7;border-radius:16px;overflow:hidden;aspect-ratio:1/1;min-width:0;min-height:0}
+.pdp-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.pdp-shot:hover img{transform:scale(1.04)}
+.pdp-shot.hero{grid-column:1 / -1;aspect-ratio:4/3}
+.pdp-shot.wide{grid-column:1 / -1;aspect-ratio:16/9}
+.pdp-shot.spec{grid-column:1 / -1;aspect-ratio:4/3}
+.pdp-shot.spec img{object-position:center bottom}
+.pdp-shot.spec:hover img{transform:none}
+.pdp-gallery-wrap{position:relative;min-width:0}
+.pdp-gnav,.pdp-gdots{display:none}
+
+/* buy box */
+.pdp-buy{padding-top:4px;position:sticky;top:90px}
+.pdp-rating{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#5a6672;margin-bottom:14px}
+.pdp-stars{color:#f5a623;letter-spacing:1px;font-size:15px}
+.pdp-title{font-family:var(--fd);font-size:clamp(26px,2.6vw,36px);font-weight:900;line-height:1.1;color:#15181c;margin-bottom:14px}
+.pdp-title em{color:var(--accent);font-style:normal}
+.pdp-price{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-bottom:18px}
+.pdp-price #pdpPrice{font-family:var(--fd);font-size:clamp(30px,2.9vw,40px);font-weight:900;color:#15181c;line-height:1}
+.pdp-tax{font-size:12px;font-weight:600;color:#8a96a0}
+.pdp-desc{font-size:15px;color:#5a6672;line-height:1.65;margin-bottom:26px;max-width:72ch}
+.pdp-opt{margin-bottom:24px}
+.pdp-opt-h{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#15181c;margin-bottom:11px}
+.pdp-opt-h span{color:#8a96a0;font-weight:600;letter-spacing:.02em;text-transform:none;margin-left:6px}
+
+/* swatches */
+.pdp-swatches{display:flex;gap:11px}
+.pdp-sw{width:40px;height:40px;border-radius:8px;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1.5px #d6dbe0;padding:0;transition:box-shadow .16s,transform .12s}
+.pdp-sw:hover{transform:translateY(-1px)}
+.pdp-sw.active{box-shadow:0 0 0 2px #15181c}
+
+/* sizes */
+.pdp-sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pdp-size{font-family:var(--fb);background:#fff;border:1px solid #d6dbe0;border-radius:10px;padding:12px 14px;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;min-width:0;transition:border-color .16s,background .16s}
+.pdp-size-d{font-size:13.5px;font-weight:700;color:#15181c;line-height:1.2}
+.pdp-size-p{font-size:12px;font-weight:600;color:#8a96a0;line-height:1.2}
+.pdp-size:hover:not(:disabled):not(.active){border-color:#9aa3ab}
+.pdp-size.active{background:#15181c;border-color:#15181c}
+.pdp-size.active .pdp-size-d{color:#fff}
+.pdp-size.active .pdp-size-p{color:rgba(255,255,255,.72)}
+.pdp-size:disabled{cursor:not-allowed;background:#fcfcfd;border-color:#e9ecef}
+.pdp-size:disabled .pdp-size-d{color:#bcc3c9}
+.pdp-size:disabled .pdp-size-p{color:#c6cdd2}
+
+/* actions */
+.pdp-actions{display:flex;flex-direction:column;gap:13px;margin:30px 0 26px}
+.pdp-add{justify-content:center;width:100%;padding:16px;font-size:13px}
+.pdp-buy-row{display:flex;gap:12px;align-items:stretch}
+.pdp-buy-row .pdp-add{flex:1;width:auto}
+.pdp-qty{display:flex;align-items:stretch;border:1px solid #d6dbe0;border-radius:10px;overflow:hidden;flex-shrink:0}
+.pdp-qty-btn{width:42px;background:#fff;border:none;font-size:19px;line-height:1;color:#15181c;cursor:pointer;font-family:var(--fb);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.pdp-qty-btn:hover{background:#f2f3f5}
+.pdp-qty-n{min-width:34px;display:flex;align-items:center;justify-content:center;font-family:var(--fb);font-size:15px;font-weight:700;color:#15181c}
+.pdp-custom-link{font-size:13px;font-weight:600;color:#5a6672;text-decoration:none;text-align:center;transition:color .18s}
+.pdp-custom-link:hover{color:var(--accent)}
+/* recommended installation add-on */
+.pdp-addon{display:flex;align-items:center;gap:14px;margin:-6px 0 26px;padding:13px 14px;border:1px solid rgba(0,0,0,.12);border-radius:12px;background:#fafbfc}
+.pdp-addon-img{width:52px;height:52px;border-radius:9px;object-fit:cover;flex-shrink:0;background:#eef1f4}
+.pdp-addon-info{flex:1;min-width:0}
+.pdp-addon-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.pdp-addon-name{font-size:13.5px;font-weight:600;color:#1a1f24;line-height:1.35}
+.pdp-addon-meta{font-size:12px;font-weight:600;color:#8a96a0;margin-top:3px}
+.pdp-addon-meta b{color:#1a1f24;font-weight:700}
+.pdp-addon-btn{flex-shrink:0;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:var(--fb);font-weight:700;font-size:13px;padding:10px 22px;cursor:pointer;transition:background .2s}
+.pdp-addon-btn:hover{background:var(--accent-h)}
+
+/* trust */
+.pdp-trust{list-style:none;border-top:1px solid #e7eaed;padding-top:20px;display:grid;gap:13px}
+.pdp-trust li{display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#3a444c;line-height:1.45}
+.pdp-trust svg{flex-shrink:0;width:18px;height:18px;color:var(--accent);margin-top:1px}
+.pdp-trust b{color:#15181c;font-weight:700}
+
+/* features */
+.pdp-feats{background:#fff;padding:84px 0 14px}
+.pdp-feats .container{max-width:1380px}
+.pdp-feats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}
+.pdp-feat{background:#f5f6f7;border-radius:14px;padding:26px 22px}
+.pdp-feat-ico{width:42px;height:42px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.pdp-feat-ico svg{width:21px;height:21px}
+.pdp-feat h3{font-family:var(--fd);font-size:19px;font-weight:800;color:#15181c;margin-bottom:7px;line-height:1.05}
+.pdp-feat p{font-size:13px;color:#5a6672;line-height:1.55}
+
+/* specs */
+.pdp-specs{background:#fff;padding:22px 0 20px}
+.pdp-specs .container{max-width:1380px}
+.pdp-specs-title{margin-bottom:36px}
+.pdp-specs-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.pdp-spec-table{width:100%;border-collapse:collapse}
+.pdp-spec-table th,.pdp-spec-table td{text-align:left;padding:13px 0;border-bottom:1px solid #e7eaed;font-size:14px;vertical-align:top}
+.pdp-spec-table th{color:#8a96a0;font-weight:600;width:42%;letter-spacing:.02em}
+.pdp-spec-table td{color:#15181c;font-weight:600}
+.pdp-incl{background:#f5f6f7;border-radius:14px;padding:28px 26px}
+.pdp-incl h3{font-family:var(--fd);font-size:22px;font-weight:800;color:#15181c;margin-bottom:16px}
+.pdp-incl ul{list-style:none;display:grid;gap:11px}
+.pdp-incl li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a444c;line-height:1.45}
+.pdp-incl svg{flex-shrink:0;width:17px;height:17px;color:var(--accent);margin-top:2px}
+
+/* reviews */
+.pdp-rev{background:#f5f6f7;padding:80px 0}
+.pdp-rev .container{max-width:1380px}
+.pdp-rev-head{display:flex;align-items:center;gap:18px;margin-bottom:38px;flex-wrap:wrap}
+.pdp-rev-score{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:12px;padding:12px 18px}
+.pdp-rev-num{font-family:var(--fd);font-size:34px;font-weight:900;color:#15181c;line-height:1}
+.pdp-rev-meta{font-size:12px;color:#8a96a0;font-weight:600}
+.pdp-rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pdp-rev-card{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:13px;padding:24px}
+.pdp-rev-stars{color:#f5a623;letter-spacing:1px;font-size:14px;margin-bottom:11px}
+.pdp-rev-text{font-size:14px;color:#1a1f24;line-height:1.6;margin-bottom:16px}
+.pdp-rev-name{font-size:13px;font-weight:700;color:#15181c}
+.pdp-rev-role{font-size:12px;color:#8a96a0}
+
+/* cta */
+.pdp-final-cta{background:#f5f6f7;padding:84px 0;text-align:center}
+.pdp-final-cta .section-title{color:#1a1f24}
+.pdp-final-cta .eyebrow-label{color:var(--accent)}
+.pdp-final-cta p{font-size:15px;color:#5a6672;max-width:46ch;margin:14px auto 28px}
+.pdp-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.pdp-cta-ghost{font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1a1f24;background:transparent;border:1px solid rgba(0,0,0,.18);padding:14px 26px;border-radius:var(--rs);text-decoration:none;transition:border-color .2s,background .2s}
+.pdp-cta-ghost:hover{border-color:rgba(0,0,0,.4);background:rgba(0,0,0,.04)}
+
 @media(max-width:900px){
-  .ch-collage{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:200px}
-  .ch-tile.big{grid-column:span 2;grid-row:auto}
+  .pdp-main{grid-template-columns:1fr;gap:30px}
+  .pdp-buy{position:static;top:auto}
+  .pdp-feats-grid{grid-template-columns:1fr 1fr}
+  .pdp-specs-grid{grid-template-columns:1fr;gap:30px}
+  .pdp-rev-grid{grid-template-columns:1fr}
+  /* gallery -> swipe carousel (one photo at a time) */
+  .pdp-gallery{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;border-radius:16px;scrollbar-width:none}
+  .pdp-gallery::-webkit-scrollbar{display:none}
+  .pdp-shot,.pdp-shot.hero,.pdp-shot.wide{flex:0 0 100%;width:100%;aspect-ratio:4/3;scroll-snap-align:center}
+  .pdp-gnav{display:flex;position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:none;align-items:center;justify-content:center;color:#15181c;cursor:pointer;z-index:2;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+  .pdp-gnav svg{width:18px;height:18px}
+  .pdp-gnav.prev{left:10px}
+  .pdp-gnav.next{right:10px}
+  .pdp-gdots{display:flex;justify-content:center;gap:7px;margin-top:13px}
+  .pdp-gdot{width:7px;height:7px;border-radius:50%;background:#cdd3d8;transition:background .2s,width .2s}
+  .pdp-gdot.active{width:20px;border-radius:4px;background:#15181c}
 }
 @media(max-width:560px){
-  .ch-collage{grid-template-columns:1fr 1fr;grid-auto-rows:130px;gap:7px}
-  .ch-tile.big{grid-column:span 2;grid-row:span 2}
-  .ch-cap{padding:14px}
-  .ch-name{font-size:15px}
-  .ch-tile.big .ch-name{font-size:24px}
-  .ch-loc{font-size:11px;margin-top:5px}
+  .pdp-container{padding-top:22px}
+  .pdp-feats{padding-top:60px}
+  .pdp-feats-grid{grid-template-columns:1fr}
 }
-
-/* ===== CATEGORY / COLLECTION PAGE ===== */
-.cat-hero{position:relative;background:#0c0d0f;padding:150px 0 72px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
-.cat-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;z-index:0}
-.cat-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(8,9,11,.95) 0%,rgba(8,9,11,.84) 40%,rgba(8,9,11,.45) 72%,rgba(8,9,11,.2) 100%)}
-.cat-hero-inner{position:relative;z-index:2}
-.cat-hero-title{font-family:var(--fd);font-size:clamp(44px,7vw,92px);font-weight:900;line-height:.92;color:#fff;letter-spacing:-.01em;margin:14px 0 0}
-.cat-hero-title em{color:var(--accent);font-style:normal}
-.cat-hero-sub{font-size:15px;color:rgba(255,255,255,.62);line-height:1.7;max-width:540px;margin-top:22px}
-.cat-stats{display:flex;gap:54px;margin-top:42px;flex-wrap:wrap}
-.cat-stat-n{font-family:var(--fd);font-size:clamp(30px,3.5vw,42px);font-weight:900;color:var(--text);line-height:1}
-.cat-stat-u{font-size:.42em;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:.01em}
-.cat-stat-l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.5);margin-top:7px}
-.catalogue-section{background:#fff;padding:52px 0 80px}
-.cat-head{margin-bottom:30px}
-.cat-head-sub{font-size:15px;color:#5a6672;line-height:1.7;margin-top:10px;max-width:560px}
-.cat-filterbar{margin-bottom:30px}
-.cat-frow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.cat-frow+.cat-frow{margin-top:12px;padding-top:14px;border-top:1px solid rgba(0,0,0,.07)}
-.cat-flabel{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8a96a0;flex-shrink:0;width:52px}
-.cat-filters{display:flex;gap:8px;flex-wrap:wrap}
-.cat-filter{font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:.04em;color:#5a6672;background:#f2f3f5;border:1px solid transparent;padding:9px 16px;border-radius:40px;cursor:pointer;transition:background .2s,color .2s}
-.cat-filter:hover{background:#e7e9ec;color:#1a1f24}
-.cat-filter.active{background:#14181c;color:#fff}
-.cat-count{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a96a0;flex-shrink:0;margin-left:auto}
-.cat-filtoggle{display:none}
-@media(max-width:720px){
-  .cat-filtoggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;background:#fff;border:1px solid #d6dbe0;border-radius:8px;padding:13px 16px;cursor:pointer;font-family:var(--fb)}
-  .cat-filtoggle-l{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:#1a1f24}
-  .cat-filtoggle-l svg{width:16px;height:16px}
-  .cat-filtoggle-r{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a96a0}
-  .cat-filtoggle-chev{width:15px;height:15px;transition:transform .25s}
-  .cat-filterbar.open .cat-filtoggle-chev{transform:rotate(180deg)}
-  .cat-frow{display:none}
-  .cat-filterbar.open .cat-frow{display:flex}
-  .cat-filterbar.open .cat-frow:first-of-type{margin-top:16px}
-  .cat-count{display:none}
+/* PRODUCT DETAILS accordion */
+.pdp-details{background:#f5f6f7;padding:64px 0 84px}
+.pdp-details .container{max-width:1380px}
+.pdp-acc{border-top:1px solid rgba(0,0,0,.1);margin-top:26px}
+.pdp-acc-item{border-bottom:1px solid rgba(0,0,0,.1)}
+.pdp-acc-btn{width:100%;display:flex;align-items:center;gap:16px;background:none;border:none;padding:22px 0;cursor:pointer;text-align:left;font-family:var(--fb);font-size:15px;font-weight:600;color:#1a1f24;transition:color .2s}
+.pdp-acc-btn:hover{color:var(--accent)}
+.pdp-acc-ico{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:19px;line-height:0;color:#5a6672;transition:background .2s,border-color .2s,color .2s,transform .3s}
+.pdp-acc-btn:hover .pdp-acc-ico{border-color:var(--accent);background:var(--accent);color:#fff}
+.pdp-acc-item.open .pdp-acc-ico{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
+.pdp-acc-panel{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.pdp-acc-body{padding:2px 0 26px 44px;font-size:14.5px;color:#5a6672;line-height:1.75}
+.pdp-acc-body p{margin:0 0 12px}
+.pdp-acc-body p:last-child{margin-bottom:0}
+.pdp-acc-body ul{margin:0 0 12px;padding-left:18px}
+.pdp-acc-body li{margin-bottom:7px}
+.pdp-acc-body strong{color:#1a1f24}
+.pdp-acc-body a{color:var(--accent);text-decoration:underline}
+.pdp-dl{display:grid;grid-template-columns:auto 1fr;gap:9px 22px;margin:0}
+.pdp-dl dt{color:#8a96a0;font-weight:600}
+.pdp-dl dd{margin:0;color:#15181c;font-weight:600}
+.pdp-cert{margin-top:6px;font-size:13px}
+.pdp-cert-row{display:grid;grid-template-columns:30% 30% 1fr;gap:14px;padding:9px 12px 9px 9px;border-bottom:1px solid #e2e5e9;border-left:3px solid transparent;line-height:1.5;transition:background .15s}
+.pdp-cert-row:not(.pdp-cert-head):hover{background:rgba(0,0,0,.035)}
+.pdp-cert-row.star{border-left-color:var(--accent)}
+.pdp-cert-row span:first-child{color:#15181c;font-weight:600}
+.pdp-cert-row span:nth-child(2){color:#a8b1b9;font-size:12px}
+.pdp-cert-row span:last-child b{color:#15181c;font-weight:700}
+.pdp-cert-group{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:20px 12px 7px 9px;border-bottom:1px solid #e2e5e9}
+.cert-pass{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:#dff3e8;color:#1f9d55;font-style:normal;font-weight:800;font-size:9px;margin-right:7px;transform:translateY(2px)}
+.pdp-cert-note{font-size:12.5px;color:#8a96a0;margin-top:16px;padding-left:9px}
+.pdp-cert-note a{color:var(--accent);text-decoration:underline}
+.pdp-cert-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.pdp-cert-head span,.pdp-cert-head span:first-child{color:#8a96a0!important;font-weight:700}
+/* dark variant of the product-details accordion (on the slate value band) */
+.pdp-acc-dark{border-top-color:rgba(255,255,255,.16);margin-top:30px}
+.pdp-acc-dark .pdp-acc-item{border-bottom-color:rgba(255,255,255,.16)}
+.pdp-acc-dark .pdp-acc-btn{color:#fff}
+.pdp-acc-dark .pdp-acc-btn:hover{color:var(--accent)}
+.pdp-acc-dark .pdp-acc-ico{border-color:rgba(255,255,255,.32);color:rgba(255,255,255,.85)}
+.pdp-acc-dark .pdp-acc-btn:hover .pdp-acc-ico,.pdp-acc-dark .pdp-acc-item.open .pdp-acc-ico{background:var(--accent);border-color:var(--accent);color:#fff}
+.pdp-acc-dark .pdp-acc-body{color:rgba(255,255,255,.72)}
+.pdp-acc-dark .pdp-acc-body strong{color:#fff}
+.pdp-acc-dark .pdp-acc-body a{color:#fff}
+.pdp-acc-dark .pdp-dl dt{color:rgba(255,255,255,.55)}
+.pdp-acc-dark .pdp-dl dd{color:#fff}
+.pdp-acc-dark .pdp-cert-row{border-bottom-color:rgba(255,255,255,.14)}
+.pdp-acc-dark .pdp-cert-row span:first-child{color:#fff}
+.pdp-acc-dark .pdp-cert-row span:nth-child(2){color:rgba(255,255,255,.55)}
+.pdp-acc-dark .pdp-cert-head span,.pdp-acc-dark .pdp-cert-head span:first-child{color:rgba(255,255,255,.55)!important}
+.pdp-acc-dark .pdp-cert-row span:nth-child(3)::before{color:rgba(255,255,255,.55)}
+/* product highlights v2 — stats 2x2 + detail image */
+.pdp-hl2-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:22px;align-items:stretch}
+.pdp-hl2-stats{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:12px;overflow:hidden}
+.pdp-hl2-cell{padding:26px 24px}
+.pdp-hl2-cell:nth-child(1){border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)}
+.pdp-hl2-cell:nth-child(2){border-bottom:1px solid rgba(0,0,0,.08)}
+.pdp-hl2-cell:nth-child(3){border-right:1px solid rgba(0,0,0,.08)}
+.pdp-hl2-k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px}
+.pdp-hl2-n{font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px}
+.pdp-hl2-n span{font-size:.52em;color:#8a96a0;font-weight:600}
+.pdp-hl2-p{font-size:12px;color:#5a6672;line-height:1.6}
+.pdp-hl2-img{position:relative;border-radius:12px;overflow:hidden;background:#111;min-height:300px}
+.pdp-hl2-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.pdp-hl2-grid{grid-template-columns:1fr}.pdp-hl2-img{min-height:0;aspect-ratio:16/9}}
+/* ===== CERTIFICATIONS (interactive showcase) ===== */
+.pcert{background:#323f49;color:#fff;padding:84px 0;overflow:hidden}
+.pcert-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:stretch}
+.pcert-visual{position:relative;border-radius:16px;overflow:hidden;min-height:440px;background:#0b0e12;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.pcert-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04)}
+.pcert-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,12,16,.2),rgba(8,12,16,.62))}
+.pcert-hud{position:absolute;inset:0;z-index:2;background-image:linear-gradient(rgba(54,224,209,.20) 1px,transparent 1px),linear-gradient(90deg,rgba(54,224,209,.20) 1px,transparent 1px);background-size:38px 38px;-webkit-mask-image:radial-gradient(circle at 46% 54%,#000 28%,transparent 80%);mask-image:radial-gradient(circle at 46% 54%,#000 28%,transparent 80%)}
+.pcert-scan{position:absolute;left:0;right:0;top:8%;height:2px;z-index:3;background:linear-gradient(90deg,transparent,rgba(54,224,209,.95),transparent);box-shadow:0 0 18px rgba(54,224,209,.75);animation:pcertScan 4.6s ease-in-out infinite}
+@keyframes pcertScan{0%{top:6%}50%{top:90%}100%{top:6%}}
+.pcert-reticle{position:absolute;z-index:4;width:74px;height:74px;left:40%;top:53%;transform:translate(-50%,-50%);color:#36e0d1;animation:pcertPulse 2.6s ease-in-out infinite}
+.pcert-reticle svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.4;filter:drop-shadow(0 0 6px rgba(54,224,209,.6))}
+@keyframes pcertPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.92}50%{transform:translate(-50%,-50%) scale(1.13);opacity:.5}}
+.pcert-corner{position:absolute;z-index:4;width:22px;height:22px;border:2px solid rgba(54,224,209,.6)}
+.pcert-corner.tl{top:14px;left:14px;border-right:0;border-bottom:0}
+.pcert-corner.tr{top:14px;right:14px;border-left:0;border-bottom:0}
+.pcert-corner.bl{bottom:14px;left:14px;border-right:0;border-top:0}
+.pcert-corner.br{bottom:14px;right:14px;border-left:0;border-top:0}
+.pcert-tag{position:absolute;z-index:4;top:16px;left:46px;display:flex;align-items:center;gap:7px;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9ff3ea;background:rgba(8,14,18,.55);backdrop-filter:blur(4px);border:1px solid rgba(54,224,209,.32);padding:5px 11px;border-radius:30px}
+.pcert-dot{width:6px;height:6px;border-radius:50%;background:#36e0d1;box-shadow:0 0 8px #36e0d1;animation:pcertBlink 1.4s infinite}
+@keyframes pcertBlink{0%,100%{opacity:1}50%{opacity:.2}}
+.pcert-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.pcert-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent)}
+.pcert-title{font-family:var(--fd);font-size:clamp(30px,3.4vw,46px);font-weight:900;line-height:1.02;color:#fff;margin-bottom:16px}
+.pcert-title em{color:var(--accent);font-style:normal}
+.pcert-intro{font-size:15.5px;color:rgba(255,255,255,.74);line-height:1.7;margin-bottom:16px;max-width:54ch}
+.pcert-sub{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.86);margin-bottom:10px}
+.pcert-list{list-style:none;margin:0 0 28px;display:flex;flex-direction:column;gap:6px}
+.pcert-item{display:flex;gap:15px;align-items:flex-start;padding:14px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);transition:background .2s,border-color .2s,transform .2s}
+.pcert-item:hover{background:rgba(227,51,43,.08);border-color:rgba(227,51,43,.4);transform:translateX(4px)}
+.pcert-ico{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.pcert-item:hover .pcert-ico{background:var(--accent);color:#fff}
+.pcert-ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pcert-it-h{font-size:15px;font-weight:600;color:#fff;line-height:1.4}
+.pcert-num{font-family:var(--fd);font-weight:900;color:var(--accent);font-size:1.18em}
+.pcert-std{font-size:12px;color:rgba(255,255,255,.5);max-height:0;opacity:0;overflow:hidden;transition:max-height .3s ease,opacity .3s ease,margin-top .3s ease}
+.pcert-item:hover .pcert-std{max-height:42px;opacity:1;margin-top:5px}
+.pcert-link{display:inline-flex;align-items:center;gap:8px;color:#fff;font-family:var(--fb);font-weight:700;font-size:13.5px;text-decoration:none;background:none;border:none;border-bottom:2px solid var(--accent);padding:0 0 3px;cursor:pointer;transition:gap .2s,color .2s}
+.pcert-link:hover{gap:13px;color:#ff6a5e}
+.pcert-link .chev{transition:transform .3s}
+.pcert-link[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.pcert-results{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.pcert-rt-intro{font-size:14px;color:rgba(255,255,255,.7);margin:0 0 14px;padding-top:28px;max-width:74ch}
+.pcert-rt{font-size:13px;border-top:1px solid rgba(255,255,255,.14)}
+.pcert-rt-row{display:grid;grid-template-columns:26% 26% 1fr;gap:18px;padding:11px 12px 11px 9px;border-bottom:1px solid rgba(255,255,255,.1);border-left:3px solid transparent;line-height:1.5;transition:background .15s}
+.pcert-rt-row:not(.pcert-rt-head):hover{background:rgba(255,255,255,.045)}
+.pcert-rt-row.star{border-left-color:var(--accent)}
+.pcert-rt-row span:first-child{color:#fff;font-weight:600}
+.pcert-rt-row span:nth-child(2){color:rgba(255,255,255,.42);font-size:12px}
+.pcert-rt-row span:last-child{color:rgba(255,255,255,.82)}
+.pcert-rt-row span:last-child b{color:#fff;font-weight:700}
+.pcert-rt-group{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:20px 12px 7px 9px;border-bottom:1px solid rgba(255,255,255,.14)}
+.pcert-rt .cert-pass{background:rgba(70,209,127,.16);color:#4cd688}
+.pcert-rt-note{font-size:12.5px;color:rgba(255,255,255,.55);margin-top:16px;padding-left:9px}
+.pcert-rt-note a{color:#fff;text-decoration:underline}
+.pcert-rt-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.pcert-rt-head span{color:rgba(255,255,255,.45)!important;font-weight:700}
+@media(max-width:560px){.pcert-rt-head{display:none}.pcert-rt-row{grid-template-columns:1fr;gap:3px;padding:13px 10px 13px 9px}.pcert-rt-group{padding:16px 10px 5px 9px}.pcert-rt-row span:nth-child(2)::before{content:'Standard: ';color:rgba(255,255,255,.4)}.pcert-rt-row span:last-child::before{content:'Result: ';color:rgba(255,255,255,.4)}}
+@media(hover:none){.pcert-std{max-height:42px;opacity:1;margin-top:5px}}
+@media(max-width:900px){.pcert{padding:58px 0}.pcert-grid{grid-template-columns:1fr;gap:30px}.pcert-visual{aspect-ratio:16/11;max-height:420px;min-height:0}}
+@media(prefers-reduced-motion:reduce){.pcert-scan,.pcert-reticle,.pcert-dot{animation:none}}
+@media(max-width:640px){
+  .pdp-details{padding:52px 0 64px}
+  .pdp-acc-body{padding-left:0}
+  .pdp-dl{grid-template-columns:1fr;gap:2px 0}
+  .pdp-dl dt{margin-top:9px}
+  .pdp-cert-head{display:none}
+  .pdp-cert-row{grid-template-columns:1fr;gap:2px;padding:10px 10px 10px 9px}
+  .pdp-cert-group{padding:16px 10px 5px 9px}
+  .pdp-cert-row span:nth-child(2)::before{content:'Standard: '}
+  .pdp-cert-row span:nth-child(3)::before{content:'Result: ';color:#8a96a0}
 }
-.cat-sizes{display:flex;gap:8px;flex-wrap:wrap}
-.cat-size{font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:.04em;color:#5a6672;background:#fff;border:1px solid #d6dbe0;padding:8px 14px;border-radius:40px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.cat-size:hover{border-color:#1a1f24;color:#1a1f24}
-.cat-size.active{background:#1a1f24;color:#fff;border-color:#1a1f24}
-.cat-size.disabled{display:none}
-.cat-size-custom{border-color:var(--accent);color:var(--accent)}
-.cat-size-custom:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-.cat-size-custom.active{background:var(--accent);border-color:var(--accent);color:#fff}
-.cat-empty{display:none;text-align:center;padding:54px 0}
-.cat-empty.show{display:block}
-.cat-empty p{font-size:15px;color:#5a6672;margin-bottom:18px}
-.cat-clear{font-family:var(--fb);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1a1f24;background:none;border:1px solid rgba(0,0,0,.2);padding:11px 22px;border-radius:6px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.cat-clear:hover{background:#1a1f24;color:#fff;border-color:#1a1f24}
-.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.cat-viewswitch{display:none}
-@media(max-width:720px){
-  .cat-viewswitch{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin:16px 0 18px}
-  .cat-viewswitch .vsw-l{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a96a0;margin-right:4px}
-  .cat-vbtn{width:36px;height:36px;border:1px solid #d6dbe0;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#9aa3ab;padding:0;transition:background .18s,color .18s,border-color .18s}
-  .cat-vbtn svg{width:17px;height:17px}
-  .cat-vbtn.active{background:#14181c;border-color:#14181c;color:#fff}
-  .cat-grid.gv-1{grid-template-columns:1fr;gap:18px}
-  .cat-grid.gv-2{grid-template-columns:1fr 1fr;gap:12px}
-  .cat-grid.gv-2 .prod-body{padding:13px;gap:11px}
-  .cat-grid.gv-2 .prod-thumb{display:none}
-  .cat-grid.gv-2 .prod-name{font-size:13px}
-  .cat-grid.gv-2 .prod-meta{font-size:9px}
-  .cat-grid.gv-2 .prod-price{font-size:15px}
-  .cat-grid.gv-2 .prod-arrow{width:30px;height:30px}
-}
-.prod-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:var(--r);overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
-.prod-card:hover{transform:translateY(-5px) scale(1.015);box-shadow:0 20px 46px rgba(0,0,0,.15)}
-.prod-img{position:relative;aspect-ratio:1/1;background:#eceef0;overflow:hidden}
-.prod-img img{width:100%;height:100%;object-fit:cover;display:block}
-.ph-slide{position:absolute;inset:0;opacity:0;transition:opacity .35s ease;z-index:1}
-.ph-slide.active{opacity:1}
-.ph-nav{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;border:none;background:rgba(255,255,255,.9);color:#14181c;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;opacity:0;font-size:17px;line-height:1;box-shadow:0 2px 10px rgba(0,0,0,.25);transition:opacity .2s,background .2s,transform .15s}
-.ph-nav.prev{left:10px}.ph-nav.next{right:10px}
-.prod-card:hover .ph-nav{opacity:1}
-.ph-nav:hover{background:var(--accent);color:#fff;transform:translateY(-50%) scale(1.12)}
-.ph-dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:5px;z-index:3;pointer-events:none}
-.ph-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55);transition:background .25s,width .25s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
-.ph-dot.active{background:#fff;width:16px;border-radius:3px}
-@media(hover:none){.ph-nav{opacity:.95}}
-.prod-badge{position:absolute;top:12px;left:12px;z-index:4;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--accent);padding:5px 10px;border-radius:30px}
-.prod-badge.soldout{background:#5a6672}
-.prod-badge.custom{background:#FF6A00}
-.prod-body{padding:18px;display:flex;flex-direction:column;gap:16px;flex:1}
-.prod-head{display:flex;align-items:center;gap:11px}
-.prod-swatch{width:26px;height:26px;border-radius:50%;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14)}
-.prod-thumb{width:44px;height:44px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#eceef0}
-.prod-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.prod-name{font-family:var(--fb);font-size:15px;font-weight:700;color:#1a1f24;line-height:1.2}
-.prod-meta{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#8a96a0;margin-top:4px;display:flex;align-items:center;gap:6px}
-.prod-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 1px rgba(0,0,0,.14),inset 0 0 0 1px rgba(255,255,255,.15)}
-.prod-foot{display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto}
-.prod-price{font-family:var(--fb);font-size:18px;font-weight:700;color:#1a1f24;line-height:1}
-.prod-price-l{display:block;font-family:var(--fb);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a96a0;margin-bottom:3px}
-.prod-arrow{width:36px;height:36px;border-radius:50%;background:#f2f3f5;display:flex;align-items:center;justify-content:center;color:#14181c;flex-shrink:0;transition:background .2s,color .2s}
-.prod-card:hover .prod-arrow{background:var(--accent);color:#fff}
-.prod-arrow svg{width:15px;height:15px}
-.cat-features{background:#f5f6f7;padding:64px 0}
-.cat-feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 48px}
-.cat-feat{text-align:center}
-.cat-feat-ic{display:inline-flex;color:var(--accent);margin-bottom:14px}
-.cat-feat-ic svg{width:26px;height:26px}
-.cat-feat h3{font-family:var(--fd);font-size:18px;font-weight:800;color:#14181c;margin-bottom:8px}
-.cat-feat p{font-size:13px;color:#5a6672;line-height:1.65;max-width:300px;margin:0 auto}
-.cp-why{background:#f5f6f7;padding:72px 0}
-.cp-why .eyebrow-label{color:var(--accent)}
-.cp-why .section-title{color:#1b1d21;font-size:clamp(38px,4.4vw,58px)}
-.cp-why .section-title em{color:var(--accent)}
-.cp-why .section-sub{color:#5a6168;max-width:620px;margin-left:auto;margin-right:auto}
-.cp-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
-.cp-why-card{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:var(--r);padding:32px 26px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
-.cp-why-ico{width:48px;height:48px;border-radius:13px;background:rgba(227,51,43,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.cp-why-ico svg{width:24px;height:24px}
-.cp-why-card h3{font-family:var(--fd);font-size:22px;font-weight:800;color:#1b1d21;margin-bottom:10px;line-height:1.12}
-.cp-why-card p{font-size:14px;color:#5a6672;line-height:1.6}
-@media(max-width:900px){.cp-why-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.cp-why-grid{grid-template-columns:repeat(2,1fr);gap:10px}.cp-why-card{padding:18px 15px}.cp-why-ico{width:40px;height:40px;border-radius:11px;margin-bottom:13px}.cp-why-ico svg{width:20px;height:20px}.cp-why-card h3{font-size:17px;margin-bottom:7px}.cp-why-card p{font-size:12.5px;line-height:1.5}}
-.cat-uses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.cat-uses-grid>div:hover img{transform:scale(1.05)}
-@media(max-width:900px){.cat-uses-grid{grid-template-columns:repeat(2,1fr)}}
-.cat-seo{background:#fff;padding:74px 0;border-top:1px solid rgba(0,0,0,.06)}
-.cat-seo-inner{max-width:860px;margin:0 auto}
-.cat-seo-title{font-family:var(--fd);font-size:clamp(26px,3vw,38px);font-weight:900;color:#1a1f24;line-height:1.1;margin-bottom:22px}
-.cat-seo-body p{font-size:15px;color:#5a6672;line-height:1.8;margin-bottom:16px}
-.cat-seo-body strong{color:#1a1f24;font-weight:700}
-.cat-seo-kf{font-weight:700;color:#1a1f24;margin-top:6px;margin-bottom:10px}
-.cat-seo-list{list-style:disc;margin:0 0 18px;padding-left:22px}
-.cat-seo-list li{font-size:15px;color:#5a6672;line-height:1.7;margin-bottom:6px}
-.cat-cta-wrap{background:#fff;padding:40px 0 32px}
-.cat-cta{position:relative;border-radius:var(--r);overflow:hidden;background:#14181c;padding:56px 52px;min-height:280px;display:flex;align-items:center}
-.cat-cta-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.cat-cta-grad{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,var(--accent) 0%,var(--accent) 56%,rgba(18,21,25,.82) 56%,rgba(18,21,25,.5) 100%)}
-.cat-cta-text{position:relative;z-index:2;max-width:560px}
-.cat-cta-eyebrow{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);display:block;margin-bottom:14px}
-.cat-cta-title{font-family:var(--fd);font-size:clamp(30px,4vw,52px);font-weight:900;color:#fff;line-height:.96;margin-bottom:14px}
-.cat-cta-title em{color:#14181c;font-style:normal}
-.cat-cta-sub{font-size:14px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:28px;max-width:440px}
-.cat-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
-.cat-cta .btn-primary{background:#fff;color:#14181c;box-shadow:none}
-.cat-cta .btn-primary:hover{background:#f0f0f0}
-.cat-cta-ghost{color:#fff;border-color:rgba(255,255,255,.45)}
-.cat-cta-ghost:hover{border-color:#fff;color:#fff}
-@media(max-width:900px){.cat-grid{grid-template-columns:repeat(2,1fr)}.cat-feat-grid{grid-template-columns:repeat(2,1fr);gap:34px}}
-@media(max-width:768px){.cat-hero-overlay{background:linear-gradient(180deg,rgba(8,9,11,.5) 0%,rgba(8,9,11,.92) 100%)}}
-@media(max-width:600px){.cat-hero{padding:90px 0 40px}.cat-grid{grid-template-columns:1fr}.cat-feat-grid{grid-template-columns:1fr}.cat-hero-sub{margin-top:16px}.cat-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.cat-stat-n{font-size:22px}.cat-stat-u{display:block;font-size:11px;margin-top:1px}.cat-stat-l{margin-top:6px}.cat-cta{padding:40px 26px}.cat-cta-grad{background:linear-gradient(168deg,var(--accent) 0%,var(--accent) 68%,rgba(18,21,25,.8) 68%,rgba(18,21,25,.45) 100%)}}
 </style>
-<!-- ===== HERO ===== -->
-<section class="cat-hero">
-  <img class="cat-hero-img" src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-negro-trineo-con-chico1.webp" alt="Athlete pushing a sled on a black gym sled track in high-density artificial turf" loading="eager">
-  <div class="cat-hero-overlay"></div>
-  <div class="container cat-hero-inner">
-    <span class="ch-eyebrow reveal">Gym sled tracks · Made in Spain</span>
-    <h1 class="cat-hero-title reveal d1">All <em>tracks.</em><br>One standard.</h1>
-    <p class="cat-hero-sub reveal d2">Gym sled tracks made in Spain from high-density artificial turf — built for sled push, prowler and sprint work. 15 colour finishes, 1 m and 2 m widths, and custom sizes in 48 h.</p>
-    <div class="cat-stats reveal d3">
-      <div class="cat-stat"><div class="cat-stat-n">50,000+<span class="cat-stat-u"> Lisport cycles</span></div><div class="cat-stat-l">Durability</div></div>
-      <div class="cat-stat"><div class="cat-stat-n">12<span class="cat-stat-u"> mm visible height</span></div><div class="cat-stat-l">Height</div></div>
-      <div class="cat-stat"><div class="cat-stat-n">5<span class="cat-stat-u"> years</span></div><div class="cat-stat-l">Guarantee</div></div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== CATALOGUE ===== -->
-<section class="catalogue-section">
-  <div class="container">
-    <div class="cat-filterbar reveal">
-      <button class="cat-filtoggle" type="button" onclick="toggleCatFilters(this)" aria-expanded="false">
-        <span class="cat-filtoggle-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>Filters</span>
-        <span class="cat-filtoggle-r"><span class="js-count">9</span> <span class="js-count-label">products</span><svg class="cat-filtoggle-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
-      </button>
-      <div class="cat-frow">
-        <span class="cat-flabel">Size</span>
-        <div class="cat-sizes">
-          <button class="cat-size active" data-size="all">All</button>
-          <button class="cat-size" data-size="1.0x5.0">1.0 × 5.0 m</button>
-          <button class="cat-size" data-size="1.0x5.3">1.0 × 5.3 m</button>
-          <button class="cat-size" data-size="1.0x8.0">1.0 × 8.0 m</button>
-          <button class="cat-size" data-size="1.0x10.0">1.0 × 10.0 m</button>
-          <button class="cat-size" data-size="2.0x10.0">2.0 × 10.0 m</button>
-          <button class="cat-size" data-size="2.0x12.4">2.0 × 12.4 m</button>
-          <button class="cat-size" data-size="2.0x15.0">2.0 × 15.0 m</button>
-          <button class="cat-size" data-size="2.0x16.1">2.0 × 16.1 m</button>
-          <button class="cat-size cat-size-custom" data-size="custom">Custom size</button>
-        </div>
-        <div class="cat-count"><span id="catCount" class="js-count">9</span> <span class="js-count-label">products</span></div>
+<div class="pdp-wrap">
+  <div class="container pdp-container">
+    <nav class="pdp-crumbs"><a href="categoria-alina.html">Tracks</a><span>/</span><a href="categoria-alina.html">In stock</a><span>/</span>Hero4U</nav>
+
+    <div class="pdp-main">
+      <!-- GALLERY -->
+      <div class="pdp-gallery-wrap">
+      <div class="pdp-gallery">
+        <div class="pdp-shot hero"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Tigre-150x1000-Vista-1.webp?width=1100" alt="Valhalla One black sled track with white lines and numbers" loading="eager"></div>
+        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/wod_BOX-133.webp?width=700" alt="Athlete pushing a sled on the Valhalla One track" loading="lazy"></div>
+        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Tigre-150x1000-Vista-4.webp?width=700" alt="Valhalla One track detail" loading="lazy"></div>
+        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Tigre-150x1000-Vista-5.webp?width=700" alt="Valhalla One track markings close-up" loading="lazy"></div>
+        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/custom_turf.webp?width=700" alt="Valhalla One track surface texture" loading="lazy"></div>
+        <div class="pdp-shot wide"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/sled_push_track_hyrox_Lowfit.webp?width=1100" alt="Sled workout in progress on the Valhalla One track" loading="lazy"></div>
+        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/custom_artificial_grass.webp?width=700" alt="Valhalla One track numbers detail" loading="lazy"></div>
+        <div class="pdp-shot"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico1_d58fd91d-11b3-464b-ac9d-776790e7d03f.webp?width=700" alt="Valhalla One track full view" loading="lazy"></div>
+        <div class="pdp-shot spec"><img src="assets/cesped/valhalla-detail-specs.webp" alt="Valhalla One turf cross-section — 86,000 stitches per m² and 12 mm apparent total height" loading="lazy"></div>
       </div>
-    </div>
-    <div class="cat-viewswitch" role="group" aria-label="Gallery view">
-      <span class="vsw-l">View</span>
-      <button class="cat-vbtn active" type="button" data-view="1" aria-label="1 per row"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="14" height="16" rx="2"/></svg></button>
-      <button class="cat-vbtn" type="button" data-view="2" aria-label="2 per row"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="4" width="7.5" height="16" rx="1.6"/><rect x="13" y="4" width="7.5" height="16" rx="1.6"/></svg></button>
-    </div>
-    <div class="cat-grid gv-1" id="catGrid">
-      <a href="producto-valhalla-one-alina.html" class="prod-card reveal" data-cat="markings" data-sizes="1.0x5.3|1.0x8.0|1.0x10.0|2.0x10.0|2.0x12.4">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?v=1753602264" alt="Valhalla One" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp?v=1753942050" alt="Valhalla One in use" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-02.webp?v=1758801053" alt="Valhalla One" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg?v=1758801053" alt="Valhalla One in use" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-          <span class="prod-badge">Best seller</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-valhalla-negro-150x1000-01.webp?v=1753602264" alt="" loading="lazy"></span><div><div class="prod-name">Valhalla One</div><div class="prod-meta"><span class="prod-dot" style="background:#15171a"></span>Black · With markings</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£372.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.vercel.app/products/double-lane-sled-track-with-markings-valhalla-duo" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="2.0x16.1">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs_Prod-8.webp?v=1768875593" alt="Valhalla Duo" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs_Prod-9.webp?v=1768875593" alt="Valhalla Duo" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs_Prod-12.webp?v=1768875593" alt="Valhalla Duo" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs_Prod-13.webp?v=1768875593" alt="Valhalla Duo" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-          <span class="prod-badge soldout">Sold out</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs_Prod-8.webp?v=1768875593" alt="" loading="lazy"></span><div><div class="prod-name">Valhalla Duo</div><div class="prod-meta"><span class="prod-dot" style="background:#15171a"></span>Twin lane · With markings</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">Price</span>£1,610.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.vercel.app/products/green-sled-track-elysium-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x5.3|1.0x8.0|1.0x10.0|2.0x10.0|2.0x12.4">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-verde-elysium-150x1000-01.webp?v=1753602669" alt="Elysium One" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-verde-cuerda-chica1.webp?v=1753941988" alt="Elysium One in use" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-verde-elysium-150x1000-02.webp?v=1758801097" alt="Elysium One" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-verde-cuerda-chica2_93d746d8-cb73-4b30-a27b-10c5ca1fc8e7.webp?v=1758801097" alt="Elysium One in use" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-verde-elysium-150x1000-01.webp?v=1753602669" alt="" loading="lazy"></span><div><div class="prod-name">Elysium One</div><div class="prod-meta"><span class="prod-dot" style="background:#3f9d4a"></span>Green · With markings</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£372.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.vercel.app/products/blue-sled-track-atlantis-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x5.3|1.0x8.0|1.0x10.0|2.0x10.0|2.0x12.4">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-azul-atlantis-150x1000-01.webp?v=1753600183" alt="Atlantis One" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Cesped-artificial-gimnasio-azul-chica1.jpg?v=1753941967" alt="Atlantis One in use" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-azul-atlantis-150x1000-02.webp?v=1758801108" alt="Atlantis One" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-artificial-gimnasio-azul-chica-2.webp?v=1758801108" alt="Atlantis One in use" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-azul-atlantis-150x1000-01.webp?v=1753600183" alt="" loading="lazy"></span><div><div class="prod-name">Atlantis One</div><div class="prod-meta"><span class="prod-dot" style="background:#2a5fd0"></span>Blue · With markings</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£372.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.vercel.app/products/terracotta-sled-track-marathon-one" target="_blank" rel="noopener" class="prod-card reveal" data-cat="markings" data-sizes="1.0x5.3|1.0x8.0|1.0x10.0|2.0x10.0|2.0x12.4">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp?v=1753602589" alt="Marathon One" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Pista-Marathon-One-con-personas.webp?v=1753942009" alt="Marathon One in use" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-crossfit-rojo-marathon-150x1000-1.webp?v=1758801068" alt="Marathon One" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Pista-Marathon-One-con-trineo.webp?v=1758801068" alt="Marathon One in use" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp?v=1753602589" alt="" loading="lazy"></span><div><div class="prod-name">Marathon One</div><div class="prod-meta"><span class="prod-dot" style="background:#cf2e2e"></span>Red · With markings</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£372.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.vercel.app/products/black-gym-turf-valhalla-solids" target="_blank" rel="noopener" class="prod-card reveal" data-cat="single" data-sizes="1.0x5.0|1.0x10.0|2.0x10.0|2.0x15.0">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-negro-modelo-valhalla-solids-150x1000-Vista-1.webp?v=1752476828" alt="Valhalla Solids" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-negro-modelo-valhalla-solids-chico-1.webp?v=1752476828" alt="Valhalla Solids in use" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-negro-modelo-valhalla-solids-150x1000-Vista-2.webp?v=1752476828" alt="Valhalla Solids" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-negro-modelo-valhalla-solids-chico-2.webp?v=1752476828" alt="Valhalla Solids in use" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-negro-modelo-valhalla-solids-150x1000-Vista-1.webp?v=1752476828" alt="" loading="lazy"></span><div><div class="prod-name">Valhalla Solids</div><div class="prod-meta"><span class="prod-dot" style="background:#15171a"></span>Black · Single colour</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£258.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.vercel.app/products/green-gym-turf-elysium-solids" target="_blank" rel="noopener" class="prod-card reveal" data-cat="single" data-sizes="1.0x5.0|1.0x10.0|2.0x10.0|2.0x15.0">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-azul-modelo-elysium-solids-150x1000-Vista-1.webp?v=1752476851" alt="Elysium Solids" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-verde-ambiente-1.webp?v=1752476851" alt="Elysium Solids in use" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-azul-modelo-elysium-solids-150x1000-Vista-2.webp?v=1752476851" alt="Elysium Solids" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-verde-ambiente-2.webp?v=1752476851" alt="Elysium Solids in use" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-azul-modelo-elysium-solids-150x1000-Vista-1.webp?v=1752476851" alt="" loading="lazy"></span><div><div class="prod-name">Elysium Solids</div><div class="prod-meta"><span class="prod-dot" style="background:#3f9d4a"></span>Green · Single colour</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£258.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-      <a href="https://heroturfs.vercel.app/products/blue-gym-turf-atlantis-solids" target="_blank" rel="noopener" class="prod-card reveal" data-cat="single" data-sizes="1.0x5.0|1.0x10.0|2.0x10.0|2.0x15.0">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-azul-modelo-atlantis-solids-150x1000-Vista-1.webp?v=1752476808" alt="Atlantis Solids" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-azul-ambiente-1.webp?v=1752476808" alt="Atlantis Solids in use" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-azul-modelo-atlantis-solids-150x1000-Vista-2.webp?v=1752476808" alt="Atlantis Solids" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-gimnasio-azul-ambiente-2_2e974781-072d-44f8-9177-505bb642f140.webp?v=1752476808" alt="Atlantis Solids in use" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/cesped-para-trineo-azul-modelo-atlantis-solids-150x1000-Vista-1.webp?v=1752476808" alt="" loading="lazy"></span><div><div class="prod-name">Atlantis Solids</div><div class="prod-meta"><span class="prod-dot" style="background:#2a5fd0"></span>Blue · Single colour</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£258.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-      <a href="custom-gym-turf-alina.html" class="prod-card reveal" data-cat="custom" data-sizes="custom">
-        <div class="prod-img">
-          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Tigre-150x1000-Vista-1.webp?v=1752476884" alt="Hero4U" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/wod_BOX-133.webp?v=1761405606" alt="Hero4U custom track in use" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Tigre-150x1000-Vista-4.webp?v=1752476884" alt="Hero4U" loading="lazy">
-          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/sled_push_track_hyrox_Lowfit.webp?v=1761474337" alt="Hero4U custom track in use" loading="lazy">
-          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button>
-          <button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-          <span class="prod-badge custom">Customisable</span>
-        </div>
-        <div class="prod-body">
-          <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Tigre-150x1000-Vista-1.webp?v=1752476884" alt="" loading="lazy"></span><div><div class="prod-name">Hero4U</div><div class="prod-meta"><span class="prod-dot" style="background:conic-gradient(#cf2e2e 0 33%,#2a5fd0 33% 66%,#3f9d4a 66%)"></span>Your logo · Three colours</div></div></div>
-          <div class="prod-foot"><div class="prod-price"><span class="prod-price-l">From</span>£70.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </a>
-    </div>
-    <div class="cat-empty" id="catEmpty">
-      <p>No tracks match these filters.</p>
-      <button class="cat-clear" onclick="clearCatFilters()">Clear filters</button>
-    </div>
-  </div>
-</section>
+        <button class="pdp-gnav prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="pdp-gnav next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button>
+        <div class="pdp-gdots" aria-hidden="true"></div>
+      </div>
 
-<!-- ===== WHY HEROTURFS ===== -->
-<section class="cp-why">
-  <div class="container">
-    <div class="section-header reveal" style="text-align:center">
-      <span class="eyebrow-label">Why our sled tracks</span>
-      <h2 class="section-title">Built different, <em>on purpose.</em></h2>
-      <p class="section-sub">Not just turf off a shelf — a track engineered, made and tuned around the way you train.</p>
-    </div>
-    <div class="cp-why-grid">
-      <div class="cp-why-card reveal"><div class="cp-why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4M4 4h13l-2 4 2 4H4"/></svg></div><h3>Made in Spain</h3><p>Manufactured in our own facilities, backed by 100+ years of textile craft and B Corp certification.</p></div>
-      <div class="cp-why-card reveal"><div class="cp-why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><h3>Straight-from-maker prices</h3><p>You buy direct from the people who make it — no middlemen, no markups, just honest value.</p></div>
-      <div class="cp-why-card reveal"><div class="cp-why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Built to take a beating</h3><p>86,000 stitches/m², 50,000+ Lisport cycles and a 5-year guarantee. Made for daily sled work.</p></div>
-      <div class="cp-why-card reveal"><div class="cp-why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>We actually listen</h3><p>Tell us your space, your sport and your brand — and we design the track around you.</p></div>
-    </div>
-  </div>
-</section>
+      <!-- BUY BOX -->
+      <div class="pdp-buy">
+        <div class="pdp-rating"><span class="pdp-stars">★★★★★</span> 4.9 · 58 reviews</div>
+        <h1 class="pdp-title">Custom Gym Turf – <em>Hero4U</em></h1>
+        <div class="pdp-price"><span id="pdpPrice">£70.00</span> <span class="pdp-tax">Tax included · Free shipping mainland &amp; Balearics</span></div>
+        <p class="pdp-desc">Customize your artificial turf track with your logo, colours and style. We adapt the design to reflect your identity and align with your brand or personal aesthetic. Contact us for a personalised quote — prices vary with quantity and design. The listed price of £70 per m² is a reference.</p>
 
-<!-- ===== CUSTOM CTA ===== -->
-<section class="cat-cta-wrap">
-  <div class="container">
-    <div class="cat-cta reveal">
-      <img class="cat-cta-img" src="assets/compartidos/craft-bcn.jpg" alt="" loading="lazy">
-      <div class="cat-cta-grad"></div>
-      <div class="cat-cta-text">
-        <span class="cat-cta-eyebrow" style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:2px;background:rgba(255,255,255,.85);display:inline-block"></span>Custom · No limits</span>
-        <h2 class="cat-cta-title">Can’t find <em>your colour?</em></h2>
-        <p class="cat-cta-sub">We manufacture your custom sled track in Spain with your logo, colours and exact dimensions. We send a 3D render before production.</p>
-        <div class="cat-cta-btns">
-          <a href="cesped-personalizado-alina.html" class="btn-primary">Customise your track <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          <a href="#" class="btn-ghost cat-cta-ghost">Request a quote</a>
+        <!-- size -->
+        <div class="pdp-opt">
+          <div class="pdp-opt-h">Selected size <span id="pdpSizeName">Default title</span></div>
+          <div class="pdp-sizes" id="pdpSizes" style="grid-template-columns:1fr">
+            <button class="pdp-size active" type="button" data-price="£70.00"><span class="pdp-size-d">Default title</span><span class="pdp-size-p">£70.00</span></button>
+          </div>
         </div>
+
+        <div class="pdp-actions">
+          <div class="pdp-buy-row">
+            <div class="pdp-qty">
+              <button type="button" class="pdp-qty-btn" data-q="dec" aria-label="Decrease quantity">−</button>
+              <span class="pdp-qty-n" id="pdpQty">1</span>
+              <button type="button" class="pdp-qty-btn" data-q="inc" aria-label="Increase quantity">+</button>
+            </div>
+            <a href="#" class="btn-primary pdp-add">Add to cart</a>
+          </div>
+        </div>
+
+        <div class="pdp-addon" id="pdpAddon" data-key="tape-1" data-name="Endurance Installation Tape" data-meta="Double-sided" data-unit="1 roll" data-price="97.00" data-img="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=200">
+          <img class="pdp-addon-img" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=160" alt="Endurance double-sided installation tape" loading="lazy">
+          <div class="pdp-addon-info">
+            <span class="pdp-addon-label">Recommended installation add-on</span>
+            <div class="pdp-addon-name">Endurance Installation Tape — 1 roll</div>
+            <div class="pdp-addon-meta">50&nbsp;cm × 25&nbsp;m · <b>£97.00</b></div>
+          </div>
+          <button type="button" class="pdp-addon-btn">Add</button>
+        </div>
+
+        <ul class="pdp-trust">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span><b>5-year guarantee</b> against manufacturing defects.</span></li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span><b>Free shipping</b> to Mainland UK.</span></li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span><b>Made in Spain</b> with quality certification.</span></li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>In-stock tracks ship in <b>48–72 h</b> (3–5 working days prep) · 14-day returns.</span></li>
+        </ul>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ===== SEO / FAQ ===== -->
-<section class="faq-section-d" style="background:#fff">
+  <!-- PRODUCT HIGHLIGHTS (light — title + key stats + full-details accordion) -->
+  <section class="pdp-highlights" style="background:#f5f6f7;padding:64px 0 72px">
+    <div class="container">
+      <span class="eyebrow-label">At a glance</span>
+      <h2 class="section-title reveal" style="color:#15181c;margin-bottom:26px">Product <em>highlights.</em></h2>
+      <div class="reveal" style="border:1px solid rgba(0,0,0,.09);border-radius:12px;overflow:hidden;background:#fff">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr)">
+          <div style="padding:28px 24px;border-right:1px solid rgba(0,0,0,.08)">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Density</div>
+            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">86,000<span style="font-size:.52em;color:#8a96a0;font-weight:600"> st/m²</span></div>
+            <div style="font-size:12px;color:#5a6672;line-height:1.6">Fibre that won’t flatten under repeated load or intensive daily use.</div>
+          </div>
+          <div style="padding:28px 24px;border-right:1px solid rgba(0,0,0,.08)">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Height</div>
+            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">12<span style="font-size:.52em;color:#8a96a0;font-weight:600"> mm visible height</span></div>
+            <div style="font-size:12px;color:#5a6672;line-height:1.6">Low-profile pile that keeps footing stable and lets the sled glide smoothly.</div>
+          </div>
+          <div style="padding:28px 24px;border-right:1px solid rgba(0,0,0,.08)">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Guarantee</div>
+            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">5<span style="font-size:.52em;color:#8a96a0;font-weight:600"> years</span></div>
+            <div style="font-size:12px;color:#5a6672;line-height:1.6">Manufactured directly, no middlemen. We stand behind the product.</div>
+          </div>
+          <div style="padding:28px 24px">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px">Durability</div>
+            <div style="font-family:var(--fd);font-size:clamp(26px,2.5vw,34px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px">50,000+<span style="font-size:.52em;color:#8a96a0;font-weight:600"> Lisport cycles</span></div>
+            <div style="font-size:12px;color:#5a6672;line-height:1.6">Tested to UNE-EN 15306:2014 — no fibrillation or breaks, with good visual retention.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- accordion (full details, light styling) -->
+      <span class="eyebrow-label" style="margin:38px 0 0">Full details</span>
+      <div class="pdp-acc" style="margin-top:12px">
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Product description</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <p>High-performance textured artificial turf track with integrated markings and numbering — ideal for functional training, movement drills and sled work.</p>
+            <ul>
+              <li>High fibre density: <strong>86,000 stitches/m²</strong> for exceptional grip and comfort on high-intensity floor work.</li>
+              <li>Excellent impact resistance, built for heavy daily use in gyms.</li>
+              <li>Easy to clean and maintain, with quick, simple installation.</li>
+              <li>Available in several sizes — and we also make <a href="cesped-personalizado-alina.html">custom tracks</a> to fit your exact project.</li>
+              <li>Made in the EU in a facility with over 100 years of textile experience in technical carpets and mats.</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Technical data sheet</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <dl class="pdp-dl">
+              <dt>Fibre type</dt><dd>Textured polyethylene monofilament</dd>
+              <dt>Gauge</dt><dd>1/7 inch</dd>
+              <dt>Total height</dt><dd>15 mm (whole system, fibre + backing, measured flat). As the fibre is texturised, the visible height in use is around 11–12 mm.</dd>
+              <dt>Pile height</dt><dd>12 mm (±5%)</dd>
+              <dt>Fibre weight</dt><dd>1,550 g/m² (±10%)</dd>
+              <dt>Stitches/m²</dt><dd>86,000 (±10%)</dd>
+              <dt>Yarn weight</dt><dd>5,500 dtex (±10%)</dd>
+              <dt>Total weight</dt><dd>approx. 2,400 g/m² (±10%)</dd>
+            </dl>
+          </div></div>
+        </div>
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Tests and certifications</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <p>Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
+            <div class="pdp-cert">
+              <div class="pdp-cert-row pdp-cert-head"><span>Property</span><span>Standard</span><span>Result</span></div>
+
+              <div class="pdp-cert-group">Durability &amp; wear</div>
+              <div class="pdp-cert-row star"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span><i class="cert-pass">✓</i><b>≥50,000 cycles</b> — no fibrillation or breakage; good visual retention.</span></div>
+              <div class="pdp-cert-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span><i class="cert-pass">✓</i><b>0.52% mass loss</b> @5,000 cycles — excellent wear resistance.</span></div>
+              <div class="pdp-cert-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span><i class="cert-pass">✓</i><b>Appearance 5 · colour 5</b> after 4,000 rotations; 4 · 4 after 12,000.</span></div>
+              <div class="pdp-cert-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span><i class="cert-pass">✓</i><b>Colour change 5</b> after 5,200 h UVA; tensile loss −10%.</span></div>
+              <div class="pdp-cert-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span><i class="cert-pass">✓</i><b>Commercial 33 (intensive)</b> · Domestic 23 (intensive).</span></div>
+
+              <div class="pdp-cert-group">Safety &amp; comfort</div>
+              <div class="pdp-cert-row"><span>Slip resistance</span><span>EN 14904:2006</span><span><i class="cert-pass">✓</i><b>Compliant</b> — suitable for indoor sports facilities.</span></div>
+              <div class="pdp-cert-row"><span>Impact absorption</span><span>EN 14808:2005</span><span><i class="cert-pass">✓</i><b>25.01% ±2%</b> — suitable for sports flooring.</span></div>
+              <div class="pdp-cert-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span><i class="cert-pass">✓</i><b>11.18 kPa at 40% · 904.78 kPa at 70%</b> load.</span></div>
+              <div class="pdp-cert-row star"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span><i class="cert-pass">✓</i><b>CFL-s1</b> (bonded with Forbo 540 FR adhesive).</span></div>
+              <div class="pdp-cert-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span><i class="cert-pass">✓</i><b>18 dB</b> impact noise reduction.</span></div>
+
+              <div class="pdp-cert-group">Hygiene &amp; compliance</div>
+              <div class="pdp-cert-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span><i class="cert-pass">✓</i><b>Fungal growth 0 (absent)</b> after 28 days.</span></div>
+              <div class="pdp-cert-row star"><span>Product certification</span><span>CE marking</span><span><i class="cert-pass">✓</i><b>Compliant</b> — EU safety, health &amp; environmental requirements.</span></div>
+              <div class="pdp-cert-row star"><span>Responsible manufacturing</span><span>B Corp</span><span><i class="cert-pass">✓</i><b>Certified</b> — made by Moquetas Rols S.A. for its environmental &amp; social commitment.</span></div>
+
+              <p class="pdp-cert-note">Need the full test reports? <a href="contacto.html">Ask us</a> and we'll send them over.</p>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Installation manual</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <p>Designed for quick, clean installation — all you need is a level surface, extra-strong double-sided tape and a few simple steps.</p>
+            <p>Our full step-by-step guide covers preparing the area, laying the turf and ensuring long-lasting fixing, even for heavy sled work.</p>
+          </div></div>
+        </div>
+
+        <div class="pdp-acc-item">
+          <button class="pdp-acc-btn" type="button"><span class="pdp-acc-ico">+</span><span>Maintenance and warranty</span></button>
+          <div class="pdp-acc-panel"><div class="pdp-acc-body">
+            <p>Built to take intensive use with minimal upkeep. A little regular care keeps it looking like day one:</p>
+            <ul>
+              <li>Regular vacuuming to remove dust, chalk, fibres or rubber.</li>
+              <li>Spot-clean with water and mild soap for stains or spills.</li>
+              <li>Periodic checks of the installation and seams.</li>
+            </ul>
+            <p>All tracks include a <strong>5-year guarantee</strong> against manufacturing defects and functional failures under normal use.</p>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT HIGHLIGHTS V2 (stats 2x2 + detail image) — alternative version, compare with the one above -->
+  <section class="pdp-hl2" style="background:#f5f6f7;padding:64px 0 72px">
+    <div class="container">
+      <span class="eyebrow-label">At a glance</span>
+      <h2 class="section-title reveal" style="color:#15181c;margin-bottom:26px">Product <em>highlights.</em></h2>
+      <div class="pdp-hl2-grid reveal">
+        <div class="pdp-hl2-stats">
+          <div class="pdp-hl2-cell">
+            <div class="pdp-hl2-k">Density</div>
+            <div class="pdp-hl2-n">86,000<span> st/m²</span></div>
+            <div class="pdp-hl2-p">Fibre that won’t flatten under repeated load or intensive daily use.</div>
+          </div>
+          <div class="pdp-hl2-cell">
+            <div class="pdp-hl2-k">Height</div>
+            <div class="pdp-hl2-n">12<span> mm visible height</span></div>
+            <div class="pdp-hl2-p">Low-profile pile that keeps footing stable and lets the sled glide smoothly.</div>
+          </div>
+          <div class="pdp-hl2-cell">
+            <div class="pdp-hl2-k">Guarantee</div>
+            <div class="pdp-hl2-n">5<span> years</span></div>
+            <div class="pdp-hl2-p">Manufactured directly, no middlemen. We stand behind the product.</div>
+          </div>
+          <div class="pdp-hl2-cell">
+            <div class="pdp-hl2-k">Durability</div>
+            <div class="pdp-hl2-n">50,000+<span> Lisport cycles</span></div>
+            <div class="pdp-hl2-p">Tested to UNE-EN 15306:2014 — no fibrillation or breaks, with good visual retention.</div>
+          </div>
+        </div>
+        <div class="pdp-hl2-img"><img src="assets/cesped/valhalla-detail-close.webp" alt="Valhalla One turf cross-section — 86,000 stitches per m² and 12 mm apparent total height" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS (featured — same content as home) -->
+<section class="reviews-section-d pdp-reviews" style="padding:80px 0 40px">
   <div class="container">
-    <div class="faq-inner-d">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px" class="reveal">
       <div>
-        <span class="ch-eyebrow">Buying guide</span>
-        <h2 class="faq-title-d" style="margin-top:12px">Gym sled tracks &amp;<br><em>functional training turf.</em></h2>
-        <p class="faq-desc-d">Everything about our gym sled tracks — turf, sizes, customisation and durability. Still unsure? We're one message away.</p>
-        <a href="#" class="btn-primary" style="margin-top:8px">Ask us anything</a>
+        <span class="eyebrow-label">Featured reviews</span>
+        <h2 class="section-title" style="color:#1a1f24;font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1">The verdict<br><em style="color:var(--accent);font-style:normal">from the floor</em></h2>
       </div>
-      <div class="faq-list-d">
-        <div class="faq-item-d open">
-          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">What is a sled push turf track?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>
-          <div class="faq-ans-d"><div class="faq-ans-inner-d">A sled track — or sled push turf track — is a high-density artificial turf lane built for functional training, sprints and conditioning. Also known as a prowler track or sled lane, it's made from artificial turf for sleds with a no-direction pile that gives consistent traction and resistance across every metre.</div></div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:9px" class="reveal d2">
+        <div class="reviews-score-badge">
+          <div class="rsb-num">4.80</div>
+        <div class="rsb-right">
+          <div class="rsb-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="rsb-label">76 reviews</div>
+          </div>
         </div>
-        <div class="faq-item-d open">
-          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Which gym sled track should I choose for my box?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>
-          <div class="faq-ans-d"><div class="faq-ans-inner-d">Every track shares the same 86,000 stitches/m² build. Pick a with-markings model (Valhalla, Elysium, Atlantis or Marathon) for numbered lanes, a single-colour Solids model for a clean look, or a fully customised track in your own colours.</div></div>
-        </div>
-        <div class="faq-item-d open">
-          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Can I customise the colours, size and logo?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>
-          <div class="faq-ans-d"><div class="faq-ans-inner-d">Yes. We make fully customised tracks in any length, width and colour, with the option to add your logo or motivational markings. We send a 3D render before production.</div></div>
-        </div>
-        <div class="faq-item-d open">
-          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Is the turf made for sled work and functional training?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>
-          <div class="faq-ans-d"><div class="faq-ans-inner-d">Exactly what it's built for. Our gym sled track handles heavy sled drags, prowler pushes, sprints and daily intensity without flattening or rippling.</div></div>
-        </div>
-        <div class="faq-item-d open">
-          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">What sled track sizes are available?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>
-          <div class="faq-ans-d"><div class="faq-ans-inner-d">Sled tracks come in widths from 1 m to 2 m and lengths from 5 m up to 16 m — including popular 10 m sled tracks. Custom orders are made to your exact dimensions.</div></div>
-        </div>
-        <div class="faq-item-d open">
-          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Where are Heroturfs tracks made?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>
-          <div class="faq-ans-d"><div class="faq-ans-inner-d">Made in Spain in partnership with Rols, a certified B Corp, using environmentally friendly materials — which means guaranteed durability, sustainability and design freedom.</div></div>
-        </div>
-        <div class="faq-item-d open">
-          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Can I use a sled track indoors and outdoors?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>
-          <div class="faq-ans-d"><div class="faq-ans-inner-d">Yes. The same artificial turf works as both an indoor sled track and an outdoor sled track — it's UV-stable, drains well and holds its traction in any gym, box or outdoor training area.</div></div>
-        </div>
-        <div class="faq-item-d open">
-          <button class="faq-q-d" onclick="toggleFaqD(this)"><span class="faq-q-text-d">Sled track, sled mat or sled carpet — what's the difference?</span><span class="faq-ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>
-          <div class="faq-ans-d"><div class="faq-ans-inner-d">They're different names for the same surface. Whether you call it a sled mat, sled carpet, sled turf or sled track flooring, it's a hard-wearing lane for sled push and pull work. We supply full sled tracks as well as narrower sled strips and lanes.</div></div>
+        <div style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#5a6672"><span style="width:16px;height:16px;border-radius:4px;background:#00b27a;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Verified reviews on <strong style="color:#1a1f24;font-weight:800;margin-left:1px">Judge.me</strong></div>
+      </div>
+    </div>
+    <div class="reviews-carousel">
+    <div class="reviews-grid-photo" id="reviewsTrack">
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/compartidos/bollodromo.jpg" alt="Bollodromo · custom weightlifting turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">19 May 2026</span></div>
+          <p class="rpc-text rpc-en">"We're a sports centre specialising in strength training. We ordered a strip of turf with our colours and logo. The quality has been superb — it feels great underfoot and is comfortable for strength work. We're keen to see how it holds up over time, but for now we're really happy with the result."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Somos un centro deportivo especializado en el entrenamiento de fuerza. Hemos encargado una tira de césped con nuestros colores y logo. La calidad ha sido estupenda, el tacto se siente muy bien y parece cómoda a la hora de utilizarla para entrenamiento de fuerza. Estamos deseando ver cómo se mantiene con el tiempo, pero, por ahora, estamos muy satisfechos con el resultado de su trabajo."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Bollodromo</div><div class="rpc-role">Strength training centre · Tarragona</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
         </div>
       </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/crossfit-camp-major.avif" alt="CrossFit Camp Major · custom track with logo" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" style="fill:rgba(26,31,36,.15)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">10 Jun 2026</span></div>
+          <p class="rpc-text rpc-en">"The track has arrived and it's superb — we had great communication with Ivan throughout. The logo looks brilliant and the designer did a great job. The track feels solid for sled work and for intensive Hyrox use."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"La piste est arrivée, elle est magnifique, nous avons eu une très bonne communication avec Ivan. Le logo est superbe et le designer a fait un très bon travail. La piste a l'air solide pour le SLED et pour l'usage intensif d'Hyrox."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
+          <div class="rpc-foot"><div><div class="rpc-name">CrossFit Camp Major</div><div class="rpc-role">CrossFit box · Aubagne, France</div></div><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div><div class="review-photo-card reveal d3">
+        <div class="rpc-img"><img src="assets/home/mark-gaye-tracks.jpg" alt="Custom sprint tracks installed in Belgium" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">27 Apr 2026</span></div>
+          <p class="rpc-text rpc-en">"I'd like to highlight the high quality of their service for tracks and sprint tracks. The products delivered are of an excellent standard, both in design and in on-field performance — a level of quality that reflects real expertise. Beyond the product itself, their service clearly stands out: structured support, precise and responsive follow-up, and smooth communication at every stage of the project. The after-sales service is equally up to the task — available and efficient — which builds long-term trust. This very positive collaboration confirms the seriousness of the company and makes them a reference I'll recommend without reservation."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Je tiens à souligner la grande qualité de votre prestation concernant les pistes et sprintracks. Les produits livrés sont d’un excellent niveau, tant en termes de conception que de performance sur le terrain. Cette exigence de qualité reflète un réel savoir-faire. Au-delà du produit, votre service se distingue clairement : accompagnement structuré, suivi de dossier précis et réactif, avec une communication fluide à chaque étape du projet. Le service après-vente est également à la hauteur, disponible et efficace, ce qui renforce la confiance sur le long terme. Cette collaboration très positive confirme le sérieux de votre entreprise et constitue une référence que je recommanderai sans réserve."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Mark Gaye</div><div class="rpc-role">Kinaxis · Belgium</div></div><img class="flag" src="https://flagcdn.com/be.svg" alt="Belgium" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/testa-fitness.jpg" alt="Testa Fitness · black turf track with sleds" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">5 Feb 2026</span></div>
+          <p class="rpc-text rpc-en">"From the very first moment the service was friendly, and the information they provide makes the whole process easy. Unbeatable value for money — and they made shipping to the Canary Islands simple."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Desde el primer momento el trato fue amable y la información que dan hace que toda la gestión resulte cómoda. Relación calidad/precio insuperable y ponen facilidades para enviar a Canarias."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Testa Fitness</div><div class="rpc-role">Gym · Canary Islands</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/compartidos/acero-crossfit.jpg" alt="Acero CrossFit · Toledo" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">28 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"Everything was perfect from day one — serious and professional. They fitted us a custom turf and it turned out brilliantly. We'll definitely be back!"</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Todo perfecto desde el inicio, serios y formales. Nos pusieron un césped personalizado y quedó de cine. Repetiré seguro!"</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Acero CrossFit</div><div class="rpc-role">CrossFit box · Toledo</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/wellbox-leganes.jpg" alt="WellBox Leganés · custom turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">23 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"Great-quality custom turf — really happy with the product."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Césped personalizado de gran calidad, muy contento con el producto."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">WellBox</div><div class="rpc-role">Gym · Leganés</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d2">
+        <div class="rpc-img"><img src="assets/home/lowfit-review.jpg" alt="Lowfit Huelva · custom sled turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"At Lowfit we don’t do things by halves — we do everything in a big way, which is why we asked Heroturfs for the most spectacular sled turf ever seen, and the result has been exactly that: spectacular. They stayed in touch with us at every step to make sure everything turned out perfect. We’ll trust them again, 100%."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"En Lowfit no andamos con medias tintas y todo lo hacemos a lo grande, por eso le encargamos a Heroturfs el césped para trineos más espectacular que se haya visto, y el resultado ha sido espectacular. Estuvieron en contacto con nosotros en todo momento y pendientes para que todo saliera perfecto. Volveremos a confiar en ellos 100%."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Jonathan Gómez</div><div class="rpc-role">Director · Lowfit Huelva</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d1">
+        <div class="rpc-img"><img src="assets/home/lions-gym.jpg" alt="Lion's Gym · LionX area track in Palma de Mallorca" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">3 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"We bought the track for the LionX (Hyrox) area of our Lion's Gym in Palma de Mallorca from this company, and it's honestly excellent. The material is top quality and the custom design they made for us was exactly what we had in mind. From day one the whole process was impeccable: outstanding service, quick responses and constant support at every step. Thank you so much for everything — we'll certainly be back for future projects. A company we recommend 100%, both for the quality of the product and for the service and professionalism they work with."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Compramos con esta empresa la pista que instalamos en el sector de LionX (Hyrox) de nuestro gimnasio Lion’s Gym en Palma de Mallorca, y la verdad es que es excelente. El material es de muy buena calidad y el diseño personalizado que nos hicieron fue exactamente lo que teníamos pensado. Desde el primer día, la gestión fue impecable: una atención inmejorable, respuestas rápidas y un acompañamiento constante en todo el proceso. Muchísimas gracias por todo, sin dudas los volveré a contactar para futuros trabajos. Una empresa 100% recomendable, tanto por la calidad del producto como por el servicio y la seriedad con la que trabajan."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Lion's Gym</div><div class="rpc-role">Gym · Palma de Mallorca</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+
+    </div>
+    <button class="reviews-arrow reviews-arrow-prev" onclick="scrollReviews(-1)" aria-label="Previous review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="reviews-arrow reviews-arrow-next" onclick="scrollReviews(1)" aria-label="Next review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    <div class="reviews-dots">
+      <button class="rev-dot active" onclick="goReview(0)" aria-label="Review 1"></button>
+      <button class="rev-dot" onclick="goReview(1)" aria-label="Review 2"></button>
+      <button class="rev-dot" onclick="goReview(2)" aria-label="Review 3"></button>
+      <button class="rev-dot" onclick="goReview(3)" aria-label="Review 4"></button>
+      <button class="rev-dot" onclick="goReview(4)" aria-label="Review 5"></button>
+      <button class="rev-dot" onclick="goReview(5)" aria-label="Review 6"></button>
+      <button class="rev-dot" onclick="goReview(6)" aria-label="Review 7"></button>
+      <button class="rev-dot" onclick="goReview(7)" aria-label="Review 8"></button>
+    </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:28px">
+      <a href="#" class="reviews-cta">Read all 76 reviews <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- ===== USE CASES ===== -->
-<section style="background:#fff;padding:40px 0 80px">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:36px">
-      <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="width:24px;height:2px;background:var(--accent);display:inline-block"></span>What it’s for</span>
-      <h2 style="font-family:var(--fd);font-size:clamp(28px,4vw,54px);font-weight:900;color:#1a1f24;line-height:1">Made for <span style="color:var(--accent)">serious athletes</span></h2>
+  <!-- CERTIFICATIONS (interactive showcase) -->
+  <section class="pcert">
+    <div class="container">
+      <div class="pcert-grid">
+        <div class="pcert-visual reveal">
+          <img src="assets/home/cesped-verde-marcaje.webp" alt="Heroturfs sports turf with woven markings under certified testing" loading="lazy">
+          <div class="pcert-hud"></div>
+          <div class="pcert-scan"></div>
+          <span class="pcert-corner tl"></span><span class="pcert-corner tr"></span><span class="pcert-corner bl"></span><span class="pcert-corner br"></span>
+          <div class="pcert-reticle"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="6"/><path d="M50 8v15M50 77v15M8 50h15M77 50h15"/></svg></div>
+          <span class="pcert-tag"><span class="pcert-dot"></span>Scanning · Certified</span>
+        </div>
+        <div class="pcert-content">
+          <span class="pcert-eyebrow">Tested &amp; certified</span>
+          <h2 class="pcert-title reveal">Certifications that <em>make a difference.</em></h2>
+          <p class="pcert-intro reveal">Heroturfs is the only brand in the industry with official tests certifying the durability, safety and performance of every model.</p>
+          <p class="pcert-sub reveal">Our sports turf solutions offer:</p>
+          <ul class="pcert-list reveal">
+            <li class="pcert-item">
+              <span class="pcert-ico"><svg viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+              <div class="pcert-it">
+                <div class="pcert-it-h">More than <span class="pcert-num" data-count="50000">50,000</span> certified wear cycles.</div>
+                <div class="pcert-std">Lisport abrasion · UNE-EN 15306:2014 — no fibrillation or breakage.</div>
+              </div>
+            </li>
+            <li class="pcert-item">
+              <span class="pcert-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              <div class="pcert-it">
+                <div class="pcert-it-h">Anti-slip properties, shock absorption and sound insulation.</div>
+                <div class="pcert-std">Slip EN 14904 · Impact EN 14808 · Acoustic ISO 10140-3 (18 dB).</div>
+              </div>
+            </li>
+            <li class="pcert-item">
+              <span class="pcert-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span>
+              <div class="pcert-it">
+                <div class="pcert-it-h">Responsible manufacturing and CE-certified products.</div>
+                <div class="pcert-std">CE marking · B Corp (Moquetas Rols S.A.) · fire behaviour CFL-s1.</div>
+              </div>
+            </li>
+            <li class="pcert-item">
+              <span class="pcert-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+              <div class="pcert-it">
+                <div class="pcert-it-h">Total confidence for you, and complete safety for everyone who uses it.</div>
+                <div class="pcert-std">Every batch tested before dispatch to the strictest European standards.</div>
+              </div>
+            </li>
+          </ul>
+          <button type="button" class="pcert-link" id="pcertToggle" aria-expanded="false"><span class="pcert-link-txt">See the full test results</span> <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        </div>
+      </div>
+      <div class="pcert-results" id="pcertResults">
+        <p class="pcert-rt-intro">Every batch passes certified testing for durability, safety and hygiene to the strictest European standards.</p>
+        <div class="pcert-rt">
+          <div class="pcert-rt-row pcert-rt-head"><span>Property</span><span>Standard</span><span>Result</span></div>
+
+          <div class="pcert-rt-group">Durability &amp; wear</div>
+          <div class="pcert-rt-row star"><span>Durability (Lisport)</span><span>UNE-EN 15306:2014</span><span><i class="cert-pass">✓</i><b>≥50,000 cycles</b> — no fibrillation or breakage; good visual retention.</span></div>
+          <div class="pcert-rt-row"><span>Abrasion resistance</span><span>EN 13672:2004</span><span><i class="cert-pass">✓</i><b>0.52% mass loss</b> @5,000 cycles — excellent wear resistance.</span></div>
+          <div class="pcert-rt-row"><span>Appearance &amp; colour change (Hexapod)</span><span>EN 1307:2014+A3 · ISO 10361:2015 B</span><span><i class="cert-pass">✓</i><b>Appearance 5 · colour 5</b> after 4,000 rotations; 4 · 4 after 12,000.</span></div>
+          <div class="pcert-rt-row"><span>Artificial ageing (UVA)</span><span>UNE-EN ISO 4892-3:2016</span><span><i class="cert-pass">✓</i><b>Colour change 5</b> after 5,200 h UVA; tensile loss −10%.</span></div>
+          <div class="pcert-rt-row"><span>Use classification</span><span>UNE-EN ISO 10874:2012</span><span><i class="cert-pass">✓</i><b>Commercial 33 (intensive)</b> · Domestic 23 (intensive).</span></div>
+
+          <div class="pcert-rt-group">Safety &amp; comfort</div>
+          <div class="pcert-rt-row"><span>Slip resistance</span><span>EN 14904:2006</span><span><i class="cert-pass">✓</i><b>Compliant</b> — suitable for indoor sports facilities.</span></div>
+          <div class="pcert-rt-row"><span>Impact absorption</span><span>EN 14808:2005</span><span><i class="cert-pass">✓</i><b>25.01% ±2%</b> — suitable for sports flooring.</span></div>
+          <div class="pcert-rt-row"><span>Compression resistance</span><span>UNE-EN ISO 3386-1:1998+A1</span><span><i class="cert-pass">✓</i><b>11.18 kPa at 40% · 904.78 kPa at 70%</b> load.</span></div>
+          <div class="pcert-rt-row star"><span>Fire behaviour</span><span>EN 13501-1:2018</span><span><i class="cert-pass">✓</i><b>CFL-s1</b> (bonded with Forbo 540 FR adhesive).</span></div>
+          <div class="pcert-rt-row"><span>Acoustic insulation</span><span>ISO 10140-3:2021</span><span><i class="cert-pass">✓</i><b>18 dB</b> impact noise reduction.</span></div>
+
+          <div class="pcert-rt-group">Hygiene &amp; compliance</div>
+          <div class="pcert-rt-row"><span>Microbiological resistance</span><span>ISO 846:2019 B</span><span><i class="cert-pass">✓</i><b>Fungal growth 0 (absent)</b> after 28 days.</span></div>
+          <div class="pcert-rt-row star"><span>Product certification</span><span>CE marking</span><span><i class="cert-pass">✓</i><b>Compliant</b> — EU safety, health &amp; environmental requirements.</span></div>
+          <div class="pcert-rt-row star"><span>Responsible manufacturing</span><span>B Corp</span><span><i class="cert-pass">✓</i><b>Certified</b> — made by Moquetas Rols S.A. for its environmental &amp; social commitment.</span></div>
+
+          <p class="pcert-rt-note">Need the full test reports? <a href="contacto.html">Ask us</a> and we'll send them over.</p>
+        </div>
+      </div>
     </div>
-    <div class="cat-uses-grid reveal">
+  </section>
 
-      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer">
-        <img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-negro-trineo-con-chico1.webp" alt="Sled drags and sled push on artificial turf for gyms" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%)"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
-          <div style="font-family:var(--fd);font-size:16px;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">Sled tracks</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.55)">Sled push · Sled pull · Hybrid training</div>
-        </div>
+  <!-- CTA -->
+  <section class="pdp-final-cta">
+    <div class="container">
+      <span class="eyebrow-label">Your track, your size</span>
+      <h2 class="section-title">Can't find the exact fit?</h2>
+      <p>Every Heroturfs track can be made to measure — your width, length and colour, produced in Spain.</p>
+      <div class="pdp-cta-btns">
+        <a href="cesped-personalizado-alina.html" class="btn-primary">Design your own</a>
+        <a href="categoria-alina.html" class="pdp-cta-ghost">See tracks in stock</a>
       </div>
-
-      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer">
-        <img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-verde-cuerda-chica1.webp" alt="Artificial turf for CrossFit and WOD in CrossFit boxes" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%)"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
-          <div style="font-family:var(--fd);font-size:16px;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">CrossFit</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.55)">CrossFit boxes · Training tracks</div>
-        </div>
-      </div>
-
-      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer">
-        <img src="assets/home/terracota-funcional.webp" alt="Artificial turf for functional training and HIIT in sports centres" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%)"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
-          <div style="font-family:var(--fd);font-size:16px;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">Gyms</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.55)">Sports centres · Wellness · EMS</div>
-        </div>
-      </div>
-
-      <div style="position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer">
-        <img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/cesped-artificial-gimnasio-azul-chica-2.webp" alt="Artificial turf for physiotherapy and physical rehabilitation in clinics and physiotherapy centres" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 50%)"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
-          <div style="font-family:var(--fd);font-size:16px;font-weight:900;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">Physiotherapy</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.55)">Rehabilitation · Sports clinics · Reconditioning</div>
-        </div>
-      </div>
-
     </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var sizes=document.getElementById('pdpSizes');
+  var price=document.getElementById('pdpPrice');
+  var sizeName=document.getElementById('pdpSizeName');
+  if(sizes){
+    sizes.addEventListener('click',function(e){
+      var btn=e.target.closest('.pdp-size');
+      if(!btn||btn.disabled)return;
+      sizes.querySelectorAll('.pdp-size').forEach(function(s){s.classList.remove('active');});
+      btn.classList.add('active');
+      var d=btn.querySelector('.pdp-size-d');
+      if(sizeName&&d)sizeName.textContent=d.textContent.trim();
+      if(btn.dataset.price)price.textContent=btn.dataset.price;
+    });
+  }
+  var sw=document.getElementById('pdpSwatches');
+  var cn=document.getElementById('pdpColourName');
+  // Per-colour galleries (8 photos each, same layout: hero, action, track, track, track, action-wide, track, track)
+  var B='https://cdn.shopify.com/s/files/1/0960/0047/5401/files/';
+  var W=[1100,700,700,700,700,1100,700,700];
+  var COLOURS={
+    'Black · Valhalla One':['cesped-gimnasio-valhalla-negro-150x1000-01.webp','cesped-artificial-gimnasio-negro-trineo-con-chico1_9b19dca6-e212-4285-8f97-1b66c4a731cd.webp','cesped-gimnasio-valhalla-negro-150x1000-02.webp','cesped-gimnasio-valhalla-negro-150x1000-03.webp','cesped-gimnasio-valhalla-negro-150x1000-04.webp','cesped-artificial-gimnasio-negro-trineo-con-chico2_54ccdb04-975f-42c8-8783-d9d577fa2f45.jpg','cesped-gimnasio-valhalla-negro-150x1000-05.webp','cesped-gimnasio-valhalla-negro-150x1000-06.webp'],
+    'Blue · Atlantis':['cesped-gimnasio-azul-atlantis-150x1000-01.webp','Cesped-artificial-gimnasio-azul-chica1.jpg','cesped-gimnasio-azul-atlantis-150x1000-02.webp','cesped-gimnasio-azul-atlantis-150x1000-03.webp','cesped-gimnasio-azul-atlantis-150x1000-04.webp','cesped-artificial-gimnasio-azul-chica-2.webp','cesped-gimnasio-azul-atlantis-150x1000-05.webp','cesped-gimnasio-azul-atlantis-150x1000-06.webp'],
+    'Green · Elysium':['cesped-gimnasio-verde-elysium-150x1000-01.webp','cesped-artificial-gimnasio-verde-cuerda-chica1.webp','cesped-gimnasio-verde-elysium-150x1000-02.webp','cesped-gimnasio-verde-elysium-150x1000-03.webp','cesped-gimnasio-verde-elysium-150x1000-04.webp','cesped-artificial-gimnasio-verde-cuerda-chica2_93d746d8-cb73-4b30-a27b-10c5ca1fc8e7.webp','cesped-gimnasio-verde-elysium-150x1000-05.webp','cesped-gimnasio-verde-elysium-150x1000-06.webp'],
+    'Red · Marathon':['cesped-gimnasio-crossfit-rojo-marathon-150x1000-7.webp','Pista-Marathon-One-con-personas.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-1.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-2.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-3.webp','Pista-Marathon-One-con-trineo.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-4.webp','cesped-gimnasio-crossfit-rojo-marathon-150x1000-5.webp']
+  };
+  var shots=document.querySelectorAll('.pdp-gallery .pdp-shot img');
+  function setColour(name){
+    var arr=COLOURS[name];
+    if(!arr||!shots.length)return;
+    shots.forEach(function(img,i){
+      if(arr[i])img.src=B+arr[i]+'?width='+(W[i]||700);
+    });
+    // preload other colours so switching is instant
+  }
+  // warm cache for all colours
+  Object.keys(COLOURS).forEach(function(k){COLOURS[k].forEach(function(f,i){var p=new Image();p.src=B+f+'?width='+(W[i]||700);});});
+  if(sw){
+    sw.addEventListener('click',function(e){
+      var btn=e.target.closest('.pdp-sw');
+      if(!btn)return;
+      sw.querySelectorAll('.pdp-sw').forEach(function(s){s.classList.remove('active');});
+      btn.classList.add('active');
+      if(btn.dataset.name){
+        if(cn)cn.textContent=btn.dataset.name;
+        setColour(btn.dataset.name);
+      }
+    });
+  }
+})();
+</script>
+
+<!-- mobile gallery carousel (dots + arrows) -->
+<script>
+(function(){
+  var wrap=document.querySelector('.pdp-gallery-wrap');if(!wrap)return;
+  var gal=wrap.querySelector('.pdp-gallery');
+  var slides=gal.querySelectorAll('.pdp-shot');
+  var dots=wrap.querySelector('.pdp-gdots');
+  var prev=wrap.querySelector('.pdp-gnav.prev');
+  var next=wrap.querySelector('.pdp-gnav.next');
+  for(var i=0;i<slides.length;i++){var d=document.createElement('span');d.className='pdp-gdot'+(i===0?' active':'');dots.appendChild(d);}
+  var dotEls=dots.querySelectorAll('.pdp-gdot');
+  function upd(){var c=Math.round(gal.scrollLeft/gal.clientWidth);dotEls.forEach(function(d,i){d.classList.toggle('active',i===c);});}
+  var raf;gal.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(upd);});
+  function tween(to){
+    var start=gal.scrollLeft,dist=to-start,t0=null;
+    gal.style.scrollSnapType='none';
+    function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/320);var e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;gal.scrollLeft=start+dist*e;if(p<1){requestAnimationFrame(step);}else{gal.scrollLeft=to;gal.style.scrollSnapType='';upd();}}
+    requestAnimationFrame(step);
+  }
+  function go(dir){var idx=Math.round(gal.scrollLeft/gal.clientWidth);var t=Math.max(0,Math.min(slides.length-1,idx+dir));tween(t*gal.clientWidth);}
+  if(prev)prev.addEventListener('click',function(){go(-1);});
+  if(next)next.addEventListener('click',function(){go(1);});
+})();
+</script>
+
+
+<!-- reviews carousel + autoplay (ported from home) -->
+<script>
+function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
+  function toggleReviewLang(b,lang){
+    const body=b.closest('.rpc-body');
+    const en=body.querySelector('.rpc-en'),orig=body.querySelector('.rpc-orig');
+    const showOrig=orig.style.display==='none';
+    orig.style.display=showOrig?'':'none';
+    en.style.display=showOrig?'none':'';
+    b.textContent=showOrig?'Read translation · EN':('Read original · '+lang);
+    if(window.stopReviewsAutoplay)window.stopReviewsAutoplay();
+  }
+  // "Read more": clamp reviews to 3 lines and add an expand toggle only where text overflows
+  window.addEventListener('load',function(){
+    document.querySelectorAll('.review-photo-card .rpc-body').forEach(function(body){
+      const texts=[...body.querySelectorAll('.rpc-text')];
+      if(!texts.length)return;
+      const overflows=texts.some(function(p){
+        const hidden=p.style.display==='none';
+        if(hidden){p.style.visibility='hidden';p.style.display='';}
+        const o=p.scrollHeight>p.clientHeight+2;
+        if(hidden){p.style.display='none';p.style.visibility='';}
+        return o;
+      });
+      const row=document.createElement('div');
+      row.className='rpc-links';
+      if(overflows){
+        const b=document.createElement('button');
+        b.className='rpc-lang';
+        b.textContent='Read more';
+        b.onclick=function(){
+          const ex=!texts[0].classList.contains('expanded');
+          texts.forEach(function(t){t.classList.toggle('expanded',ex);});
+          b.textContent=ex?'Read less':'Read more';
+          if(window.stopReviewsAutoplay)window.stopReviewsAutoplay();
+        };
+        row.appendChild(b);
+      }
+      const lang=body.querySelector('.rpc-lang:not(.rpc-links .rpc-lang)');
+      if(lang&&lang.parentElement===body)row.appendChild(lang);
+      if(row.children.length)body.insertBefore(row,body.querySelector('.rpc-foot'));
+    });
+  });
+  function scrollReviews(dir){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');t.scrollBy({left:dir*(c.offsetWidth+reviewGap(t)),behavior:'smooth'});}
+  function goReview(i){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');t.scrollTo({left:i*(c.offsetWidth+reviewGap(t)),behavior:'smooth'});}
+  function updateReviewDots(){const t=document.getElementById('reviewsTrack');const c=t.querySelector('.review-photo-card');if(!c)return;const dots=document.querySelectorAll('.rev-dot');if(!dots.length)return;const i=Math.round(t.scrollLeft/(c.offsetWidth+reviewGap(t)))%dots.length;dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));}
+  document.getElementById('reviewsTrack').addEventListener('scroll',()=>window.requestAnimationFrame(updateReviewDots));
+
+  // Reviews marquee: continuous scroll that only pauses on hover; stops for good on real horizontal interaction
+  (function(){
+    const t=document.getElementById('reviewsTrack');
+    if(!t)return;
+    let stopped=false,paused=false;
+    window.stopReviewsAutoplay=function(){stopped=true};
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)stopped=true;
+    // Duplicate the cards once so the loop is seamless (like the ticker)
+    const originals=[...t.querySelectorAll('.review-photo-card')];
+    originals.forEach(function(c){const k=c.cloneNode(true);k.classList.add('visible');t.appendChild(k);});
+    const SPEED=48; // px per second
+    let pos=t.scrollLeft,last=null;
+    function frame(ts){
+      if(last!==null&&!stopped&&!paused&&!document.hidden){
+        const dt=Math.min(ts-last,100)/1000;
+        if(Math.abs(t.scrollLeft-pos)>2)pos=t.scrollLeft;
+        const c=t.querySelector('.review-photo-card');
+        const h=originals.length*(c.offsetWidth+reviewGap(t));
+        pos+=SPEED*dt;
+        if(pos>=h)pos-=h;
+        t.scrollLeft=pos;
+      }
+      last=ts;
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    t.addEventListener('mouseenter',function(){paused=true});
+    t.addEventListener('mouseleave',function(){paused=false});
+    // Stop only on real horizontal interaction; vertical page scrolling over the carousel must not kill autoplay
+    let px=0,py=0;
+    t.addEventListener('pointerdown',function(e){px=e.clientX;py=e.clientY},{passive:true});
+    t.addEventListener('pointermove',function(e){if(e.buttons&&Math.abs(e.clientX-px)>12&&Math.abs(e.clientX-px)>Math.abs(e.clientY-py))stopped=true},{passive:true});
+    t.addEventListener('touchstart',function(e){px=e.touches[0].clientX;py=e.touches[0].clientY},{passive:true});
+    t.addEventListener('touchmove',function(e){const dx=Math.abs(e.touches[0].clientX-px),dy=Math.abs(e.touches[0].clientY-py);if(dx>12&&dx>dy)stopped=true},{passive:true});
+    t.addEventListener('wheel',function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY))stopped=true},{passive:true});
+    document.querySelectorAll('.reviews-arrow,.rev-dot').forEach(function(b){b.addEventListener('click',function(){stopped=true})});
+  })();
+</script>
+
+<!-- ===== CART DRAWER (mockup) ===== -->
+<style>
+.cart-ov{position:fixed;inset:0;background:rgba(10,12,14,.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:300}
+.cart-ov.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;top:0;right:0;height:100%;width:390px;max-width:92vw;background:#fff;z-index:301;transform:translateX(100%);transition:transform .38s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;box-shadow:-12px 0 44px rgba(0,0,0,.16)}
+.cart-drawer.open{transform:none}
+.cart-head{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid #e7eaed}
+.cart-head h3{font-family:var(--fd);font-size:21px;font-weight:800;color:#15181c;letter-spacing:.01em;display:inline-flex;align-items:center;gap:7px}
+.cart-head .cart-count{font-family:var(--fb);font-size:13px;font-weight:700;color:var(--accent)}
+.cart-close{background:none;border:none;cursor:pointer;color:#8a96a0;padding:4px;display:flex}
+.cart-close:hover{color:#15181c}
+.cart-body{flex:1;overflow-y:auto;padding:8px 24px}
+.cart-empty{color:#8a96a0;font-size:14px;text-align:center;margin-top:56px}
+.cart-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid #eef0f2}
+.cart-item-img{width:74px;height:74px;border-radius:10px;object-fit:cover;background:#f3f5f7;flex-shrink:0}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-size:14px;font-weight:700;color:#15181c;line-height:1.2}
+.cart-item-meta{font-size:12px;color:#8a96a0;margin:4px 0 10px}
+.cart-item-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cart-qty{display:inline-flex;align-items:center;border:1px solid #d6dbe0;border-radius:8px;overflow:hidden}
+.cart-qty button{width:28px;height:28px;border:none;background:#fff;cursor:pointer;color:#15181c;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center}
+.cart-qty button:hover{background:#f3f5f7}
+.cart-qty span{min-width:30px;text-align:center;font-size:13px;font-weight:700;color:var(--accent)}
+.cart-item-price{font-family:var(--fd);font-size:17px;font-weight:800;color:#15181c;white-space:nowrap}
+.cart-item-rm{background:none;border:none;color:#b9c0c6;cursor:pointer;font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding:0;margin-top:8px;font-weight:600}
+.cart-item-rm:hover{color:var(--accent)}
+.cart-foot{border-top:1px solid #e7eaed;padding:20px 24px}
+.cart-sub{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.cart-sub-l{font-size:13px;font-weight:700;color:#5a6672;text-transform:uppercase;letter-spacing:.06em}
+.cart-sub-v{font-family:var(--fd);font-size:25px;font-weight:900;color:#15181c}
+.cart-note{font-size:11px;color:#8a96a0;margin-bottom:15px}
+.cart-checkout{justify-content:center;width:100%;padding:15px;font-size:13px}
+.cart-cont{display:block;width:100%;text-align:center;margin-top:11px;font-size:12px;font-weight:600;color:#5a6672;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;background:none;border:none}
+.cart-cont:hover{color:#15181c}
+.pdp-add.added{background:#1f9d55;box-shadow:0 4px 16px rgba(31,157,85,.28)}
+</style>
+<div class="cart-ov" id="cartOv"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-head"><h3>Your cart<span class="cart-count" id="cartHeadCount"></span></h3><button class="cart-close" id="cartClose" aria-label="Close cart"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+  <div class="cart-body" id="cartBody"><p class="cart-empty">Your cart is empty.</p></div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-sub"><span class="cart-sub-l">Subtotal</span><span class="cart-sub-v" id="cartSub">£0.00</span></div>
+    <p class="cart-note">Tax included · Free shipping to Mainland UK</p>
+    <a href="checkout.html" class="btn-primary cart-checkout">Checkout</a>
+    <button class="cart-cont" id="cartCont">Continue shopping</button>
   </div>
-</section>
+</aside>
+<script>
+(function(){
+  var ov=document.getElementById('cartOv'),drawer=document.getElementById('cartDrawer');
+  var body=document.getElementById('cartBody'),foot=document.getElementById('cartFoot');
+  var subEl=document.getElementById('cartSub'),headCount=document.getElementById('cartHeadCount');
+  var badge=document.querySelector('.nav-badge');
+  var addBtn=document.querySelector('.pdp-add');
+  var cart=[];try{cart=JSON.parse(localStorage.getItem('ht_cart')||'[]')||[];}catch(e){cart=[];}
+  function save(){try{localStorage.setItem('ht_cart',JSON.stringify(cart));}catch(e){}}
+  function num(s){return parseFloat(String(s).replace(/[^0-9.]/g,''))||0;}
+  function money(n){return '£'+n.toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function open(){ov.classList.add('open');drawer.classList.add('open');document.body.style.overflow='hidden';}
+  function close(){ov.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';}
+  function render(){
+    var count=cart.reduce(function(a,i){return a+i.qty;},0);
+    var total=cart.reduce(function(a,i){return a+i.price*i.qty;},0);
+    save();
+    if(badge){badge.textContent=count;badge.style.display=count?'flex':'none';}
+    headCount.textContent=count?'('+count+')':'';
+    if(!cart.length){body.innerHTML='<p class="cart-empty">Your cart is empty.</p>';foot.style.display='none';return;}
+    foot.style.display='block';subEl.textContent=money(total);
+    body.innerHTML=cart.map(function(it,i){
+      return '<div class="cart-item"><img class="cart-item-img" src="'+it.img+'" alt=""><div class="cart-item-info">'+
+        '<div class="cart-item-name">'+it.name+'</div>'+
+        '<div class="cart-item-meta">'+it.colour+' · '+it.size+'</div>'+
+        '<div class="cart-item-row"><div class="cart-qty"><button data-a="dec" data-i="'+i+'" aria-label="Decrease">−</button><span>'+it.qty+'</span><button data-a="inc" data-i="'+i+'" aria-label="Increase">+</button></div>'+
+        '<div class="cart-item-price">'+money(it.price*it.qty)+'</div></div>'+
+        '<button class="cart-item-rm" data-a="rm" data-i="'+i+'">Remove</button>'+
+        '</div></div>';
+    }).join('');
+  }
+  function add(){
+    var colour=(document.getElementById('pdpColourName')||{}).textContent||'Black · Valhalla One';
+    var sz=document.querySelector('.pdp-size.active');
+    var szD=sz?sz.querySelector('.pdp-size-d'):null;
+    var size=szD?szD.textContent.trim():(sz?sz.textContent.trim():'1.5 × 10.0 m');
+    var price=num(sz&&sz.dataset.price?sz.dataset.price:document.getElementById('pdpPrice').textContent);
+    var qtyEl=document.getElementById('pdpQty');
+    var qty=qtyEl?Math.max(1,parseInt(qtyEl.textContent,10)||1):1;
+    var img=(document.querySelector('.pdp-shot.hero img')||{}).src||'';
+    var key=colour+'|'+size;
+    var ex=cart.filter(function(i){return i.key===key;})[0];
+    if(ex){ex.qty+=qty;}else{cart.push({key:key,name:'Valhalla One',colour:colour,size:size,price:price,img:img,qty:qty});}
+    render();open();
+  }
+  body.addEventListener('click',function(e){
+    var b=e.target.closest('[data-a]');if(!b)return;
+    var i=+b.dataset.i,a=b.dataset.a;
+    if(a==='inc')cart[i].qty++;
+    else if(a==='dec'){cart[i].qty--;if(cart[i].qty<1)cart.splice(i,1);}
+    else if(a==='rm')cart.splice(i,1);
+    render();
+  });
+  if(addBtn){addBtn.addEventListener('click',function(e){
+    e.preventDefault();add();
+    addBtn.classList.add('added');var t=addBtn.textContent;addBtn.textContent='Added ✓';
+    setTimeout(function(){addBtn.classList.remove('added');addBtn.textContent=t;},1100);
+  });}
+  // quantity stepper
+  var qtyN=document.getElementById('pdpQty');
+  var qtyBox=qtyN?qtyN.closest('.pdp-qty'):null;
+  if(qtyBox){qtyBox.addEventListener('click',function(e){
+    var b=e.target.closest('.pdp-qty-btn');if(!b)return;
+    var n=parseInt(qtyN.textContent,10)||1;
+    n=(b.dataset.q==='inc')?n+1:Math.max(1,n-1);
+    qtyN.textContent=n;
+  });}
+  // recommended installation add-on
+  var addon=document.getElementById('pdpAddon');
+  if(addon){
+    var addonBtn=addon.querySelector('.pdp-addon-btn');
+    addonBtn.addEventListener('click',function(){
+      var k=addon.dataset.key;
+      var ex=cart.filter(function(i){return i.key===k;})[0];
+      if(ex){ex.qty++;}else{cart.push({key:k,name:addon.dataset.name,colour:addon.dataset.meta,size:addon.dataset.unit,price:parseFloat(addon.dataset.price),img:addon.dataset.img,qty:1});}
+      render();open();
+      var t=addonBtn.textContent;addonBtn.textContent='Added ✓';
+      setTimeout(function(){addonBtn.textContent=t;},1100);
+    });
+  }
+  document.getElementById('cartClose').addEventListener('click',close);
+  document.getElementById('cartCont').addEventListener('click',close);
+  ov.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  // open cart from the nav cart icon too
+  var navCart=document.querySelector('.nav-badge')&&document.querySelector('.nav-badge').closest('.nav-icon');
+  if(navCart)navCart.addEventListener('click',function(e){e.preventDefault();open();});
+  render(); // reflect any persisted cart on load
+})();
+</script>
 
 <footer>
   <div class="footer-top">
@@ -1342,6 +1882,71 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       btns.forEach(x => x.classList.toggle('active', x === b));
     }));
   })();
+
+  /* Product details accordion */
+  (function(){
+    var btns = document.querySelectorAll('.pdp-acc-btn');
+    btns.forEach(function(btn){
+      var item = btn.closest('.pdp-acc-item');
+      var panel = item.querySelector('.pdp-acc-panel');
+      btn.addEventListener('click', function(){
+        if(item.classList.contains('open')){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          void panel.offsetHeight;
+          item.classList.remove('open');
+          panel.style.maxHeight = '0px';
+        } else {
+          item.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+      panel.addEventListener('transitionend', function(e){
+        if(e.propertyName === 'max-height' && item.classList.contains('open')){ panel.style.maxHeight = 'none'; }
+      });
+    });
+  })();
+</script>
+<script>
+/* certifications section — count-up + open full results */
+(function(){
+  var nums=document.querySelectorAll('.pcert-num');
+  if(nums.length && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting)return;
+        var el=en.target; io.unobserve(el);
+        var target=parseInt(el.dataset.count,10)||0, start=null, dur=1500;
+        function step(ts){ if(start===null)start=ts; var p=Math.min(1,(ts-start)/dur);
+          var val=Math.floor((1-Math.pow(1-p,3))*target);
+          el.textContent=val.toLocaleString('en-GB');
+          if(p<1)requestAnimationFrame(step); else el.textContent=target.toLocaleString('en-GB'); }
+        requestAnimationFrame(step);
+      });
+    },{threshold:.5});
+    nums.forEach(function(n){io.observe(n);});
+  }
+  var toggle=document.getElementById('pcertToggle');
+  var panel=document.getElementById('pcertResults');
+  var txt=toggle&&toggle.querySelector('.pcert-link-txt');
+  if(toggle&&panel){
+    toggle.addEventListener('click',function(){
+      if(panel.classList.contains('open')){
+        panel.style.maxHeight=panel.scrollHeight+'px'; void panel.offsetHeight;
+        panel.classList.remove('open'); panel.style.maxHeight='0px';
+        toggle.setAttribute('aria-expanded','false');
+        if(txt)txt.textContent='See the full test results';
+      } else {
+        panel.classList.add('open');
+        panel.style.maxHeight=panel.scrollHeight+'px';
+        toggle.setAttribute('aria-expanded','true');
+        if(txt)txt.textContent='Hide the full test results';
+      }
+    });
+    panel.addEventListener('transitionend',function(e){
+      if(e.propertyName==='max-height'&&panel.classList.contains('open')) panel.style.maxHeight='none';
+    });
+  }
+})();
 </script>
 <script type="application/ld+json">
 {
