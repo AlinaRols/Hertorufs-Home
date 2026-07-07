@@ -690,6 +690,12 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-size:disabled{cursor:not-allowed;background:#fcfcfd;border-color:#e9ecef}
 .pdp-size:disabled .pdp-size-d{color:#bcc3c9}
 .pdp-size:disabled .pdp-size-p{color:#c6cdd2}
+/* custom product: price per m², static size card, sizing note, m² qty unit */
+.pdp-price #pdpPrice small{font-size:.42em;font-weight:700;color:#8a96a0}
+.pdp-size.static{cursor:default}
+.pdp-size-note{font-size:12px;color:#8a96a0;line-height:1.55;margin-top:10px}
+.pdp-size-note a{color:var(--accent);text-decoration:underline}
+.pdp-qty-unit{align-self:center;font-family:var(--fb);font-size:12px;font-weight:700;color:#8a96a0;margin-left:-2px}
 
 /* actions */
 .pdp-actions{display:flex;flex-direction:column;gap:13px;margin:30px 0 26px}
@@ -940,15 +946,16 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       <div class="pdp-buy">
         <div class="pdp-rating"><span class="pdp-stars">★★★★★</span> 4.9 · 58 reviews</div>
         <h1 class="pdp-title">Custom Gym Turf – <em>Hero4U</em></h1>
-        <div class="pdp-price"><span id="pdpPrice">£70.00</span> <span class="pdp-tax">Tax included · Free shipping mainland &amp; Balearics</span></div>
-        <p class="pdp-desc">Customize your artificial turf track with your logo, colours and style. We adapt the design to reflect your identity and align with your brand or personal aesthetic. Contact us for a personalised quote — prices vary with quantity and design. The listed price of £70 per m² is a reference.</p>
+        <div class="pdp-price"><span id="pdpPrice">£70.00<small> / m²</small></span> <span class="pdp-tax">Tax included · Free shipping</span></div>
+        <p class="pdp-desc">Customise your artificial turf track with your logo, colours and style. We adapt the design to reflect your identity and align with your brand or personal aesthetic. Contact us for a personalised quote — prices vary with quantity and design. The listed price of £70 per m² is a reference.</p>
 
         <!-- size -->
         <div class="pdp-opt">
-          <div class="pdp-opt-h">Selected size <span id="pdpSizeName">Default title</span></div>
+          <div class="pdp-opt-h">Size <span id="pdpSizeName">Made to measure</span></div>
           <div class="pdp-sizes" id="pdpSizes" style="grid-template-columns:1fr">
-            <button class="pdp-size active" type="button" data-price="£70.00"><span class="pdp-size-d">Default title</span><span class="pdp-size-p">£70.00</span></button>
+            <div class="pdp-size active static"><span class="pdp-size-d">Custom size — your exact width × length</span><span class="pdp-size-p">£70 / m²</span></div>
           </div>
+          <p class="pdp-size-note">Final price confirmed with your quote — it varies with size and design. Need help with sizing? <a href="contacto.html">Ask us</a>.</p>
         </div>
 
         <div class="pdp-actions">
@@ -958,6 +965,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
               <span class="pdp-qty-n" id="pdpQty">1</span>
               <button type="button" class="pdp-qty-btn" data-q="inc" aria-label="Increase quantity">+</button>
             </div>
+            <span class="pdp-qty-unit">m²</span>
             <a href="#" class="btn-primary pdp-add">Add to cart</a>
           </div>
         </div>
@@ -976,7 +984,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span><b>5-year guarantee</b> against manufacturing defects.</span></li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span><b>Free shipping</b> to Mainland UK.</span></li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span><b>Made in Spain</b> with quality certification.</span></li>
-          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>In-stock tracks ship in <b>48–72 h</b> (3–5 working days prep) · 14-day returns.</span></li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Custom tracks are made to order — allow around <b>6 weeks</b> lead time.</span></li>
         </ul>
       </div>
     </div>
@@ -1909,17 +1917,15 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
     }).join('');
   }
   function add(){
-    var colour=(document.getElementById('pdpColourName')||{}).textContent||'Black · Valhalla One';
-    var sz=document.querySelector('.pdp-size.active');
-    var szD=sz?sz.querySelector('.pdp-size-d'):null;
-    var size=szD?szD.textContent.trim():(sz?sz.textContent.trim():'1.5 × 10.0 m');
-    var price=num(sz&&sz.dataset.price?sz.dataset.price:document.getElementById('pdpPrice').textContent);
+    var colour='Custom design';
+    var size='per m²';
+    var price=num(document.getElementById('pdpPrice').textContent);
     var qtyEl=document.getElementById('pdpQty');
     var qty=qtyEl?Math.max(1,parseInt(qtyEl.textContent,10)||1):1;
     var img=(document.querySelector('.pdp-shot.hero img')||{}).src||'';
-    var key=colour+'|'+size;
+    var key='custom-gym-turf';
     var ex=cart.filter(function(i){return i.key===key;})[0];
-    if(ex){ex.qty+=qty;}else{cart.push({key:key,name:'Valhalla One',colour:colour,size:size,price:price,img:img,qty:qty});}
+    if(ex){ex.qty+=qty;}else{cart.push({key:key,name:'Custom Gym Turf – Hero4U',colour:colour,size:size,price:price,img:img,qty:qty});}
     render();open();
   }
   body.addEventListener('click',function(e){
