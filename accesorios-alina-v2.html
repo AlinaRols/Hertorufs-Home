@@ -879,6 +879,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .tpd-price{font-family:var(--fd);font-size:clamp(28px,2.8vw,38px);font-weight:900;color:#15181c;line-height:1}
 .tpd-tax{font-size:12px;font-weight:600;color:#8a96a0;margin:6px 0 20px}
 .tpd-desc{font-size:14.5px;color:#5a6672;line-height:1.7;margin-bottom:24px;max-width:60ch}
+.tpd-desc-more{display:none}
+@media(max-width:860px){
+  .tpd-desc.clamped{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
+  .tpd-desc-more{display:inline-block;background:none;border:none;padding:0;font:600 13.5px/1 var(--fb);color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-bottom:24px}
+}
 .tpd-opt-h{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#15181c;margin-bottom:10px}
 .tpd-opt-h span{color:#8a96a0;font-weight:600;margin-left:6px;text-transform:none;letter-spacing:0}
 .tpd-sizes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
@@ -965,7 +970,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <h1 class="tpd-title">Endurance XL <em>Installation Tape</em></h1>
         <div class="tpd-price"><span id="tapePrice">&pound;97.00</span></div>
         <div class="tpd-tax">Tax included &middot; Free shipping mainland &amp; Balearics</div>
-        <p class="tpd-desc">Double-sided, extra-strong tape for artificial sports turf. An interior mesh reinforcement gives a solid, uniform, long-lasting bond &mdash; even under sled drags and heavy daily use. Strong grip on clean, level surfaces (rubber, concrete or wood). No glue, no tools: peel, apply and press. Moisture-resistant, indoor &amp; outdoor.</p>
+        <p class="tpd-desc clamped" id="tapeDesc">Double-sided, extra-strong tape for artificial sports turf. An interior mesh reinforcement gives a solid, uniform, long-lasting bond &mdash; even under sled drags and heavy daily use. Strong grip on clean, level surfaces (rubber, concrete or wood). No glue, no tools: peel, apply and press. Moisture-resistant, indoor &amp; outdoor.</p>
+        <button type="button" class="tpd-desc-more" id="tapeDescMore" aria-expanded="false">Read more</button>
         <div class="tpd-opt">
           <div class="tpd-opt-h">Size <span id="tapeSizeName">50 cm &times; 25 m</span></div>
           <div class="tpd-sizes" id="tapeSizes" role="radiogroup" aria-label="Roll size">
@@ -1224,6 +1230,15 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     var calcLink=document.getElementById('tapeCalcLink');
     if(calcLink)calcLink.addEventListener('click',function(e){ var t=document.getElementById('tapeCalc'); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); } });
     window.tapeSelectSize=function(roll){ select([].filter.call(sizesEl.querySelectorAll('.tpd-size'),function(x){return x.dataset.roll===String(roll);})[0]); };
+  })();
+  (function(){
+    var d=document.getElementById('tapeDesc'),b=document.getElementById('tapeDescMore');
+    if(!d||!b)return;
+    b.addEventListener('click',function(){
+      var expanded=!d.classList.toggle('clamped');
+      b.textContent=expanded?'Read less':'Read more';
+      b.setAttribute('aria-expanded',expanded?'true':'false');
+    });
   })();
 })();
 </script>
