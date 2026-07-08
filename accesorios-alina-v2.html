@@ -906,23 +906,37 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .tpd-gallery .prod-img:hover .ph-nav{opacity:1}
 .tpd-gallery .ph-dots{pointer-events:auto}
 @media(hover:none){.tpd-gallery .ph-nav{opacity:.95}}
-/* product details accordion */
-.tpd-details{margin-top:30px}
-.tpd-details-h{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
-.tpd-acc{border-top:1px solid rgba(0,0,0,.1)}
+/* product specs (stat cards) + full-details accordion — like the track PDPs */
+.tpd-specs{margin-top:54px}
+.tpd-specs-eyebrow{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.tpd-specs-title{font-family:var(--fd);font-size:clamp(24px,2.8vw,38px);font-weight:900;line-height:1;color:#15181c;margin:0 0 26px}
+.tpd-specs-title em{font-style:normal;color:var(--accent)}
+.tpd-hl{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(0,0,0,.09);border-radius:var(--r);overflow:hidden;background:#fff;margin-bottom:42px}
+.tpd-hl>div{padding:26px 24px;border-right:1px solid rgba(0,0,0,.08)}
+.tpd-hl>div:last-child{border-right:none}
+.tpd-hl-k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a96a0;margin-bottom:10px}
+.tpd-hl-n{font-family:var(--fd);font-size:clamp(22px,2.2vw,32px);font-weight:900;color:#15181c;line-height:1;margin-bottom:8px}
+.tpd-hl-n span{font-size:.5em;color:#8a96a0;font-weight:600}
+.tpd-hl-p{font-size:12px;color:#5a6672;line-height:1.6}
+.tpd-fd-eyebrow{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.tpd-acc{border-top:1px solid rgba(0,0,0,.1);margin-top:12px}
 .tpd-acc-item{border-bottom:1px solid rgba(0,0,0,.1)}
-.tpd-acc-btn{width:100%;display:flex;align-items:center;gap:12px;background:none;border:none;padding:16px 2px;cursor:pointer;font-family:var(--fd);font-size:16px;font-weight:800;color:#15181c;text-align:left}
-.tpd-acc-ico{margin-left:auto;font-size:22px;color:#8a96a0;transition:transform .2s;line-height:1;font-weight:400}
-.tpd-acc-item.open .tpd-acc-ico{transform:rotate(45deg)}
-.tpd-acc-panel{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.tpd-acc-item.open .tpd-acc-panel{max-height:640px}
-.tpd-acc-body{padding:0 2px 18px;font-size:13.5px;color:#5a6672;line-height:1.7}
-.tpd-acc-body p{margin:0 0 8px}
-.tpd-acc-body ul{margin:8px 0 0;padding-left:18px}.tpd-acc-body li{margin-bottom:6px}
-.tpd-acc-body dl{display:grid;grid-template-columns:auto 1fr;gap:7px 20px;margin:4px 0 0}
-.tpd-acc-body dt{font-weight:700;color:#15181c}
-.tpd-acc-body dd{margin:0}
-.tpd-acc-body a{color:var(--accent)}
+.tpd-acc-btn{width:100%;display:flex;align-items:center;gap:16px;background:none;border:none;padding:22px 0;cursor:pointer;text-align:left;font-family:var(--fb);font-size:15px;font-weight:600;color:#1a1f24;transition:color .2s}
+.tpd-acc-btn:hover{color:var(--accent)}
+.tpd-acc-ico{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:19px;line-height:0;color:#5a6672;transition:background .2s,border-color .2s,color .2s,transform .3s}
+.tpd-acc-btn:hover .tpd-acc-ico{border-color:var(--accent);background:var(--accent);color:#fff}
+.tpd-acc-item.open .tpd-acc-ico{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
+.tpd-acc-panel{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.tpd-acc-item.open .tpd-acc-panel{max-height:900px}
+.tpd-acc-body{padding:2px 0 26px 44px;font-size:14.5px;color:#5a6672;line-height:1.75}
+.tpd-acc-body p{margin:0 0 12px}.tpd-acc-body p:last-child{margin-bottom:0}
+.tpd-acc-body ul{margin:0 0 12px;padding-left:18px}.tpd-acc-body li{margin-bottom:7px}
+.tpd-acc-body strong{color:#1a1f24}
+.tpd-acc-body a{color:var(--accent);text-decoration:underline}
+.tpd-dl{display:grid;grid-template-columns:auto 1fr;gap:9px 22px;margin:0}
+.tpd-dl dt{color:#8a96a0;font-weight:600}
+.tpd-dl dd{margin:0;color:#15181c;font-weight:600}
+@media(max-width:760px){.tpd-hl{grid-template-columns:1fr 1fr}.tpd-hl>div:nth-child(2n){border-right:none}.tpd-hl>div:nth-child(-n+2){border-bottom:1px solid rgba(0,0,0,.08)}.tpd-acc-body{padding-left:0}}
 @media(max-width:860px){.tpd-wrap{grid-template-columns:1fr;gap:24px}}
 @media(max-width:520px){.tpd-sizes{grid-template-columns:1fr}}
 </style>
@@ -964,50 +978,71 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span><b>Made in Spain</b> &middot; pro-grade, used by our own install team.</span></li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span><b>Free shipping</b> to mainland &amp; Balearics.</span></li>
         </ul>
-        <div class="tpd-details">
-          <span class="tpd-details-h">Product details</span>
-          <div class="tpd-acc">
-            <div class="tpd-acc-item open">
-              <button class="tpd-acc-btn" type="button">Product description <span class="tpd-acc-ico">+</span></button>
-              <div class="tpd-acc-panel"><div class="tpd-acc-body">
-                <p>Extra-strong double-sided tape for sports artificial turf, with a high-strength adhesive made to fix tracks in gyms and functional-training areas.</p>
-                <ul>
-                  <li>Interior mesh reinforcement for a solid, uniform bond under heavy loads and sled drags.</li>
-                  <li>Strong grip on clean, level surfaces &mdash; rubber, concrete or wood.</li>
-                  <li>Quick install: peel, apply and press. No glue or special tools.</li>
-                  <li>Moisture-resistant and suited to high-traffic areas.</li>
-                  <li>Made in Spain (EU).</li>
-                </ul>
-              </div></div>
-            </div>
-            <div class="tpd-acc-item">
-              <button class="tpd-acc-btn" type="button">Technical data sheet <span class="tpd-acc-ico">+</span></button>
-              <div class="tpd-acc-panel"><div class="tpd-acc-body">
-                <dl>
-                  <dt>Type</dt><dd>Double-sided adhesive tape, mesh-reinforced</dd>
-                  <dt>Width</dt><dd>50 cm</dd>
-                  <dt>Roll length</dt><dd>25 m or 50 m (linear metres)</dd>
-                  <dt>Reinforcement</dt><dd>Interior mesh</dd>
-                  <dt>Suitable surfaces</dt><dd>Rubber, concrete or wood (clean &amp; level)</dd>
-                  <dt>Moisture resistance</dt><dd>Yes &mdash; indoor &amp; outdoor</dd>
-                  <dt>Origin</dt><dd>Made in Spain (EU)</dd>
-                </dl>
-              </div></div>
-            </div>
-            <div class="tpd-acc-item">
-              <button class="tpd-acc-btn" type="button">Installation <span class="tpd-acc-ico">+</span></button>
-              <div class="tpd-acc-panel"><div class="tpd-acc-body">
-                <p>Prep a clean, level surface. Peel the backing and run the tape along the full underside of the track, edge to edge, then press firmly &mdash; no glue or special tools.</p>
-                <p><a href="instalacion-alina.html">Read the full installation guide</a>.</p>
-              </div></div>
-            </div>
-            <div class="tpd-acc-item">
-              <button class="tpd-acc-btn" type="button">Shipping &amp; delivery <span class="tpd-acc-ico">+</span></button>
-              <div class="tpd-acc-panel"><div class="tpd-acc-body">
-                <p>Free shipping to mainland &amp; Balearics. Orders are usually dispatched within 48&ndash;72 h.</p>
-              </div></div>
-            </div>
-          </div>
+      </div>
+    </div>
+
+    <div class="tpd-specs">
+      <span class="tpd-specs-eyebrow">At a glance</span>
+      <h2 class="tpd-specs-title">Product <em>specs.</em></h2>
+      <div class="tpd-hl">
+        <div><div class="tpd-hl-k">Width</div><div class="tpd-hl-n">50<span> cm</span></div><div class="tpd-hl-p">Standard 50&nbsp;cm width &mdash; covers seams and full undersides.</div></div>
+        <div><div class="tpd-hl-k">Roll length</div><div class="tpd-hl-n">25 / 50<span> m</span></div><div class="tpd-hl-p">Two linear-metre rolls to match any track size.</div></div>
+        <div><div class="tpd-hl-k">Bond</div><div class="tpd-hl-n">2-sided</div><div class="tpd-hl-p">Double-sided, mesh-reinforced &mdash; holds flat under sled drags.</div></div>
+        <div><div class="tpd-hl-k">Made in</div><div class="tpd-hl-n">Spain</div><div class="tpd-hl-p">Manufactured in the EU to high technical standards.</div></div>
+      </div>
+      <span class="tpd-fd-eyebrow">Full details</span>
+      <div class="tpd-acc">
+        <div class="tpd-acc-item open">
+          <button class="tpd-acc-btn" type="button"><span class="tpd-acc-ico">+</span><span>Product description</span></button>
+          <div class="tpd-acc-panel"><div class="tpd-acc-body">
+            <p>Extra-strong double-sided tape for sports artificial turf, with a high-strength adhesive made to fix tracks in gyms and functional-training areas.</p>
+            <ul>
+              <li><strong>Interior mesh reinforcement</strong> for a solid, uniform bond under heavy loads and sled drags.</li>
+              <li>Excellent grip on clean, level surfaces &mdash; rubber, concrete or wood.</li>
+              <li>Quick install: peel, apply and press &mdash; no glue or complex tools.</li>
+              <li>Moisture-resistant and suited to high-traffic zones.</li>
+              <li>Made in the EU to high technical quality standards.</li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="tpd-acc-item">
+          <button class="tpd-acc-btn" type="button"><span class="tpd-acc-ico">+</span><span>Technical data sheet</span></button>
+          <div class="tpd-acc-panel"><div class="tpd-acc-body">
+            <dl class="tpd-dl">
+              <dt>Type</dt><dd>Double-sided adhesive tape, mesh-reinforced</dd>
+              <dt>Width</dt><dd>50 cm</dd>
+              <dt>Roll length</dt><dd>25 m or 50 m (linear metres)</dd>
+              <dt>Reinforcement</dt><dd>Interior mesh</dd>
+              <dt>Suitable surfaces</dt><dd>Rubber, concrete or wood (clean &amp; level)</dd>
+              <dt>Moisture resistance</dt><dd>Yes &mdash; indoor &amp; outdoor</dd>
+              <dt>Origin</dt><dd>Made in the EU (Spain)</dd>
+            </dl>
+          </div></div>
+        </div>
+        <div class="tpd-acc-item">
+          <button class="tpd-acc-btn" type="button"><span class="tpd-acc-ico">+</span><span>Recommended quantities</span></button>
+          <div class="tpd-acc-panel"><div class="tpd-acc-body">
+            <p>Tape the full underside of the track, edge to edge, to avoid wrinkles. As a guide:</p>
+            <ul>
+              <li>1.0 &times; 8.0 m and 1.0 &times; 10.0 m &rarr; 1&times; 50&nbsp;cm &times; 25&nbsp;m</li>
+              <li>1.33 / 1.5 / 2.0 &times; 10.0 m, and 2.0 &times; 12.4 m &rarr; 1&times; 50&nbsp;cm &times; 50&nbsp;m</li>
+              <li>2.0 &times; 15.0 m &rarr; 1&times; 50&nbsp;cm &times; 50&nbsp;m + 1&times; 50&nbsp;cm &times; 25&nbsp;m</li>
+            </ul>
+            <p>Use the calculator below for your exact size.</p>
+          </div></div>
+        </div>
+        <div class="tpd-acc-item">
+          <button class="tpd-acc-btn" type="button"><span class="tpd-acc-ico">+</span><span>Installation</span></button>
+          <div class="tpd-acc-panel"><div class="tpd-acc-body">
+            <p>Prep a clean, level surface. Peel the backing and run the tape along the full underside of the track, edge to edge, then press firmly &mdash; no glue or special tools.</p>
+            <p><a href="instalacion-alina.html">Read the full installation guide</a>.</p>
+          </div></div>
+        </div>
+        <div class="tpd-acc-item">
+          <button class="tpd-acc-btn" type="button"><span class="tpd-acc-ico">+</span><span>Shipping &amp; delivery</span></button>
+          <div class="tpd-acc-panel"><div class="tpd-acc-body">
+            <p>Shipping is included in the price. Delivery usually takes <strong>10&ndash;14 business days</strong>. Returns accepted (return shipping at the customer&rsquo;s cost unless the product is faulty).</p>
+          </div></div>
         </div>
       </div>
     </div>
