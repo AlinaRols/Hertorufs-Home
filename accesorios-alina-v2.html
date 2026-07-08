@@ -865,33 +865,92 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   </div>
 </section>
 
-<!-- CATALOGUE -->
+<!-- PRODUCT (Endurance tape — category + product in one) -->
+<style>
+.tpd-crumbs{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#9aa3ab;margin-bottom:24px}
+.tpd-crumbs a{color:#5a6672;text-decoration:none}.tpd-crumbs a:hover{color:var(--accent)}
+.tpd-crumbs span{margin:0 8px;color:#cdd3d8}
+.tpd-wrap{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:start}
+.tpd-gallery .prod-img{aspect-ratio:4/3;border-radius:var(--r);border:1px solid rgba(0,0,0,.08);background:#f3f5f7}
+.tpd-info{padding-top:2px}
+.tpd-flag{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5a6672;background:#f2f4f6;border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:5px 12px;margin-bottom:16px}
+.tpd-title{font-family:var(--fd);font-size:clamp(26px,2.6vw,38px);font-weight:900;line-height:1.08;color:#15181c;margin-bottom:14px}
+.tpd-title em{font-style:normal;color:var(--accent)}
+.tpd-price{font-family:var(--fd);font-size:clamp(28px,2.8vw,38px);font-weight:900;color:#15181c;line-height:1}
+.tpd-tax{font-size:12px;font-weight:600;color:#8a96a0;margin:6px 0 20px}
+.tpd-desc{font-size:14.5px;color:#5a6672;line-height:1.7;margin-bottom:24px;max-width:60ch}
+.tpd-opt-h{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#15181c;margin-bottom:10px}
+.tpd-opt-h span{color:#8a96a0;font-weight:600;margin-left:6px;text-transform:none;letter-spacing:0}
+.tpd-sizes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.tpd-size{font-family:var(--fb);background:#fff;border:1px solid #d6dbe0;border-radius:10px;padding:13px 15px;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;transition:border-color .16s,background .16s}
+.tpd-size:hover:not(.active){border-color:#9aa3ab}
+.tpd-size.active{background:#15181c;border-color:#15181c}
+.tpd-size-d{font-size:13.5px;font-weight:700;color:#15181c;line-height:1.2}
+.tpd-size-p{font-size:12px;font-weight:600;color:#8a96a0;line-height:1.2}
+.tpd-size.active .tpd-size-d{color:#fff}.tpd-size.active .tpd-size-p{color:rgba(255,255,255,.72)}
+.tpd-actions{display:flex;gap:12px;align-items:stretch;margin-bottom:22px}
+.tpd-qty{display:flex;align-items:stretch;border:1px solid #d6dbe0;border-radius:10px;overflow:hidden;flex-shrink:0}
+.tpd-qty button{width:42px;background:#fff;border:none;font-size:19px;line-height:1;color:#15181c;cursor:pointer;font-family:var(--fb)}
+.tpd-qty button:hover{background:#f2f3f5}
+.tpd-qty span{min-width:36px;display:flex;align-items:center;justify-content:center;font-family:var(--fb);font-size:15px;font-weight:700;color:#15181c}
+.tpd-add{flex:1;justify-content:center;padding:16px;font-size:13px}
+.tpd-add.added{background:#1f9d55}
+.tpd-trust{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0;padding:20px 0 0;border-top:1px solid rgba(0,0,0,.08)}
+.tpd-trust li{display:flex;align-items:flex-start;gap:11px;font-size:13px;color:#5a6672;line-height:1.5}
+.tpd-trust svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:1px}
+.tpd-trust b{color:#15181c;font-weight:700}
+.tpd-calc-wrap{margin-top:46px;max-width:760px}
+.tpd-calc-eyebrow{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.tpd-gallery .prod-img{position:relative}
+.tpd-gallery .ph-nav{opacity:0;transition:opacity .2s}
+.tpd-gallery .prod-img:hover .ph-nav{opacity:1}
+.tpd-gallery .ph-dots{pointer-events:auto}
+@media(hover:none){.tpd-gallery .ph-nav{opacity:.95}}
+@media(max-width:860px){.tpd-wrap{grid-template-columns:1fr;gap:24px}}
+@media(max-width:520px){.tpd-sizes{grid-template-columns:1fr}}
+</style>
 <section class="catalogue-section">
   <div class="container">
-    <div class="section-header reveal" style="margin-bottom:34px">
-      <span class="eyebrow-label">Shop Installation Tape</span>
-      <h2 class="section-title">Everything to <em>install it right.</em></h2>
-      <p class="section-sub">Pro-grade essentials to fit and finish your track.</p>
-    </div>
-    <div class="acc-layout">
-      <div class="cat-grid" id="catGrid">
-        <a href="#" class="prod-card reveal" data-add data-key="tape-1" data-name="Endurance Installation Tape" data-meta="Double-sided" data-unit="1 roll" data-price="97.00" data-img="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-5_2.webp?width=200">
-          <div class="prod-img">
-            <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-5_2.webp?width=700" alt="Endurance Installation Tape" loading="lazy">
-            <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Cinta-doble-cara-cesped-artificial-extra-fuerte-para-gimnasio_4.webp?width=700" alt="Endurance Installation Tape" loading="lazy">
-            <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=700" alt="Endurance Installation Tape" loading="lazy">
-            <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Cinta-doble-cara-cesped-artificial-extra-fuerte-para-gimnasio_5.webp?width=700" alt="Endurance Installation Tape" loading="lazy">
-            <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button><button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
-            <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
-            <span class="prod-badge">Essential</span>
-          </div>
-          <div class="prod-body">
-            <div class="prod-head"><span class="prod-thumb"><img src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-5_2.webp?width=200" alt="" loading="lazy"></span><div><div class="prod-name">Endurance Installation Tape</div><div class="prod-meta"><span class="prod-dot" style="background:#c79a5b"></span>Double-sided · 1 roll</div></div></div>
-            <div class="prod-foot"><div class="prod-price">£97.00</div><span class="prod-arrow"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-          </div>
-        </a>
+    <nav class="tpd-crumbs"><a href="categoria-alina.html">Accessories</a><span>/</span>Endurance Tape</nav>
+    <div class="tpd-wrap">
+      <div class="tpd-gallery reveal">
+        <div class="prod-img">
+          <img class="ph-slide active" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-5_2.webp?width=900" alt="Endurance XL Installation Tape roll" loading="eager">
+          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Cinta-doble-cara-cesped-artificial-extra-fuerte-para-gimnasio_4.webp?width=900" alt="Applying Endurance tape to a Heroturfs track" loading="lazy">
+          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=900" alt="Endurance tape roll detail" loading="lazy">
+          <img class="ph-slide" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Cinta-doble-cara-cesped-artificial-extra-fuerte-para-gimnasio_5.webp?width=900" alt="Endurance tape installation" loading="lazy">
+          <button class="ph-nav prev" type="button" aria-label="Previous photo">&#8249;</button><button class="ph-nav next" type="button" aria-label="Next photo">&#8250;</button>
+          <div class="ph-dots"><span class="ph-dot active"></span><span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span></div>
+          <span class="prod-badge">Essential</span>
+        </div>
       </div>
+      <div class="tpd-info reveal d1">
+        <span class="tpd-flag"><span>&#127466;&#127480;</span> Made in Spain</span>
+        <h1 class="tpd-title">Endurance XL <em>Installation Tape</em></h1>
+        <div class="tpd-price"><span id="tapePrice">&pound;97.00</span></div>
+        <div class="tpd-tax">Tax included &middot; Free shipping mainland &amp; Balearics</div>
+        <p class="tpd-desc">Double-sided, extra-strong tape for artificial sports turf. An interior mesh reinforcement gives a solid, uniform, long-lasting bond &mdash; even under sled drags and heavy daily use. Strong grip on clean, level surfaces (rubber, concrete or wood). No glue, no tools: peel, apply and press. Moisture-resistant, indoor &amp; outdoor.</p>
+        <div class="tpd-opt">
+          <div class="tpd-opt-h">Size <span id="tapeSizeName">50 cm &times; 25 m</span></div>
+          <div class="tpd-sizes" id="tapeSizes" role="radiogroup" aria-label="Roll size">
+            <button type="button" class="tpd-size active" role="radio" aria-checked="true" data-roll="25" data-unit="50 cm &times; 25 m" data-price="97.00"><span class="tpd-size-d">50 cm &times; 25 m</span><span class="tpd-size-p">&pound;97.00</span></button>
+            <button type="button" class="tpd-size" role="radio" aria-checked="false" data-roll="50" data-unit="50 cm &times; 50 m" data-price="97.00"><span class="tpd-size-d">50 cm &times; 50 m</span><span class="tpd-size-p">&pound;97.00</span></button>
+          </div>
+        </div>
+        <div class="tpd-actions">
+          <div class="tpd-qty"><button type="button" data-q="dec" aria-label="Decrease quantity">&minus;</button><span id="tapeQty">1</span><button type="button" data-q="inc" aria-label="Increase quantity">+</button></div>
+          <a href="#" class="btn-primary tpd-add" id="tapeAdd" data-img="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-5_2.webp?width=200">Add to cart</a>
+        </div>
+        <ul class="tpd-trust">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span><b>Interior mesh reinforcement</b> &mdash; holds flat under load, no stretch or tearing.</span></li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span><b>Peel, apply &amp; press</b> &mdash; no glue or special tools needed.</span></li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span><b>Made in Spain</b> &middot; pro-grade, used by our own install team.</span></li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span><b>Free shipping</b> to mainland &amp; Balearics.</span></li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="tpd-calc-wrap">
       <div class="tape-calc reveal">
         <span class="tc-eyebrow">Tape calculator</span>
         <h3 class="tc-title">How much tape do you need?</h3>
@@ -998,6 +1057,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     // best option: the 50x50 roll when it needs fewer rolls; otherwise the smaller 50x25 (cheaper, less waste)
     var n,roll;
     if(r50<r25){n=r50;roll='50';}else{n=r25;roll='25';}
+    if(window.tapeSelectSize)window.tapeSelectSize(roll);
     tcNeed.innerHTML=tcFmt(n)+' · 50&nbsp;cm × '+roll+'&nbsp;m';
   }
   if(tcSizes&&tcNeed){
@@ -1012,6 +1072,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       }else{
         if(tcCustom)tcCustom.hidden=true;
         tcNeed.innerHTML=b.dataset.need;
+        if(window.tapeSelectSize){var _a=(b.dataset.need.split('×')[1]||'');window.tapeSelectSize(/50/.test(_a)?'50':'25');}
       }
     });
   }
@@ -1026,6 +1087,37 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       paint();showToast();
     });
   }
+
+  // === product buy area: size selector + qty + add to cart ===
+  (function(){
+    var sizesEl=document.getElementById('tapeSizes');
+    var priceEl=document.getElementById('tapePrice');
+    var nameEl=document.getElementById('tapeSizeName');
+    var addBtn=document.getElementById('tapeAdd');
+    var qtyEl=document.getElementById('tapeQty');
+    if(!sizesEl||!addBtn) return;
+    var cur=sizesEl.querySelector('.tpd-size.active')||sizesEl.querySelector('.tpd-size');
+    function money(n){return '£'+n.toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});}
+    function sync(){ if(!cur)return; if(priceEl)priceEl.textContent=money(parseFloat(cur.dataset.price)); if(nameEl)nameEl.innerHTML=cur.dataset.unit; }
+    function select(b){ if(!b)return; sizesEl.querySelectorAll('.tpd-size').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-checked','false');}); b.classList.add('active'); b.setAttribute('aria-checked','true'); cur=b; sync(); }
+    sizesEl.addEventListener('click',function(e){ var b=e.target.closest('.tpd-size'); if(b) select(b); });
+    sync();
+    if(qtyEl){ var box=qtyEl.closest('.tpd-qty'); if(box)box.addEventListener('click',function(e){ var q=e.target.closest('[data-q]'); if(!q)return; var n=parseInt(qtyEl.textContent,10)||1; n=(q.dataset.q==='inc')?n+1:Math.max(1,n-1); qtyEl.textContent=n; }); }
+    addBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      var qty=qtyEl?Math.max(1,parseInt(qtyEl.textContent,10)||1):1;
+      var unit=cur?cur.dataset.unit.replace(/&times;/g,'×'):'50 cm × 25 m';
+      var price=cur?parseFloat(cur.dataset.price):97;
+      var key='tape-'+(cur?cur.dataset.roll:'25');
+      var ex=cart.filter(function(i){return i.key===key;})[0];
+      if(ex){ex.qty+=qty;}else{cart.push({key:key,name:'Endurance XL Installation Tape',colour:'Double-sided',size:unit,price:price,img:addBtn.dataset.img,qty:qty});}
+      try{localStorage.setItem('ht_cart',JSON.stringify(cart));}catch(e){}
+      paint();showToast();
+      addBtn.classList.add('added');var t=addBtn.textContent;addBtn.textContent='Added ✓';
+      setTimeout(function(){addBtn.classList.remove('added');addBtn.textContent=t;},1200);
+    });
+    window.tapeSelectSize=function(roll){ select([].filter.call(sizesEl.querySelectorAll('.tpd-size'),function(x){return x.dataset.roll===String(roll);})[0]); };
+  })();
 })();
 </script>
 
@@ -1210,7 +1302,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
   // Per-card mini photo carousel (hover swaps to 2nd photo, arrows browse the rest)
   (function(){
-    document.querySelectorAll('.prod-card').forEach(card=>{
+    document.querySelectorAll('.prod-img').forEach(card=>{
       const slides=[...card.querySelectorAll('.ph-slide')];
       if(slides.length<2) return;
       const dots=[...card.querySelectorAll('.ph-dot')];
@@ -1225,8 +1317,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       function step(d,e){ e.preventDefault(); e.stopPropagation(); go(i+d); }
       if(prev) prev.addEventListener('click',e=>step(-1,e));
       if(next) next.addEventListener('click',e=>step(1,e));
-      card.addEventListener('mouseenter',()=>{ if(i===0) go(1); });
-      card.addEventListener('mouseleave',()=>go(0));
+      dots.forEach((d,k)=>d.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();go(k);}));
     });
   })();
 
