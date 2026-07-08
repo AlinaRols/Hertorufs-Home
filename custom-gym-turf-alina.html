@@ -668,6 +668,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-price #pdpPrice{font-family:var(--fd);font-size:clamp(30px,2.9vw,40px);font-weight:900;color:#15181c;line-height:1}
 .pdp-tax{font-size:12px;font-weight:600;color:#8a96a0}
 .pdp-desc{font-size:15px;color:#5a6672;line-height:1.65;margin-bottom:14px;max-width:72ch}
+.pdp-desc-more{display:none}
+@media(max-width:900px){
+  .pdp-desc.clamped{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
+  .pdp-desc-more{display:inline-block;background:none;border:none;padding:0;font:600 13.5px/1 var(--fb);color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-bottom:14px}
+}
 .pdp-desc-note{font-size:15px;color:#15181c;line-height:1.5;margin:0 0 26px;max-width:72ch}
 .pdp-desc-note strong{font-weight:800}
 /* reference-price callout */
@@ -954,7 +959,8 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <div class="pdp-rating"><span class="pdp-stars">★★★★★</span> 4.9 · 58 reviews</div>
         <h1 class="pdp-title">Custom Gym Turf – <em>Hero4U</em></h1>
         <div class="pdp-price"><span id="pdpPrice">£70.00<small> / m²</small></span> <span class="pdp-tax">Tax included</span></div>
-        <p class="pdp-desc">Customise your artificial turf track with your logo, colours and style. We adapt the design to reflect your identity and align with your brand or personal aesthetic. Contact us for a personalised quote — prices vary with quantity and design.</p>
+        <p class="pdp-desc clamped" id="pdpDesc">Customise your artificial turf track with your logo, colours and style. We adapt the design to reflect your identity and align with your brand or personal aesthetic. Contact us for a personalised quote — prices vary with quantity and design.</p>
+        <button type="button" class="pdp-desc-more" id="pdpDescMore" aria-expanded="false">Read more</button>
         <div class="pdp-ref-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span><strong>£70 / m² is a reference price.</strong> Your final price is confirmed with your quote — it varies with size and design.</span></div>
 
         <div class="pdp-actions">
@@ -2221,6 +2227,17 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
       panel.addEventListener('transitionend', function(e){
         if(e.propertyName === 'max-height' && item.classList.contains('open')){ panel.style.maxHeight = 'none'; }
       });
+    });
+  })();
+
+  /* Description read more (mobile) */
+  (function(){
+    var d = document.getElementById('pdpDesc'), b = document.getElementById('pdpDescMore');
+    if(!d || !b) return;
+    b.addEventListener('click', function(){
+      var expanded = !d.classList.toggle('clamped');
+      b.textContent = expanded ? 'Read less' : 'Read more';
+      b.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     });
   })();
 </script>
