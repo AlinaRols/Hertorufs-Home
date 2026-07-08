@@ -666,8 +666,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-title em{color:var(--accent);font-style:normal}
 .pdp-price{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-bottom:18px}
 .pdp-price #pdpPrice{font-family:var(--fd);font-size:clamp(30px,2.9vw,40px);font-weight:900;color:#15181c;line-height:1}
-.pdp-price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.pdp-price-ref{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#8a96a0;border:1px solid #e2e6ea;border-radius:20px;padding:3px 9px}
 .pdp-tax{font-size:12px;font-weight:600;color:#8a96a0}
 .pdp-desc{font-size:15px;color:#5a6672;line-height:1.65;margin-bottom:14px;max-width:72ch}
 .pdp-desc-note{font-size:15px;color:#15181c;line-height:1.5;margin:0 0 26px;max-width:72ch}
@@ -687,6 +685,9 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-size{font-family:var(--fb);background:#fff;border:1px solid #d6dbe0;border-radius:10px;padding:12px 14px;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;min-width:0;transition:border-color .16s,background .16s}
 .pdp-size-d{font-size:13.5px;font-weight:700;color:#15181c;line-height:1.2}
 .pdp-size-p{font-size:12px;font-weight:600;color:#8a96a0;line-height:1.2}
+.pdp-size.static{flex-direction:row;align-items:center;justify-content:space-between;gap:14px}
+.pdp-size.static .pdp-size-txt{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0}
+.pdp-size-ref{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.4);border-radius:20px;padding:4px 12px;white-space:nowrap;flex-shrink:0}
 .pdp-size:hover:not(:disabled):not(.active){border-color:#9aa3ab}
 .pdp-size.active{background:#15181c;border-color:#15181c}
 .pdp-size.active .pdp-size-d{color:#fff}
@@ -948,7 +949,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       <div class="pdp-buy">
         <div class="pdp-rating"><span class="pdp-stars">★★★★★</span> 4.9 · 58 reviews</div>
         <h1 class="pdp-title">Custom Gym Turf – <em>Hero4U</em></h1>
-        <div class="pdp-price"><span class="pdp-price-row"><span id="pdpPrice">£70.00<small> / m²</small></span><span class="pdp-price-ref">reference price</span></span> <span class="pdp-tax">Tax included · Free shipping</span></div>
+        <div class="pdp-price"><span id="pdpPrice">£70.00<small> / m²</small></span> <span class="pdp-tax">Tax included · Free shipping</span></div>
         <p class="pdp-desc">Customise your artificial turf track with your logo, colours and style. We adapt the design to reflect your identity and align with your brand or personal aesthetic. Contact us for a personalised quote — prices vary with quantity and design.</p>
         <p class="pdp-desc-note"><strong>The listed price of £70 per m² is a reference.</strong></p>
 
@@ -956,7 +957,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         <div class="pdp-opt">
           <div class="pdp-opt-h">Size <span id="pdpSizeName">Made to measure</span></div>
           <div class="pdp-sizes" id="pdpSizes" style="grid-template-columns:1fr">
-            <div class="pdp-size active static"><span class="pdp-size-d">Custom size — your exact width × length</span><span class="pdp-size-p">£70 / m²</span></div>
+            <div class="pdp-size active static"><span class="pdp-size-txt"><span class="pdp-size-d">Custom size — your exact width × length</span><span class="pdp-size-p">£70 / m²</span></span><span class="pdp-size-ref">reference price</span></div>
           </div>
           <p class="pdp-size-note">Final price confirmed with your quote — it varies with size and design. Need help with sizing? <a href="contacto.html">Ask us</a>.</p>
         </div>
