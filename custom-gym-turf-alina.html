@@ -698,14 +698,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-qty-unit{align-self:center;font-family:var(--fb);font-size:12px;font-weight:700;color:#8a96a0;margin-left:-2px}
 
 /* actions */
-.pdp-actions{display:flex;flex-direction:column;gap:13px;margin:30px 0 26px}
-.pdp-add{justify-content:center;width:100%;padding:16px;font-size:13px}
-.pdp-buy-row{display:flex;gap:12px;align-items:stretch}
-.pdp-buy-row .pdp-add{flex:1;width:auto}
-.pdp-qty{display:flex;align-items:stretch;border:1px solid #d6dbe0;border-radius:10px;overflow:hidden;flex-shrink:0}
-.pdp-qty-btn{width:42px;background:#fff;border:none;font-size:19px;line-height:1;color:#15181c;cursor:pointer;font-family:var(--fb);display:flex;align-items:center;justify-content:center;transition:background .15s}
-.pdp-qty-btn:hover{background:#f2f3f5}
-.pdp-qty-n{min-width:34px;display:flex;align-items:center;justify-content:center;font-family:var(--fb);font-size:15px;font-weight:700;color:#15181c}
+/* actions — deliberately low-key: it's a made-to-measure product (Shopping listing), not a real checkout */
+.pdp-actions{display:flex;flex-direction:column;align-items:flex-start;gap:13px;margin:24px 0 22px}
+.pdp-add{display:inline-flex;align-items:center;gap:7px;font-family:var(--fb);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#8a96a0;background:transparent;border:1px solid #dfe3e7;border-radius:7px;padding:7px 13px;text-decoration:none;cursor:pointer;transition:border-color .2s,color .2s}
+.pdp-add:hover{border-color:#b3bcc3;color:#5a6672}
 .pdp-custom-link{font-size:13px;font-weight:600;color:#5a6672;text-decoration:none;text-align:center;transition:color .18s}
 .pdp-custom-link:hover{color:var(--accent)}
 /* recommended installation add-on */
@@ -959,25 +955,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         </div>
 
         <div class="pdp-actions">
-          <div class="pdp-buy-row">
-            <div class="pdp-qty">
-              <button type="button" class="pdp-qty-btn" data-q="dec" aria-label="Decrease quantity">−</button>
-              <span class="pdp-qty-n" id="pdpQty">1</span>
-              <button type="button" class="pdp-qty-btn" data-q="inc" aria-label="Increase quantity">+</button>
-            </div>
-            <span class="pdp-qty-unit">m²</span>
-            <a href="#" class="btn-primary pdp-add">Add to cart</a>
-          </div>
-        </div>
-
-        <div class="pdp-addon" id="pdpAddon" data-key="tape-1" data-name="Endurance Installation Tape" data-meta="Double-sided" data-unit="1 roll" data-price="97.00" data-img="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=200">
-          <img class="pdp-addon-img" src="https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-4_2.webp?width=160" alt="Endurance double-sided installation tape" loading="lazy">
-          <div class="pdp-addon-info">
-            <span class="pdp-addon-label">Recommended installation add-on</span>
-            <div class="pdp-addon-name">Endurance Installation Tape — 1 roll</div>
-            <div class="pdp-addon-meta">50&nbsp;cm × 25&nbsp;m · <b>£97.00</b></div>
-          </div>
-          <button type="button" class="pdp-addon-btn">Add</button>
+          <a href="#" class="pdp-add">Add to cart</a>
         </div>
 
         <ul class="pdp-trust">
@@ -1904,7 +1882,7 @@ function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
 .cart-checkout{justify-content:center;width:100%;padding:15px;font-size:13px}
 .cart-cont{display:block;width:100%;text-align:center;margin-top:11px;font-size:12px;font-weight:600;color:#5a6672;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;background:none;border:none}
 .cart-cont:hover{color:#15181c}
-.pdp-add.added{background:#1f9d55;box-shadow:0 4px 16px rgba(31,157,85,.28)}
+.pdp-add.added{background:#1f9d55;border-color:#1f9d55;color:#fff}
 </style>
 <div class="cart-ov" id="cartOv"></div>
 <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
