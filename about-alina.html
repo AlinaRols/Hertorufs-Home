@@ -720,12 +720,28 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 </section>
 
 <!-- ===== STORY ===== -->
+<style>
+.about-story-img img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;display:block}
+.about-bcorp{display:flex;align-items:center;gap:16px;margin-top:26px;padding:16px 18px;border:1px solid #e6e8ec;border-radius:12px;background:#fafbfc;max-width:460px}
+.about-bcorp img{height:64px;width:auto;flex-shrink:0}
+.about-bcorp span{font-size:13px;color:#5a646c;line-height:1.5}
+@media(max-width:960px){.about-story-img img{aspect-ratio:4/3}}
+</style>
 <section class="cp-sec" style="background:#fff">
   <div class="container">
-    <div class="cp-head reveal" style="max-width:780px">
-      <span class="eyebrow-label">Our story</span>
-      <h2 class="cp-h2">Over <em>100 years</em> weaving textiles &mdash; now for sport.</h2>
-      <p class="cp-lead">Heroturfs is powered by <strong>Rols</strong>, a family factory making carpets and rugs since <strong>1917</strong>. Four generations on, the fourth is channelling a century of textile know-how into a new project: high-performance artificial turf built for gyms, boxes and sports centres.</p>
+    <div class="cp-design-grid" style="align-items:center;margin-bottom:44px">
+      <div class="reveal">
+        <span class="eyebrow-label">Our story</span>
+        <h2 class="cp-h2">Over <em>100 years</em> weaving textiles &mdash; now for sport.</h2>
+        <p class="cp-lead">Heroturfs is powered by <strong>Rols</strong>, a family factory making carpets and rugs since <strong>1917</strong>. Four generations on, the fourth is channelling a century of textile know-how into a new project: high-performance artificial turf built for gyms, boxes and sports centres.</p>
+        <div class="about-bcorp">
+          <img src="assets/home/bcorp-logo.png" alt="Certified B Corporation">
+          <span>Rols is a <strong>Certified B Corporation</strong> &mdash; meeting high standards of social and environmental performance.</span>
+        </div>
+      </div>
+      <div class="about-story-img reveal d1">
+        <img src="assets/compartidos/rols-team-bcorp.webp" alt="The Rols &amp; Heroturfs team at our factory, Certified B Corporation" loading="lazy">
+      </div>
     </div>
     <div class="cp-steps" style="grid-template-columns:repeat(4,1fr)">
       <div class="cp-step reveal"><div class="cp-step-n" style="font-size:40px">1917</div><div class="cp-step-t">Founded</div><div class="cp-step-d">Rols starts weaving carpets and rugs in Spain.</div></div>
