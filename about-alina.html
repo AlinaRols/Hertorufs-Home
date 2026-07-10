@@ -885,47 +885,170 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   </div>
 </section>
 
-<!-- ===== REVIEWS ===== -->
+<!-- ===== REVIEWS (from home) ===== -->
 <style>
-.about-rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:6px}
-.about-rev{margin:0;background:#f5f6f7;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:28px 26px;display:flex;flex-direction:column;gap:14px;transition:transform .2s,box-shadow .2s,border-color .2s}
-.about-rev:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08);border-color:rgba(0,0,0,.14)}
-.about-rev-stars{color:#f5a623;font-size:15px;letter-spacing:2px}
-.about-rev p{font-size:14.5px;color:#3a4148;line-height:1.7;font-style:italic;margin:0;flex:1}
-.about-rev footer{display:flex;flex-direction:column;gap:3px;border-top:1px solid rgba(0,0,0,.08);padding-top:14px}
-.about-rev-name{font-family:var(--fd);font-weight:800;font-size:15px;color:#14181c}
-.about-rev-loc{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8a949c}
-.about-rev-foot{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:26px;font-size:12px;font-weight:600;color:#8a949c}
-.about-rev-foot b{color:#14181c}
-@media(max-width:900px){.about-rev-grid{grid-template-columns:1fr}}
+.reviews-section-d{background:#fff;padding:88px 0 40px}
+.reviews-section-d .eyebrow-label{color:var(--accent)}
+.reviews-score-badge{display:flex;align-items:center;gap:10px;background:#f5f6f7;border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:10px 16px}
+.rsb-num{font-family:var(--fd);font-size:32px;font-weight:900;color:#1a1f24;line-height:1}
+.rsb-right{}
+.rsb-stars{display:flex;gap:2px;margin-bottom:2px}
+.rsb-stars svg{width:14px;height:14px;fill:#e8a020}
+.rsb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a96a0}
+.reviews-grid-photo{display:flex;align-items:stretch;overflow-x:auto;gap:16px;margin-bottom:32px;scrollbar-width:none;-ms-overflow-style:none}
+.reviews-grid-photo::-webkit-scrollbar{display:none}
+.review-photo-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.review-photo-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
+.rpc-img{aspect-ratio:4/3;overflow:hidden;flex-shrink:0}
+.rpc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.review-photo-card:hover .rpc-img img{transform:scale(1.04)}
+.rpc-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.rpc-stars{display:flex;gap:2px;align-items:center}
+.rpc-stars svg{width:13px;height:13px;fill:#e8a020}
+.rpc-date{margin-left:auto;font-size:11px;color:#8a96a0;font-weight:500}
+.rpc-text{font-size:13px;font-weight:300;color:#3a4a54;line-height:1.75;font-style:italic;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rpc-text.expanded{display:block;-webkit-line-clamp:unset}
+.rpc-links{display:flex;align-items:center;gap:14px}
+.rpc-lang{background:none;border:none;padding:0;font-size:11px;font-weight:600;color:#8a96a0;cursor:pointer;text-decoration:underline;text-underline-offset:2px;align-self:flex-start;font-family:var(--fb);transition:color .2s}
+.rpc-lang:hover{color:#1a1f24}
+.rpc-foot{margin-top:auto;padding-top:12px;border-top:1px solid rgba(0,0,0,.07);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rpc-foot .flag{box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.rpc-name{font-size:13px;font-weight:700;color:#1a1f24}
+.rpc-role{font-size:11px;color:#8a96a0;margin-top:2px}
+.reviews-carousel{position:relative}
+.reviews-arrow{display:flex;position:absolute;top:140px;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:#1a1f24;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.28);transition:background .2s}
+.reviews-arrow:hover{background:#fff}
+.reviews-arrow:active{background:#fff}
+.reviews-arrow-prev{left:2px}
+.reviews-arrow-next{right:2px}
+.reviews-dots{display:flex;justify-content:center;gap:9px;margin-top:4px}
+.rev-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.18);cursor:pointer;padding:0;transition:background .25s,width .25s}
+.rev-dot.active{background:var(--accent);width:22px;border-radius:5px}
+.reviews-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:1px solid rgba(0,0,0,.22);border-radius:6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a1f24;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.reviews-cta:hover{background:#1a1f24;color:#fff;border-color:#1a1f24}
+@media(max-width:1024px){.review-photo-card{flex-basis:calc((100% - 16px)/2)}}
+@media(max-width:768px){.reviews-grid-photo{gap:14px}.review-photo-card{flex:0 0 86%}.rpc-img{aspect-ratio:auto;height:220px}.reviews-carousel .reveal{opacity:1;transform:none}.reviews-arrow{top:110px}.reviews-dots{margin-top:20px}}
 </style>
-<section class="cp-sec about-reviews" style="background:#fff;padding:88px 0">
+<section class="reviews-section-d" style="padding:88px 0 40px">
   <div class="container">
-    <div class="cp-head reveal" style="max-width:680px">
-      <span class="eyebrow-label">Reviews</span>
-      <h2 class="cp-h2">The verdict <em>from the floor.</em></h2>
-      <p class="cp-lead">Real gyms, boxes and sports centres that train on Heroturfs every day.</p>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px" class="reveal">
+      <div>
+        <span class="eyebrow-label" style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:2px;background:var(--accent);display:inline-block;flex-shrink:0"></span>Featured reviews</span>
+        <h2 class="section-title" style="color:#1a1f24;font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1">The verdict<br><em style="color:var(--accent);font-style:normal">from the floor</em></h2>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:9px" class="reveal d2">
+        <div class="reviews-score-badge">
+          <div class="rsb-num">4.80</div>
+        <div class="rsb-right">
+          <div class="rsb-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="rsb-label">76 reviews</div>
+          </div>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#5a6672"><span style="width:16px;height:16px;border-radius:4px;background:#00b27a;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Verified reviews on <strong style="color:#1a1f24;font-weight:800;margin-left:1px">Judge.me</strong></div>
+      </div>
     </div>
-    <div class="about-rev-grid reveal">
-      <blockquote class="about-rev">
-        <div class="about-rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"We ordered a strip of turf with our colours and logo. The quality has been superb &mdash; it feels great underfoot and is comfortable for strength work. Really happy with the result."</p>
-        <footer><span class="about-rev-name">Bollodromo</span><span class="about-rev-loc">Strength training centre &middot; Tarragona</span></footer>
-      </blockquote>
-      <blockquote class="about-rev">
-        <div class="about-rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"At Lowfit we don't do things by halves. We asked Heroturfs for the most spectacular sled turf ever seen &mdash; and the result has been exactly that."</p>
-        <footer><span class="about-rev-name">Jonathan G&oacute;mez</span><span class="about-rev-loc">Director &middot; Lowfit Huelva</span></footer>
-      </blockquote>
-      <blockquote class="about-rev">
-        <div class="about-rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Everything was perfect from day one &mdash; serious and professional. They fitted us a custom turf and it turned out brilliantly. We'll definitely be back!"</p>
-        <footer><span class="about-rev-name">Acero CrossFit</span><span class="about-rev-loc">CrossFit box &middot; Toledo</span></footer>
-      </blockquote>
+    <div class="reviews-carousel">
+    <div class="reviews-grid-photo" id="reviewsTrack">
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/compartidos/bollodromo.jpg" alt="Bollodromo · custom weightlifting turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">19 May 2026</span></div>
+          <p class="rpc-text rpc-en">"We're a sports centre specialising in strength training. We ordered a strip of turf with our colours and logo. The quality has been superb — it feels great underfoot and is comfortable for strength work. We're keen to see how it holds up over time, but for now we're really happy with the result."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Somos un centro deportivo especializado en el entrenamiento de fuerza. Hemos encargado una tira de césped con nuestros colores y logo. La calidad ha sido estupenda, el tacto se siente muy bien y parece cómoda a la hora de utilizarla para entrenamiento de fuerza. Estamos deseando ver cómo se mantiene con el tiempo, pero, por ahora, estamos muy satisfechos con el resultado de su trabajo."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Bollodromo</div><div class="rpc-role">Strength training centre · Tarragona</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/crossfit-camp-major.avif" alt="CrossFit Camp Major · custom track with logo" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" style="fill:rgba(26,31,36,.15)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">10 Jun 2026</span></div>
+          <p class="rpc-text rpc-en">"The track has arrived and it's superb — we had great communication with Ivan throughout. The logo looks brilliant and the designer did a great job. The track feels solid for sled work and for intensive Hyrox use."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"La piste est arrivée, elle est magnifique, nous avons eu une très bonne communication avec Ivan. Le logo est superbe et le designer a fait un très bon travail. La piste a l'air solide pour le SLED et pour l'usage intensif d'Hyrox."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
+          <div class="rpc-foot"><div><div class="rpc-name">CrossFit Camp Major</div><div class="rpc-role">CrossFit box · Aubagne, France</div></div><img class="flag" src="https://flagcdn.com/fr.svg" alt="France" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div><div class="review-photo-card reveal d3">
+        <div class="rpc-img"><img src="assets/home/mark-gaye-tracks.jpg" alt="Custom sprint tracks installed in Belgium" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">27 Apr 2026</span></div>
+          <p class="rpc-text rpc-en">"I'd like to highlight the high quality of their service for tracks and sprint tracks. The products delivered are of an excellent standard, both in design and in on-field performance — a level of quality that reflects real expertise. Beyond the product itself, their service clearly stands out: structured support, precise and responsive follow-up, and smooth communication at every stage of the project. The after-sales service is equally up to the task — available and efficient — which builds long-term trust. This very positive collaboration confirms the seriousness of the company and makes them a reference I'll recommend without reservation."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Je tiens à souligner la grande qualité de votre prestation concernant les pistes et sprintracks. Les produits livrés sont d’un excellent niveau, tant en termes de conception que de performance sur le terrain. Cette exigence de qualité reflète un réel savoir-faire. Au-delà du produit, votre service se distingue clairement : accompagnement structuré, suivi de dossier précis et réactif, avec une communication fluide à chaque étape du projet. Le service après-vente est également à la hauteur, disponible et efficace, ce qui renforce la confiance sur le long terme. Cette collaboration très positive confirme le sérieux de votre entreprise et constitue une référence que je recommanderai sans réserve."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'FR')">Read original · FR</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Mark Gaye</div><div class="rpc-role">Kinaxis · Belgium</div></div><img class="flag" src="https://flagcdn.com/be.svg" alt="Belgium" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/testa-fitness.jpg" alt="Testa Fitness · black turf track with sleds" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">5 Feb 2026</span></div>
+          <p class="rpc-text rpc-en">"From the very first moment the service was friendly, and the information they provide makes the whole process easy. Unbeatable value for money — and they made shipping to the Canary Islands simple."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Desde el primer momento el trato fue amable y la información que dan hace que toda la gestión resulte cómoda. Relación calidad/precio insuperable y ponen facilidades para enviar a Canarias."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Testa Fitness</div><div class="rpc-role">Gym · Canary Islands</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/compartidos/acero-crossfit.jpg" alt="Acero CrossFit · Toledo" loading="lazy" onerror="this.closest('.rpc-img').style.display='none'"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">28 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"Everything was perfect from day one — serious and professional. They fitted us a custom turf and it turned out brilliantly. We'll definitely be back!"</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Todo perfecto desde el inicio, serios y formales. Nos pusieron un césped personalizado y quedó de cine. Repetiré seguro!"</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Acero CrossFit</div><div class="rpc-role">CrossFit box · Toledo</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d4">
+        <div class="rpc-img"><img src="assets/home/wellbox-leganes.jpg" alt="WellBox Leganés · custom turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">23 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"Great-quality custom turf — really happy with the product."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Césped personalizado de gran calidad, muy contento con el producto."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">WellBox</div><div class="rpc-role">Gym · Leganés</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d2">
+        <div class="rpc-img"><img src="assets/home/lowfit-review.jpg" alt="Lowfit Huelva · custom sled turf" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">11 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"At Lowfit we don’t do things by halves — we do everything in a big way, which is why we asked Heroturfs for the most spectacular sled turf ever seen, and the result has been exactly that: spectacular. They stayed in touch with us at every step to make sure everything turned out perfect. We’ll trust them again, 100%."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"En Lowfit no andamos con medias tintas y todo lo hacemos a lo grande, por eso le encargamos a Heroturfs el césped para trineos más espectacular que se haya visto, y el resultado ha sido espectacular. Estuvieron en contacto con nosotros en todo momento y pendientes para que todo saliera perfecto. Volveremos a confiar en ellos 100%."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Jonathan Gómez</div><div class="rpc-role">Director · Lowfit Huelva</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="review-photo-card reveal d1">
+        <div class="rpc-img"><img src="assets/home/lions-gym.jpg" alt="Lion's Gym · LionX area track in Palma de Mallorca" loading="lazy"></div>
+        <div class="rpc-body">
+          <div class="rpc-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="rpc-date">3 Oct 2025</span></div>
+          <p class="rpc-text rpc-en">"We bought the track for the LionX (Hyrox) area of our Lion's Gym in Palma de Mallorca from this company, and it's honestly excellent. The material is top quality and the custom design they made for us was exactly what we had in mind. From day one the whole process was impeccable: outstanding service, quick responses and constant support at every step. Thank you so much for everything — we'll certainly be back for future projects. A company we recommend 100%, both for the quality of the product and for the service and professionalism they work with."</p>
+          <p class="rpc-text rpc-orig" style="display:none">"Compramos con esta empresa la pista que instalamos en el sector de LionX (Hyrox) de nuestro gimnasio Lion’s Gym en Palma de Mallorca, y la verdad es que es excelente. El material es de muy buena calidad y el diseño personalizado que nos hicieron fue exactamente lo que teníamos pensado. Desde el primer día, la gestión fue impecable: una atención inmejorable, respuestas rápidas y un acompañamiento constante en todo el proceso. Muchísimas gracias por todo, sin dudas los volveré a contactar para futuros trabajos. Una empresa 100% recomendable, tanto por la calidad del producto como por el servicio y la seriedad con la que trabajan."</p>
+          <button class="rpc-lang" onclick="toggleReviewLang(this,'ES')">Read original · ES</button>
+          <div class="rpc-foot"><div><div class="rpc-name">Lion's Gym</div><div class="rpc-role">Gym · Palma de Mallorca</div></div><img class="flag" src="https://flagcdn.com/es.svg" alt="Spain" width="20" height="14" loading="lazy"></div>
+        </div>
+      </div>
+      
     </div>
-    <div class="about-rev-foot reveal">Verified reviews on <b>Judge.me</b> &middot; <b>4.8 / 5</b> from 76 reviews</div>
+    <button class="reviews-arrow reviews-arrow-prev" onclick="scrollReviews(-1)" aria-label="Previous review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="reviews-arrow reviews-arrow-next" onclick="scrollReviews(1)" aria-label="Next review"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    <div class="reviews-dots">
+      <button class="rev-dot active" onclick="goReview(0)" aria-label="Review 1"></button>
+      <button class="rev-dot" onclick="goReview(1)" aria-label="Review 2"></button>
+      <button class="rev-dot" onclick="goReview(2)" aria-label="Review 3"></button>
+      <button class="rev-dot" onclick="goReview(3)" aria-label="Review 4"></button>
+      <button class="rev-dot" onclick="goReview(4)" aria-label="Review 5"></button>
+      <button class="rev-dot" onclick="goReview(5)" aria-label="Review 6"></button>
+      <button class="rev-dot" onclick="goReview(6)" aria-label="Review 7"></button>
+      <button class="rev-dot" onclick="goReview(7)" aria-label="Review 8"></button>
+    </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:28px">
+      <a href="producto-valhalla-one-alina.html" class="reviews-cta">Read all 76 reviews <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
   </div>
 </section>
+
 
 <!-- ===== CTA ===== -->
 <section class="cp-form-sec" style="background:#323F49;padding:88px 0">
@@ -1014,6 +1137,72 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
   function toggleFaqD(btn){ btn.closest('.faq-item-d').classList.toggle('open'); }
+  /* ===== reviews (ported from home) ===== */
+  function reviewGap(t){return parseFloat(getComputedStyle(t).gap)||16;}
+  function toggleReviewLang(b,lang){
+    var body=b.closest('.rpc-body');
+    var en=body.querySelector('.rpc-en'),orig=body.querySelector('.rpc-orig');
+    var showOrig=orig.style.display==='none';
+    orig.style.display=showOrig?'':'none';
+    en.style.display=showOrig?'none':'';
+    b.textContent=showOrig?'Read translation · EN':('Read original · '+lang);
+    if(window.stopReviewsAutoplay)window.stopReviewsAutoplay();
+  }
+  function scrollReviews(dir){var t=document.getElementById('reviewsTrack');if(!t)return;var c=t.querySelector('.review-photo-card');t.scrollBy({left:dir*(c.offsetWidth+reviewGap(t)),behavior:'smooth'});}
+  function goReview(i){var t=document.getElementById('reviewsTrack');if(!t)return;var c=t.querySelector('.review-photo-card');t.scrollTo({left:i*(c.offsetWidth+reviewGap(t)),behavior:'smooth'});}
+  function updateReviewDots(){var t=document.getElementById('reviewsTrack');if(!t)return;var c=t.querySelector('.review-photo-card');if(!c)return;var dots=document.querySelectorAll('.rev-dot');if(!dots.length)return;var i=Math.round(t.scrollLeft/(c.offsetWidth+reviewGap(t)))%dots.length;dots.forEach(function(d,idx){d.classList.toggle('active',idx===i);});}
+  (function(){var t=document.getElementById('reviewsTrack');if(t)t.addEventListener('scroll',function(){window.requestAnimationFrame(updateReviewDots);});})();
+  window.addEventListener('load',function(){
+    document.querySelectorAll('.review-photo-card .rpc-body').forEach(function(body){
+      var texts=[].slice.call(body.querySelectorAll('.rpc-text'));
+      if(!texts.length)return;
+      var overflows=texts.some(function(p){
+        var hidden=p.style.display==='none';
+        if(hidden){p.style.visibility='hidden';p.style.display='';}
+        var o=p.scrollHeight>p.clientHeight+2;
+        if(hidden){p.style.display='none';p.style.visibility='';}
+        return o;
+      });
+      var row=document.createElement('div');row.className='rpc-links';
+      if(overflows){
+        var mb=document.createElement('button');mb.className='rpc-lang';mb.textContent='Read more';
+        mb.onclick=function(){var ex=!texts[0].classList.contains('expanded');texts.forEach(function(t){t.classList.toggle('expanded',ex);});mb.textContent=ex?'Read less':'Read more';if(window.stopReviewsAutoplay)window.stopReviewsAutoplay();};
+        row.appendChild(mb);
+      }
+      var lang=body.querySelector('.rpc-lang:not(.rpc-links .rpc-lang)');
+      if(lang&&lang.parentElement===body)row.appendChild(lang);
+      if(row.children.length)body.insertBefore(row,body.querySelector('.rpc-foot'));
+    });
+  });
+  (function(){
+    var t=document.getElementById('reviewsTrack');if(!t)return;
+    var stopped=false,paused=false;
+    window.stopReviewsAutoplay=function(){stopped=true;};
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)stopped=true;
+    var originals=[].slice.call(t.querySelectorAll('.review-photo-card'));
+    originals.forEach(function(c){var k=c.cloneNode(true);k.classList.add('visible');t.appendChild(k);});
+    var SPEED=48,pos=t.scrollLeft,last=null;
+    function frame(ts){
+      if(last!==null&&!stopped&&!paused&&!document.hidden){
+        var dt=Math.min(ts-last,100)/1000;
+        if(Math.abs(t.scrollLeft-pos)>2)pos=t.scrollLeft;
+        var c=t.querySelector('.review-photo-card');
+        var h=originals.length*(c.offsetWidth+reviewGap(t));
+        pos+=SPEED*dt; if(pos>=h)pos-=h; t.scrollLeft=pos;
+      }
+      last=ts; requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    t.addEventListener('mouseenter',function(){paused=true;});
+    t.addEventListener('mouseleave',function(){paused=false;});
+    var px=0,py=0;
+    t.addEventListener('pointerdown',function(e){px=e.clientX;py=e.clientY;},{passive:true});
+    t.addEventListener('pointermove',function(e){if(e.buttons&&Math.abs(e.clientX-px)>12&&Math.abs(e.clientX-px)>Math.abs(e.clientY-py))stopped=true;},{passive:true});
+    t.addEventListener('touchstart',function(e){px=e.touches[0].clientX;py=e.touches[0].clientY;},{passive:true});
+    t.addEventListener('touchmove',function(e){var dx=Math.abs(e.touches[0].clientX-px),dy=Math.abs(e.touches[0].clientY-py);if(dx>12&&dx>dy)stopped=true;},{passive:true});
+    t.addEventListener('wheel',function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY))stopped=true;},{passive:true});
+    document.querySelectorAll('.reviews-arrow,.rev-dot').forEach(function(b){b.addEventListener('click',function(){stopped=true;});});
+  })();
   function cpSubmit(e){
     e.preventDefault();
     const f=e.target;
