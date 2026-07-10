@@ -728,15 +728,16 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .cp-fac-fig{position:relative;grid-column:1;grid-row:1 / span 3;border-radius:12px;overflow:hidden}
 .cp-fac-fig img{width:100%;height:100%;aspect-ratio:auto;border-radius:0}
 .cp-fac-cap{position:absolute;left:0;right:0;bottom:0;padding:16px 15px 13px;background:linear-gradient(to top,rgba(10,12,14,.82),transparent);color:#fff;font-size:11.5px;line-height:1.45;font-weight:600}
-.cp-fac-facts{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
-.cp-fac-facts div{display:flex;flex-direction:column}
-.cp-fac-facts b{font-family:var(--fd);font-size:30px;font-weight:900;color:#14181c;line-height:1}
-.cp-fac-facts span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#8a949c;margin-top:6px;max-width:15ch}
+.cp-fac-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.cp-fac-facts div{background:#fff;border:1px solid #e6e8ec;border-radius:14px;padding:22px 22px 20px;transition:transform .18s,border-color .2s,box-shadow .2s}
+.cp-fac-facts div:hover{transform:translateY(-3px);border-color:rgba(0,0,0,.14);box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.cp-fac-facts b{display:block;font-family:var(--fd);font-size:clamp(28px,2.4vw,36px);font-weight:900;color:var(--accent);line-height:1}
+.cp-fac-facts span{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#8a949c;margin-top:9px}
 .cp-fac-flag{display:inline-flex;align-items:center;gap:9px;margin-bottom:14px}
 .cp-fac-flag img{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
 .cp-fac-flag span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
 @media(max-width:960px){ .cp-fac-grid{grid-template-columns:1fr;gap:26px} .cp-fac{padding:64px 0} }
-@media(max-width:620px){ .cp-fac-facts{gap:14px} .cp-fac-facts b{font-size:23px} }
+@media(max-width:620px){ .cp-fac-facts{gap:10px} .cp-fac-facts div{padding:16px 15px 14px} .cp-fac-facts b{font-size:24px} }
 /* experience (team) */
 .about-story-img img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 64%;border-radius:14px;display:block}
 .about-lead-note{font-size:13px;color:#8a949c;margin-top:16px}
