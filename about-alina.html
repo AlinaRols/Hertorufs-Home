@@ -705,83 +705,71 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 }
 </style>
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO (mission) ===== -->
 <section class="cp-hero">
   <img src="assets/cesped/hero-cesped.jpg" alt="Heroturfs technical sports turf">
   <div class="cp-hero-shade"></div>
   <div class="cp-hero-inner">
     <span class="cp-hero-eyebrow reveal">About Heroturfs</span>
     <h1 class="reveal d1">Technical turf for <em>training &amp; competition.</em></h1>
-    <p class="cp-hero-sub reveal d2">The highest-quality artificial turf for anyone who wants performance, durability and design &mdash; engineered and manufactured in Spain, with production centralised under one roof.</p>
+    <p class="cp-hero-sub reveal d2">We were born with a mission: to offer the highest-quality artificial turf for anyone who wants performance, durability and design. We manufacture with pride in Spain, centralising all production under our own roof &mdash; so we can focus 100% on the product and get better every day.</p>
     <div class="cp-hero-ctas reveal d3">
       <a href="categoria-alina.html" class="btn-primary">Explore the tracks</a>
     </div>
   </div>
 </section>
 
-<!-- ===== STORY ===== -->
+<!-- shared styles for the about sections -->
 <style>
-.about-story-img img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 64%;border-radius:14px;display:block}
-.about-bcorp{display:flex;align-items:center;gap:16px;margin-top:26px;padding:16px 18px;border:1px solid #e6e8ec;border-radius:12px;background:#fafbfc;max-width:460px}
-.about-bcorp img{height:64px;width:auto;flex-shrink:0}
-.about-bcorp span{font-size:13px;color:#5a646c;line-height:1.5}
-@media(max-width:960px){.about-story-img img{aspect-ratio:4/3}}
-</style>
-<section class="cp-sec" style="background:#fff">
-  <div class="container">
-    <div class="cp-design-grid" style="align-items:start;margin-bottom:44px">
-      <div class="reveal">
-        <span class="eyebrow-label">Our story</span>
-        <h2 class="cp-h2">Over <em>100 years</em> weaving textiles &mdash; now for sport.</h2>
-        <p class="cp-lead">Heroturfs is powered by <strong>Rols</strong>, a family factory making carpets and rugs since <strong>1917</strong>. Four generations on, the fourth is channelling a century of textile know-how into a new project: high-performance artificial turf built for gyms, boxes and sports centres.</p>
-        <div class="about-bcorp">
-          <img src="assets/home/bcorp-logo.png" alt="Certified B Corporation">
-          <span>Rols is a <strong>Certified B Corporation</strong> &mdash; meeting high standards of social and environmental performance.</span>
-        </div>
-      </div>
-      <div class="about-story-img reveal d1">
-        <img src="assets/compartidos/rols-team-bcorp.webp" alt="The Rols &amp; Heroturfs team at our factory, Certified B Corporation" loading="lazy">
-      </div>
-    </div>
-    <div class="cp-steps" style="grid-template-columns:repeat(4,1fr)">
-      <div class="cp-step reveal"><div class="cp-step-n" style="font-size:40px">1917</div><div class="cp-step-t">Founded</div><div class="cp-step-d">Rols starts weaving carpets and rugs in Spain.</div></div>
-      <div class="cp-step reveal d1"><div class="cp-step-n" style="font-size:40px">100+</div><div class="cp-step-t">Years of craft</div><div class="cp-step-d">A century of textile expertise behind every roll.</div></div>
-      <div class="cp-step reveal d2"><div class="cp-step-n" style="font-size:40px">4</div><div class="cp-step-t">Generations</div><div class="cp-step-d">Family-run &mdash; the 4th generation now leads Heroturfs.</div></div>
-      <div class="cp-step reveal d3"><div class="cp-step-n" style="font-size:34px">B&nbsp;Corp</div><div class="cp-step-t">Certified</div><div class="cp-step-d">Recognised for our environmental &amp; social commitment.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== MADE IN SPAIN / FACTORY ===== -->
-<style>
-.cp-fac{padding:96px 0 0}
-.cp-fac-grid{display:grid;grid-template-columns:0.6fr 1fr;gap:54px;align-items:start}
+.cp-fac{padding:96px 0}
+.cp-fac-grid{display:grid;grid-template-columns:0.62fr 1fr;gap:54px;align-items:start}
 .cp-fac-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .cp-fac-imgs img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
-.cp-fac-imgs .fac-tall{grid-column:1;grid-row:1 / span 3;aspect-ratio:auto}
-.cp-fac-facts{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}
+.cp-fac-fig{position:relative;grid-column:1;grid-row:1 / span 3;border-radius:12px;overflow:hidden}
+.cp-fac-fig img{width:100%;height:100%;aspect-ratio:auto;border-radius:0}
+.cp-fac-cap{position:absolute;left:0;right:0;bottom:0;padding:16px 15px 13px;background:linear-gradient(to top,rgba(10,12,14,.82),transparent);color:#fff;font-size:11.5px;line-height:1.45;font-weight:600}
+.cp-fac-facts{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
 .cp-fac-facts div{display:flex;flex-direction:column}
 .cp-fac-facts b{font-family:var(--fd);font-size:30px;font-weight:900;color:#14181c;line-height:1}
-.cp-fac-facts span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8a949c;margin-top:6px}
+.cp-fac-facts span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#8a949c;margin-top:6px;max-width:15ch}
 .cp-fac-flag{display:inline-flex;align-items:center;gap:9px;margin-bottom:14px}
 .cp-fac-flag img{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
 .cp-fac-flag span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
-.cp-fac-map{margin-top:32px;display:flex;align-items:center;gap:26px;background:#fff;border:1px solid #e6e8ec;border-radius:14px;padding:22px 26px}
-@media(min-width:961px){.cp-fac-copy{display:flex;flex-direction:column;align-self:stretch}.cp-fac-details{flex:1 1 auto;display:flex;flex-direction:column}.cp-fac-map{flex:1 1 auto}}
-.cp-fac-map img{flex-shrink:0;width:310px;height:auto;display:block}
-.cp-fac-map-cap b{display:block;font-family:var(--fd);font-size:22px;font-weight:900;color:#14181c;line-height:1.08;letter-spacing:-.01em}
-.cp-fac-map-cap b em{font-style:normal;color:var(--accent)}
-.cp-fac-map-cap span{display:block;font-size:13px;color:#5a646c;margin-top:9px}
-@media(max-width:960px){ .cp-fac-grid{display:flex;flex-direction:column;gap:24px} .cp-fac-copy{display:contents} .cp-fac-intro{order:1} .cp-fac-imgs{order:2} .cp-fac-details{order:3} .cp-fac-facts{margin-top:0} .cp-fac-map{margin-top:22px} }
-@media(max-width:560px){ .cp-fac-map{flex-direction:column;align-items:flex-start;gap:16px} }
-@media(max-width:620px){ .cp-fac-facts{gap:10px;flex-wrap:nowrap} .cp-fac-facts div{flex:1 1 0;min-width:0} .cp-fac-facts b{font-size:21px} .cp-fac-facts span{font-size:8px;letter-spacing:.05em;margin-top:5px;line-height:1.3} }
-@media(max-width:768px){ .cp-fac{padding:64px 0 0} }
+@media(max-width:960px){ .cp-fac-grid{grid-template-columns:1fr;gap:26px} .cp-fac{padding:64px 0} }
+@media(max-width:620px){ .cp-fac-facts{gap:14px} .cp-fac-facts b{font-size:23px} }
+/* experience (team) */
+.about-story-img img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 64%;border-radius:14px;display:block}
+.about-lead-note{font-size:13px;color:#8a949c;margin-top:16px}
+@media(max-width:960px){.about-story-img img{aspect-ratio:16/11}}
+/* quality */
+.about-q-img{position:relative;border-radius:14px;overflow:hidden}
+.about-q-img img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.about-bcorp{display:flex;align-items:center;gap:16px;margin-top:24px;padding:16px 18px;border:1px solid #e6e8ec;border-radius:12px;background:#fafbfc;max-width:480px}
+.about-bcorp img{height:64px;width:auto;flex-shrink:0}
+.about-bcorp span{font-size:13px;color:#5a646c;line-height:1.5}
+/* projects band */
+.about-proj{background:#14181c;padding:88px 0}
+.about-proj .cp-h2,.about-proj .cp-lead{color:#fff}
+.about-proj .cp-lead{color:rgba(255,255,255,.66)}
+.about-proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 30px}
+.about-proj-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block}
+.about-proj-grid img:first-child{grid-column:span 2;aspect-ratio:2/1}
+@media(max-width:760px){.about-proj-grid{grid-template-columns:1fr 1fr}.about-proj-grid img:first-child{grid-column:span 2;aspect-ratio:2/1}}
+/* whatsapp button */
+.btn-wa{background:#25D366;color:#fff;box-shadow:0 4px 16px rgba(37,211,102,.3)}
+.btn-wa:hover{background:#1eb658}
+.btn-wa svg{width:17px;height:17px}
 </style>
-<section class="cp-fac" style="background:#f5f6f7;padding:96px 0">
+
+<!-- ===== MADE IN SPAIN (Alicante) ===== -->
+<section class="cp-fac" style="background:#f5f6f7">
   <div class="container">
     <div class="cp-fac-grid">
       <div class="cp-fac-imgs reveal">
-        <img class="fac-tall" src="assets/cesped/lowfit-xl.jpg" alt="Full track finished at our factory">
+        <figure class="cp-fac-fig">
+          <img src="assets/cesped/lowfit-xl.jpg" alt="Lowfit XL track finished at our factory">
+          <figcaption class="cp-fac-cap">Lowfit project &mdash; one of the largest tracks we've ever made.</figcaption>
+        </figure>
         <img src="assets/cesped/factory-1.jpg" alt="Custom branded track in production">
         <img src="assets/cesped/factory-4.jpg" alt="Custom logo track being made">
         <img src="assets/cesped/factory-yarn.jpg" alt="Yarn at the Heroturfs factory">
@@ -789,22 +777,15 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
       <div class="cp-fac-copy">
         <div class="cp-fac-intro reveal d1">
           <div class="cp-fac-flag"><img src="https://flagcdn.com/es.svg" alt="Spain"><span>Made in Spain</span></div>
-          <h2 class="cp-h2">Made in our factory in <em>Alicante, Spain.</em></h2>
-          <p class="cp-lead">We don't resell &mdash; we manufacture. Every track is woven and finished in our own factory in Crevillent, Alicante. That's how we control quality, customisation and lead times, from the first thread to the final roll that ships to your box.</p>
+          <h2 class="cp-h2">We make it in Crevillent, <em>Alicante.</em> We don't resell.</h2>
+          <p class="cp-lead">Every track is woven and finished in our own factory. That's how we control quality, materials and lead times from start to finish &mdash; from the first thread to the roll that arrives at your box.</p>
         </div>
         <div class="cp-fac-details reveal d2">
           <div class="cp-fac-facts">
+            <div><b>1917</b><span>Making textiles since (Rols)</span></div>
+            <div><b>4</b><span>Generations at the helm</span></div>
             <div><b>86,000</b><span>Stitches / m&sup2;</span></div>
-            <div><b>12mm</b><span>Visible height</span></div>
-            <div><b>50,000+</b><span>Lisport cycles</span></div>
-            <div><b>Direct</b><span>From our factory</span></div>
-          </div>
-          <div class="cp-fac-map">
-            <img src="assets/cesped/europe-map.svg" alt="Shipping across Europe from our factory in Alicante" loading="lazy">
-            <div class="cp-fac-map-cap">
-              <b>From one factory<br>to <em>all of Europe.</em></b>
-              <span>Woven in Alicante &middot; delivered Europe-wide.</span>
-            </div>
+            <div><b>5 years</b><span>Guarantee</span></div>
           </div>
         </div>
       </div>
@@ -812,38 +793,59 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   </div>
 </section>
 
-<!-- ===== QUALITY & VALUES ===== -->
+<!-- ===== OUR EXPERIENCE (Rols) ===== -->
 <section class="cp-sec" style="background:#fff">
   <div class="container">
-    <div class="cp-design-grid">
+    <div class="cp-design-grid" style="align-items:center">
+      <div class="about-story-img reveal">
+        <img src="assets/compartidos/rols-team-bcorp.webp" alt="The Rols &amp; Heroturfs team at our factory, Certified B Corporation" loading="lazy">
+      </div>
+      <div class="reveal d1">
+        <span class="eyebrow-label">Our experience</span>
+        <h2 class="cp-h2">Backed by <em>Rols</em> &mdash; over 100 years of craft.</h2>
+        <p class="cp-lead">Heroturfs is backed by Rols, a factory with more than 100 years making carpets and rugs. Since 1917, Rols has poured all of its know-how and experience into serving its customers. The company has been led by four generations &mdash; and today it's the latest, full of drive and ambition, powering this new project in artificial turf.</p>
+        <p class="about-lead-note">Led today by <strong>[name &amp; role &mdash; to add]</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUALITY, CONTROL & SUSTAINABILITY ===== -->
+<section class="cp-sec" style="background:#f5f6f7">
+  <div class="container">
+    <div class="cp-design-grid" style="align-items:center">
       <div class="reveal">
         <span class="eyebrow-label">Quality &amp; control</span>
         <h2 class="cp-h2">We control <em>every step.</em></h2>
-        <p class="cp-lead">Because we manufacture in-house, nothing is left to chance &mdash; from the fibre we choose to the finished track that ships to your door.</p>
-        <div class="cp-feat">
-          <div class="cp-feat-item">
-            <div class="cp-feat-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div>
-            <div><div class="cp-feat-t">B Corp certified</div><div class="cp-feat-d">Recognised for our environmental and social standards &mdash; batch after batch.</div></div>
-          </div>
-          <div class="cp-feat-item">
-            <div class="cp-feat-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
-            <div><div class="cp-feat-t">Whole-process control</div><div class="cp-feat-d">Every stage supervised in-house &mdash; no outsourcing, no surprises.</div></div>
-          </div>
-          <div class="cp-feat-item">
-            <div class="cp-feat-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-            <div><div class="cp-feat-t">Best-in-class materials</div><div class="cp-feat-d">Hand-picked fibres from the top suppliers in the industry.</div></div>
-          </div>
-          <div class="cp-feat-item">
-            <div class="cp-feat-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="3"/></svg></div>
-            <div><div class="cp-feat-t">Innovation &amp; sustainability</div><div class="cp-feat-d">Always improving the product, with durability and lower impact in mind.</div></div>
-          </div>
+        <p class="cp-lead">We supervise the whole production process of our sports turf, from the very start to the finished product. We carefully select our materials and work with the best fibre suppliers in the industry. Everything is made in partnership with Rols, a certified B Corp. We're driven by a constant push for innovation and a firm commitment to sustainability.</p>
+        <div class="about-bcorp">
+          <img src="assets/home/bcorp-logo.png" alt="Certified B Corporation">
+          <span>The <strong>B Corp</strong> certification verifies our social and environmental sustainability standards. Every track also carries a <strong>5-year guarantee</strong> against manufacturing defects under normal use.</span>
         </div>
       </div>
-      <div class="cp-design-imgs reveal d1">
-        <img class="dp" src="assets/cesped/factory-yarn.jpg" alt="Yarn selection at the factory">
-        <img class="dp" src="assets/cesped/factory-1.jpg" alt="Track in production">
-        <img class="dw" src="assets/cesped/factory-4.jpg" alt="Finished custom track">
+      <div class="about-q-img reveal d1">
+        <img src="assets/home/cesped-verde-marcaje.webp" alt="Sports turf with woven markings at our factory" loading="lazy">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS / SOCIAL PROOF ===== -->
+<section class="about-proj">
+  <div class="container">
+    <div class="cp-head reveal" style="max-width:680px">
+      <span class="eyebrow-label" style="color:var(--accent)">Real results</span>
+      <h2 class="cp-h2">Projects that <em>speak for us.</em></h2>
+      <p class="cp-lead">From boxes and CrossFit gyms to sports centres across Europe &mdash; real tracks, installed and training every day.</p>
+    </div>
+    <div class="about-proj-grid reveal">
+      <img src="assets/lowfit/lowfit-room.jpg" alt="Lowfit gym track installation">
+      <img src="assets/lowfit/lowfit-sled.jpg" alt="Sled work on a Heroturfs track">
+      <img src="assets/lowfit/lowfit-lanes.jpg" alt="Numbered lanes on a Heroturfs track">
+      <img src="assets/lowfit/lowfit-lights.jpg" alt="Heroturfs track under gym lighting">
+    </div>
+    <div class="reveal" style="text-align:center">
+      <a href="projects.html" class="btn-primary">See all projects</a>
     </div>
   </div>
 </section>
@@ -854,10 +856,10 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     <div class="cp-head reveal" style="max-width:660px;margin:0 auto;text-align:center">
       <span class="eyebrow-label" style="justify-content:center">Let's build yours</span>
       <h2 class="cp-h2" style="color:#fff">Would you like to <em>request a quote?</em></h2>
-      <p class="cp-lead" style="color:rgba(255,255,255,.7)">From a single track for your box to thousands of square metres for a full facility &mdash; tell us about your project and we'll come back with a plan.</p>
+      <p class="cp-lead" style="color:rgba(255,255,255,.7)">Whether you're after a solution for a few square metres or planning a project that runs into the thousands, we always offer the best options so you can choose what suits you.</p>
       <div class="cp-hero-ctas" style="justify-content:center;margin-top:28px">
-        <a href="contacto.html" class="btn-primary">Contact us</a>
-        <a href="cesped-personalizado-alina.html" class="btn-ghost" style="border-color:rgba(255,255,255,.4);color:#fff">Design a custom track</a>
+        <a href="https://wa.me/34865450295" target="_blank" rel="noopener" class="btn-primary btn-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.86 9.86 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7C17.17 3.03 14.68 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.94 1.34-.5.05-.97.23-3.27-.68-2.76-1.09-4.5-3.9-4.64-4.08-.14-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.94-2.25.24-.27.53-.34.7-.34.18 0 .35 0 .5.01.16.01.38-.06.6.46.23.55.77 1.9.84 2.04.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.6-.14.24.09 1.55.73 1.82.86.27.14.45.2.51.32.07.11.07.64-.17 1.32z"/></svg> WhatsApp us</a>
+        <a href="contacto.html" class="btn-ghost" style="border-color:rgba(255,255,255,.4);color:#fff">Contact form</a>
       </div>
     </div>
   </div>
