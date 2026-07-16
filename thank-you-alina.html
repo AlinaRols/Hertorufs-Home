@@ -784,7 +784,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) stopped=true;
   var originals=[].slice.call(t.querySelectorAll('.pj-card'));
   originals.forEach(function(c){var k=c.cloneNode(true);t.appendChild(k);});
-  var SPEED=42,pos=t.scrollLeft,last=null;
+  var SPEED=18,pos=t.scrollLeft,last=null;
   function frame(ts){
     if(last!==null&&!stopped&&!paused&&!document.hidden){
       var dt=Math.min(ts-last,100)/1000;
