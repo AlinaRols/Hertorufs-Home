@@ -762,6 +762,32 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .ac-submit:hover{background:var(--accent-h);transform:translateY(-2px)}
 .ac-submit svg{width:16px;height:16px}
 
+/* wizard progress */
+.ac-progress{margin-bottom:32px}
+.ac-prog-steps{display:flex;gap:8px;margin-bottom:14px}
+.ac-prog-step{flex:1;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:#aeb6bd;transition:color .2s}
+.ac-prog-step .n{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:2px solid #d6dae0;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:13px;font-weight:900;color:#aeb6bd;background:#fff;transition:all .2s}
+.ac-prog-step.active,.ac-prog-step.done{color:#14181c}
+.ac-prog-step.active .n,.ac-prog-step.done .n{border-color:var(--accent);background:var(--accent);color:#fff}
+.ac-prog-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ac-prog-track{height:6px;background:#e6e8ec;border-radius:99px;overflow:hidden}
+.ac-prog-fill{height:100%;background:var(--accent);border-radius:99px;width:33.33%;transition:width .35s cubic-bezier(.22,1,.36,1)}
+
+/* steps */
+.ac-step{display:none}
+.ac-step.active{display:block;animation:acFade .35s ease}
+@keyframes acFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* wizard nav */
+.ac-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:30px;padding-top:26px;border-top:1px solid #edeff2}
+.ac-nav-right{display:flex;align-items:center;gap:16px}
+.ac-count{font-family:var(--fd);font-size:14px;font-weight:800;letter-spacing:.05em;color:#9aa4ac}
+.ac-prev{font-family:var(--fb);font-weight:700;font-size:14px;background:#fff;color:#3a444c;border:1px solid #d6dae0;border-radius:11px;padding:14px 24px;cursor:pointer;transition:border-color .18s,background .18s;display:inline-flex;align-items:center;gap:8px}
+.ac-prev:hover{border-color:#b9c0c7;background:#fafbfc}
+.ac-prev svg{width:15px;height:15px}
+.ac-prev.hide{visibility:hidden}
+@media(max-width:560px){.ac-prog-label{display:none}.ac-prev{padding:13px 18px}.ac-count{display:none}}
+
 /* reassurance strip */
 .ac-trust{max-width:920px;margin:26px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .ac-trust div{display:flex;align-items:flex-start;gap:11px;background:#fff;border:1px solid #e6e8ec;border-radius:12px;padding:16px 16px}
@@ -804,10 +830,17 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
       <!-- FORM -->
       <form id="acForm" novalidate>
-        <div class="ac-steps-note"><span>Company registration</span></div>
+        <div class="ac-progress">
+          <div class="ac-prog-steps">
+            <div class="ac-prog-step active"><span class="n">1</span><span class="ac-prog-label">Company</span></div>
+            <div class="ac-prog-step"><span class="n">2</span><span class="ac-prog-label">Shipping</span></div>
+            <div class="ac-prog-step"><span class="n">3</span><span class="ac-prog-label">Notes</span></div>
+          </div>
+          <div class="ac-prog-track"><div class="ac-prog-fill" id="acFill"></div></div>
+        </div>
 
         <!-- Group 1: Contact / company -->
-        <div class="ac-group">
+        <div class="ac-group ac-step active" data-step="1">
           <div class="ac-group-head">
             <span class="ac-badge">1</span>
             <div><h2>Company &amp; billing details</h2><p>The business we'll be invoicing.</p></div>
@@ -895,7 +928,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         </div>
 
         <!-- Group 2: Shipping -->
-        <div class="ac-group">
+        <div class="ac-group ac-step" data-step="2">
           <div class="ac-group-head">
             <span class="ac-badge">2</span>
             <div><h2>Shipping details</h2><p>Where your tracks will be delivered.</p></div>
@@ -930,7 +963,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         </div>
 
         <!-- Group 3: Notes -->
-        <div class="ac-group">
+        <div class="ac-group ac-step" data-step="3">
           <div class="ac-group-head">
             <span class="ac-badge">3</span>
             <div><h2>Anything else?</h2><p>Optional &mdash; tell us anything that helps.</p></div>
@@ -949,11 +982,20 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
           </div>
         </div>
 
-        <div class="ac-actions">
-          <span class="ac-req-note">Fields marked <span style="color:var(--accent)">*</span> are required.</span>
-          <button type="submit" class="ac-submit">Submit registration
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <div class="ac-nav">
+          <button type="button" class="ac-prev hide" id="acPrev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            Back
           </button>
+          <div class="ac-nav-right">
+            <span class="ac-count"><span id="acStepNum">1</span> / 3</span>
+            <button type="button" class="ac-submit" id="acNext">Next
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <button type="submit" class="ac-submit" id="acSubmit" style="display:none">Submit registration
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </form>
 
@@ -1222,10 +1264,18 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   })();
 </script>
 <script>
-  /* ===== Alta cliente form ===== */
+  /* ===== Alta cliente wizard ===== */
   (function(){
     var form=document.getElementById('acForm');
     if(!form)return;
+    var steps=[].slice.call(form.querySelectorAll('.ac-step'));
+    var progSteps=[].slice.call(form.querySelectorAll('.ac-prog-step'));
+    var total=steps.length, cur=1;
+    var fill=document.getElementById('acFill');
+    var stepNum=document.getElementById('acStepNum');
+    var prev=document.getElementById('acPrev');
+    var next=document.getElementById('acNext');
+    var submit=document.getElementById('acSubmit');
     var success=document.getElementById('acSuccess');
     var card=form.closest('.ac-card');
 
@@ -1236,21 +1286,39 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 
     /* require at least one "how did you hear about us" */
     var sources=[].slice.call(form.querySelectorAll('input[name="source"]'));
-    function syncSourceRequirement(){
-      var any=sources.some(function(c){return c.checked;});
-      sources.forEach(function(c){ c.required=!any; });
+    function syncSource(){ var any=sources.some(function(c){return c.checked;}); sources.forEach(function(c){ c.required=!any; }); }
+    sources.forEach(function(c){ c.addEventListener('change',syncSource); });
+    syncSource();
+
+    function render(){
+      steps.forEach(function(s,i){ s.classList.toggle('active',(i+1)===cur); });
+      progSteps.forEach(function(p,i){ p.classList.remove('active','done'); if(i+1<cur)p.classList.add('done'); if(i+1===cur)p.classList.add('active'); });
+      fill.style.width=(cur/total*100)+'%';
+      stepNum.textContent=cur;
+      prev.classList.toggle('hide',cur===1);
+      next.style.display=cur<total?'':'none';
+      submit.style.display=cur===total?'':'none';
     }
-    sources.forEach(function(c){ c.addEventListener('change',syncSourceRequirement); });
-    syncSourceRequirement();
+    function validStep(n){
+      var fields=[].slice.call(steps[n-1].querySelectorAll('input,select,textarea'));
+      for(var i=0;i<fields.length;i++){ if(!fields[i].checkValidity()){ fields[i].reportValidity(); return false; } }
+      return true;
+    }
+    function goTop(){ if(card) card.scrollIntoView({behavior:'smooth',block:'start'}); }
+
+    next.addEventListener('click',function(){ syncSource(); if(!validStep(cur))return; if(cur<total){ cur++; render(); goTop(); } });
+    prev.addEventListener('click',function(){ if(cur>1){ cur--; render(); goTop(); } });
 
     form.addEventListener('submit',function(e){
       e.preventDefault();
-      syncSourceRequirement();
-      if(!form.checkValidity()){ form.reportValidity(); return; }
+      syncSource();
+      for(var n=1;n<=total;n++){ if(!validStep(n)){ cur=n; render(); return; } }
       form.style.display='none';
       success.classList.add('show');
-      if(card) card.scrollIntoView({behavior:'smooth',block:'start'});
+      goTop();
     });
+
+    render();
   })();
 </script>
 </body>
