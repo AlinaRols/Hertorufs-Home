@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New customer registration | Heroturfs</title>
+<title>Registration received | Heroturfs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
@@ -705,331 +705,105 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 }
 </style>
 
-<!-- ===== ALTA CLIENTE STYLES ===== -->
+<!-- ===== THANK YOU ===== -->
 <style>
-.ac-hero{position:relative;overflow:hidden;background:#000;padding:158px 0 96px}
-.ac-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;opacity:.6}
-.ac-hero-shade{position:absolute;inset:0;background:linear-gradient(100deg,rgba(8,10,12,.92) 0%,rgba(8,10,12,.62) 42%,rgba(8,10,12,.2) 72%,rgba(8,10,12,.5) 100%),linear-gradient(to bottom,rgba(8,10,12,.25),rgba(8,10,12,.72))}
-.ac-hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 40px;text-align:center}
-.ac-hero .cp-hero-eyebrow{justify-content:center}
-.ac-hero h1{font-family:var(--fd);font-size:clamp(42px,6.4vw,86px);font-weight:900;line-height:.9;letter-spacing:-.015em;color:#fff;margin:0 auto;max-width:15ch}
-.ac-hero h1 em{font-style:normal;color:var(--accent)}
-.ac-hero-sub{font-size:17px;color:rgba(255,255,255,.8);line-height:1.7;max-width:560px;margin:22px auto 0}
-@media(max-width:680px){.ac-hero{padding:120px 0 80px}}
-
-/* form section */
-.ac-sec{background:#f5f6f7;padding:0 0 96px}
-.ac-shell{max-width:920px;margin:-40px auto 0;position:relative;z-index:3;padding:0 24px}
-.ac-card{background:#fff;border:1px solid #e6e8ec;border-radius:18px;box-shadow:0 24px 60px rgba(10,14,20,.10);padding:clamp(26px,4vw,52px)}
-.ac-steps-note{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#8a949c;margin-bottom:6px}
-.ac-steps-note b{color:var(--accent)}
-
-.ac-group{padding:34px 0;border-top:1px solid #edeff2}
-.ac-group:first-of-type{border-top:none;padding-top:8px}
-.ac-group-head{display:flex;align-items:center;gap:14px;margin-bottom:24px}
-.ac-badge{flex-shrink:0;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-family:var(--fd);font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center}
-.ac-group-head h2{font-family:var(--fd);font-size:clamp(21px,2.4vw,27px);font-weight:800;color:#14181c;line-height:1;margin:0}
-.ac-group-head p{font-size:12.5px;color:#8a949c;margin:5px 0 0;line-height:1.4}
-
-.ac-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
-.ac-field{display:flex;flex-direction:column;gap:7px}
-.ac-field.full{grid-column:1 / -1}
-.ac-field label{font-size:12.5px;font-weight:700;color:#3a444c;letter-spacing:.01em}
-.ac-field label .req{color:var(--accent)}
-.ac-field .hint{font-size:11.5px;font-weight:500;color:#9aa4ac;margin-top:-2px}
-.ac-field input,.ac-field select,.ac-field textarea{width:100%;font-family:var(--fb);font-size:14.5px;color:#14181c;background:#fff;border:1px solid #d6dae0;border-radius:10px;padding:12px 14px;transition:border-color .18s,box-shadow .18s}
-.ac-field textarea{resize:vertical;min-height:110px}
-.ac-field input::placeholder,.ac-field textarea::placeholder{color:#aeb6bd}
-.ac-field input:focus,.ac-field select:focus,.ac-field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(227,51,43,.12)}
-.ac-field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a949c' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer}
-
-/* checkbox chips (how did you hear about us) */
-.ac-chips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.ac-chip{display:flex;align-items:center;gap:10px;border:1px solid #d6dae0;border-radius:10px;padding:11px 14px;cursor:pointer;font-size:13.5px;color:#3a444c;transition:border-color .18s,background .18s}
-.ac-chip:hover{border-color:#b9c0c7}
-.ac-chip input{width:17px;height:17px;accent-color:var(--accent);flex-shrink:0;margin:0}
-.ac-chip.on{border-color:var(--accent);background:rgba(227,51,43,.05);color:#14181c;font-weight:600}
-
-/* consent */
-.ac-consent{display:flex;align-items:flex-start;gap:12px;background:#fafbfc;border:1px solid #e6e8ec;border-radius:12px;padding:16px 18px;margin-top:8px}
-.ac-consent input{width:18px;height:18px;accent-color:var(--accent);flex-shrink:0;margin-top:1px}
-.ac-consent label{font-size:13px;color:#5a646c;line-height:1.55}
-.ac-consent a{color:var(--accent);text-decoration:underline}
-
-.ac-actions{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:30px;padding-top:26px;border-top:1px solid #edeff2}
-.ac-actions .ac-req-note{font-size:12px;color:#9aa4ac}
-.ac-submit{font-family:var(--fb);font-weight:800;font-size:15px;letter-spacing:.01em;background:var(--accent);color:#fff;border:none;border-radius:11px;padding:15px 34px;cursor:pointer;transition:background .18s,transform .18s;display:inline-flex;align-items:center;gap:9px}
-.ac-submit:hover{background:var(--accent-h);transform:translateY(-2px)}
-.ac-submit svg{width:16px;height:16px}
-
-/* wizard progress */
-.ac-progress{margin-bottom:32px}
-.ac-prog-steps{display:flex;gap:8px;margin-bottom:14px}
-.ac-prog-step{flex:1;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:#aeb6bd;transition:color .2s}
-.ac-prog-step .n{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:2px solid #d6dae0;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:13px;font-weight:900;color:#aeb6bd;background:#fff;transition:all .2s}
-.ac-prog-step.active,.ac-prog-step.done{color:#14181c}
-.ac-prog-step.active .n,.ac-prog-step.done .n{border-color:var(--accent);background:var(--accent);color:#fff}
-.ac-prog-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ac-prog-track{height:6px;background:#e6e8ec;border-radius:99px;overflow:hidden}
-.ac-prog-fill{height:100%;background:var(--accent);border-radius:99px;width:33.33%;transition:width .35s cubic-bezier(.22,1,.36,1)}
-
-/* steps */
-.ac-step{display:none}
-.ac-step.active{display:block;animation:acFade .35s ease}
-@keyframes acFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-/* wizard nav */
-.ac-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:30px;padding-top:26px;border-top:1px solid #edeff2}
-.ac-nav-right{display:flex;align-items:center;gap:16px}
-.ac-count{font-family:var(--fd);font-size:14px;font-weight:800;letter-spacing:.05em;color:#9aa4ac}
-.ac-prev{font-family:var(--fb);font-weight:700;font-size:14px;background:#fff;color:#3a444c;border:1px solid #d6dae0;border-radius:11px;padding:14px 24px;cursor:pointer;transition:border-color .18s,background .18s;display:inline-flex;align-items:center;gap:8px}
-.ac-prev:hover{border-color:#b9c0c7;background:#fafbfc}
-.ac-prev svg{width:15px;height:15px}
-.ac-prev.hide{visibility:hidden}
-@media(max-width:560px){.ac-prog-label{display:none}.ac-prev{padding:13px 18px}.ac-count{display:none}}
-
-/* reassurance strip */
-.ac-trust{max-width:920px;margin:26px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.ac-trust div{display:flex;align-items:flex-start;gap:11px;background:#fff;border:1px solid #e6e8ec;border-radius:12px;padding:16px 16px}
-.ac-trust svg{width:19px;height:19px;color:var(--accent);flex-shrink:0;margin-top:1px}
-.ac-trust b{display:block;font-size:13px;color:#14181c;font-weight:800;margin-bottom:2px}
-.ac-trust span{font-size:12px;color:#8a949c;line-height:1.45}
-
-/* success */
-.ac-success{display:none;text-align:center;padding:20px 10px 8px}
-.ac-success.show{display:block}
-.ac-success-ic{width:66px;height:66px;border-radius:50%;background:rgba(37,211,102,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
-.ac-success-ic svg{width:32px;height:32px;color:#25D366}
-.ac-success h2{font-family:var(--fd);font-size:clamp(26px,3.2vw,38px);font-weight:900;color:#14181c;line-height:1;margin:0 0 12px}
-.ac-success p{font-size:15px;color:#5a646c;line-height:1.6;max-width:460px;margin:0 auto 26px}
-
-@media(max-width:680px){
-  .ac-grid{grid-template-columns:1fr}
-  .ac-chips{grid-template-columns:1fr}
-  .ac-trust{grid-template-columns:1fr}
-  .ac-hero{padding:100px 0 54px}
-  .ac-shell{padding:0 16px}
-}
+/* no dark hero here, so keep the nav solid from the top */
+.nav{background:rgba(50,63,73,.97);border-bottom-color:rgba(255,255,255,.08);backdrop-filter:blur(16px)}
+.ty-wrap .btn-ghost{color:#1a1f24;border-color:rgba(0,0,0,.22)}
+.ty-wrap .btn-ghost:hover{background:#1a1f24;color:#fff;border-color:#1a1f24}
+.ty-wrap{min-height:60vh;display:flex;align-items:center;text-align:center}
+.ty-check{width:74px;height:74px;border-radius:50%;background:#1f9d55;display:flex;align-items:center;justify-content:center;margin:0 auto 26px;box-shadow:0 12px 30px rgba(31,157,85,.32)}
+.ty-check svg{width:36px;height:36px;stroke:#fff;stroke-width:3;fill:none}
+.ty-eyebrow{display:inline-flex;justify-content:center;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.ty-h1{font-family:var(--fd);font-size:clamp(30px,4.4vw,54px);font-weight:900;line-height:1.02;color:#14181c;margin-bottom:18px}
+.ty-h1 em{font-style:normal;color:var(--accent)}
+.ty-sub{font-size:16px;color:#5a646c;line-height:1.7;max-width:56ch;margin:0 auto 28px}
+.ty-carousel{position:relative;margin-top:36px}
+.ty-track{display:flex;gap:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 2px}
+.ty-track::-webkit-scrollbar{display:none}
+.ty-track .pj-card{flex:0 0 clamp(280px,32%,440px);aspect-ratio:4/3;margin:0}
+.ty-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.95);color:#14181c;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 16px rgba(0,0,0,.22);transition:background .2s,transform .15s}
+.ty-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.ty-arrow.prev{left:-8px}.ty-arrow.next{right:-8px}
+@media(max-width:600px){.ty-track .pj-card{flex-basis:86%}.ty-arrow{display:none}}
 </style>
-
-<!-- ===== HERO ===== -->
-<section class="ac-hero">
-  <img src="assets/home/lions-gym.jpg" alt="A Heroturfs training track installed at a gym">
-  <div class="ac-hero-shade"></div>
-  <div class="ac-hero-inner">
-    <span class="cp-hero-eyebrow reveal">New customer registration</span>
-    <h1 class="reveal d1">Welcome &mdash; <em>one last step.</em></h1>
-    <p class="ac-hero-sub reveal d2">Thanks for choosing Heroturfs. Fill in your details below and we'll set up your account so we can start working together.</p>
+<section class="cp-sec ty-wrap" style="background:#f5f6f7;padding:110px 0 60px">
+  <div class="container" style="max-width:760px">
+    <div class="ty-check reveal"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <span class="ty-eyebrow reveal">Customer registration received</span>
+    <h1 class="ty-h1 reveal d1">Thanks &mdash; you're <em>all set.</em></h1>
+    <p class="ty-sub reveal d2">Thanks for choosing Heroturfs! We've received your customer registration and we'll be in touch shortly to finalise everything and answer any questions. In the meantime, get inspired by our projects and see how we can help transform your space.</p>
+    <div class="cp-hero-ctas reveal d3" style="justify-content:center">
+      <a href="projects.html" class="btn-primary">See the projects we've delivered &rarr;</a>
+      <a href="categoria-alina.html" class="btn-ghost">Browse the tracks</a>
+    </div>
   </div>
 </section>
 
-<!-- ===== FORM ===== -->
-<section class="ac-sec">
-  <div class="ac-shell reveal">
-    <div class="ac-card">
-
-      <!-- FORM -->
-      <form id="acForm" novalidate>
-        <div class="ac-progress">
-          <div class="ac-prog-steps">
-            <div class="ac-prog-step active"><span class="n">1</span><span class="ac-prog-label">Company</span></div>
-            <div class="ac-prog-step"><span class="n">2</span><span class="ac-prog-label">Shipping</span></div>
-            <div class="ac-prog-step"><span class="n">3</span><span class="ac-prog-label">Notes</span></div>
-          </div>
-          <div class="ac-prog-track"><div class="ac-prog-fill" id="acFill"></div></div>
-        </div>
-
-        <!-- Group 1: Contact / company -->
-        <div class="ac-group ac-step active" data-step="1">
-          <div class="ac-group-head">
-            <span class="ac-badge">1</span>
-            <div><h2>Company &amp; billing details</h2><p>The business we'll be invoicing.</p></div>
-          </div>
-          <div class="ac-grid">
-            <div class="ac-field">
-              <label>Company tax ID (VAT / CIF / NIF) <span class="req">*</span></label>
-              <input type="text" name="tax_id" required>
-            </div>
-            <div class="ac-field">
-              <label>Registered company name <span class="req">*</span></label>
-              <input type="text" name="company" required>
-            </div>
-            <div class="ac-field full">
-              <label>Trading name</label>
-              <span class="hint">Only if it's different from the registered name.</span>
-              <input type="text" name="trading_name" placeholder="Optional">
-            </div>
-            <div class="ac-field">
-              <label>Sector <span class="req">*</span></label>
-              <select name="sector" required>
-                <option value="" selected disabled>Select an option</option>
-                <option>Gym</option>
-                <option>CrossFit box</option>
-                <option>Gym chain</option>
-                <option>Functional training</option>
-                <option>Multisport</option>
-                <option>Other sports facility</option>
-                <option>Private / home use</option>
-                <option>Distributor</option>
-                <option>Hotel</option>
-                <option>Architect</option>
-                <option>Interior designer</option>
-                <option>Retail</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="ac-field">
-              <label>Country <span class="req">*</span></label>
-              <select name="country" required>
-                <option selected>United Kingdom</option>
-                <option>Ireland</option>
-                <option>Spain</option>
-                <option>Portugal</option>
-                <option>France</option>
-                <option>Germany</option>
-                <option>Italy</option>
-                <option>Netherlands</option>
-                <option>Belgium</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="ac-field full">
-              <label>Billing address <span class="req">*</span></label>
-              <input type="text" name="address" required>
-            </div>
-            <div class="ac-field">
-              <label>Postcode <span class="req">*</span></label>
-              <input type="text" name="postcode" required>
-            </div>
-            <div class="ac-field">
-              <label>Town / city <span class="req">*</span></label>
-              <input type="text" name="city" required>
-            </div>
-            <div class="ac-field">
-              <label>Billing email <span class="req">*</span></label>
-              <input type="email" name="billing_email" required>
-            </div>
-            <div class="ac-field">
-              <label>Email for commercial communications <span class="req">*</span></label>
-              <input type="email" name="marketing_email" required>
-            </div>
-            <div class="ac-field full">
-              <label>How did you hear about us? <span class="req">*</span></label>
-              <div class="ac-chips">
-                <label class="ac-chip"><input type="checkbox" name="source" value="Social media"> Social media (Instagram, Facebook)</label>
-                <label class="ac-chip"><input type="checkbox" name="source" value="Search engines"> Search engines (Google, Bing)</label>
-                <label class="ac-chip"><input type="checkbox" name="source" value="Referral"> Referral</label>
-                <label class="ac-chip"><input type="checkbox" name="source" value="Amazon"> Amazon</label>
-                <label class="ac-chip"><input type="checkbox" name="source" value="Pinterest"> Pinterest</label>
-                <label class="ac-chip"><input type="checkbox" name="source" value="Other"> Other</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Group 2: Shipping -->
-        <div class="ac-group ac-step" data-step="2">
-          <div class="ac-group-head">
-            <span class="ac-badge">2</span>
-            <div><h2>Shipping details</h2><p>Where your tracks will be delivered.</p></div>
-          </div>
-          <div class="ac-grid">
-            <div class="ac-field">
-              <label>Contact name for deliveries <span class="req">*</span></label>
-              <input type="text" name="ship_name" required>
-            </div>
-            <div class="ac-field">
-              <label>Delivery email <span class="req">*</span></label>
-              <input type="email" name="ship_email" required>
-            </div>
-            <div class="ac-field full">
-              <label>Delivery phone number <span class="req">*</span></label>
-              <input type="tel" name="ship_phone" required>
-            </div>
-            <div class="ac-field full">
-              <label>Delivery address</label>
-              <span class="hint">Only fill in if it's different from the billing address.</span>
-              <input type="text" name="ship_address" placeholder="Optional">
-            </div>
-            <div class="ac-field">
-              <label>Delivery postcode</label>
-              <input type="text" name="ship_postcode" placeholder="Optional">
-            </div>
-            <div class="ac-field">
-              <label>Delivery town / city</label>
-              <input type="text" name="ship_city" placeholder="Optional">
-            </div>
-          </div>
-        </div>
-
-        <!-- Group 3: Notes -->
-        <div class="ac-group ac-step" data-step="3">
-          <div class="ac-group-head">
-            <span class="ac-badge">3</span>
-            <div><h2>Anything else?</h2><p>Optional &mdash; tell us anything that helps.</p></div>
-          </div>
-          <div class="ac-grid">
-            <div class="ac-field full">
-              <label>Is there anything else you'd like to add or share with us?</label>
-              <textarea name="notes" placeholder="Your message (optional)"></textarea>
-            </div>
-            <div class="ac-field full">
-              <div class="ac-consent">
-                <input type="checkbox" id="acConsent" name="consent" required>
-                <label for="acConsent">I agree that Heroturfs may store and process my personal data in accordance with the company's <a href="#">privacy policy</a>. <span class="req">*</span></label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ac-nav">
-          <button type="button" class="ac-prev hide" id="acPrev">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-            Back
-          </button>
-          <div class="ac-nav-right">
-            <span class="ac-count"><span id="acStepNum">1</span> / 3</span>
-            <button type="button" class="ac-submit" id="acNext">Next
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-            <button type="submit" class="ac-submit" id="acSubmit" style="display:none">Submit registration
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            </button>
-          </div>
-        </div>
-      </form>
-
-      <!-- SUCCESS -->
-      <div class="ac-success" id="acSuccess">
-        <div class="ac-success-ic">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <h2>Thanks &mdash; you're all set.</h2>
-        <p>We've received your details and we'll set up your account shortly. Our team will be in touch to get things moving.</p>
-        <a href="categoria-alina.html" class="btn-primary">Browse the tracks</a>
+<!-- featured projects -->
+<section class="cp-sec cp-realproj" style="background:#fff;padding:10px 0 90px">
+  <div class="container">
+    <div class="cp-head reveal" style="text-align:center;max-width:620px;margin:0 auto 32px">
+      <span class="eyebrow-label" style="justify-content:center">Featured projects</span>
+      <h2 class="cp-h2">Real installations, <em>real results.</em></h2>
+    </div>
+    <div class="ty-carousel reveal">
+      <button class="ty-arrow prev" type="button" onclick="tyScroll(-1)" aria-label="Previous">&#10094;</button>
+      <div class="ty-track" id="tyTrack">
+        <a href="projects.html" class="pj-card">
+          <img src="assets/compartidos/acero-crossfit.jpg" alt="Acero CrossFit"><div class="pj-ov"></div><span class="pj-tag">CrossFit box</span>
+          <div class="pj-info"><div class="pj-name">Acero CrossFit</div><div class="pj-loc">Toledo &middot; Spain</div></div>
+        </a>
+        <a href="projects.html" class="pj-card">
+          <img src="https://cdn.shopify.com/s/files/1/0909/8058/1751/files/wod_BOX-133.webp" alt="CrossFit Costa Blanca"><div class="pj-ov"></div><span class="pj-tag">CrossFit box</span>
+          <div class="pj-info"><div class="pj-name">CrossFit Costa Blanca</div><div class="pj-loc">Alicante &middot; Spain</div></div>
+        </a>
+        <a href="proyecto-lowfit.html" class="pj-card">
+          <img src="assets/compartidos/lowfit-marathon.jpg" alt="Lowfit"><div class="pj-ov"></div><span class="pj-tag">Functional training</span>
+          <div class="pj-info"><div class="pj-name">Lowfit</div><div class="pj-loc">Huelva &middot; Spain</div></div>
+        </a>
+        <a href="proyecto-craft.html" class="pj-card">
+          <img src="assets/compartidos/craft-bcn.jpg" alt="Craft BCN"><div class="pj-ov"></div><span class="pj-tag">Physio &amp; recovery</span>
+          <div class="pj-info"><div class="pj-name">Craft BCN</div><div class="pj-loc">Barcelona &middot; Spain</div></div>
+        </a>
+        <a href="projects.html" class="pj-card">
+          <img src="assets/compartidos/finestrat-aritz.jpg" alt="Finestrat Aritz"><div class="pj-ov"></div><span class="pj-tag">Outdoor</span>
+          <div class="pj-info"><div class="pj-name">Finestrat Aritz</div><div class="pj-loc">Alicante &middot; Spain</div></div>
+        </a>
       </div>
-
-    </div>
-  </div>
-
-  <!-- reassurance -->
-  <div class="ac-trust reveal">
-    <div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <div><b>Your data is safe</b><span>Stored and processed under our privacy policy &mdash; never sold.</span></div>
-    </div>
-    <div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-      <div><b>One-time setup</b><span>Register once and we're ready to work together on every order.</span></div>
-    </div>
-    <div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      <div><b>Here to help</b><span>Questions? Reach us on WhatsApp and we'll guide you through it.</span></div>
+      <button class="ty-arrow next" type="button" onclick="tyScroll(1)" aria-label="Next">&#10095;</button>
     </div>
   </div>
 </section>
 
-
+<script>
+(function(){
+  var t=document.getElementById('tyTrack'); if(!t) return;
+  window.tyScroll=function(d){ var c=t.querySelector('.pj-card'); var g=parseFloat(getComputedStyle(t).gap)||16; t.scrollBy({left:d*(c.offsetWidth+g),behavior:'smooth'}); stopped=true; };
+  var stopped=false,paused=false;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) stopped=true;
+  var originals=[].slice.call(t.querySelectorAll('.pj-card'));
+  originals.forEach(function(c){var k=c.cloneNode(true);t.appendChild(k);});
+  var SPEED=18,pos=t.scrollLeft,last=null;
+  function frame(ts){
+    if(last!==null&&!stopped&&!paused&&!document.hidden){
+      var dt=Math.min(ts-last,100)/1000;
+      if(Math.abs(t.scrollLeft-pos)>2)pos=t.scrollLeft;
+      var c=t.querySelector('.pj-card'); var g=parseFloat(getComputedStyle(t).gap)||16;
+      var h=originals.length*(c.offsetWidth+g);
+      pos+=SPEED*dt; if(pos>=h)pos-=h; t.scrollLeft=pos;
+    }
+    last=ts; requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  t.addEventListener('mouseenter',function(){paused=true;});
+  t.addEventListener('mouseleave',function(){paused=false;});
+  var px=0,py=0;
+  t.addEventListener('touchstart',function(e){px=e.touches[0].clientX;py=e.touches[0].clientY;},{passive:true});
+  t.addEventListener('touchmove',function(e){var dx=Math.abs(e.touches[0].clientX-px),dy=Math.abs(e.touches[0].clientY-py);if(dx>12&&dx>dy)stopped=true;},{passive:true});
+  t.addEventListener('wheel',function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY))stopped=true;},{passive:true});
+})();
+</script>
 <footer>
   <div class="footer-top">
     <div>
@@ -1261,62 +1035,6 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
     }
     build();
     let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(build, 200); });
-  })();
-</script>
-<script>
-  /* ===== Alta cliente wizard ===== */
-  (function(){
-    var form=document.getElementById('acForm');
-    if(!form)return;
-    var steps=[].slice.call(form.querySelectorAll('.ac-step'));
-    var progSteps=[].slice.call(form.querySelectorAll('.ac-prog-step'));
-    var total=steps.length, cur=1;
-    var fill=document.getElementById('acFill');
-    var stepNum=document.getElementById('acStepNum');
-    var prev=document.getElementById('acPrev');
-    var next=document.getElementById('acNext');
-    var submit=document.getElementById('acSubmit');
-    var success=document.getElementById('acSuccess');
-    var card=form.closest('.ac-card');
-
-    /* chip visual state */
-    form.querySelectorAll('.ac-chip input[type="checkbox"]').forEach(function(cb){
-      cb.addEventListener('change',function(){ cb.closest('.ac-chip').classList.toggle('on',cb.checked); });
-    });
-
-    /* require at least one "how did you hear about us" */
-    var sources=[].slice.call(form.querySelectorAll('input[name="source"]'));
-    function syncSource(){ var any=sources.some(function(c){return c.checked;}); sources.forEach(function(c){ c.required=!any; }); }
-    sources.forEach(function(c){ c.addEventListener('change',syncSource); });
-    syncSource();
-
-    function render(){
-      steps.forEach(function(s,i){ s.classList.toggle('active',(i+1)===cur); });
-      progSteps.forEach(function(p,i){ p.classList.remove('active','done'); if(i+1<cur)p.classList.add('done'); if(i+1===cur)p.classList.add('active'); });
-      fill.style.width=(cur/total*100)+'%';
-      stepNum.textContent=cur;
-      prev.classList.toggle('hide',cur===1);
-      next.style.display=cur<total?'':'none';
-      submit.style.display=cur===total?'':'none';
-    }
-    function validStep(n){
-      var fields=[].slice.call(steps[n-1].querySelectorAll('input,select,textarea'));
-      for(var i=0;i<fields.length;i++){ if(!fields[i].checkValidity()){ fields[i].reportValidity(); return false; } }
-      return true;
-    }
-    function goTop(){ if(card) card.scrollIntoView({behavior:'smooth',block:'start'}); }
-
-    next.addEventListener('click',function(){ syncSource(); if(!validStep(cur))return; if(cur<total){ cur++; render(); goTop(); } });
-    prev.addEventListener('click',function(){ if(cur>1){ cur--; render(); goTop(); } });
-
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      syncSource();
-      for(var n=1;n<=total;n++){ if(!validStep(n)){ cur=n; render(); return; } }
-      window.location.href='thank-you-registration-alina.html';
-    });
-
-    render();
   })();
 </script>
 </body>
