@@ -951,6 +951,11 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .gd2-sd-desc p:last-child{margin-bottom:0}
 .gd2-sd-desc b{color:#15181c;font-weight:700}
 .gd2-sd-desc a{color:var(--accent);text-decoration:underline}
+.gd2-sd-pimg{display:block;width:150px;margin-top:16px;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.08);background:#fff}
+.gd2-sd-pimg img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .3s}
+.gd2-sd-pimg:hover img{transform:scale(1.04)}
+.gd2-acc-pimg{display:block;width:120px;margin-top:12px;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,.08);background:#fff}
+.gd2-acc-pimg img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
 .gd2-sd-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px}
 .gd2-sd-tools .gd2-steptool{margin-top:0;color:var(--accent);background:rgba(227,51,43,.08);border-color:rgba(227,51,43,.2)}
 .gd2-sd-cta{display:inline-flex;align-items:center;gap:7px;font-family:var(--fb);font-size:12.5px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:8px;padding:9px 16px;text-decoration:none;transition:background .2s}
@@ -1463,7 +1468,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
   var STEPS=[
     {n:'01',h:'Clean the zone',s:'Sweep it spotless.',d:"<p>Start with a spotless subfloor: sweep and vacuum the whole area so there's no dust, sand or debris left behind. A clean surface is what lets the tape grip properly and stops the track lifting later.</p>",tl:'Broom + vacuum',sv:'<path d="M3 21l3-3m0 0a4 4 0 105.66-5.66L9 9"/><path d="M14 4l6 6"/>',img:'https://heroturfs.es/cdn/shop/files/instalacion-cesped-gimnasio-aspirado-final.webp?width=1100'},
     {n:'02',h:'Mark it out',s:'Position and mark the area.',d:"<p>Set the track in its final position and mark the area on the floor — a chalk line is ideal — then move the track aside. This gives you a clean, visible reference to lay the tape to, so the edges end up straight and square.</p><p>Take your time squaring it to the walls and to any tracks beside it. A few extra minutes lining it up now is the difference between a finish that looks properly fitted and one that drifts out of true.</p>",tl:'Chalk line',sv:'<path d="M4 20L20 4M4 20l4 0M4 20l0-4M14 4h6v6"/>',img:'https://heroturfs.es/cdn/shop/files/instalacion_cesped-artificial-gimnasio-extendiendo-pista.webp?width=1100'},
-    {n:'03',h:'Lay the tape',s:'Tape the whole area.',d:"<p>Run the double-sided tape all the way around the perimeter and across the surface — <b>not just the outline.</b> Press it firmly to the floor and smooth out any bubbles as you go.</p><p>An untaped middle is what lets the track lift and wrinkle under heavy sled drags, so cover the whole area. And lay every strip in the same direction the sled travels — tape placed across the drag creates a ridge that brakes the sled and wears the fibres faster.</p>",tl:'Endurance tape',cta:'accesorios-alina.html',sv:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/>',img:'assets/home/instalacion-cinta-espatula.jpg'},
+    {n:'03',h:'Lay the tape',s:'Tape the whole area.',d:"<p>Run the double-sided tape all the way around the perimeter and across the surface — <b>not just the outline.</b> Press it firmly to the floor and smooth out any bubbles as you go.</p><p>An untaped middle is what lets the track lift and wrinkle under heavy sled drags, so cover the whole area. And lay every strip in the same direction the sled travels — tape placed across the drag creates a ridge that brakes the sled and wears the fibres faster.</p>",tl:'Endurance tape',cta:'accesorios-alina.html',sv:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/>',img:'assets/home/instalacion-cinta-espatula.jpg',pimg:'https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Heroturfs-Rollo-Doble-Cara-Vista-5_2.webp?width=400'},
     {n:'04',h:'Peel & roll it on',s:'Expose adhesive, unroll.',d:"<p>With the tape down, peel off the top backing layer to expose the adhesive. Then unroll the track over the tape from one end, keeping it aligned to your marks.</p><p>Press down as you go — a spatula or a firm hand pushes out any trapped air and seats the track onto the tape. Work slowly so it lands flat and tight, with no ripples.</p>",tl:'Spatula',sv:'<path d="M3 14l7-7 4 4-7 7H3v-4zM14 7l3-3a2 2 0 013 3l-3 3"/>',img:'https://cdn.shopify.com/s/files/1/0960/0047/5401/files/Cinta-doble-cara-cesped-artificial-extra-fuerte-para-gimnasio_4.webp?width=1100'},
     {n:'05',h:'Final vacuum',s:'Lift loose fibres, done.',d:"<p>Give the surface a final vacuum to lift any loose fibres left from cutting and to tidy up the seams.</p><p>That's it — the track is fitted, flat and ready to train on. From here it's just simple upkeep; our <a href='guia-limpieza-alina.html'>cleaning guide</a> covers the easy weekly routine that keeps it fast and looking new.</p>",tl:'Vacuum',sv:'<path d="M3 12h13a3 3 0 10-3-3M3 17h10a3 3 0 11-3 3"/>',img:'assets/home/instalacion-cinta-cesped.jpg'}
   ];
@@ -1486,6 +1491,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         '<div class="gd2-acc-panel"><div class="gd2-acc-inner">'+
           '<div class="gd2-acc-media"><img src="'+s.img+'" alt="'+s.h+'"></div>'+
           '<div class="gd2-acc-desc">'+s.d+'</div>'+
+          (s.pimg?'<a class="gd2-acc-pimg" href="'+s.cta+'"><img src="'+s.pimg+'" alt="Endurance installation tape roll" loading="lazy"></a>':'')+
           toolTag(s)+
           (s.cta?'<a class="gd2-acc-cta" href="'+s.cta+'">Shop Endurance tape '+ARROW+'</a>':'')+
         '</div></div>'+
@@ -1514,6 +1520,7 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         '<div class="gd2-sd-body">'+
           '<div class="gd2-sd-top"><span class="gd2-sd-n">'+s.n+'</span><h3>'+s.h+'</h3></div>'+
           '<div class="gd2-sd-desc">'+s.d+'</div>'+
+          (s.pimg?'<a class="gd2-sd-pimg" href="'+s.cta+'"><img src="'+s.pimg+'" alt="Endurance installation tape roll" loading="lazy"></a>':'')+
           '<div class="gd2-sd-tools">'+toolTag(s)+(s.cta?'<a class="gd2-sd-cta" href="'+s.cta+'">Shop Endurance tape '+ARROW+'</a>':'')+'</div>'+
         '</div>';
     }
