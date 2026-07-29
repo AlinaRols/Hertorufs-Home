@@ -712,10 +712,13 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
 .pdp-addon-meta b{color:#1a1f24;font-weight:700}
 .pdp-addon-btn{flex-shrink:0;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:var(--fb);font-weight:700;font-size:13px;padding:10px 22px;cursor:pointer;transition:background .2s}
 .pdp-addon-btn:hover{background:var(--accent-h)}
-.pdp-notice{background:#fdf5da;border:1px solid #efd587;border-radius:12px;padding:16px 20px;margin:0 0 20px;text-align:center}
-.pdp-notice-title{font-family:var(--fd);font-size:16px;font-weight:800;color:#8a6a12;letter-spacing:.01em;margin-bottom:7px}
-.pdp-notice p{font-size:12.5px;line-height:1.65;color:#7d6522;margin:0}
-.pdp-notice p b{color:#5c4a10;font-weight:800}
+.pdp-notice{display:flex;gap:14px;align-items:flex-start;background:#fbfbfc;border:1px solid #e6e8ec;border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;margin:0 0 20px;text-align:left}
+.pdp-notice-ic{flex-shrink:0;width:36px;height:36px;border-radius:9px;background:rgba(227,51,43,.1);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.pdp-notice-ic svg{width:19px;height:19px}
+.pdp-notice-lab{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.pdp-notice-title{font-family:var(--fd);font-size:15.5px;font-weight:800;color:#15181c;letter-spacing:.01em;margin-bottom:6px}
+.pdp-notice p{font-size:12.5px;line-height:1.6;color:#5a6672;margin:0}
+.pdp-notice p b{color:#15181c;font-weight:800}
 
 /* trust */
 .pdp-trust{list-style:none;border-top:1px solid #e7eaed;padding-top:20px;display:grid;gap:13px}
@@ -987,8 +990,14 @@ footer{background:#323F49;padding:56px 0 28px;border-top:1px solid var(--border)
         </div>
 
         <div class="pdp-notice">
-          <div class="pdp-notice-title">Summer notice ☀️</div>
-          <p>Throughout August we dispatch orders on <b>6 and 27 August</b> only. To guarantee shipping on those dates, orders must be placed before <b>12:00 noon on 3 and 24 August</b> respectively. From <b>31 August</b> we resume our usual daily dispatch. Thanks for your understanding.</p>
+          <div class="pdp-notice-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="pdp-notice-body">
+            <span class="pdp-notice-lab">Summer shipping</span>
+            <div class="pdp-notice-title">August dispatch dates</div>
+            <p>Throughout August we dispatch orders on <b>6 and 27 August</b> only. To guarantee shipping on those dates, place your order before <b>12:00 noon on 3 and 24 August</b> respectively. From <b>31 August</b> we resume our usual daily dispatch.</p>
+          </div>
         </div>
 
         <div class="pdp-actions">
